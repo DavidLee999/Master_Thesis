@@ -1,0 +1,1 @@
+C:\Users\li_pe\AppData\Local\Continuum\Anaconda2\python C:\Users\li_pe\AppData\Local\Continuum\Anaconda2\Scripts\gdal_polygonize.py E:\tet_alpha.tif -f "ESRI Shapefile" E:\mylayer.shp

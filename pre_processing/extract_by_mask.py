@@ -1,0 +1,203 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue May 16 13:54:21 2017
+
+@author: li_pe
+"""
+from osgeo import gdal
+from osgeo import osr, ogr
+import subprocess
+import os
+
+
+def cut (inputshapefile, inputimg, outputimg, nodata=-9999):
+    
+    command = ['gdalwarp', '-of', 'GTiff', '-crop_to_cutline']
+    
+    command.extend(['-cutline', inputshapefile])
+    
+    command.extend([inputimg, '-overwrite', outputimg])
+    
+    subprocess.call(command)
+    
+    print 'end.'
+
+
+
+Location = ['Etna', 'Demmin', 'Lascar', 'Lybien-1', 'Lybien-2', 'Portugal']
+
+outputFile = r'E:\Penghua\data' + '\\' + Location[0]
+
+outputfolder = []
+
+   
+sourFile = r'E:\Penghua\data\georeferenced_TET' + '\\' + Location[0] + r'\alpha_channel'
+
+inputShapefile = []
+
+for shp in os.listdir(sourFile):
+    
+    if shp.endswith('.shp'):
+        
+        inputShapefile.append(os.path.join(sourFile, shp))
+
+
+sourWV = r'E:\Penghua\data\corresponding_water_vapor' + '\\' + Location[0]
+
+inputWV = []
+
+outputWV = []
+
+counter = 0
+
+for WV in os.listdir(sourWV):
+    
+    folder = outputFile+'\\'+WV
+    
+    if os.path.exists(folder) == False:
+        
+        os.makedirs(folder)
+        
+        os.makedirs(folder+'\\'+'water_vapor')
+        
+        os.makedirs(folder+'\\'+'TET')
+        
+        os.makedirs(folder+'\\'+'emivissivity_map')
+        
+        os.makedirs(folder+'\\'+'DEM')
+        
+        os.makedirs(folder+'\\'+'SST')
+    
+    outputfolder.append(folder)
+        
+    folder_WV = sourWV + '\\' + WV + '\\' + 'repro'
+    
+    for file_WV in os.listdir(folder_WV):
+        
+        if file_WV.endswith('.tif'):
+            
+            inputWV.append(os.path.join(folder_WV, file_WV))
+            
+            name, postfix = os.path.splitext(file_WV)
+            
+            outputWV.append(os.path.join(outputfolder[counter]+'\\'+'water_vapor', name+'_cut.tif'))
+    
+    counter = counter + 1
+    
+    
+sourTET = r'E:\Penghua\data\georeferenced_TET' + '\\' + Location[0]
+
+inputTET = []
+
+outputTET = []
+
+counter = 0
+
+for tet in os.listdir(sourTET):
+    
+    if 'TET' in tet:
+        
+        #print tet
+    
+        folder_TET = sourTET + '\\' + tet + '\\' + 'TET_repro'
+    
+        for file_TET in os.listdir(folder_TET):
+        
+            if file_TET.endswith('.tif') and ('LWIR' in file_TET or 'MWIR' in file_TET):
+            
+                inputTET.append(os.path.join(folder_TET, file_TET))
+            
+                name, postfix  = os.path.splitext(file_TET)
+                        
+                outputTET.append(os.path.join(outputfolder[counter]+'\\'+'TET', name+'_cut.tif'))
+            
+        counter = counter + 1
+    
+    
+    
+emissivity = r'E:\Penghua\data\emissivity_map' + '\\emissivity_map_' + Location[0] + '\\merged\\repro'
+
+inputEmi = []
+
+outputEmi = []
+
+for emi in os.listdir(emissivity):
+    
+    if emi.endswith('.tif') and 'band' in emi:
+        
+        inputEmi.append(os.path.join(emissivity, emi))
+        
+for folder in outputfolder:
+
+    abspath, name = os.path.split(inputEmi[0])
+    
+    emi_name, postfix = os.path.splitext(name)
+        
+    outputEmi.append(os.path.join(folder+'\\'+'emivissivity_map', emi_name + '_cut.tif'))
+
+    abspath, name = os.path.split(inputEmi[1])
+    
+    emi_name, postfix = os.path.splitext(name)
+        
+    outputEmi.append(os.path.join(folder+'\\'+'emivissivity_map', emi_name + '_cut.tif'))
+
+
+DEM = r'E:\Penghua\data\DEM' + '\\' + Location[0] + '\\merged\\repro'
+
+inputDEM =  DEM + '\\astgtm2_DEM_repro.tif'
+
+outputDEM = []
+
+for folders in outputfolder:
+    
+    folder, name = os.path.split(inputDEM)
+    
+    dem_name, postfix = os.path.splitext(name)
+    
+    outputDEM.append(os.path.join(folders+'\\'+'DEM', dem_name + '_cut.tif'))
+
+sst = r'E:\Penghua\data\SST' + '\\' + Location[0]
+
+inputSST = []
+
+outputSST = []
+
+os.chdir(sst)
+
+counter = 0
+
+for files in os.listdir(sst):
+    
+    if os.path.isdir(files) == True:
+        
+        folders = os.path.abspath(files) + '\\repro'
+        
+        for fil in os.listdir(folders):
+            
+            if fil.endswith('.tif') and 'SST' in fil:
+                
+                inputSST.append(folders + '\\' + fil)
+                
+                outputSST.append(outputfolder[counter] + '\\SST\\' + os.path.splitext(fil)[0] + '_cut.tif')
+                
+                counter = counter + 1
+
+counter = 0
+
+for shapefile in inputShapefile:
+    
+#    cut(shapefile, inputWV[counter], outputWV[counter])
+#    
+#    cut(shapefile, inputTET[2*counter], outputTET[2*counter])
+#    
+#    cut(shapefile, inputTET[2*counter+1], outputTET[2*counter+1])
+#    
+#    cut(shapefile, inputEmi[0], outputEmi[2*counter])
+#    
+#    cut(shapefile, inputEmi[1], outputEmi[2*counter+1])
+#
+#    cut(shapefile, inputDEM, outputDEM[counter], 0)
+#    
+    cut(shapefile, inputSST[counter], outputSST[counter])
+    
+    counter = counter + 1

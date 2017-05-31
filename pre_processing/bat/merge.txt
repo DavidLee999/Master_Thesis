@@ -1,0 +1,1 @@
+C:\Users\li_pe\AppData\Local\Continuum\Anaconda2\Library\bin\ogr2ogr E:\clip_poly_out.shp -where "DN=255" -overwrite ogrinfo -al -geom='NO’ E:\clip_poly_out.shp
