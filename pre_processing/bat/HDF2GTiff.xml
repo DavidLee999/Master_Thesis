@@ -4,7 +4,7 @@
     <operator>Read</operator>
     <sources/>
     <parameters class="com.bc.ceres.binding.dom.XppDomElement">
-      <file>E:\Penghua\data\corresponding_water_vapor\Etna\2015.12.25\MYD05_L2.A2015359.0040.006.2015359190413.hdf</file>
+      <file>E:\Penghua\data\corresponding_water_vapor\Etna\new_selected_data\2015.09.12\MYD07_L2.A2015255.0125.006.2015255154450.hdf</file>
     </parameters>
   </node>
   <node id="Subset">
@@ -13,7 +13,7 @@
       <sourceProduct refid="Read"/>
     </sources>
     <parameters class="com.bc.ceres.binding.dom.XppDomElement">
-      <sourceBands>Water_Vapor_Infrared</sourceBands>
+      <sourceBands>Water_Vapor</sourceBands>
       <region>0,0,270,406</region>
       <geoRegion/>
       <subSamplingX>1</subSamplingX>
@@ -56,7 +56,7 @@
       <sourceProduct refid="Reproject"/>
     </sources>
     <parameters class="com.bc.ceres.binding.dom.XppDomElement">
-      <file>E:\Penghua\data\corresponding_water_vapor\Etna\2015.12.25\MYD05_L2.A2015359.0040.006.2015359190413.tif</file>
+      <file>E:\Penghua\data\corresponding_water_vapor\Etna\new_selected_data\2015.09.12\MYD07_L2.A2015255.0125.006.2015255154450.tif</file>
       <formatName>GeoTIFF</formatName>
     </parameters>
   </node>
