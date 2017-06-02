@@ -75,21 +75,21 @@ UTM_zone = {'Etna':'EPSG:32633', 'Demmin':'EPSG:32633', 'Lascar':'EPSG:32719', '
 
 #reproject water vapor data to UTM coord. system
 
-sourFile = r'E:\Penghua\data\corresponding_water_vapor' + '\\' + location[0] + '\\new_selected_data'
-
-os.chdir(sourFile)
-
-for files in os.listdir(sourFile):
-    
-    if os.path.isdir(files) == True:
-        
-        for fil in os.listdir(files):
-            
-            if fil.endswith('.tif') and 'water' in fil:
-                
-                inFileLoc = os.path.abspath(files) + '\\' + fil
-                #print inFileLoc
-                wgs2utm(inFileLoc, UTM_zone[location[0]], True, [150,150])
+#sourFile = r'E:\Penghua\data\corresponding_water_vapor' + '\\' + location[0] + '\\new_selected_data'
+#
+#os.chdir(sourFile)
+#
+#for files in os.listdir(sourFile):
+#    
+#    if os.path.isdir(files) == True:
+#        
+#        for fil in os.listdir(files):
+#            
+#            if fil.endswith('.tif') and 'water' in fil:
+#                
+#                inFileLoc = os.path.abspath(files) + '\\' + fil
+#                #print inFileLoc
+#                wgs2utm(inFileLoc, UTM_zone[location[0]], True, [150,150])
 
 
 #reproject DEM to UTM coord. system
@@ -124,18 +124,18 @@ for files in os.listdir(sourFile):
 #            wgs2utm(inFileLoc, UTM_zone[location[5]], True, [150,150])
 
 
-#sourFile = r'E:\Penghua\data\SST' + '\\' + location[0]
-#
-#os.chdir(sourFile)
-#
-#for files in os.listdir(sourFile):
-#    
-#    if os.path.isdir(files) == True:
-#        
-#        for fil in os.listdir(files):
-#            
-#            if fil.endswith('.tif') and 'UTM' in fil:
-#                
-#                inFileLoc = os.path.abspath(files) + '\\' + fil
-#                                           
-#                wgs2utm(inFileLoc, UTM_zone[location[0]], True, [150,150])
+sourFile = r'E:\Penghua\data\SST' + '\\' + location[0] + '\\new_selected_data'
+
+os.chdir(sourFile)
+
+for files in os.listdir(sourFile):
+    
+    if os.path.isdir(files) == True:
+        
+        for fil in os.listdir(files):
+            
+            if fil.endswith('.tif') and 'UTM' in fil:
+                
+                inFileLoc = os.path.abspath(files) + '\\' + fil
+                                           
+                wgs2utm(inFileLoc, UTM_zone[location[0]], True, [150,150])
