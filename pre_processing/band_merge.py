@@ -32,7 +32,7 @@ def band_merge(inputimg, outputimg):
     gdal_merge.main()
     
 
-sourFolder = r'E:\Penghua\data\Portugal'
+sourFolder = r'E:\Penghua\data\Etna'
 
 inputimg = []
 
