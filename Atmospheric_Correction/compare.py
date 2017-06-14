@@ -69,7 +69,7 @@ def compare ( TET_tem_path, SST_tem_path, outputFile ):
     f.write('MIR band.\tUnit: degrees Celsius.\n')
     f.write('Maximum: %s.\nMinimum: %s.\n' %(str(diff_MIR_max), str(diff_MIR_min)))
     f.write('Mean: %s.\nStandard Deviation: %s.\nMedian Value: %s.\n' %(str(diff_MIR_mean), str(diff_MIR_std), str(diff_MIR_median)))
-    f.write('Absolute Mean: %s.\nAbsolute Standard Deviation: %s.\n' %(str(abs_diff_MIR_mean), str(abs_diff_MIR_std)))
+    f.write('Absolute Mean: %s.\nAbsolute Standard Deviation: %s.\n\n' %(str(abs_diff_MIR_mean), str(abs_diff_MIR_std)))
     
     f.write('Difference between SST and TET temperature.\n')
     f.write('TIR band.\tUnit: degrees Celsius.\n')
@@ -93,10 +93,34 @@ def compare ( TET_tem_path, SST_tem_path, outputFile ):
     TIR_bandOut.SetNoDataValue(0.0)
     gdalnumeric.BandWriteArray(TIR_bandOut, diff_TIR)
 
-TET_tem_path = r'E:\Penghua\data\Etna\2014.06.22\TET\ac_results\FBI_TET1_20140622T232052_20140622T232155_L2_002589_WHM_cobined_MIR_TIR_tem.tif'
+Location = ['Etna', 'Demmin', 'Lascar', 'Lybien-1', 'Lybien-2', 'Portugal']
 
-SST_tem_path = r'E:\Penghua\data\Etna\2014.06.22\SST\A2014173003000.L2_LAC_SST_repro_UTM33N_repro_cut.tif'
+sourFile = r'E:\Penghua\data' + '\\' + Location[0]
 
-outputFile = os.path.join(os.path.split(TET_tem_path)[0], 'compared')
+os.chdir(sourFile)
 
-compare(TET_tem_path, SST_tem_path, outputFile)
+for files in os.listdir(sourFile):
+    
+    ac_results = os.path.join(os.path.abspath(files), r'TET\ac_results')
+    
+    if os.listdir(ac_results) != []:
+        
+        for fil in os.listdir(ac_results):
+            
+            if fil.endswith('.tif') and 'tem' in fil:
+                
+                TET_tem_path = os.path.join(ac_results, fil)
+        
+        SST = os.path.join(os.path.abspath(files), r'SST')
+        
+        for fi in os.listdir(SST):
+            
+            if fi.endswith('.tif') and 'SST' in fi:
+                
+                SST_tem_path = os.path.join(SST, fi)               
+                
+    outputFile = os.path.join(os.path.split(TET_tem_path)[0], 'compared')
+    
+    compare(TET_tem_path, SST_tem_path, outputFile)
+    
+    os.chdir(sourFile)
