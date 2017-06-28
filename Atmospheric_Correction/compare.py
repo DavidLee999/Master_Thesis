@@ -7,10 +7,13 @@ Created on Tue Jun 13 10:32:08 2017
 import os
 import numpy as np
 from osgeo import gdal, gdalnumeric, gdalconst
+import xlrd, xlwt
 
 def compare ( TET_tem_path, SST_tem_path, outputFile ):
     if os.path.exists(outputFile) == False:
         os.mkdir(outputFile)
+    elif os.path.exists(outputFile) == True:
+        return
     
     os.chdir(outputFile)
     
@@ -93,34 +96,84 @@ def compare ( TET_tem_path, SST_tem_path, outputFile ):
     TIR_bandOut.SetNoDataValue(0.0)
     gdalnumeric.BandWriteArray(TIR_bandOut, diff_TIR)
 
+def cal (inputimg):
+    
+    diff = gdal.Open(inputimg)
+    
+    diff_band = diff.GetRasterBand(1)
+    
+    diff_data = diff_band.ReadAsArray()
+    
+    diff_data_mean = diff_data.mean()
+    
+    diff_data_std = diff_data.std()
+    
+    print diff_data_mean
+    
+    return diff_data_mean, diff_data_std
+
 Location = ['Etna', 'Demmin', 'Lascar', 'Lybien-1', 'Lybien-2', 'Portugal']
 
 sourFile = r'E:\Penghua\data' + '\\' + Location[0]
 
 os.chdir(sourFile)
 
+filename = xlwt.Workbook()
+
+sheet1 = filename.add_sheet(u'MIR')
+
+sheet2 = filename.add_sheet(u'TIR')
+
+sheet1.write(1, 0, 1.20)
+            
+sheet2.write(1, 0, 1.20)
+
+count = 1
+
 for files in os.listdir(sourFile):
     
-    ac_results = os.path.join(os.path.abspath(files), r'TET\ac_results')
-    
-    if os.listdir(ac_results) != []:
+    if '0' in files:
+        print files
+        sheet1.write(0, count, files)
         
-        for fil in os.listdir(ac_results):
+        sheet2.write(0, count, files)
+        
+        if os.path.exists(os.path.join(os.path.abspath(files), r'TET\ac_results_1.20\compared')) == True:
+        
+            ac_results = os.path.join(os.path.abspath(files), r'TET\ac_results_1.20\compared')
+        
+            for fil in os.listdir(ac_results):
             
-            if fil.endswith('.tif') and 'tem' in fil:
+                if fil.endswith('.tif') and 'MIR_cut_rect2' in fil:
                 
-                TET_tem_path = os.path.join(ac_results, fil)
-        
-        SST = os.path.join(os.path.abspath(files), r'SST')
-        
-        for fi in os.listdir(SST):
+                    TET_tem_path1 = os.path.join(ac_results, fil)
+                    
+                if fil.endswith('.tif') and 'TIR_cut_rect2' in fil:
+                
+                    TET_tem_path2 = os.path.join(ac_results, fil)
             
-            if fi.endswith('.tif') and 'SST' in fi:
+            mean1, std1 = cal(TET_tem_path1)
+            
+            mean2, std2 = cal(TET_tem_path2)
+            
+            sheet1.write(1, count, float(mean1))
+            
+            sheet2.write(1, count, float(mean2))
+            
+        count = count + 1
+
+filename.save(os.path.join(sourFile, 'scale_factor_1.20.xls'))
+
+#        SST = os.path.join(os.path.abspath(files), r'SST')
+#        
+#        for fi in os.listdir(SST):
+#            
+#            if fi.endswith('.tif') and 'SST' in fi:
+#                
+#                SST_tem_path = os.path.join(SST, fi)               
                 
-                SST_tem_path = os.path.join(SST, fi)               
-                
-    outputFile = os.path.join(os.path.split(TET_tem_path)[0], 'compared')
-    
-    compare(TET_tem_path, SST_tem_path, outputFile)
-    
-    os.chdir(sourFile)
+#    outputFile = os.path.join(os.path.split(TET_tem_path)[0], 'compared')
+#    
+#    compare(TET_tem_path, SST_tem_path, outputFile)
+#    
+#    os.chdir(sourFile)
