@@ -124,9 +124,17 @@ sheet1 = filename.add_sheet(u'MIR')
 
 sheet2 = filename.add_sheet(u'TIR')
 
-sheet1.write(1, 0, 1.20)
+sheet1.write(1, 0, u'rect2')
+
+sheet1.write(2, 0, u'rect4')
+
+sheet1.write(3, 0, u'rect6')
             
-sheet2.write(1, 0, 1.20)
+sheet2.write(1, 0, u'rect2')
+
+sheet2.write(2, 0, u'rect4')
+
+sheet2.write(3, 0, u'rect6')
 
 count = 1
 
@@ -138,27 +146,55 @@ for files in os.listdir(sourFile):
         
         sheet2.write(0, count, files)
         
-        if os.path.exists(os.path.join(os.path.abspath(files), r'TET\ac_results_1.20\compared')) == True:
+        if os.path.exists(os.path.join(os.path.abspath(files), r'TET\ac_results_1.20\compared\cut')) == True:
         
-            ac_results = os.path.join(os.path.abspath(files), r'TET\ac_results_1.20\compared')
+            ac_results = os.path.join(os.path.abspath(files), r'TET\ac_results_1.20\compared\cut')
         
             for fil in os.listdir(ac_results):
             
                 if fil.endswith('.tif') and 'MIR_cut_rect2' in fil:
                 
-                    TET_tem_path1 = os.path.join(ac_results, fil)
+                    TET_tem_MIR2 = os.path.join(ac_results, fil)
+                    
+                if fil.endswith('.tif') and 'MIR_cut_rect4' in fil:
+                
+                    TET_tem_MIR4 = os.path.join(ac_results, fil)
+                    
+                if fil.endswith('.tif') and 'MIR_cut_rect6' in fil:
+                
+                    TET_tem_MIR6 = os.path.join(ac_results, fil)
                     
                 if fil.endswith('.tif') and 'TIR_cut_rect2' in fil:
                 
-                    TET_tem_path2 = os.path.join(ac_results, fil)
+                    TET_tem_TIR2 = os.path.join(ac_results, fil)
+                    
+                if fil.endswith('.tif') and 'TIR_cut_rect4' in fil:
+                
+                    TET_tem_TIR4 = os.path.join(ac_results, fil)
+                    
+                if fil.endswith('.tif') and 'TIR_cut_rect6' in fil:
+                
+                    TET_tem_TIR6 = os.path.join(ac_results, fil)
             
-            mean1, std1 = cal(TET_tem_path1)
+            mean_MIR2, std_MIR2 = cal(TET_tem_MIR2)
             
-            mean2, std2 = cal(TET_tem_path2)
+            mean_MIR4, std_MIR6 = cal(TET_tem_MIR4)
             
-            sheet1.write(1, count, float(mean1))
+            mean_MIR6, std_MIR6 = cal(TET_tem_MIR6)
             
-            sheet2.write(1, count, float(mean2))
+            mean_TIR2, std_TIR2 = cal(TET_tem_TIR2)
+            
+            mean_TIR4, std_TIR6 = cal(TET_tem_TIR4)
+            
+            mean_TIR6, std_TIR6 = cal(TET_tem_TIR6)
+            
+            sheet1.write(1, count, float(mean_MIR2))
+            sheet1.write(2, count, float(mean_MIR4))
+            sheet1.write(3, count, float(mean_MIR6))
+            
+            sheet2.write(1, count, float(mean_TIR2))
+            sheet2.write(2, count, float(mean_TIR4))
+            sheet2.write(3, count, float(mean_TIR6))
             
         count = count + 1
 

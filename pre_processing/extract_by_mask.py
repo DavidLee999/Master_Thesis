@@ -35,10 +35,13 @@ sourFile = r'E:\Penghua\data' + '\\' + Location[0]
 os.chdir(sourFile)
 
 for files in os.listdir(sourFile):
-    if os.path.exists(os.path.join(os.path.abspath(files), r'TET\ac_results_1.10\compared')) == True:
+    
+    if os.path.exists(os.path.join(os.path.abspath(files), r'TET\ac_results_1.20\compared')) == True:
         
-        ac_results = os.path.join(os.path.abspath(files), r'TET\ac_results_1.10\compared')
+        ac_results = os.path.join(os.path.abspath(files), r'TET\ac_results_1.20\compared')
+        
     else:
+        
         continue
     
     if os.listdir(ac_results) != []:
@@ -61,9 +64,15 @@ for files in os.listdir(sourFile):
 #                
 #                SST_tem_path = os.path.join(SST, fi)
     
-        outputFile1 = os.path.join(os.path.split(TET_tem_path1)[0], 'diff_MIR_cut_rect2.tif')
+        outputFolder = os.path.join(os.path.split(TET_tem_path1)[0], 'cut')
         
-        outputFile2 = os.path.join(os.path.split(TET_tem_path2)[0], 'diff_TIR_cut_rect2.tif')
+        if os.path.exists(outputFolder) == False:
+            
+            os.mkdir(outputFolder)
+            
+        outputFile1 = os.path.join(outputFolder, 'diff_MIR_cut_rect2.tif')
+        
+        outputFile2 = os.path.join(outputFolder, 'diff_TIR_cut_rect2.tif')
         
 #        outputFile3 = os.path.join(os.path.split(SST_tem_path)[0], 'diff_SST_cut.tif')
     
