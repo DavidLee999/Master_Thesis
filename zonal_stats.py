@@ -204,13 +204,13 @@ for files in os.listdir(sourFile):
             
             MIR_rect2 = zonal_stats(shp[1], TET_tem_MIR)
             
-            MIR_rect7 = zonal_stats(shp[5], TET_tem_MIR)
+            MIR_rect7 = zonal_stats(shp[3], TET_tem_MIR)
             
             MIR_rect6 = zonal_stats(shp[4], TET_tem_MIR)
             
             TIR_rect2 = zonal_stats(shp[1], TET_tem_MIR)
             
-            TIR_rect7 = zonal_stats(shp[5], TET_tem_MIR)
+            TIR_rect7 = zonal_stats(shp[3], TET_tem_MIR)
             
             TIR_rect6 = zonal_stats(shp[4], TET_tem_MIR)
             
@@ -225,5 +225,5 @@ for files in os.listdir(sourFile):
             
         count = count + 1
 
-filename.save(os.path.join(sourFile, 'scale_factor_1.00.xls'))
+#filename.save(os.path.join(sourFile, 'scale_factor_1.00.xls'))
     
