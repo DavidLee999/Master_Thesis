@@ -1,14 +1,11 @@
 """
 Zonal Statistics
 Vector-Raster Analysis
-
 Copyright 2013 Matthew Perry
-
 Usage:
   zonal_stats.py VECTOR RASTER
   zonal_stats.py -h | --help
   zonal_stats.py --version
-
 Options:
   -h --help     Show this screen.
   --version     Show version.
@@ -141,11 +138,7 @@ def zonal_stats(vector_path, raster_path, nodata_value=None, global_src_extent=F
 if __name__ == "__main__":
     opts = {'VECTOR': sys.argv[1], 'RASTER': sys.argv[2]}
     stats = zonal_stats(opts['VECTOR'], opts['RASTER'])
-    
 
-for files in os.listdir(sourFile):
-    
-    
     try:
         from pandas import DataFrame
         print DataFrame(stats)

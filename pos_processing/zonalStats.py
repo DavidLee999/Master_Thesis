@@ -119,7 +119,7 @@ def loop_zonal_stats(input_zone_polygon, input_value_raster):
 
     shp = ogr.Open(input_zone_polygon)
     lyr = shp.GetLayer()
-    featList = range(lyr.GetFeatureCount())
+    featList = range(lyr.GetFeatureCount()) # -1 for multiple features
     statDict = {}
 
     for FID in featList:
