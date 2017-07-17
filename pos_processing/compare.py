@@ -118,87 +118,121 @@ sourFile = r'E:\Penghua\data' + '\\' + Location[0]
 
 os.chdir(sourFile)
 
-filename = xlwt.Workbook()
-
-sheet1 = filename.add_sheet(u'MIR')
-
-sheet2 = filename.add_sheet(u'TIR')
-
-sheet1.write(1, 0, u'rect2')
-
-sheet1.write(2, 0, u'rect4')
-
-sheet1.write(3, 0, u'rect6')
-            
-sheet2.write(1, 0, u'rect2')
-
-sheet2.write(2, 0, u'rect4')
-
-sheet2.write(3, 0, u'rect6')
-
-count = 1
-
 for files in os.listdir(sourFile):
     
     if '0' in files:
-        print files
-        sheet1.write(0, count, files)
         
-        sheet2.write(0, count, files)
+        folder = os.path.join(os.path.abspath(files), r'TET')
         
-        if os.path.exists(os.path.join(os.path.abspath(files), r'TET\ac_results_1.20\compared\cut')) == True:
+        SST = os.path.join(os.path.abspath(files), r'SST')
         
-            ac_results = os.path.join(os.path.abspath(files), r'TET\ac_results_1.20\compared\cut')
-        
-            for fil in os.listdir(ac_results):
+        for fil in os.listdir(folder):
             
-                if fil.endswith('.tif') and 'MIR_cut_rect2' in fil:
+            if 'ac_results' in fil:
                 
-                    TET_tem_MIR2 = os.path.join(ac_results, fil)
+                f = os.path.join(folder, fil)
+                
+                if len( os.listdir(f) ) != 0 :
                     
-                if fil.endswith('.tif') and 'MIR_cut_rect4' in fil:
-                
-                    TET_tem_MIR4 = os.path.join(ac_results, fil)
+                    for img in os.listdir(f):
+                        
+                        if img.endswith('.tif') and 'tem' in img:
+                            
+                            tet_tem = os.path.join(f, img)
+                            
+                    outputFile = os.path.join(f, 'compared')
                     
-                if fil.endswith('.tif') and 'MIR_cut_rect6' in fil:
-                
-                    TET_tem_MIR6 = os.path.join(ac_results, fil)
+                    for sst_img in os.listdir(SST):
+                        
+                        if sst_img.endswith('.tif') and 'SST' in sst_img:
+                            
+                            sst_tem = os.path.join(SST, sst_img)
                     
-                if fil.endswith('.tif') and 'TIR_cut_rect2' in fil:
-                
-                    TET_tem_TIR2 = os.path.join(ac_results, fil)
+                    compare(tet_tem, sst_tem, outputFile)
                     
-                if fil.endswith('.tif') and 'TIR_cut_rect4' in fil:
-                
-                    TET_tem_TIR4 = os.path.join(ac_results, fil)
-                    
-                if fil.endswith('.tif') and 'TIR_cut_rect6' in fil:
-                
-                    TET_tem_TIR6 = os.path.join(ac_results, fil)
-            
-            mean_MIR2, std_MIR2 = cal(TET_tem_MIR2)
-            
-            mean_MIR4, std_MIR6 = cal(TET_tem_MIR4)
-            
-            mean_MIR6, std_MIR6 = cal(TET_tem_MIR6)
-            
-            mean_TIR2, std_TIR2 = cal(TET_tem_TIR2)
-            
-            mean_TIR4, std_TIR6 = cal(TET_tem_TIR4)
-            
-            mean_TIR6, std_TIR6 = cal(TET_tem_TIR6)
-            
-            sheet1.write(1, count, float(mean_MIR2))
-            sheet1.write(2, count, float(mean_MIR4))
-            sheet1.write(3, count, float(mean_MIR6))
-            
-            sheet2.write(1, count, float(mean_TIR2))
-            sheet2.write(2, count, float(mean_TIR4))
-            sheet2.write(3, count, float(mean_TIR6))
-            
-        count = count + 1
+                    os.chdir(sourFile)
 
-filename.save(os.path.join(sourFile, 'scale_factor_1.20.xls'))
+#filename = xlwt.Workbook()
+#
+#sheet1 = filename.add_sheet(u'MIR')
+#
+#sheet2 = filename.add_sheet(u'TIR')
+#
+#sheet1.write(1, 0, u'rect2')
+#
+#sheet1.write(2, 0, u'rect4')
+#
+#sheet1.write(3, 0, u'rect6')
+#            
+#sheet2.write(1, 0, u'rect2')
+#
+#sheet2.write(2, 0, u'rect4')
+#
+#sheet2.write(3, 0, u'rect6')
+#
+#count = 1
+#
+#for files in os.listdir(sourFile):
+#    
+#    if '0' in files:
+#        print files
+#        sheet1.write(0, count, files)
+#        
+#        sheet2.write(0, count, files)
+#        
+#        if os.path.exists(os.path.join(os.path.abspath(files), r'TET\ac_results_1.20\compared\cut')) == True:
+#        
+#            ac_results = os.path.join(os.path.abspath(files), r'TET\ac_results_1.20\compared\cut')
+#        
+#            for fil in os.listdir(ac_results):
+#            
+#                if fil.endswith('.tif') and 'MIR_cut_rect2' in fil:
+#                
+#                    TET_tem_MIR2 = os.path.join(ac_results, fil)
+#                    
+#                if fil.endswith('.tif') and 'MIR_cut_rect4' in fil:
+#                
+#                    TET_tem_MIR4 = os.path.join(ac_results, fil)
+#                    
+#                if fil.endswith('.tif') and 'MIR_cut_rect6' in fil:
+#                
+#                    TET_tem_MIR6 = os.path.join(ac_results, fil)
+#                    
+#                if fil.endswith('.tif') and 'TIR_cut_rect2' in fil:
+#                
+#                    TET_tem_TIR2 = os.path.join(ac_results, fil)
+#                    
+#                if fil.endswith('.tif') and 'TIR_cut_rect4' in fil:
+#                
+#                    TET_tem_TIR4 = os.path.join(ac_results, fil)
+#                    
+#                if fil.endswith('.tif') and 'TIR_cut_rect6' in fil:
+#                
+#                    TET_tem_TIR6 = os.path.join(ac_results, fil)
+#            
+#            mean_MIR2, std_MIR2 = cal(TET_tem_MIR2)
+#            
+#            mean_MIR4, std_MIR6 = cal(TET_tem_MIR4)
+#            
+#            mean_MIR6, std_MIR6 = cal(TET_tem_MIR6)
+#            
+#            mean_TIR2, std_TIR2 = cal(TET_tem_TIR2)
+#            
+#            mean_TIR4, std_TIR6 = cal(TET_tem_TIR4)
+#            
+#            mean_TIR6, std_TIR6 = cal(TET_tem_TIR6)
+#            
+#            sheet1.write(1, count, float(mean_MIR2))
+#            sheet1.write(2, count, float(mean_MIR4))
+#            sheet1.write(3, count, float(mean_MIR6))
+#            
+#            sheet2.write(1, count, float(mean_TIR2))
+#            sheet2.write(2, count, float(mean_TIR4))
+#            sheet2.write(3, count, float(mean_TIR6))
+#            
+#        count = count + 1
+#
+#filename.save(os.path.join(sourFile, 'scale_factor_1.20.xls'))
 
 #        SST = os.path.join(os.path.abspath(files), r'SST')
 #        
