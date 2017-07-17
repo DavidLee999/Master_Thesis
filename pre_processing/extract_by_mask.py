@@ -26,35 +26,35 @@ def cut (inputshapefile, inputimg, outputimg, nodata=-9999):
 
 Location = ['Etna', 'Demmin', 'Lascar', 'Lybien-1', 'Lybien-2', 'Portugal']
 
-outputFile = r'E:\Penghua\data' + '\\' + Location[0]
+outputFile = r'E:\Penghua\data' + '\\' + Location[5]
+#
+#shapefile = r'E:\Penghua\data\Etna\shapefiles\rect2.shp'
+#
+#sourFile = r'E:\Penghua\data' + '\\' + Location[0]
 
-shapefile = r'E:\Penghua\data\Etna\shapefiles\rect2.shp'
-
-sourFile = r'E:\Penghua\data' + '\\' + Location[0]
-
-os.chdir(sourFile)
-
-for files in os.listdir(sourFile):
-    
-    if os.path.exists(os.path.join(os.path.abspath(files), r'TET\ac_results_1.20\compared')) == True:
-        
-        ac_results = os.path.join(os.path.abspath(files), r'TET\ac_results_1.20\compared')
-        
-    else:
-        
-        continue
-    
-    if os.listdir(ac_results) != []:
-        
-        for fil in os.listdir(ac_results):
-            
-            if fil.endswith('.tif') and 'MIR' in fil:
-                
-                TET_tem_path1 = os.path.join(ac_results, fil)
-                
-            if fil.endswith('.tif') and 'TIR' in fil:
-                
-                TET_tem_path2 = os.path.join(ac_results, fil)
+#os.chdir(sourFile)
+#
+#for files in os.listdir(sourFile):
+#    
+#    if os.path.exists(os.path.join(os.path.abspath(files), r'TET\ac_results_1.20\compared')) == True:
+#        
+#        ac_results = os.path.join(os.path.abspath(files), r'TET\ac_results_1.20\compared')
+#        
+#    else:
+#        
+#        continue
+#    
+#    if os.listdir(ac_results) != []:
+#        
+#        for fil in os.listdir(ac_results):
+#            
+#            if fil.endswith('.tif') and 'MIR' in fil:
+#                
+#                TET_tem_path1 = os.path.join(ac_results, fil)
+#                
+#            if fil.endswith('.tif') and 'TIR' in fil:
+#                
+#                TET_tem_path2 = os.path.join(ac_results, fil)
                 
 #        SST = os.path.join(os.path.abspath(files), r'SST')
 #        
@@ -63,79 +63,79 @@ for files in os.listdir(sourFile):
 #            if fi.endswith('.tif') and 'SST' in fi:
 #                
 #                SST_tem_path = os.path.join(SST, fi)
-    
-        outputFolder = os.path.join(os.path.split(TET_tem_path1)[0], 'cut')
-        
-        if os.path.exists(outputFolder) == False:
-            
-            os.mkdir(outputFolder)
-            
-        outputFile1 = os.path.join(outputFolder, 'diff_MIR_cut_rect2.tif')
-        
-        outputFile2 = os.path.join(outputFolder, 'diff_TIR_cut_rect2.tif')
+#    
+#        outputFolder = os.path.join(os.path.split(TET_tem_path1)[0], 'cut')
+#        
+#        if os.path.exists(outputFolder) == False:
+#            
+#            os.mkdir(outputFolder)
+#            
+#        outputFile1 = os.path.join(outputFolder, 'diff_MIR_cut_rect2.tif')
+#        
+#        outputFile2 = os.path.join(outputFolder, 'diff_TIR_cut_rect2.tif')
         
 #        outputFile3 = os.path.join(os.path.split(SST_tem_path)[0], 'diff_SST_cut.tif')
-    
-        cut(shapefile, TET_tem_path1, outputFile1)
-        cut(shapefile, TET_tem_path2, outputFile2)
-        #cut(shapefile, SST_tem_path, outputFile3)
+#    
+#        cut(shapefile, TET_tem_path1, outputFile1)
+#        cut(shapefile, TET_tem_path2, outputFile2)
+#        cut(shapefile, SST_tem_path, outputFile3)
                     
                 
-#outputfolder = []
-#
-#   
-#sourFile = r'E:\Penghua\data\georeferenced_TET' + '\\' + Location[0] + r'\new_selected_data\alpha_channel'
-#
-#inputShapefile = []
-#
-#for shp in os.listdir(sourFile):
-#    
-#    if shp.endswith('.shp'):
-#        
-#        inputShapefile.append(os.path.join(sourFile, shp))
-#
-#
-#sourWV = r'E:\Penghua\data\corresponding_water_vapor' + '\\' + Location[0] + '\\new_selected_data'
-#
-#inputWV = []
-#
-#outputWV = []
-#
-#counter = 0
-#
-#for WV in os.listdir(sourWV):
-#    
-#    folder = outputFile+'\\'+WV
-#    
-#    if os.path.exists(folder) == False:
-#        
-#        os.makedirs(folder)
-#        
-#        os.makedirs(folder+'\\'+'water_vapor')
-#        
-#        os.makedirs(folder+'\\'+'TET')
-#        
-#        os.makedirs(folder+'\\'+'emivissivity_map')
-#        
-#        os.makedirs(folder+'\\'+'DEM')
-#        
-#        os.makedirs(folder+'\\'+'SST')
-#    
-#    outputfolder.append(folder)
-#        
-#    folder_WV = sourWV + '\\' + WV + '\\' + 'repro'
-#    
-#    for file_WV in os.listdir(folder_WV):
-#        
-#        if file_WV.endswith('.tif'):
-#            
-#            inputWV.append(os.path.join(folder_WV, file_WV))
-#            
-#            name, postfix = os.path.splitext(file_WV)
-#            
-#            outputWV.append(os.path.join(outputfolder[counter]+'\\'+'water_vapor', name+'_cut.tif'))
-#    
-#    counter = counter + 1
+outputfolder = []
+
+   
+sourFile = r'E:\Penghua\data\georeferenced_TET' + '\\' + Location[5] + r'\alpha_channel'
+
+inputShapefile = []
+
+for shp in os.listdir(sourFile):
+    
+    if shp.endswith('.shp'):
+        
+        inputShapefile.append(os.path.join(sourFile, shp))
+
+
+sourWV = r'E:\Penghua\data\corresponding_water_vapor' + '\\' + Location[5] #+ '\\new_selected_data'
+
+inputWV = []
+
+outputWV = []
+
+counter = 0
+
+for WV in os.listdir(sourWV):
+    
+    folder = outputFile+'\\'+WV
+    
+    if os.path.exists(folder) == False:
+        
+        os.makedirs(folder)
+        
+        os.makedirs(folder+'\\'+'water_vapor')
+        
+        os.makedirs(folder+'\\'+'TET')
+        
+        os.makedirs(folder+'\\'+'emivissivity_map')
+        
+        os.makedirs(folder+'\\'+'DEM')
+        
+        os.makedirs(folder+'\\'+'SST')
+    
+    outputfolder.append(folder)
+        
+    folder_WV = sourWV + '\\' + WV + '\\' + 'repro'
+    
+    for file_WV in os.listdir(folder_WV):
+        
+        if file_WV.endswith('.tif'):
+            
+            inputWV.append(os.path.join(folder_WV, file_WV))
+            
+            name, postfix = os.path.splitext(file_WV)
+            
+            outputWV.append(os.path.join(outputfolder[counter]+'\\'+'water_vapor', name+'_cut.tif'))
+    
+    counter = counter + 1
 #    
 #    
 #sourTET = r'E:\Penghua\data\georeferenced_TET' + '\\' + Location[0] + '\\new_selected_data'
@@ -209,38 +209,38 @@ for files in os.listdir(sourFile):
 #    
 #    outputDEM.append(os.path.join(folders+'\\'+'DEM', dem_name + '_cut.tif'))
 #
-#sst = r'E:\Penghua\data\SST' + '\\' + Location[0] + '\\new_selected_data'
-#
-#inputSST = []
-#
-#outputSST = []
-#
-#os.chdir(sst)
-#
-#counter = 0
-#
-#for files in os.listdir(sst):
-#    
-#    if os.path.isdir(files) == True:
-#        
-#        folders = os.path.abspath(files) + '\\repro'
-#        
-#        for fil in os.listdir(folders):
-#            
-#            if fil.endswith('.tif') and 'SST' in fil:
-#                
-#                inputSST.append(folders + '\\' + fil)
-#                
-#                outputSST.append(outputfolder[counter] + '\\SST\\' + os.path.splitext(fil)[0] + '_cut.tif')
-#                
-#                counter = counter + 1
-#
-#
-#
-#counter = 0
-#
-#for shapefile in inputShapefile:
-#    
+sst = r'E:\Penghua\data\SST' + '\\' + Location[5]
+
+inputSST = []
+
+outputSST = []
+
+os.chdir(sst)
+
+counter = 0
+
+for files in os.listdir(sst):
+    
+    if os.path.isdir(files) == True:
+        
+        folders = os.path.abspath(files) + '\\repro'
+        
+        for fil in os.listdir(folders):
+            
+            if fil.endswith('.tif') and 'SST' in fil:
+                
+                inputSST.append(folders + '\\' + fil)
+                
+                outputSST.append(outputfolder[counter] + '\\SST\\' + os.path.splitext(fil)[0] + '_cut.tif')
+                
+                counter = counter + 1
+
+
+
+counter = 0
+
+for shapefile in inputShapefile:
+    
 #    cut(shapefile, inputWV[counter], outputWV[counter])
 #    
 #    cut(shapefile, inputTET[2*counter], outputTET[2*counter])
@@ -252,7 +252,7 @@ for files in os.listdir(sourFile):
 #    cut(shapefile, inputEmi[1], outputEmi[2*counter+1])
 #
 #    cut(shapefile, inputDEM, outputDEM[counter], 0)
-#    
-#    cut(shapefile, inputSST[counter], outputSST[counter])
-#    
-#    counter = counter + 1
+    
+    cut(shapefile, inputSST[counter], outputSST[counter])
+    
+    counter = counter + 1
