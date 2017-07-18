@@ -284,7 +284,6 @@ for i in range(len(scale_factor)):
 
 zero = numpy.zeros([1,16])
 fig1, ax1 = plt.subplots()
-#plt.xticks(range(16), time, rotation=30, fontsize=4)
 p1, = ax1.plot(sc_mir[0], 'yo-')
 p2, = ax1.plot(sc_mir[1], 'go-')
 p3, = ax1.plot(sc_mir[2], 'ro-')
@@ -302,9 +301,7 @@ plt.grid()
 fig1.savefig(os.path.join(r'E:\Penghua\results\ComSST\Etna', r'Etna_scf_mir.png'), dpi=200)
 plt.show()
 
-zero = numpy.zeros([1,16])
 fig1, ax1 = plt.subplots()
-#plt.xticks(range(16), time, rotation=30, fontsize=4)
 p1, = ax1.plot(sc_tir[0], 'yo-')
 p2, = ax1.plot(sc_tir[1], 'go-')
 p3, = ax1.plot(sc_tir[2], 'ro-')
