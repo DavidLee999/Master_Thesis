@@ -389,7 +389,6 @@ plt.show()
 
 fig2, ax1 = plt.subplots()
 p1, = ax1.plot(diff_tem, 'ro-', markerfacecolor='none')
-#p2, = ax1.plot(sc_mir[1], 'go--', markerfacecolor='none')
 p3, = ax1.plot(sc_mir[2], 'bo--', markerfacecolor='none')
 ax1.set_title('Temperature Differences for Etna Scenes in MIR band')
 ax1.set_ylabel('Temperature Differences [K]')
