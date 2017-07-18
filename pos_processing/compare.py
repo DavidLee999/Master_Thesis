@@ -28,13 +28,14 @@ def compare ( TET_tem_path, SST_tem_path, outputFile ):
     TIR_data = TIR_band.ReadAsArray()
     SST_data = SST_band.ReadAsArray()
     
-    default_tem = -273 * np.ones(MIR_data.shape)
+    default_tem = 274.15 * np.ones(SST_data.shape)
     
-    MIR_deg = MIR_data + default_tem
-    TIR_deg = TIR_data + default_tem
-    
-    diff_MIR = SST_data - MIR_deg
-    diff_TIR = SST_data - TIR_deg
+#    MIR_deg = MIR_data + default_tem
+#    TIR_deg = TIR_data + default_tem
+
+    SST_K = SST_data + default_tem
+    diff_MIR = SST_K - MIR_data
+    diff_TIR = SST_K - TIR_data
     
     logic1 = np.where(np.absolute(diff_MIR)>20)
     diff_MIR[logic1] = 0
