@@ -4,7 +4,7 @@ Created on Tue Jun 13 10:32:08 2017
 
 @author: li_pe
 """
-import os
+import os, shutil
 import numpy as np
 from osgeo import gdal, gdalnumeric, gdalconst
 import xlrd, xlwt
@@ -115,7 +115,7 @@ def cal (inputimg):
 
 Location = ['Etna', 'Demmin', 'Lascar', 'Lybien-1', 'Lybien-2', 'Portugal']
 
-sourFile = r'E:\Penghua\data' + '\\' + Location[1]
+sourFile = r'E:\Penghua\data' + '\\' + Location[5]
 
 os.chdir(sourFile)
 
@@ -142,7 +142,8 @@ for files in os.listdir(sourFile):
                             tet_tem = os.path.join(f, img)
                             
                     outputFile = os.path.join(f, 'compared')
-                    
+#                    if os.path.exists(outputFile) == True:
+#                        shutil.rmtree(outputFile)
                     for sst_img in os.listdir(SST):
                         
                         if sst_img.endswith('.tif') and 'SST' in sst_img:
