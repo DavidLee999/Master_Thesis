@@ -4,7 +4,7 @@
     <operator>Read</operator>
     <sources/>
     <parameters class="com.bc.ceres.binding.dom.XppDomElement">
-      <file>E:\Penghua\data\SST\Portugal\2016.08.14\A2016227021000.L2_LAC_SST.nc</file>
+      <file>E:\Penghua\data\SST\Demmin\2017.03.24\A2017083004000.L2_LAC_SST.nc</file>
     </parameters>
   </node>
   <node id="Subset">
@@ -30,7 +30,7 @@
     </sources>
     <parameters class="com.bc.ceres.binding.dom.XppDomElement">
       <wktFile/>
-      <crs>EPSG:32629</crs>
+      <crs>EPSG:32633</crs>
       <resampling>Nearest</resampling>
       <referencePixelX/>
       <referencePixelY/>
@@ -56,7 +56,7 @@
       <sourceProduct refid="Reproject"/>
     </sources>
     <parameters class="com.bc.ceres.binding.dom.XppDomElement">
-      <file>E:\Penghua\data\SST\Portugal\2016.08.14\A2016227021000.L2_LAC_SST_repro.tif</file>
+      <file>E:\Penghua\data\SST\Demmin\2017.03.24\A2017083004000.L2_LAC_SST_repro.tif</file>
       <formatName>GeoTIFF</formatName>
     </parameters>
   </node>

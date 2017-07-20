@@ -26,7 +26,7 @@ def cut (inputshapefile, inputimg, outputimg, nodata=-9999):
 
 Location = ['Etna', 'Demmin', 'Lascar', 'Lybien-1', 'Lybien-2', 'Portugal']
 
-outputFile = r'E:\Penghua\data' + '\\' + Location[5]
+outputFile = r'E:\Penghua\data' + '\\' + Location[1]
 #
 #shapefile = r'E:\Penghua\data\Etna\shapefiles\rect2.shp'
 #
@@ -84,7 +84,7 @@ outputFile = r'E:\Penghua\data' + '\\' + Location[5]
 outputfolder = []
 
    
-sourFile = r'E:\Penghua\data\georeferenced_TET' + '\\' + Location[5] + r'\alpha_channel'
+sourFile = r'E:\Penghua\data\georeferenced_TET' + '\\' + Location[1] + r'\alpha_channel'
 
 inputShapefile = []
 
@@ -95,7 +95,7 @@ for shp in os.listdir(sourFile):
         inputShapefile.append(os.path.join(sourFile, shp))
 
 
-sourWV = r'E:\Penghua\data\corresponding_water_vapor' + '\\' + Location[5] #+ '\\new_selected_data'
+sourWV = r'E:\Penghua\data\corresponding_water_vapor' + '\\' + Location[1] #+ '\\new_selected_data'
 
 inputWV = []
 
@@ -209,7 +209,7 @@ for WV in os.listdir(sourWV):
 #    
 #    outputDEM.append(os.path.join(folders+'\\'+'DEM', dem_name + '_cut.tif'))
 #
-sst = r'E:\Penghua\data\SST' + '\\' + Location[5]
+sst = r'E:\Penghua\data\SST' + '\\' + Location[1]
 
 inputSST = []
 

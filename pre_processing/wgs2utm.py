@@ -124,7 +124,7 @@ UTM_zone = {'Etna':'EPSG:32633', 'Demmin':'EPSG:32633', 'Lascar':'EPSG:32719', '
 #            wgs2utm(inFileLoc, UTM_zone[location[5]], True, [150,150])
 
 
-sourFile = r'E:\Penghua\data\SST' + '\\' + location[5]
+sourFile = r'E:\Penghua\data\SST' + '\\' + location[1]
 
 os.chdir(sourFile)
 
@@ -138,4 +138,4 @@ for files in os.listdir(sourFile):
                 
                 inFileLoc = os.path.abspath(files) + '\\' + fil
                                            
-                wgs2utm(inFileLoc, UTM_zone[location[5]], True, [150,150])
+                wgs2utm(inFileLoc, UTM_zone[location[1]], True, [150,150])
