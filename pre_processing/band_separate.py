@@ -132,22 +132,22 @@ UTM_zone = {'Etna':'EPSG:32633', 'Demmin':'EPSG:32633', 'Lascar':'EPSG:32719', '
 #            
 #        band_separate(inFileLoc, outFileLoc2, 3)
 
-name = '_UTM29N.tif'
-
-sourFile = r'E:\Penghua\data\SST' + '\\' + location[1]
-
-os.chdir(sourFile)
-
-for files in os.listdir(sourFile):
-    
-    if os.path.isdir(files) == True:
-        
-        for fil in os.listdir(files):
-            
-            if fil.endswith('.tif') and 'SST' in fil:
-                
-                inFileLoc = os.path.abspath(files) + '\\' + fil
-                                    
-                outFileLoc = os.path.splitext(inFileLoc)[0] + name
-                                          
-                band_separate(inFileLoc, outFileLoc, 1)               
+#name = '_UTM29N.tif'
+#
+#sourFile = r'E:\Penghua\data\SST' + '\\' + location[1]
+#
+#os.chdir(sourFile)
+#
+#for files in os.listdir(sourFile):
+#    
+#    if os.path.isdir(files) == True:
+#        
+#        for fil in os.listdir(files):
+#            
+#            if fil.endswith('.tif') and 'SST' in fil:
+#                
+#                inFileLoc = os.path.abspath(files) + '\\' + fil
+#                                    
+#                outFileLoc = os.path.splitext(inFileLoc)[0] + name
+#                                          
+#                band_separate(inFileLoc, outFileLoc, 1)               

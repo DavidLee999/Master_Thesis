@@ -158,7 +158,7 @@ def main(input_zone_polygon, input_value_raster):
 #
 #shutil.rmtree(os.path.join(os.path.split(shpfile)[0], 'temp'))
 
-shpFile = r'E:\Penghua\data\Portugal\shapefiles'
+shpFile = r'E:\Penghua\data\Demmin\shapefiles'
 
 shp = []
 
@@ -170,7 +170,7 @@ for files in os.listdir(shpFile):
         
         shp.append(os.path.abspath(files)) 
 
-sourFile = r'E:\Penghua\data\Portugal'
+sourFile = r'E:\Penghua\data\Demmin'
 
 os.chdir(sourFile)
 
@@ -326,7 +326,7 @@ for i in range(len(scale_factor)):
 #            
 #            count = count + 1                         
                 
-                if files == '2016.08.14':
+                if files == '2016.09.16':
                     sc_mir[i].append((main(shp[0], TET_tem_MIR)[0]+main(shp[1], TET_tem_MIR)[0]+main(shp[2], TET_tem_MIR)[0]) / 3.0)
                 
                     sc_tir[i].append((main(shp[0], TET_tem_TIR)[0]+main(shp[1], TET_tem_TIR)[0]+main(shp[2], TET_tem_TIR)[0]) / 3.0)
