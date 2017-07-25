@@ -327,15 +327,15 @@ for i in range(len(scale_factor)):
 #            count = count + 1                         
                 
                 if files == '2016.09.16':
-                    sc_mir[i].append((main(shp[0], TET_tem_MIR)[0]+main(shp[1], TET_tem_MIR)[0]+main(shp[2], TET_tem_MIR)[0]) / 3.0)
+                    sc_mir[i].append((main(shp[0], TET_tem_MIR)[0] + main(shp[1], TET_tem_MIR)[0] + main(shp[2], TET_tem_MIR)[0]) / 3.0)
                 
-                    sc_tir[i].append((main(shp[0], TET_tem_TIR)[0]+main(shp[1], TET_tem_TIR)[0]+main(shp[2], TET_tem_TIR)[0]) / 3.0)
+                    sc_tir[i].append((main(shp[0], TET_tem_TIR)[0] + main(shp[1], TET_tem_TIR)[0] + main(shp[2], TET_tem_TIR)[0]) / 3.0)
                 
                 else:
-                    sc_mir[i].append((main(shp[0], TET_tem_MIR)[0]+main(shp[1], TET_tem_MIR)[0]+main(shp[2], TET_tem_MIR)[0] + \
+                    sc_mir[i].append((main(shp[0], TET_tem_MIR)[0] + main(shp[1], TET_tem_MIR)[0] + main(shp[2], TET_tem_MIR)[0] + \
                           main(shp[3], TET_tem_MIR)[0] + main(shp[4], TET_tem_MIR)[0]) / 5.0)
                 
-                    sc_tir[i].append((main(shp[0], TET_tem_TIR)[0]+main(shp[1], TET_tem_TIR)[0]+main(shp[2], TET_tem_TIR)[0] + \
+                    sc_tir[i].append((main(shp[0], TET_tem_TIR)[0] + main(shp[1], TET_tem_TIR)[0] + main(shp[2], TET_tem_TIR)[0] + \
                     main(shp[3], TET_tem_TIR)[0] + main(shp[4], TET_tem_TIR)[0] ) / 5.0)
                 
                 if os.path.exists(os.path.join(ac_results, 'temp')) == True:
@@ -348,7 +348,7 @@ for i in range(len(scale_factor)):
                 sc_tir[i].append(0.0)
                 
 
-#zero = numpy.zeros([1,16])
+#zero = numpy.zeros([1,13])
 #fig1, ax1 = plt.subplots()
 #p1, = ax1.plot(sc_mir[0], 'yo-')
 #p2, = ax1.plot(sc_mir[1], 'go-')
@@ -359,12 +359,12 @@ for i in range(len(scale_factor)):
 #ax1.set_title('Temperature Differences with MODIS SST for Etna Scenes (MIR band)')
 #ax1.set_xlabel('time')
 #ax1.set_ylabel('Temperature Differences [K]')
-#ax1.set_xticks(range(16))
-#ax1.set_xticklabels(time, rotation=30, fontsize=5)
+#ax1.set_xticks(range(13))
+#ax1.set_xticklabels(time, rotation=30, fontsize=6)
 #plt.legend([p1,p2,p3,p4,p5], ['scale factor 1.00','scale factor 1.05','scale factor 1.10','scale factor 1.15','scale factor 1.20'],prop={'size':7})
 #fig1.tight_layout()
 #plt.grid()
-#fig1.savefig(os.path.join(r'E:\Penghua\results\ComSST\Etna', r'Etna_scf_mir.png'), dpi=200)
+#fig1.savefig(os.path.join(r'E:\Penghua\results\ComSST\Etna2', r'Etna_scf_mir.png'), dpi=200)
 #plt.show()
 #
 #fig1, ax1 = plt.subplots()
@@ -377,15 +377,15 @@ for i in range(len(scale_factor)):
 #ax1.set_title('Temperature Differences with MODIS SST for Etna Scenes (TIR band)')
 #ax1.set_xlabel('time')
 #ax1.set_ylabel('Temperature Differences [K]')
-#ax1.set_xticks(range(16))
-#ax1.set_xticklabels(time, rotation=30, fontsize=5)
+#ax1.set_xticks(range(13))
+#ax1.set_xticklabels(time, rotation=30, fontsize=6)
 #plt.legend([p1,p2,p3,p4,p5], ['scale factor 1.00','scale factor 1.05','scale factor 1.10','scale factor 1.15','scale factor 1.20'],prop={'size':7})
 #fig1.tight_layout()
 #plt.grid()
-#fig1.savefig(os.path.join(r'E:\Penghua\results\ComSST\Etna', r'Etna_scf_test_tir.png'), dpi=200)
+#fig1.savefig(os.path.join(r'E:\Penghua\results\ComSST\Etna2', r'Etna_scf_test_tir.png'), dpi=200)
 #plt.show()
-#
-#
+##
+##
 #sc = []
 #
 #index = []
@@ -423,15 +423,15 @@ for i in range(len(scale_factor)):
 #ax1.set_title('Best scale factor for each scene (MIR band)')
 #ax1.set_ylabel('scale factor')
 #ax1.set_xlabel('time')
-#ax1.set_xticks(range(16))
-#ax1.set_xticklabels(time, rotation=30, fontsize=5)
+#ax1.set_xticks(range(13))
+#ax1.set_xticklabels(time, rotation=30, fontsize=7)
 #fig.tight_layout()
 #plt.grid()
-#fig.savefig(os.path.join(r'E:\Penghua\results\ComSST\Etna', r'Etna_bsc_mir.png'), dpi=200)
+#fig.savefig(os.path.join(r'E:\Penghua\results\ComSST\Etna2', r'Etna_bsc_mir.png'), dpi=200)
 #plt.show()
-#one = 1.1 * numpy.ones([1,16])
+#one = 1.1 * numpy.ones([1,13])
 #p2, = ax1.plot(one[0], 'b--')
-#fig.savefig(os.path.join(r'E:\Penghua\results\ComSST\Etna', r'Etna_bsc&ssc_mir.png'), dpi=200)
+#fig.savefig(os.path.join(r'E:\Penghua\results\ComSST\Etna2', r'Etna_bsc&ssc_mir.png'), dpi=200)
 #plt.show()
 #
 #fig, ax1 = plt.subplots()
@@ -445,12 +445,12 @@ for i in range(len(scale_factor)):
 #ax2.set_ylabel('corresponding $\Delta$T [K]', color='b')
 #ax2.tick_params('y', colors='b')
 #ax1.set_xlabel('time')
-#ax1.set_xticks(range(16))
-#ax1.set_xticklabels(time, rotation=30, fontsize=5)
+#ax1.set_xticks(range(13))
+#ax1.set_xticklabels(time, rotation=30, fontsize=7)
 #fig.tight_layout()
 #plt.grid()
 #plt.legend([p1,p2], [r'best scale factor', r'corresponding $\Delta$T'],prop={'size':7})
-#fig.savefig(os.path.join(r'E:\Penghua\results\ComSST\Etna', r'Etna_bsc&tem_mir.png'), dpi=200)
+#fig.savefig(os.path.join(r'E:\Penghua\results\ComSST\Etna2', r'Etna_bsc&tem_mir.png'), dpi=200)
 #plt.show()
 #
 #fig2, ax1 = plt.subplots()
@@ -459,12 +459,12 @@ for i in range(len(scale_factor)):
 #ax1.set_title('Temperature Differences with MODIS SST for Etna Scenes (MIR band)')
 #ax1.set_ylabel('Temperature Differences [K]')
 #ax1.set_xlabel('time')
-#ax1.set_xticks(range(16))
-#ax1.set_xticklabels(time, rotation=30, fontsize=5)
+#ax1.set_xticks(range(13))
+#ax1.set_xticklabels(time, rotation=30, fontsize=7)
 #plt.legend([p1,p3], [r'smallest $\Delta$T','$\Delta$T for scale factor 1.10'],prop={'size':7})
 #plt.grid()
 #fig2.tight_layout()
-#fig2.savefig(os.path.join(r'E:\Penghua\results\ComSST\Etna', r'Etna_bsc&temCom_mir.png'), dpi=200)
+#fig2.savefig(os.path.join(r'E:\Penghua\results\ComSST\Etna2', r'Etna_bsc&temCom_mir.png'), dpi=200)
 #plt.show()
 #
 #sc = []
@@ -504,16 +504,16 @@ for i in range(len(scale_factor)):
 #ax1.set_title('Best scale factor for each scene (TIR band)')
 #ax1.set_ylabel('scale factor')
 #ax1.set_xlabel('time')
-#ax1.set_xticks(range(16))
+#ax1.set_xticks(range(13))
 #ax1.set_yticks(numpy.arange(1.0,1.1,0.01))
-#ax1.set_xticklabels(time, rotation=30, fontsize=5)
+#ax1.set_xticklabels(time, rotation=30, fontsize=7)
 #fig.tight_layout()
 #plt.grid()
-#fig.savefig(os.path.join(r'E:\Penghua\results\ComSST\Etna', r'Etna_bsc_tir.png'), dpi=200)
+#fig.savefig(os.path.join(r'E:\Penghua\results\ComSST\Etna2', r'Etna_bsc_tir.png'), dpi=200)
 #plt.show()
-#one = 1.05 * numpy.ones([1,16])
+#one = 1.05 * numpy.ones([1,13])
 #p2, = ax1.plot(one[0], 'b--')
-#fig.savefig(os.path.join(r'E:\Penghua\results\ComSST\Etna', r'Etna_bsc&ssc_tir.png'), dpi=200)
+#fig.savefig(os.path.join(r'E:\Penghua\results\ComSST\Etna2', r'Etna_bsc&ssc_tir.png'), dpi=200)
 #plt.show()
 #
 #fig, ax1 = plt.subplots()
@@ -527,12 +527,12 @@ for i in range(len(scale_factor)):
 #ax2.set_ylabel('corresponding $\Delta$T [K]', color='b')
 #ax2.tick_params('y', colors='b')
 #ax1.set_xlabel('time')
-#ax1.set_xticks(range(16))
-#ax1.set_xticklabels(time, rotation=30, fontsize=5)
+#ax1.set_xticks(range(13))
+#ax1.set_xticklabels(time, rotation=30, fontsize=7)
 #fig.tight_layout()
 #plt.grid()
 #plt.legend([p1,p2], [r'best scale factor', r'corresponding $\Delta$T'],prop={'size':7})
-#fig.savefig(os.path.join(r'E:\Penghua\results\ComSST\Etna', r'Etna_bsc&tem_tir.png'), dpi=200)
+#fig.savefig(os.path.join(r'E:\Penghua\results\ComSST\Etna2', r'Etna_bsc&tem_tir.png'), dpi=200)
 #plt.show()
 #
 #fig2, ax1 = plt.subplots()
@@ -541,10 +541,10 @@ for i in range(len(scale_factor)):
 #ax1.set_title('Temperature Differences with MODIS SST for Etna Scenes(TIR band)')
 #ax1.set_ylabel('Temperature Differences [K]')
 #ax1.set_xlabel('time')
-#ax1.set_xticks(range(16))
-#ax1.set_xticklabels(time, rotation=30, fontsize=5)
+#ax1.set_xticks(range(13))
+#ax1.set_xticklabels(time, rotation=30, fontsize=7)
 #plt.legend([p1,p2], [r'smallest $\Delta$T',r'$\Delta$T for scale factor 1.05'],prop={'size':7})
 #plt.grid()
 #fig2.tight_layout()
-#fig2.savefig(os.path.join(r'E:\Penghua\results\ComSST\Etna', r'Etna_bsc&temCom_tir.png'), dpi=200)
+#fig2.savefig(os.path.join(r'E:\Penghua\results\ComSST\Etna2', r'Etna_bsc&temCom_tir.png'), dpi=200)
 #plt.show()
