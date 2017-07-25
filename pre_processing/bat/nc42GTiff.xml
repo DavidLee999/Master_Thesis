@@ -56,8 +56,8 @@
       <sourceProduct refid="Reproject"/>
     </sources>
     <parameters class="com.bc.ceres.binding.dom.XppDomElement">
-      <file>E:\Penghua\data\SST\Demmin\2017.03.24\GLDAS_NOAH025_3H.A20160918.0000.021.tif</file>
-      <formatName>GeoTIFF</formatName>
+      <file>E:\Penghua\data\LST\Lybien-1\2016.09.18\projected_GLDAS_NOAH025_3H.A20160918.0000.021.tif</file>
+      <formatName>GeoTIFF-BigTIFF</formatName>
     </parameters>
   </node>
   <applicationData id="Presentation">
@@ -66,10 +66,10 @@
             <displayPosition x="37.0" y="134.0"/>
     </node>
     <node id="Subset">
-      <displayPosition x="171.0" y="138.0"/>
+      <displayPosition x="161.0" y="126.0"/>
     </node>
     <node id="Reproject">
-      <displayPosition x="292.0" y="129.0"/>
+      <displayPosition x="333.0" y="140.0"/>
     </node>
     <node id="Write">
             <displayPosition x="455.0" y="135.0"/>
