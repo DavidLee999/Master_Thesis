@@ -115,7 +115,7 @@ def cal (inputimg):
 
 Location = ['Etna', 'Demmin', 'Lascar', 'Lybien-1', 'Lybien-2', 'Portugal']
 
-sourFile = r'E:\Penghua\data' + '\\' + Location[5]
+sourFile = r'E:\Penghua\data' + '\\' + Location[1]
 
 os.chdir(sourFile)
 
@@ -249,3 +249,4 @@ for files in os.listdir(sourFile):
 #    compare(TET_tem_path, SST_tem_path, outputFile)
 #    
 #    os.chdir(sourFile)
+

@@ -158,7 +158,7 @@ def main(input_zone_polygon, input_value_raster):
 #
 #shutil.rmtree(os.path.join(os.path.split(shpfile)[0], 'temp'))
 
-shpFile = r'E:\Penghua\data\Demmin\shapefiles'
+shpFile = r'E:\Penghua\data\Etna\shapefiles'
 
 shp = []
 
@@ -170,7 +170,7 @@ for files in os.listdir(shpFile):
         
         shp.append(os.path.abspath(files)) 
 
-sourFile = r'E:\Penghua\data\Demmin'
+sourFile = r'E:\Penghua\data\Etna\self_test'
 
 os.chdir(sourFile)
 
@@ -252,11 +252,11 @@ os.chdir(sourFile)
 #                    
 #                    sc_tir1.append((main(shp[1], TET_tem_TIR)[0]+main(shp[3], TET_tem_TIR)[0]+main(shp[4], TET_tem_TIR)[0]) / 3.0)
 
-#scale_factor = ['1.00', '1.05', '1.10', '1.15', '1.20']
-scale_factor = ['1.00','1.05', '1.10', '1.15']
+scale_factor = ['1.00', '1.05', '1.10', '1.15', '1.20']
 
-sc_mir = [[], [], [], []]
-sc_tir = [[], [], [], []]
+
+sc_mir = [[], [], [], [], []]
+sc_tir = [[], [], [], [], []]
 time = []
 #
 for i in range(len(scale_factor)):
@@ -326,7 +326,7 @@ for i in range(len(scale_factor)):
 #            
 #            count = count + 1                         
                 
-                if files == '2016.09.16':
+                if files == '2016.08.14':
                     sc_mir[i].append((main(shp[0], TET_tem_MIR)[0] + main(shp[1], TET_tem_MIR)[0] + main(shp[2], TET_tem_MIR)[0]) / 3.0)
                 
                     sc_tir[i].append((main(shp[0], TET_tem_TIR)[0] + main(shp[1], TET_tem_TIR)[0] + main(shp[2], TET_tem_TIR)[0]) / 3.0)
@@ -547,4 +547,47 @@ for i in range(len(scale_factor)):
 #plt.grid()
 #fig2.tight_layout()
 #fig2.savefig(os.path.join(r'E:\Penghua\results\ComSST\Etna2', r'Etna_bsc&temCom_tir.png'), dpi=200)
+#plt.show()
+
+
+#fig1, ax1 = plt.subplots()
+#p1, = ax1.plot(range(3),etna_tir[1], 'ro')
+#p4, = ax1.plot([3],portugal_tir[1], 'rx')
+#p7, = ax1.plot(range(4,6),demmin_tir[1], 'r*')
+#p10, = ax1.plot([etna_tir[1][0],etna_tir[1][1],etna_tir[1][2],portugal_tir[1][0],demmin_tir[1][0], demmin_tir[1][1]], 'r--')
+#p13, = ax1.plot(numpy.zeros([1,6])[0], 'b--')
+#ax1.set_title('Temperature Differences with MODIS SST (TIR band)')
+#ax1.set_xlabel('time')
+#ax1.set_ylabel('Temperature Differences [K]')
+#ax1.set_xticks(range(6))
+#ax1.set_xticklabels(time, fontsize=7)
+#plt.legend([p1,p4,p7,p10], ['Etna','Portugal','Demmin','scale factor 1.05'],prop={'size':7})
+#fig1.tight_layout()
+#plt.grid()
+#fig1.savefig(os.path.join(r'E:\Penghua\results\ComSST\test2', r'sst_test_tir.png'), dpi=200)
+#plt.show()
+#
+#fig1, ax1 = plt.subplots()
+#p1, = ax1.plot(range(3),etna_mir[1], 'yo')
+#p2, = ax1.plot(range(3),etna_mir[2], 'ro')
+#p3, = ax1.plot(range(3),etna_mir[3], 'go')
+#p4, = ax1.plot([3],portugal_mir[1], 'yx')
+#p5, = ax1.plot([3],portugal_mir[2], 'rx')
+#p6, = ax1.plot([3],portugal_mir[3], 'gx')
+#p7, = ax1.plot(range(4,6),demmin_mir[1], 'y*')
+#p8, = ax1.plot(range(4,6),demmin_mir[2], 'r*')
+#p9, = ax1.plot(range(4,6),demmin_mir[3], 'g*')
+#p10, = ax1.plot([etna_mir[1][0],etna_mir[1][1],etna_mir[1][2],portugal_mir[1][0],demmin_mir[1][0], demmin_mir[1][1]], 'y--')
+#p11, = ax1.plot([etna_mir[2][0],etna_mir[2][1],etna_mir[2][2],portugal_mir[2][0],demmin_mir[2][0], demmin_mir[2][1]], 'r--')
+#p12, = ax1.plot([etna_mir[3][0],etna_mir[3][1],etna_mir[3][2],portugal_mir[3][0],demmin_mir[3][0], demmin_mir[3][1]], 'g--')
+#p13, = ax1.plot(numpy.zeros([1,6])[0], 'b--')
+#ax1.set_title('Temperature Differences with MODIS SST (MIR band)')
+#ax1.set_xlabel('time')
+#ax1.set_ylabel('Temperature Differences [K]')
+#ax1.set_xticks(range(6))
+#ax1.set_xticklabels(time, fontsize=7)
+#plt.legend([p2,p5,p8,p10,p11,p12], ['Etna','Portugal','Demmin','scale factor 1.05', 'scale factor 1.10','scale_factor 1.15'],prop={'size':7})
+#fig1.tight_layout()
+#plt.grid()
+##fig1.savefig(os.path.join(r'E:\Penghua\results\ComSST\test2', r'sst_test&comp_mir.png'), dpi=200)
 #plt.show()
