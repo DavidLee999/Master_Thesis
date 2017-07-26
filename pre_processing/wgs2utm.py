@@ -53,7 +53,22 @@ location = ['Etna', 'Demmin', 'Lascar', 'Lybien-1', 'Lybien-2', 'Portugal']
 
 UTM_zone = {'Etna':'EPSG:32633', 'Demmin':'EPSG:32633', 'Lascar':'EPSG:32719', 'Lybien-1':'EPSG:32634', 'Lybien-2':'EPSG:32633', 'Portugal':'EPSG:32629'}
 
+sourFile = r'E:\Penghua\data\LST' + '\\' + location[3]
 
+os.chdir(sourFile)
+
+for files in os.listdir(sourFile):
+    
+    if os.path.isdir(files) == True:
+        
+        for fil in os.listdir(files):
+            
+            if fil.endswith('.tif') and 'MOD' in fil:
+                
+                inFileLoc = os.path.abspath(files) + '\\' + fil
+                                           
+                wgs2utm(inFileLoc, UTM_zone[location[3]], True, [150,150])
+                
 #reproject TET images to UTM coord. system
 
 #sourFile = r'E:\Penghua\data\georeferenced_TET' + '\\' + location[0] + '\\new_selected_data'
@@ -124,18 +139,18 @@ UTM_zone = {'Etna':'EPSG:32633', 'Demmin':'EPSG:32633', 'Lascar':'EPSG:32719', '
 #            wgs2utm(inFileLoc, UTM_zone[location[5]], True, [150,150])
 
 
-sourFile = r'E:\Penghua\data\SST' + '\\' + location[1]
-
-os.chdir(sourFile)
-
-for files in os.listdir(sourFile):
-    
-    if os.path.isdir(files) == True:
-        
-        for fil in os.listdir(files):
-            
-            if fil.endswith('.tif') and 'UTM' in fil:
-                
-                inFileLoc = os.path.abspath(files) + '\\' + fil
-                                           
-                wgs2utm(inFileLoc, UTM_zone[location[1]], True, [150,150])
+#sourFile = r'E:\Penghua\data\SST' + '\\' + location[1]
+#
+#os.chdir(sourFile)
+#
+#for files in os.listdir(sourFile):
+#    
+#    if os.path.isdir(files) == True:
+#        
+#        for fil in os.listdir(files):
+#            
+#            if fil.endswith('.tif') and 'UTM' in fil:
+#                
+#                inFileLoc = os.path.abspath(files) + '\\' + fil
+#                                           
+#                wgs2utm(inFileLoc, UTM_zone[location[1]], True, [150,150])

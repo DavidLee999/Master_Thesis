@@ -28,12 +28,12 @@ def compare ( TET_tem_path, SST_tem_path, outputFile ):
     TIR_data = TIR_band.ReadAsArray()
     SST_data = SST_band.ReadAsArray()
     
-    default_tem = 274.15 * np.ones(SST_data.shape)
+#    default_tem = 274.15 * np.ones(SST_data.shape)
     
 #    MIR_deg = MIR_data + default_tem
 #    TIR_deg = TIR_data + default_tem
 
-    SST_K = SST_data + default_tem
+    SST_K = SST_data #+ default_tem
     diff_MIR = SST_K - MIR_data
     diff_TIR = SST_K - TIR_data
     
@@ -115,7 +115,7 @@ def cal (inputimg):
 
 Location = ['Etna', 'Demmin', 'Lascar', 'Lybien-1', 'Lybien-2', 'Portugal']
 
-sourFile = r'E:\Penghua\data' + '\\' + Location[1]
+sourFile = r'E:\Penghua\data' + '\\' + Location[3]
 
 os.chdir(sourFile)
 
@@ -125,7 +125,7 @@ for files in os.listdir(sourFile):
         
         folder = os.path.join(os.path.abspath(files), r'TET')
         
-        SST = os.path.join(os.path.abspath(files), r'SST')
+        LST = os.path.join(os.path.abspath(files), r'LST')
         
         for fil in os.listdir(folder):
             
@@ -144,13 +144,13 @@ for files in os.listdir(sourFile):
                     outputFile = os.path.join(f, 'compared')
 #                    if os.path.exists(outputFile) == True:
 #                        shutil.rmtree(outputFile)
-                    for sst_img in os.listdir(SST):
+                    for lst_img in os.listdir(LST):
                         
-                        if sst_img.endswith('.tif') and 'SST' in sst_img:
+                        if lst_img.endswith('.tif') and 'LST' in lst_img:
                             
-                            sst_tem = os.path.join(SST, sst_img)
+                            lst_tem = os.path.join(LST, lst_img)
                     
-                    compare(tet_tem, sst_tem, outputFile)
+                    compare(tet_tem, lst_tem, outputFile)
                     
                     os.chdir(sourFile)
 

@@ -24,7 +24,7 @@ def merge(sourFile, outputPath, id, name = None):
     
     L.insert(0,'')
         
-    L.extend(['-o', outputPath, '-of', 'GTiff',  '-a_nodata', '0'])  
+    L.extend(['-o', outputPath, '-of', 'GTiff',  '-a_nodata', '-9999', '-n', '0'])  
         
     if os.path.exists(os.path.dirname(outputPath)) == False:
             
@@ -81,11 +81,14 @@ id3 = 'dem'
 #merge(sourFile2, outputPath2, id2)
 
 
-outputPath3 = sourFile3 + '\\merged\\astgtm2_DEM.tif'
+#outputPath3 = sourFile3 + '\\merged\\astgtm2_DEM.tif'
+#
+#merge(sourFile3, outputPath3, id3)
 
-merge(sourFile3, outputPath3, id3)
-
-
+sourFile4 = r'E:\Penghua\data\LST\Lybien-1\2016.09.18\repro2'
+output = sourFile4 + r'\MOD11_LST_repro.tif'
+id = '11'
+merge(sourFile4, output, id)
 
 
 
