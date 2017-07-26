@@ -59,14 +59,18 @@ os.chdir(sourFile)
 
 for files in os.listdir(sourFile):
     
-    if os.path.isdir(files) == True:
+    if os.path.isdir(files) == True and files != '2016.09.18':
         
         for fil in os.listdir(files):
             
-            if fil.endswith('.tif') and 'MOD' in fil:
+            folder = os.path.join(os.path.abspath(files), fil)
+            
+            for fi in os.listdir(folder):
                 
-                inFileLoc = os.path.abspath(files) + '\\' + fil
-                                           
+                if fi.endswith('.tif') and 'MOD' in fi:
+                
+                    inFileLoc = os.path.join( folder, fi )
+                                      
                 wgs2utm(inFileLoc, UTM_zone[location[3]], True, [150,150])
                 
 #reproject TET images to UTM coord. system

@@ -158,7 +158,7 @@ def main(input_zone_polygon, input_value_raster):
 #
 #shutil.rmtree(os.path.join(os.path.split(shpfile)[0], 'temp'))
 
-shpFile = r'E:\Penghua\data\Etna\shapefiles'
+shpFile = r'E:\Penghua\data\Lybien-1\shapefiles'
 
 shp = []
 
@@ -170,7 +170,7 @@ for files in os.listdir(shpFile):
         
         shp.append(os.path.abspath(files)) 
 
-sourFile = r'E:\Penghua\data\Etna\self_test'
+sourFile = r'E:\Penghua\data\Lybien-1'
 
 os.chdir(sourFile)
 
@@ -278,12 +278,12 @@ for i in range(len(scale_factor)):
 #            
 #            sheet2.write(0, count, files)
             
-            ac_folder = os.path.join(os.path.abspath(files), r'TET\ac_results_%s\compared' %scale_factor[i])
+            ac_folder = os.path.join(os.path.abspath(files), r'TET\ac_results_%s\compared_GLDAS2' %scale_factor[i])
             
             
-            if os.path.exists(os.path.join(os.path.abspath(files), r'TET\ac_results_%s\compared' %scale_factor[i])) == True:
+            if os.path.exists(os.path.join(os.path.abspath(files), r'TET\ac_results_%s\compared_GLDAS2' %scale_factor[i])) == True:
             
-                ac_results = os.path.join(os.path.abspath(files), r'TET\ac_results_%s\compared' %scale_factor[i])
+                ac_results = os.path.join(os.path.abspath(files), r'TET\ac_results_%s\compared_GLDAS2' %scale_factor[i])
                 
                 if os.path.exists(os.path.join(ac_results, 'temp')) == False:
     
@@ -294,11 +294,11 @@ for i in range(len(scale_factor)):
                     if fil.endswith('.tif') and 'MIR' in fil:
                     
                         TET_tem_MIR = os.path.join(ac_results, fil)
-                        
+#                        print TET_tem_MIR
                     if fil.endswith('.tif') and 'TIR' in fil:
                     
                         TET_tem_TIR = os.path.join(ac_results, fil)  
-                        
+#                        print TET_tem_TIR
 #            MIR_rect2 = main(shp[1], TET_tem_MIR)
 #            
 #            MIR_rect4 = main(shp[3], TET_tem_MIR)
@@ -326,26 +326,26 @@ for i in range(len(scale_factor)):
 #            
 #            count = count + 1                         
                 
-                if files == '2016.08.14':
-                    sc_mir[i].append((main(shp[0], TET_tem_MIR)[0] + main(shp[1], TET_tem_MIR)[0] + main(shp[2], TET_tem_MIR)[0]) / 3.0)
-                
-                    sc_tir[i].append((main(shp[0], TET_tem_TIR)[0] + main(shp[1], TET_tem_TIR)[0] + main(shp[2], TET_tem_TIR)[0]) / 3.0)
-                
-                else:
-                    sc_mir[i].append((main(shp[0], TET_tem_MIR)[0] + main(shp[1], TET_tem_MIR)[0] + main(shp[2], TET_tem_MIR)[0] + \
+#                if files == '2016.08.14':
+#                    sc_mir[i].append((main(shp[0], TET_tem_MIR)[0] + main(shp[1], TET_tem_MIR)[0] + main(shp[2], TET_tem_MIR)[0]) / 3.0)
+#                
+#                    sc_tir[i].append((main(shp[0], TET_tem_TIR)[0] + main(shp[1], TET_tem_TIR)[0] + main(shp[2], TET_tem_TIR)[0]) / 3.0)
+#                
+#                else:
+                sc_mir[i].append((main(shp[0], TET_tem_MIR)[0] + main(shp[1], TET_tem_MIR)[0] + main(shp[2], TET_tem_MIR)[0] + \
                           main(shp[3], TET_tem_MIR)[0] + main(shp[4], TET_tem_MIR)[0]) / 5.0)
                 
-                    sc_tir[i].append((main(shp[0], TET_tem_TIR)[0] + main(shp[1], TET_tem_TIR)[0] + main(shp[2], TET_tem_TIR)[0] + \
-                    main(shp[3], TET_tem_TIR)[0] + main(shp[4], TET_tem_TIR)[0] ) / 5.0)
-                
-                if os.path.exists(os.path.join(ac_results, 'temp')) == True:
-                    
-                    shutil.rmtree(os.path.join(ac_results, 'temp'))
-                
-            else:
-                
-                sc_mir[i].append(0.0)
-                sc_tir[i].append(0.0)
+                sc_tir[i].append((main(shp[0], TET_tem_TIR)[0] + main(shp[1], TET_tem_TIR)[0] + main(shp[2], TET_tem_TIR)[0] + \
+                          main(shp[3], TET_tem_TIR)[0] + main(shp[4], TET_tem_TIR)[0] ) / 5.0)
+#                
+#                if os.path.exists(os.path.join(ac_results, 'temp')) == True:
+#                    
+#                    shutil.rmtree(os.path.join(ac_results, 'temp'))
+#                
+#            else:
+#                
+#                sc_mir[i].append(0.0)
+#                sc_tir[i].append(0.0)
                 
 
 #zero = numpy.zeros([1,13])
