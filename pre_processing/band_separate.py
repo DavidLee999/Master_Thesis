@@ -33,38 +33,38 @@ location = ['Etna', 'Demmin', 'Lascar', 'Lybien-1', 'Lybien-2', 'Portugal']
 
 UTM_zone = {'Etna':'EPSG:32633', 'Demmin':'EPSG:32633', 'Lascar':'EPSG:32719', 'Lybien-1':'EPSG:32634', 'Lybien-2':'EPSG:32633', 'Portugal':'EPSG:32629'}
 
-#sourFile = r'E:\Penghua\data' + '\\' + location[0]
-#
-#os.chdir(sourFile)
+sourFile = r'E:\Penghua\data' + '\\' + location[3]
 
-#for files in os.listdir(sourFile):
-#    
-#    if '0' in files:
-#        
-#        tet_files = os.path.join( os.path.abspath(files), 'TET' )
-#        
-#        os.chdir(tet_files)
-#    
-#        for res in os.listdir( tet_files ):
-#            
-#            if os.path.isdir(os.path.abspath(res)) == True and '9.1' in res:
-#                
-#                for img in os.listdir(res):
-#                
-#                    if img.endswith('.tif') and 'tem' in img:
-#                        
-#                        inFileLoc = os.path.join(os.path.abspath(res), img)
-#                        
-#                        abspath, postfix = os.path.splitext(inFileLoc)
-#                        
-#                        outFileLoc1 = abspath + '_MIR_only.tif'
-#                        
-#                        outFileLoc2 = abspath + '_TIR_only.tif'
-#                        
-#                        band_separate(inFileLoc, outFileLoc1, 1)
-#                        
-#                        band_separate(inFileLoc, outFileLoc2, 2)
-#
+os.chdir(sourFile)
+
+for files in os.listdir(sourFile):
+    
+    if '0' in files:
+        
+        tet_files = os.path.join( os.path.abspath(files), 'TET' )
+        
+        os.chdir(tet_files)
+    
+        for res in os.listdir( tet_files ):
+            
+            if os.path.isdir(os.path.abspath(res)) == True and 'ac_results' in res:
+                
+                for img in os.listdir(res):
+                
+                    if img.endswith('.tif') and 'tem' in img:
+                        
+                        inFileLoc = os.path.join(os.path.abspath(res), img)
+                        
+                        abspath, postfix = os.path.splitext(inFileLoc)
+                        
+                        outFileLoc1 = abspath + '_MIR_only.tif'
+                        
+                        outFileLoc2 = abspath + '_TIR_only.tif'
+                        
+                        band_separate(inFileLoc, outFileLoc1, 1)
+                        
+                        band_separate(inFileLoc, outFileLoc2, 2)
+
 #                sc1 = os.path.join(tet_files, r'ac_results_1.00')
 #                
 #                for img in os.listdir(sc1):
@@ -78,13 +78,13 @@ UTM_zone = {'Etna':'EPSG:32633', 'Demmin':'EPSG:32633', 'Lascar':'EPSG:32719', '
 #                        outFileLoc1 = abspath + '_MIR_only.tif'
 #                        
 #                        outFileLoc2 = abspath + '_TIR_only.tif'
-#                        
+                        
 #                        band_separate(inFileLoc, outFileLoc1, 1)
 #                        
 #                        band_separate(inFileLoc, outFileLoc2, 2)
-#                
-#    
-#    os.chdir(sourFile)
+                
+    
+    os.chdir(sourFile)
                         
 #sourFile = r'E:\Penghua\data\corresponding_water_vapor' + '\\' + location[0] + '\\new_selected_data'
 #

@@ -85,7 +85,7 @@ id3 = 'dem'
 #
 #merge(sourFile3, outputPath3, id3)
 
-sourFile4 = r'E:\Penghua\data\LST\Lybien-1\2016.09.18\repro2'
+sourFile4 = r'E:\Penghua\data\LST\Lybien-1\2017.04.04\0404\repro'
 output = sourFile4 + r'\MOD11_LST_repro.tif'
 id = '11'
 merge(sourFile4, output, id)

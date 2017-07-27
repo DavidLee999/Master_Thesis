@@ -119,7 +119,7 @@ for WV in os.listdir(sourWV):
         
         os.makedirs(folder+'\\'+'DEM')
         
-        os.makedirs(folder+'\\'+'SST')
+    os.makedirs(folder+'\\'+'SST')
     
     outputfolder.append(folder)
         
@@ -209,7 +209,7 @@ for WV in os.listdir(sourWV):
 #    
 #    outputDEM.append(os.path.join(folders+'\\'+'DEM', dem_name + '_cut.tif'))
 #
-sst = r'E:\Penghua\data\SST' + '\\' + Location[1]
+sst = r'E:\Penghua\data\LST' + '\\' + Location[1]
 
 inputSST = []
 
@@ -253,6 +253,6 @@ for shapefile in inputShapefile:
 #
 #    cut(shapefile, inputDEM, outputDEM[counter], 0)
     
-    cut(shapefile, inputSST[counter], outputSST[counter])
+#    cut(shapefile, inputSST[counter], outputSST[counter])
     
     counter = counter + 1

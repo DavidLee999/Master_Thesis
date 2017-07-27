@@ -278,12 +278,12 @@ for i in range(len(scale_factor)):
 #            
 #            sheet2.write(0, count, files)
             
-            ac_folder = os.path.join(os.path.abspath(files), r'TET\ac_results_%s\compared_GLDAS2' %scale_factor[i])
+            ac_folder = os.path.join(os.path.abspath(files), r'TET\ac_results_%s_9.1\compared' %scale_factor[i]) #\compared2
             
             
-            if os.path.exists(os.path.join(os.path.abspath(files), r'TET\ac_results_%s\compared_GLDAS2' %scale_factor[i])) == True:
+            if os.path.exists(os.path.join(os.path.abspath(files), r'TET\ac_results_%s_9.1\compared' %scale_factor[i])) == True:
             
-                ac_results = os.path.join(os.path.abspath(files), r'TET\ac_results_%s\compared_GLDAS2' %scale_factor[i])
+                ac_results = os.path.join(os.path.abspath(files), r'TET\ac_results_%s_9.1\compared' %scale_factor[i])
                 
                 if os.path.exists(os.path.join(ac_results, 'temp')) == False:
     
@@ -323,10 +323,10 @@ for i in range(len(scale_factor)):
 #            if os.path.exists(os.path.join(ac_results, 'temp')) == True:
 #            
 #                shutil.rmtree(os.path.join(ac_results, 'temp'))
-#            
+##            
 #            count = count + 1                         
                 
-#                if files == '2016.08.14':
+#                if files == '2016.09.16':
 #                    sc_mir[i].append((main(shp[0], TET_tem_MIR)[0] + main(shp[1], TET_tem_MIR)[0] + main(shp[2], TET_tem_MIR)[0]) / 3.0)
 #                
 #                    sc_tir[i].append((main(shp[0], TET_tem_TIR)[0] + main(shp[1], TET_tem_TIR)[0] + main(shp[2], TET_tem_TIR)[0]) / 3.0)
@@ -347,6 +347,21 @@ for i in range(len(scale_factor)):
 #                sc_mir[i].append(0.0)
 #                sc_tir[i].append(0.0)
                 
+#fig1, ax1 = plt.subplots()
+#p1, = ax1.plot(sc_mir_2[2], 'ro-', markerfacecolor='none')
+#p2, = ax1.plot(sc_mir_3[2], 'ro--', markerfacecolor='none')
+#p3, = ax1.plot(sc_tir_2[2], 'bo-', markerfacecolor='none')
+#p4, = ax1.plot(sc_tir_3[2], 'bo--', markerfacecolor='none')
+#ax1.set_title('Temperature(Libya) Differences with different emissivities(scale factor 1.10)')
+#ax1.set_xlabel('time')
+#ax1.set_ylabel('Temperature [K]')
+#ax1.set_xticks(range(3))
+#ax1.set_xticklabels(time)
+#plt.legend([p1,p2,p3,p4], ['MIR band imagery. Emissivity in spectrum band 8.6 $\mu$m','MIR band imagery. Emissivity in spectrum band 9.1 $\mu$m','TIR band imagery. Emissivity in spectrum band 8.6 $\mu$m','TIR band imagery. Emissivity in spectrum band 9.1 $\mu$m'],prop={'size':7})
+#fig1.tight_layout()
+#plt.grid()
+#fig1.savefig(os.path.join(r'E:\Penghua\results\comLST\Lybia-1', r'diff_emi1.png'), dpi=200)
+#plt.show()
 
 #zero = numpy.zeros([1,13])
 #fig1, ax1 = plt.subplots()
