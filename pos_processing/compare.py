@@ -34,13 +34,13 @@ def compare ( TET_tem_path, SST_tem_path, outputFile ):
 #    TIR_deg = TIR_data + default_tem
 
     SST_K = SST_data #+ default_tem
-    diff_MIR = SST_K - MIR_data
-    diff_TIR = SST_K - TIR_data
+    diff_MIR = MIR_data - SST_K
+    diff_TIR = TIR_data - SST_K
     
-    logic1 = np.where(np.absolute(diff_MIR)>20)
+    logic1 = np.where(np.absolute(diff_MIR)>50)
     diff_MIR[logic1] = 0
             
-    logic2 = np.where(np.absolute(diff_TIR)>20)
+    logic2 = np.where(np.absolute(diff_TIR)>50)
     diff_TIR[logic2] = 0
     
     diff_MIR_max = diff_MIR.max()
