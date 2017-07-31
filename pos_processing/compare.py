@@ -115,13 +115,13 @@ def cal (inputimg):
 
 Location = ['Etna', 'Demmin', 'Lascar', 'Lybien-1', 'Lybien-2', 'Portugal']
 
-sourFile = r'E:\Penghua\data' + '\\' + Location[3]
+sourFile = r'E:\Penghua\data' + '\\' + Location[4]
 
 os.chdir(sourFile)
 
 for files in os.listdir(sourFile):
     
-    if '0' in files:
+    if '0' in files: #files == '2016.10.25': #
         
         folder = os.path.join(os.path.abspath(files), r'TET')
         
@@ -146,10 +146,10 @@ for files in os.listdir(sourFile):
 #                        shutil.rmtree(outputFile)
                     for lst_img in os.listdir(LST):
                         
-                        if lst_img.endswith('.tif') and 'LST' in lst_img:
+                        if lst_img.endswith('.tif') and 'MOD' in lst_img:
                             
                             lst_tem = os.path.join(LST, lst_img)
-                    
+                            
                     compare(tet_tem, lst_tem, outputFile)
                     
                     os.chdir(sourFile)

@@ -26,7 +26,7 @@ def cut (inputshapefile, inputimg, outputimg, nodata=-9999):
 
 Location = ['Etna', 'Demmin', 'Lascar', 'Lybien-1', 'Lybien-2', 'Portugal']
 
-outputFile = r'E:\Penghua\data' + '\\' + Location[1]
+outputFile = r'E:\Penghua\data' + '\\' + Location[4]
 #
 #shapefile = r'E:\Penghua\data\Etna\shapefiles\rect2.shp'
 #
@@ -84,7 +84,7 @@ outputFile = r'E:\Penghua\data' + '\\' + Location[1]
 outputfolder = []
 
    
-sourFile = r'E:\Penghua\data\georeferenced_TET' + '\\' + Location[1] + r'\alpha_channel'
+sourFile = r'E:\Penghua\data\georeferenced_TET' + '\\' + Location[4] + r'\alpha_channel'
 
 inputShapefile = []
 
@@ -95,7 +95,7 @@ for shp in os.listdir(sourFile):
         inputShapefile.append(os.path.join(sourFile, shp))
 
 
-sourWV = r'E:\Penghua\data\corresponding_water_vapor' + '\\' + Location[1] #+ '\\new_selected_data'
+sourWV = r'E:\Penghua\data\corresponding_water_vapor' + '\\' + Location[4] #+ '\\new_selected_data'
 
 inputWV = []
 
@@ -119,7 +119,7 @@ for WV in os.listdir(sourWV):
         
         os.makedirs(folder+'\\'+'DEM')
         
-    os.makedirs(folder+'\\'+'SST')
+    os.makedirs(folder+'\\'+'LST')
     
     outputfolder.append(folder)
         
@@ -209,7 +209,7 @@ for WV in os.listdir(sourWV):
 #    
 #    outputDEM.append(os.path.join(folders+'\\'+'DEM', dem_name + '_cut.tif'))
 #
-sst = r'E:\Penghua\data\LST' + '\\' + Location[1]
+sst = r'E:\Penghua\data\LST' + '\\' + Location[4]
 
 inputSST = []
 
@@ -224,10 +224,8 @@ for files in os.listdir(sst):
     if os.path.isdir(files) == True:
         
         folders = os.path.abspath(files) + '\\repro'
-        
-        for fil in os.listdir(folders):
-            
-            if fil.endswith('.tif') and 'SST' in fil:
+                    
+            if fil.endswith('.tif') and 'MOD' in fil:
                 
                 inputSST.append(folders + '\\' + fil)
                 

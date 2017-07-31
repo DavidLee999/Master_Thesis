@@ -4,7 +4,7 @@
     <operator>Read</operator>
     <sources/>
     <parameters class="com.bc.ceres.binding.dom.XppDomElement">
-      <file>E:\Penghua\data\LST\Lybien-1\2017.04.04\0404\MOD11A1.A2017094.h20v06.006.2017095085055.hdf</file>
+      <file>E:\Penghua\data\LST\Lybien-2\2017.01.31\0131\MOD11A1.A2017031.h19v06.041.2017032105614.hdf</file>
     </parameters>
   </node>
   <node id="Subset">
@@ -30,7 +30,7 @@
     </sources>
     <parameters class="com.bc.ceres.binding.dom.XppDomElement">
       <wktFile/>
-      <crs>EPSG:32634</crs>
+      <crs>EPSG:32633</crs>
       <resampling>Nearest</resampling>
       <referencePixelX/>
       <referencePixelY/>
@@ -56,7 +56,7 @@
       <sourceProduct refid="Reproject"/>
     </sources>
     <parameters class="com.bc.ceres.binding.dom.XppDomElement">
-      <file>E:\Penghua\data\LST\Lybien-1\2017.04.04\0404\MOD11A1.A2017094.h20v06.006.2017095085055.tif</file>
+      <file>E:\Penghua\data\LST\Lybien-2\2017.01.31\0131\MOD11A1.A2017031.h19v06.041.2017032105614.tif</file>
       <formatName>GeoTIFF-BigTIFF</formatName>
     </parameters>
   </node>

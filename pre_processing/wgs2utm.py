@@ -42,7 +42,7 @@ def wgs2utm(inFileLoc, zone, resample=False, pixel_size = None, nodata_dst = -99
     L.append(inFileLoc)
     
     L.append(outFileLoc)
-
+    
     subprocess.call(L)
     
     print 'end'
@@ -53,25 +53,26 @@ location = ['Etna', 'Demmin', 'Lascar', 'Lybien-1', 'Lybien-2', 'Portugal']
 
 UTM_zone = {'Etna':'EPSG:32633', 'Demmin':'EPSG:32633', 'Lascar':'EPSG:32719', 'Lybien-1':'EPSG:32634', 'Lybien-2':'EPSG:32633', 'Portugal':'EPSG:32629'}
 
-sourFile = r'E:\Penghua\data\LST' + '\\' + location[3]
+sourFile = r'E:\Penghua\data\LST' + '\\' + location[4]
 
 os.chdir(sourFile)
 
 for files in os.listdir(sourFile):
     
-    if os.path.isdir(files) == True and files != '2016.09.18':
+    if os.path.isdir(files) == True:
         
         for fil in os.listdir(files):
             
             folder = os.path.join(os.path.abspath(files), fil)
             
             for fi in os.listdir(folder):
-                
+#                if fi.endswith('.tif'):
+#                    os.remove(os.path.join( folder, fi ))
                 if fi.endswith('.tif') and 'MOD' in fi:
                 
                     inFileLoc = os.path.join( folder, fi )
-                                      
-                wgs2utm(inFileLoc, UTM_zone[location[3]], True, [150,150])
+                    
+                wgs2utm(inFileLoc, UTM_zone[location[4]], True, [150,150])
                 
 #reproject TET images to UTM coord. system
 
