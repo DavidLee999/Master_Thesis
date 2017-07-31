@@ -33,7 +33,7 @@ location = ['Etna', 'Demmin', 'Lascar', 'Lybien-1', 'Lybien-2', 'Portugal']
 
 UTM_zone = {'Etna':'EPSG:32633', 'Demmin':'EPSG:32633', 'Lascar':'EPSG:32719', 'Lybien-1':'EPSG:32634', 'Lybien-2':'EPSG:32633', 'Portugal':'EPSG:32629'}
 
-sourFile = r'E:\Penghua\data' + '\\' + location[3]
+sourFile = r'E:\Penghua\data' + '\\' + location[4]
 
 os.chdir(sourFile)
 
