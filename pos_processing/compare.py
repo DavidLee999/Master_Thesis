@@ -115,7 +115,7 @@ def cal (inputimg):
 
 Location = ['Etna', 'Demmin', 'Lascar', 'Lybien-1', 'Lybien-2', 'Portugal']
 
-sourFile = r'E:\Penghua\data' + '\\' + Location[4]
+sourFile = r'E:\Penghua\data' + '\\' + Location[3]
 
 os.chdir(sourFile)
 
@@ -141,7 +141,7 @@ for files in os.listdir(sourFile):
                             
                             tet_tem = os.path.join(f, img)
                             
-                    outputFile = os.path.join(f, 'compared')
+                    outputFile = os.path.join(f, 'compared2')
 #                    if os.path.exists(outputFile) == True:
 #                        shutil.rmtree(outputFile)
                     for lst_img in os.listdir(LST):

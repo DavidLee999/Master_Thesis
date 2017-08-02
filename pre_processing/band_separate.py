@@ -61,9 +61,9 @@ for files in os.listdir(sourFile):
                         
                         outFileLoc2 = abspath + '_TIR_only.tif'
                         
-                        band_separate(inFileLoc, outFileLoc1, 1)
-                        
-                        band_separate(inFileLoc, outFileLoc2, 2)
+#                        band_separate(inFileLoc, outFileLoc1, 1)
+#                        
+#                        band_separate(inFileLoc, outFileLoc2, 2)
 
 #                sc1 = os.path.join(tet_files, r'ac_results_1.00')
 #                
