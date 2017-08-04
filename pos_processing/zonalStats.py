@@ -85,12 +85,13 @@ def zonal_stats(FID, input_zone_polygon, input_value_raster):
     
     # create new layer for each feature
     if lyr.GetFeatureCount() > 1:
-        driver = ogr.GetDriverByName('ESRI Shapefile')
-        filename = os.path.join(os.path.split(input_value_raster)[0], r'temp\temp%d.shp' %FID)
-        srs = osr.SpatialReference()
-        srs.ImportFromWkt( raster.GetProjectionRef() )
-        datasource = driver.CreateDataSource(filename)
-        layer = datasource.CreateLayer('layerName',geom_type=ogr.wkbPolygon, srs=srs)    
+#        driver = ogr.GetDriverByName('ESRI Shapefile')
+#        filename = os.path.join(os.path.split(input_zone_polygon)[0], r'temp\temp%d.shp' %FID)
+#        srs = osr.SpatialReference()
+#        srs.ImportFromWkt( raster.GetProjectionRef() )
+#        datasource = driver.CreateDataSource(filename)
+        datasource = ogr.GetDriverByName( 'MEMORY' ).CreateDataSource( 'tmp.shp' )
+        layer = datasource.CreateLayer('layerName', geom_type = ogr.wkbPolygon, srs = raster_srs)    
         layer.CreateFeature(feat)
     
         # Rasterize zone polygon to raster
@@ -103,14 +104,17 @@ def zonal_stats(FID, input_zone_polygon, input_value_raster):
 
     # Read raster as arrays
     banddataraster = raster.GetRasterBand(1)
+    banddataraster.SetNoDataValue( -9999 )
     dataraster = banddataraster.ReadAsArray(xoff, yoff, xcount, ycount).astype(numpy.float)
-    
+    logic = numpy.where( dataraster == -9999 ) # no_data value
+              
     bandmask = target_ds.GetRasterBand(1)
     datamask = bandmask.ReadAsArray(0, 0, xcount, ycount).astype(numpy.float)
-    
+    datamask[logic] = 0.0
+            
     # Mask zone of raster
     zoneraster = numpy.ma.masked_array(dataraster, numpy.logical_not(datamask))
-    
+
     # Calculate statistics of zonal raster
     return numpy.mean(zoneraster)
 
@@ -131,6 +135,73 @@ def loop_zonal_stats(input_zone_polygon, input_value_raster):
 def main(input_zone_polygon, input_value_raster):
     return loop_zonal_stats(input_zone_polygon, input_value_raster)
 
+def centerPos( FID, input_zone_polygon, input_value_raster ):
+    
+    raster = gdal.Open( input_value_raster )
+    shp = ogr.Open( input_zone_polygon )
+    lyr = shp.GetLayer()
+    feat = lyr.GetFeature(FID)
+    
+    transform = raster.GetGeoTransform()
+    xOrigin = transform[0]
+    yOrigin = transform[3]
+    pixelWidth = int(transform[1])
+    pixelHeight = int(transform[5])
+    
+    target_ds = gdal.GetDriverByName('MEM').Create( '', raster.RasterXSize, raster.RasterYSize, 1, gdal.GDT_Byte )
+    target_ds.SetGeoTransform(( xOrigin, pixelWidth, 0, yOrigin, 0, pixelHeight ))
+        
+    raster_srs = osr.SpatialReference()
+    raster_srs.ImportFromWkt( raster.GetProjectionRef() )
+    target_ds.SetProjection( raster_srs.ExportToWkt() )
+    
+    if lyr.GetFeatureCount() > 1:
+        
+#        driver = ogr.GetDriverByName( 'ESRI Shapefile' )
+#        filename = os.path.join( os.path.split(input_zone_polygon)[0], r'temp\temp%d.shp' %FID )
+#        datasource = driver.CreateDataSource( filename )
+        d = ogr.GetDriverByName('MEMORY').CreateDataSource( 'tmp.shp' )
+        layer = d.CreateLayer( 'layerName',geom_type = ogr.wkbPolygon, srs = raster_srs )    
+        layer.CreateFeature(feat)
+    
+        # Rasterize zone polygon to raster
+        gdal.RasterizeLayer( target_ds, [1], layer, burn_values=[1] )
+        
+    else:
+        # Rasterize zone polygon to raster
+        gdal.RasterizeLayer( target_ds, [1], lyr, burn_values=[1] )
+        
+    bandmask = target_ds.GetRasterBand(1)
+    array = bandmask.ReadAsArray()
+    bg = 0.310369
+    logic = numpy.where( array == 1 )
+    
+    rasterBand = raster.GetRasterBand(1)
+    rasterArray = rasterBand.ReadAsArray()
+    
+    sumX = 0
+    sumY = 0
+    sum_diff = 0
+    for i in range( logic[0].shape[0] ):
+        
+        gray_value = rasterArray[logic[0][i]][logic[1][i]]
+        diff = gray_value - bg
+        print diff
+        print logic[0][i]
+        sum_diff = sum_diff + diff
+        sumX = sumX + diff * logic[1][i]
+        sumY = sumY + diff * logic[0][i]
+    
+    center_x = sumX / sum_diff
+    center_y = sumY / sum_diff
+    
+    return[center_y, center_x]
+    
+    
+    
+    
+        
+    
 
 #if __name__ == "__main__":
 #
@@ -146,33 +217,36 @@ def main(input_zone_polygon, input_value_raster):
 #    print 'Returns for each feature a dictionary item (FID) with the statistical values in the following order: Average, Mean, Medain, Standard Deviation, Variance'
 #    print main( sys.argv[1], sys.argv[2] )
 
-#shpfile = r'E:\Penghua\data\Etna\2014.06.22\TET\ac_results_1.04_MIR_TIR\POLY.shp'
-#
-#rasterfile = r'E:\Penghua\data\Etna\2014.06.22\TET\ac_results_1.04_MIR_TIR\FBI_TET1_20140622T232052_20140622T232155_L2_002589_WHM_cobined_MIR_TIR_tem_MIR_only.tif'
-#
+shpfile = r'E:\Penghua\data\Etna\2014.06.22\TET\ac_results_1.05\Mask\sub_pixel_tem.shp'
+
+rasterfile = r'E:\Penghua\data\Etna\2014.06.22\TET\ac_results_1.05\FBI_TET1_20140622T232052_20140622T232155_L2_002589_WHM_cobined_MIR_TIR_tem.tif'
+
+tet_radiance = r'E:\Penghua\data\Etna\2014.06.22\TET\FBI_TET1_20140622T232052_20140622T232155_L2_002589_WHM_MWIR_near_repro_cut.tif'
+
 #if os.path.exists(os.path.join(os.path.split(shpfile)[0], 'temp')) == False:
 #    
 #    os.mkdir(os.path.join(os.path.split(shpfile)[0], 'temp'))
-#   
-#sta = main(shpfile, rasterfile)
-#
+   
+#sta = main(shpfile, tet_radiance)
+l = centerPos(0, shpfile, tet_radiance)
+
 #shutil.rmtree(os.path.join(os.path.split(shpfile)[0], 'temp'))
 
-shpFile = r'E:\Penghua\data\Lybien-1\shapefiles'
-
-shp = []
-
-os.chdir(shpFile)
-
-for files in os.listdir(shpFile):
-    
-    if files.endswith('.shp') and 'rect' in files:
-        
-        shp.append(os.path.abspath(files)) 
-
-sourFile = r'E:\Penghua\data\Lybien-1'
-
-os.chdir(sourFile)
+#shpFile = r'E:\Penghua\data\Etna\shapefiles'
+#
+#shp = []
+#
+#os.chdir(shpFile)
+#
+#for files in os.listdir(shpFile):
+#    
+#    if files.endswith('.shp') and 'rect' in files:
+#        
+#        shp.append(os.path.abspath(files)) 
+#
+#sourFile = r'E:\Penghua\data\Etna' #\self_test
+#
+#os.chdir(sourFile)
 
 #filename = xlwt.Workbook()
 #
@@ -252,54 +326,56 @@ os.chdir(sourFile)
 #                    
 #                    sc_tir1.append((main(shp[1], TET_tem_TIR)[0]+main(shp[3], TET_tem_TIR)[0]+main(shp[4], TET_tem_TIR)[0]) / 3.0)
 
-scale_factor = ['1.00', '1.05', '1.10', '1.15', '1.20']
-
-
-sc_mir = [[], [], [], [], []]
-sc_tir = [[], [], [], [], []]
-time = []
+#scale_factor = ['1.00']#, '1.05', '1.10', '1.15', '1.20']
 #
-for i in range(len(scale_factor)):
-    
-    #print scale_factor[i]
-    
-    
-    for files in os.listdir(sourFile):
-        
-        if '0' in files:
-            
-            if i == 0:
-                
-                time.append(files)
-            
-            #print files
-            
-#            sheet1.write(0, count, files)
+#
+#sc_mir = [[]]#, [], [], [], []]
+#sc_tir = [[]]#, [], [], [], []]
+##time = []
+##
+#for i in range(len(scale_factor)):
+#    
+#    #print scale_factor[i]
+#    
+#    
+#    for files in os.listdir(sourFile):
+#        
+#        if '0' in files and files in time:
 #            
-#            sheet2.write(0, count, files)
-            
-            ac_folder = os.path.join(os.path.abspath(files), r'TET\ac_results_%s_9.1\compared2' %scale_factor[i]) #\compared _9.1
-            
-            
-            if os.path.exists(os.path.join(os.path.abspath(files), r'TET\ac_results_%s_9.1\compared2' %scale_factor[i])) == True:
-            
-                ac_results = os.path.join(os.path.abspath(files), r'TET\ac_results_%s_9.1\compared2' %scale_factor[i])
-#                shutil.rmtree(ac_results)
-                
-                if os.path.exists(os.path.join(ac_results, 'temp')) == False:
-    
-                    os.mkdir(os.path.join(ac_results, 'temp'))
-            
-                for fil in os.listdir(ac_results):
-                
-                    if  fil.endswith('.tif') and 'MIR' in fil: #fil.endswith('.tif') and
-                    
-                        TET_tem_MIR = os.path.join(ac_results, fil)
-#                        print TET_tem_MIR
-                    if  fil.endswith('.tif') and 'TIR' in fil:
-                    
-                        TET_tem_TIR = os.path.join(ac_results, fil)
+#            
+#            #print files
+#            
+##            sheet1.write(0, count, files)
+##            
+##            sheet2.write(0, count, files)
+#            
+#            ac_folder = os.path.join(os.path.abspath(files), r'TET\ac_results_%s' %scale_factor[i]) #\compared _9.1
+#            
+#            
+#            if os.path.exists(os.path.join(os.path.abspath(files), r'TET\ac_results_%s' %scale_factor[i])) == True:
+#            
+#                ac_results = os.path.join(os.path.abspath(files), r'TET\ac_results_%s' %scale_factor[i])
+#                
+##                if i == 0:
+##                
+##                    time.append(files)
+##                shutil.rmtree(ac_results)
+#                
+#                if os.path.exists(os.path.join(ac_results, 'temp')) == False:
+#    
+#                    os.mkdir(os.path.join(ac_results, 'temp'))
+#            
+#                for fil in os.listdir(ac_results):
+#                
+#                    if  fil.endswith('.tif') and 'MIR_only' in fil: #fil.endswith('.tif') and
+#                    
+#                        TET_tem_MIR = os.path.join(ac_results, fil)
+##                        print TET_tem_MIR
+#                    if  fil.endswith('.tif') and 'TIR_only' in fil:
+#                    
+#                        TET_tem_TIR = os.path.join(ac_results, fil)
 #                        print TET_tem_TIR
+
 #            MIR_rect2 = main(shp[1], TET_tem_MIR)
 #            
 #            MIR_rect4 = main(shp[3], TET_tem_MIR)
@@ -328,20 +404,20 @@ for i in range(len(scale_factor)):
 #            count = count + 1                         
                 
 #                if files == '2016.09.16':
-#                sc_mir[i].append((main(shp[0], TET_tem_MIR)[0] + main(shp[1], TET_tem_MIR)[0] + main(shp[2], TET_tem_MIR)[0]) / 3.0)
+#                sc_mir[i].append((main(shp[1], TET_tem_MIR)[0] + main(shp[3], TET_tem_MIR)[0] + main(shp[4], TET_tem_MIR)[0]) / 3.0)
 #                
-#                sc_tir[i].append((main(shp[0], TET_tem_TIR)[0] + main(shp[1], TET_tem_TIR)[0] + main(shp[2], TET_tem_TIR)[0]) / 3.0)
+#                sc_tir[i].append((main(shp[1], TET_tem_TIR)[0] + main(shp[3], TET_tem_TIR)[0] + main(shp[4], TET_tem_TIR)[0]) / 3.0)
 #                
 #                else:
-                sc_mir[i].append((main(shp[0], TET_tem_MIR)[0] + main(shp[1], TET_tem_MIR)[0] + main(shp[2], TET_tem_MIR)[0] + \
-                          main(shp[3], TET_tem_MIR)[0] + main(shp[4], TET_tem_MIR)[0]) / 5.0)
-                
-                sc_tir[i].append((main(shp[0], TET_tem_TIR)[0] + main(shp[1], TET_tem_TIR)[0] + main(shp[2], TET_tem_TIR)[0] + \
-                          main(shp[3], TET_tem_TIR)[0] + main(shp[4], TET_tem_TIR)[0] ) / 5.0)
+#                sc_mir[i].append((main(shp[0], TET_tem_MIR)[0] + main(shp[1], TET_tem_MIR)[0] + main(shp[2], TET_tem_MIR)[0] + \
+#                          main(shp[3], TET_tem_MIR)[0] + main(shp[4], TET_tem_MIR)[0]) / 5.0)
 #                
-                if os.path.exists(os.path.join(ac_results, 'temp')) == True:
-                    
-                    shutil.rmtree(os.path.join(ac_results, 'temp'))
+#                sc_tir[i].append((main(shp[0], TET_tem_TIR)[0] + main(shp[1], TET_tem_TIR)[0] + main(shp[2], TET_tem_TIR)[0] + \
+#                          main(shp[3], TET_tem_TIR)[0] + main(shp[4], TET_tem_TIR)[0] ) / 5.0)
+#                
+#                if os.path.exists(os.path.join(ac_results, 'temp')) == True:
+#                    
+#                    shutil.rmtree(os.path.join(ac_results, 'temp'))
 #                
 #            else:
 #                
@@ -363,7 +439,7 @@ for i in range(len(scale_factor)):
 #plt.grid()
 #fig1.savefig(os.path.join(r'E:\Penghua\results\comLST\Lybia-1', r'diff_emi1.png'), dpi=200)
 #plt.show()
-
+#
 #zero = numpy.zeros([1,13])
 #fig1, ax1 = plt.subplots()
 #p1, = ax1.plot(sc_mir[0], 'yo-')
@@ -400,8 +476,8 @@ for i in range(len(scale_factor)):
 #plt.grid()
 #fig1.savefig(os.path.join(r'E:\Penghua\results\ComSST\Etna2', r'Etna_scf_test_tir.png'), dpi=200)
 #plt.show()
-##
-##
+#
+#
 #sc = []
 #
 #index = []
@@ -445,7 +521,7 @@ for i in range(len(scale_factor)):
 #plt.grid()
 #fig.savefig(os.path.join(r'E:\Penghua\results\ComSST\Etna2', r'Etna_bsc_mir.png'), dpi=200)
 #plt.show()
-#one = 1.1 * numpy.ones([1,13])
+#one = 1.15 * numpy.ones([1,13])
 #p2, = ax1.plot(one[0], 'b--')
 #fig.savefig(os.path.join(r'E:\Penghua\results\ComSST\Etna2', r'Etna_bsc&ssc_mir.png'), dpi=200)
 #plt.show()
@@ -471,13 +547,13 @@ for i in range(len(scale_factor)):
 #
 #fig2, ax1 = plt.subplots()
 #p1, = ax1.plot(diff_tem, 'ro-', markerfacecolor='none')
-#p3, = ax1.plot(sc_mir[2], 'bo--', markerfacecolor='none')
+#p3, = ax1.plot(sc_mir[3], 'bo--', markerfacecolor='none')
 #ax1.set_title('Temperature Differences with MODIS SST for Etna Scenes (MIR band)')
 #ax1.set_ylabel('Temperature Differences [K]')
 #ax1.set_xlabel('time')
 #ax1.set_xticks(range(13))
 #ax1.set_xticklabels(time, rotation=30, fontsize=7)
-#plt.legend([p1,p3], [r'smallest $\Delta$T','$\Delta$T for scale factor 1.10'],prop={'size':7})
+#plt.legend([p1,p3], [r'smallest $\Delta$T','$\Delta$T for scale factor 1.15'],prop={'size':7})
 #plt.grid()
 #fig2.tight_layout()
 #fig2.savefig(os.path.join(r'E:\Penghua\results\ComSST\Etna2', r'Etna_bsc&temCom_mir.png'), dpi=200)
@@ -536,6 +612,7 @@ for i in range(len(scale_factor)):
 #p1, = ax1.plot(b_sc, 'ro-')
 #ax1.set_title('Best scale factor for each scene and corresponding $\Delta$T(TIR band)')
 #ax1.set_ylabel('best scale factor for each scene', color='r')
+#ax1.set_yticks(numpy.arange(1.0,1.1,0.01))
 #ax1.tick_params('y', colors='r')
 #
 #ax2 = ax1.twinx()

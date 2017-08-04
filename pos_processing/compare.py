@@ -28,12 +28,12 @@ def compare ( TET_tem_path, SST_tem_path, outputFile ):
     TIR_data = TIR_band.ReadAsArray()
     SST_data = SST_band.ReadAsArray()
     
-#    default_tem = 274.15 * np.ones(SST_data.shape)
+    default_tem = 274.15 * np.ones(SST_data.shape)
     
 #    MIR_deg = MIR_data + default_tem
 #    TIR_deg = TIR_data + default_tem
 
-    SST_K = SST_data #+ default_tem
+    SST_K = SST_data + default_tem
     diff_MIR = MIR_data - SST_K
     diff_TIR = TIR_data - SST_K
     
@@ -115,7 +115,7 @@ def cal (inputimg):
 
 Location = ['Etna', 'Demmin', 'Lascar', 'Lybien-1', 'Lybien-2', 'Portugal']
 
-sourFile = r'E:\Penghua\data' + '\\' + Location[3]
+sourFile = r'E:\Penghua\data' + '\\' + Location[0]
 
 os.chdir(sourFile)
 
@@ -125,7 +125,7 @@ for files in os.listdir(sourFile):
         
         folder = os.path.join(os.path.abspath(files), r'TET')
         
-        LST = os.path.join(os.path.abspath(files), r'LST')
+        LST = os.path.join(os.path.abspath(files), r'SST')
         
         for fil in os.listdir(folder):
             
@@ -140,16 +140,16 @@ for files in os.listdir(sourFile):
                         if img.endswith('.tif') and 'tem' in img:
                             
                             tet_tem = os.path.join(f, img)
-                            
-                    outputFile = os.path.join(f, 'compared2')
+#                            print tet_tem
+                    outputFile = os.path.join(f, 'compared')
 #                    if os.path.exists(outputFile) == True:
 #                        shutil.rmtree(outputFile)
                     for lst_img in os.listdir(LST):
                         
-                        if lst_img.endswith('.tif') and 'MOD' in lst_img:
+                        if lst_img.endswith('.tif') and 'SST' in lst_img:
                             
                             lst_tem = os.path.join(LST, lst_img)
-                            
+                            #print lst_tem
                     compare(tet_tem, lst_tem, outputFile)
                     
                     os.chdir(sourFile)
