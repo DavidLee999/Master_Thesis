@@ -187,7 +187,7 @@ def centerPos( FID, input_zone_polygon, input_value_raster ):
         gray_value = rasterArray[logic[0][i]][logic[1][i]]
         diff = gray_value - bg
         print diff
-        print logic[0][i]
+        print logic[1][i]
         sum_diff = sum_diff + diff
         sumX = sumX + diff * logic[1][i]
         sumY = sumY + diff * logic[0][i]

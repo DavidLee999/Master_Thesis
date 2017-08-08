@@ -26,12 +26,11 @@ def cut (inputshapefile, inputimg, outputimg, nodata=-9999):
 
 Location = ['Etna', 'Demmin', 'Lascar', 'Lybien-1', 'Lybien-2', 'Portugal']
 
-outputFile = r'E:\Penghua\data' + '\\' + Location[4]
-#
-#shapefile = r'E:\Penghua\data\Etna\shapefiles\rect2.shp'
-#
-#sourFile = r'E:\Penghua\data' + '\\' + Location[0]
+outputFile = r'E:\Penghua\data' + '\\' + Location[0]
 
+#shapefile = r'E:\Penghua\data\Etna\shapefiles\rect2.shp'
+
+#sourFile = r'E:\Penghua\data' + '\\' + Location[0]
 #os.chdir(sourFile)
 #
 #for files in os.listdir(sourFile):
@@ -55,7 +54,7 @@ outputFile = r'E:\Penghua\data' + '\\' + Location[4]
 #            if fil.endswith('.tif') and 'TIR' in fil:
 #                
 #                TET_tem_path2 = os.path.join(ac_results, fil)
-                
+#                
 #        SST = os.path.join(os.path.abspath(files), r'SST')
 #        
 #        for fi in os.listdir(SST):
@@ -73,7 +72,7 @@ outputFile = r'E:\Penghua\data' + '\\' + Location[4]
 #        outputFile1 = os.path.join(outputFolder, 'diff_MIR_cut_rect2.tif')
 #        
 #        outputFile2 = os.path.join(outputFolder, 'diff_TIR_cut_rect2.tif')
-        
+#        
 #        outputFile3 = os.path.join(os.path.split(SST_tem_path)[0], 'diff_SST_cut.tif')
 #    
 #        cut(shapefile, TET_tem_path1, outputFile1)
@@ -84,7 +83,7 @@ outputFile = r'E:\Penghua\data' + '\\' + Location[4]
 outputfolder = []
 
    
-sourFile = r'E:\Penghua\data\georeferenced_TET' + '\\' + Location[4] + r'\alpha_channel'
+sourFile = r'E:\Penghua\data\georeferenced_TET' + '\\' + Location[0] + r'\new_selected_data2\alpha_channel'
 
 inputShapefile = []
 
@@ -95,7 +94,7 @@ for shp in os.listdir(sourFile):
         inputShapefile.append(os.path.join(sourFile, shp))
 
 
-sourWV = r'E:\Penghua\data\corresponding_water_vapor' + '\\' + Location[4] #+ '\\new_selected_data'
+sourWV = r'E:\Penghua\data\corresponding_water_vapor' + '\\' + Location[0] + '\\new_selected_data2'
 
 inputWV = []
 
@@ -119,7 +118,7 @@ for WV in os.listdir(sourWV):
         
         os.makedirs(folder+'\\'+'DEM')
         
-    os.makedirs(folder+'\\'+'LST')
+#    os.makedirs(folder+'\\'+'LST')
     
     outputfolder.append(folder)
         
@@ -136,102 +135,102 @@ for WV in os.listdir(sourWV):
             outputWV.append(os.path.join(outputfolder[counter]+'\\'+'water_vapor', name+'_cut.tif'))
     
     counter = counter + 1
-#    
-#    
-#sourTET = r'E:\Penghua\data\georeferenced_TET' + '\\' + Location[0] + '\\new_selected_data'
-#
-#inputTET = []
-#
-#outputTET = []
-#
-#counter = 0
-#
-#for tet in os.listdir(sourTET):
-#    
-#    if 'TET' in tet:
-#        
-#        #print tet
-#    
-#        folder_TET = sourTET + '\\' + tet + '\\' + 'repro'
-#    
-#        for file_TET in os.listdir(folder_TET):
-#        
-#            if file_TET.endswith('.tif') and ('LWIR' in file_TET or 'MWIR' in file_TET):
-#            
-#                inputTET.append(os.path.join(folder_TET, file_TET))
-#            
-#                name, postfix  = os.path.splitext(file_TET)
-#                        
-#                outputTET.append(os.path.join(outputfolder[counter]+'\\'+'TET', name+'_cut.tif'))
-#            
-#        counter = counter + 1
-#    
-#    
-#    
-#emissivity = r'E:\Penghua\data\emissivity_map' + '\\emissivity_map_' + Location[0] + '\\merged'
-#
-#inputEmi = []
-#
-#outputEmi = []
-#
-#for emi in os.listdir(emissivity):
-#    
-#    if emi.endswith('.tif') and 'band' in emi:
-#        
-#        inputEmi.append(os.path.join(emissivity, emi))
-#        
-#for folder in outputfolder:
-#
-#    abspath, name = os.path.split(inputEmi[0])
-#    
-#    emi_name, postfix = os.path.splitext(name)
-#        
-#    outputEmi.append(os.path.join(folder+'\\'+'emivissivity_map', emi_name + '_cut.tif'))
-#
-#    abspath, name = os.path.split(inputEmi[1])
-#    
-#    emi_name, postfix = os.path.splitext(name)
-#        
-#    outputEmi.append(os.path.join(folder+'\\'+'emivissivity_map', emi_name + '_cut.tif'))
-#
-#
-#DEM = r'E:\Penghua\data\DEM' + '\\' + Location[0] + '\\repro' #'\\merged\\repro'
-#
-#inputDEM =  DEM + '\\astgtm2_DEM_combined_repro.tif'
-#
-#outputDEM = []
-#
-#for folders in outputfolder:
-#    
-#    folder, name = os.path.split(inputDEM)
-#    
-#    dem_name, postfix = os.path.splitext(name)
-#    
-#    outputDEM.append(os.path.join(folders+'\\'+'DEM', dem_name + '_cut.tif'))
-#
-sst = r'E:\Penghua\data\LST' + '\\' + Location[4]
+    
+    
+sourTET = r'E:\Penghua\data\georeferenced_TET' + '\\' + Location[0] + '\\new_selected_data2'
 
-inputSST = []
+inputTET = []
 
-outputSST = []
-
-os.chdir(sst)
+outputTET = []
 
 counter = 0
 
-for files in os.listdir(sst):
+for tet in os.listdir(sourTET):
     
-    if os.path.isdir(files) == True:
+    if 'TET' in tet:
         
-        folders = os.path.abspath(files) + '\\repro'
-                    
-            if fil.endswith('.tif') and 'MOD' in fil:
-                
-                inputSST.append(folders + '\\' + fil)
-                
-                outputSST.append(outputfolder[counter] + '\\SST\\' + os.path.splitext(fil)[0] + '_cut.tif')
-                
-                counter = counter + 1
+        #print tet
+    
+        folder_TET = sourTET + '\\' + tet + '\\' + 'repro'
+    
+        for file_TET in os.listdir(folder_TET):
+        
+            if file_TET.endswith('.tif') and ('LWIR' in file_TET or 'MWIR' in file_TET):
+            
+                inputTET.append(os.path.join(folder_TET, file_TET))
+            
+                name, postfix  = os.path.splitext(file_TET)
+                        
+                outputTET.append(os.path.join(outputfolder[counter]+'\\'+'TET', name+'_cut.tif'))
+            
+        counter = counter + 1
+    
+    
+    
+emissivity = r'E:\Penghua\data\emissivity_map' + '\\emissivity_map_' + Location[0] + r'\merged\repro'
+
+inputEmi = []
+
+outputEmi = []
+
+for emi in os.listdir(emissivity):
+    
+    if emi.endswith('.tif') and 'band' in emi:
+        
+        inputEmi.append(os.path.join(emissivity, emi))
+        
+for folder in outputfolder:
+
+    abspath, name = os.path.split(inputEmi[0])
+    
+    emi_name, postfix = os.path.splitext(name)
+        
+    outputEmi.append(os.path.join(folder+'\\'+'emivissivity_map', emi_name + '_cut.tif'))
+
+    abspath, name = os.path.split(inputEmi[1])
+    
+    emi_name, postfix = os.path.splitext(name)
+        
+    outputEmi.append(os.path.join(folder+'\\'+'emivissivity_map', emi_name + '_cut.tif'))
+
+
+DEM = r'E:\Penghua\data\DEM' + '\\' + Location[0] + '\\repro' #'\\merged\\repro'
+
+inputDEM =  DEM + '\\astgtm2_DEM_combined_repro.tif'
+
+outputDEM = []
+
+for folders in outputfolder:
+    
+    folder, name = os.path.split(inputDEM)
+    
+    dem_name, postfix = os.path.splitext(name)
+    
+    outputDEM.append(os.path.join(folders+'\\'+'DEM', dem_name + '_cut.tif'))
+
+#sst = r'E:\Penghua\data\LST' + '\\' + Location[4]
+#
+#inputSST = []
+#
+#outputSST = []
+#
+#os.chdir(sst)
+#
+#counter = 0
+#
+#for files in os.listdir(sst):
+#    
+#    if os.path.isdir(files) == True:
+#        
+#        folders = os.path.abspath(files) + '\\repro'
+#                    
+#            if fil.endswith('.tif') and 'MOD' in fil:
+#                
+#                inputSST.append(folders + '\\' + fil)
+#                
+#                outputSST.append(outputfolder[counter] + '\\SST\\' + os.path.splitext(fil)[0] + '_cut.tif')
+#                
+#                counter = counter + 1
 
 
 
@@ -239,17 +238,17 @@ counter = 0
 
 for shapefile in inputShapefile:
     
-#    cut(shapefile, inputWV[counter], outputWV[counter])
-#    
-#    cut(shapefile, inputTET[2*counter], outputTET[2*counter])
-#    
-#    cut(shapefile, inputTET[2*counter+1], outputTET[2*counter+1])
-#    
-#    cut(shapefile, inputEmi[0], outputEmi[2*counter])
-#    
-#    cut(shapefile, inputEmi[1], outputEmi[2*counter+1])
-#
-#    cut(shapefile, inputDEM, outputDEM[counter], 0)
+    cut(shapefile, inputWV[counter], outputWV[counter])
+    
+    cut(shapefile, inputTET[2*counter], outputTET[2*counter])
+    
+    cut(shapefile, inputTET[2*counter+1], outputTET[2*counter+1])
+    
+    cut(shapefile, inputEmi[0], outputEmi[2*counter])
+    
+    cut(shapefile, inputEmi[1], outputEmi[2*counter+1])
+
+    cut(shapefile, inputDEM, outputDEM[counter], 0)
     
 #    cut(shapefile, inputSST[counter], outputSST[counter])
     

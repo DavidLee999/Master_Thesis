@@ -25,34 +25,34 @@ def alpha_channel(inFileLoc, outFileLoc, nodata=-9999):
     
 
    
-#sourfile = r'E:\Penghua\data\georeferenced_TET\Etna\new_selected_data'
-#
-#outputfile = r'E:\Penghua\data\georeferenced_TET\Etna\new_selected_data\alpha_channel'
-#
-#if os.path.exists(outputfile) == False:
-#    
-#    os.makedirs(outputfile)
-#
-#os.chdir(sourfile)
-#
-#fold_name = 'repro'
-#
-#id = 'MWIR'
-#
-#for folds in os.listdir(sourfile):
-#    
-#    if 'TET' in folds:
-#    
-#        reprojected_fold = os.path.abspath(folds) + '\\' + fold_name
-#                                      
-#        for files in os.listdir(reprojected_fold):
-#        
-#            if files.endswith('.tif') and id in files:
-#            
-#                inFileLoc = os.path.join(reprojected_fold, files)
-#            
-#                file_name, postfix = os.path.splitext(files)
-#            
-#                outFileLoc = outputfile + '\\' + file_name + '_alpha.tif'
-#            
-#                alpha_channel(inFileLoc, outFileLoc)
+sourfile = r'E:\Penghua\data\georeferenced_TET\Etna\new_selected_data2'
+
+outputfile = r'E:\Penghua\data\georeferenced_TET\Etna\new_selected_data2\alpha_channel'
+
+if os.path.exists(outputfile) == False:
+    
+    os.makedirs(outputfile)
+
+os.chdir(sourfile)
+
+fold_name = 'repro'
+
+id = 'MWIR'
+
+for folds in os.listdir(sourfile):
+    
+    if 'TET' in folds:
+    
+        reprojected_fold = os.path.abspath(folds) + '\\' + fold_name
+                                      
+        for files in os.listdir(reprojected_fold):
+        
+            if files.endswith('.tif') and id in files:
+            
+                inFileLoc = os.path.join(reprojected_fold, files)
+            
+                file_name, postfix = os.path.splitext(files)
+            
+                outFileLoc = outputfile + '\\' + file_name + '_alpha.tif'
+            
+                alpha_channel(inFileLoc, outFileLoc)

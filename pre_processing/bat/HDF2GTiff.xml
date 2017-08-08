@@ -4,7 +4,7 @@
     <operator>Read</operator>
     <sources/>
     <parameters class="com.bc.ceres.binding.dom.XppDomElement">
-      <file>E:\Penghua\data\corresponding_water_vapor\Portugal\2016.08.13\MYD07_L2.A2016226.1410.006.2016231142248.hdf</file>
+      <file>E:\Penghua\data\corresponding_water_vapor\Lybien-1\new_selected_data\2017.04.29\MYD05_L2.A2017119.0025.006.2017120031427.hdf</file>
     </parameters>
   </node>
   <node id="Subset">
@@ -13,8 +13,8 @@
       <sourceProduct refid="Read"/>
     </sources>
     <parameters class="com.bc.ceres.binding.dom.XppDomElement">
-      <sourceBands>Water_Vapor</sourceBands>
-      <region>0,0,270,406</region>
+      <sourceBands>Water_Vapor_Infrared</sourceBands>
+      <region>0,0,270,408</region>
       <geoRegion/>
       <subSamplingX>1</subSamplingX>
       <subSamplingY>1</subSamplingY>
@@ -30,7 +30,7 @@
     </sources>
     <parameters class="com.bc.ceres.binding.dom.XppDomElement">
       <wktFile/>
-      <crs>EPSG:32629</crs>
+      <crs>EPSG:32634</crs>
       <resampling>Nearest</resampling>
       <referencePixelX/>
       <referencePixelY/>
@@ -44,7 +44,7 @@
       <tileSizeX/>
       <tileSizeY/>
       <orthorectify>false</orthorectify>
-      <elevationModelName/>
+      <elevationModelName>-9999</elevationModelName>
       <noDataValue/>
       <includeTiePointGrids>true</includeTiePointGrids>
       <addDeltaBands>false</addDeltaBands>
@@ -56,20 +56,20 @@
       <sourceProduct refid="Reproject"/>
     </sources>
     <parameters class="com.bc.ceres.binding.dom.XppDomElement">
-      <file>E:\Penghua\data\corresponding_water_vapor\Portugal\2016.08.13\MYD07_L2.A2016226.1410.006.2016231142248.tif</file>
-      <formatName>GeoTIFF</formatName>
+      <file>E:\Penghua\data\corresponding_water_vapor\Lybien-1\new_selected_data\2017.04.29\MYD05_L2.A2017119.0025.006.2017120031427.tif</file>
+      <formatName>GeoTIFF-BigTIFF</formatName>
     </parameters>
   </node>
   <applicationData id="Presentation">
     <Description/>
     <node id="Read">
-            <displayPosition x="19.0" y="132.0"/>
+            <displayPosition x="37.0" y="134.0"/>
     </node>
     <node id="Subset">
-      <displayPosition x="175.0" y="151.0"/>
+      <displayPosition x="174.0" y="134.0"/>
     </node>
     <node id="Reproject">
-      <displayPosition x="291.0" y="168.0"/>
+      <displayPosition x="322.0" y="135.0"/>
     </node>
     <node id="Write">
             <displayPosition x="455.0" y="135.0"/>

@@ -42,7 +42,11 @@ for files in os.listdir(sourFolder):
     
     for img in os.listdir(TET_folder):
         
-        if 'MWIR' in img:
+        if 'cobined' in img:
+            
+            break
+        
+        elif 'MWIR' in img:
             
             resultImgName = img.split('MWIR')[0] + 'cobined_MIR_TIR.tif'
             
@@ -50,11 +54,13 @@ for files in os.listdir(sourFolder):
             
             inputimg.insert(0, os.path.join(TET_folder, img))
             
-        else:
+        elif 'LWIR' in img:
             
             inputimg.append(os.path.join(TET_folder, img))
             
-    band_merge(inputimg, outputimg)
+    if inputimg != []:
+        
+        band_merge(inputimg, outputimg)
        
     inputimg = []  
 

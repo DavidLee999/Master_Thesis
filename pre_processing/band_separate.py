@@ -33,33 +33,34 @@ location = ['Etna', 'Demmin', 'Lascar', 'Lybien-1', 'Lybien-2', 'Portugal']
 
 UTM_zone = {'Etna':'EPSG:32633', 'Demmin':'EPSG:32633', 'Lascar':'EPSG:32719', 'Lybien-1':'EPSG:32634', 'Lybien-2':'EPSG:32633', 'Portugal':'EPSG:32629'}
 
-sourFile = r'E:\Penghua\data' + '\\' + location[0]
+#sourFile = r'E:\Penghua\data' + '\\' + location[0]
+#
+#os.chdir(sourFile)
 
-os.chdir(sourFile)
+#for files in os.listdir(sourFile):
+#    
+#    if '0' in files:
+#        
+#        tet_files = os.path.join( os.path.abspath(files), 'TET' )
+#        
+#        os.chdir(tet_files)
+#    
+#        for res in os.listdir( tet_files ):
+#            
+#            if os.path.isdir(os.path.abspath(res)) == True and 'ac_results' in res:
+#                
+#                for img in os.listdir(res):
+#                
+#                    if img.endswith('.tif') and 'tem' in img:
+#                        
+#                        inFileLoc = os.path.join(os.path.abspath(res), img)
+#                        
+#                        abspath, postfix = os.path.splitext(inFileLoc)
+#                        
+#                        outFileLoc1 = abspath + '_MIR_only.tif'
+#                        
+#                        outFileLoc2 = abspath + '_TIR_only.tif'
 
-for files in os.listdir(sourFile):
-    
-    if '0' in files:
-        
-        tet_files = os.path.join( os.path.abspath(files), 'TET' )
-        
-        os.chdir(tet_files)
-    
-        for res in os.listdir( tet_files ):
-            
-            if os.path.isdir(os.path.abspath(res)) == True and 'ac_results' in res:
-                
-                for img in os.listdir(res):
-                
-                    if img.endswith('.tif') and 'tem' in img:
-                        
-                        inFileLoc = os.path.join(os.path.abspath(res), img)
-                        
-                        abspath, postfix = os.path.splitext(inFileLoc)
-                        
-                        outFileLoc1 = abspath + '_MIR_only.tif'
-                        
-                        outFileLoc2 = abspath + '_TIR_only.tif'
                         
 #                        band_separate(inFileLoc, outFileLoc1, 1)
 #                        
@@ -84,29 +85,29 @@ for files in os.listdir(sourFile):
 #                        band_separate(inFileLoc, outFileLoc2, 2)
                 
     
-    os.chdir(sourFile)
+#    os.chdir(sourFile)
                         
-#sourFile = r'E:\Penghua\data\corresponding_water_vapor' + '\\' + location[0] + '\\new_selected_data'
-#
-#name = '_water_vapor_infrared.tif'
-#
-#os.chdir(sourFile)
-#
-#for files in os.listdir(sourFile):
-#    
-#    if os.path.isdir(files) == True:
-#        
-#        for fil in os.listdir(files):
-#            
-#            if fil.endswith('.tif') and 'M' in fil:
-#                
-#                inFileLoc = os.path.abspath(files) + '\\' + fil
-#                
-#                abspath, postfix = os.path.splitext(inFileLoc)
-#                
-#                outFileLoc = abspath + name
-#                #print inFileLoc
-#                band_separate(inFileLoc, outFileLoc, 1)
+sourFile = r'E:\Penghua\data\corresponding_water_vapor' + '\\' + location[3] + '\\new_selected_data'
+
+name = '_water_vapor_infrared.tif'
+
+os.chdir(sourFile)
+
+for files in os.listdir(sourFile):
+    
+    if os.path.isdir(files) == True:
+        
+        for fil in os.listdir(files):
+            
+            if fil.endswith('.tif') and 'M' in fil:
+                
+                inFileLoc = os.path.abspath(files) + '\\' + fil
+                
+                abspath, postfix = os.path.splitext(inFileLoc)
+                
+                outFileLoc = abspath + name
+#                print inFileLoc
+                band_separate(inFileLoc, outFileLoc, 1)
 
 #name = ['_band2_8.6.tif', '_band3_9.1.tif']
 #
