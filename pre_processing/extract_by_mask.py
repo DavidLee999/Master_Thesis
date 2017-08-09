@@ -26,7 +26,7 @@ def cut (inputshapefile, inputimg, outputimg, nodata=-9999):
 
 Location = ['Etna', 'Demmin', 'Lascar', 'Lybien-1', 'Lybien-2', 'Portugal']
 
-outputFile = r'E:\Penghua\data' + '\\' + Location[0]
+outputFile = r'E:\Penghua\data' + '\\' + Location[4]
 
 #shapefile = r'E:\Penghua\data\Etna\shapefiles\rect2.shp'
 
@@ -83,7 +83,7 @@ outputFile = r'E:\Penghua\data' + '\\' + Location[0]
 outputfolder = []
 
    
-sourFile = r'E:\Penghua\data\georeferenced_TET' + '\\' + Location[0] + r'\new_selected_data2\alpha_channel'
+sourFile = r'E:\Penghua\data\georeferenced_TET' + '\\' + Location[4] + r'\new_selected_data\alpha_channel'
 
 inputShapefile = []
 
@@ -94,7 +94,7 @@ for shp in os.listdir(sourFile):
         inputShapefile.append(os.path.join(sourFile, shp))
 
 
-sourWV = r'E:\Penghua\data\corresponding_water_vapor' + '\\' + Location[0] + '\\new_selected_data2'
+sourWV = r'E:\Penghua\data\corresponding_water_vapor' + '\\' + Location[4] + '\\new_selected_data'
 
 inputWV = []
 
@@ -137,7 +137,7 @@ for WV in os.listdir(sourWV):
     counter = counter + 1
     
     
-sourTET = r'E:\Penghua\data\georeferenced_TET' + '\\' + Location[0] + '\\new_selected_data2'
+sourTET = r'E:\Penghua\data\georeferenced_TET' + '\\' + Location[4] + '\\new_selected_data'
 
 inputTET = []
 
@@ -167,7 +167,7 @@ for tet in os.listdir(sourTET):
     
     
     
-emissivity = r'E:\Penghua\data\emissivity_map' + '\\emissivity_map_' + Location[0] + r'\merged\repro'
+emissivity = r'E:\Penghua\data\emissivity_map' + '\\emissivity_map_' + Location[4] + r'\merged\repro'
 
 inputEmi = []
 
@@ -194,9 +194,9 @@ for folder in outputfolder:
     outputEmi.append(os.path.join(folder+'\\'+'emivissivity_map', emi_name + '_cut.tif'))
 
 
-DEM = r'E:\Penghua\data\DEM' + '\\' + Location[0] + '\\repro' #'\\merged\\repro'
+DEM = r'E:\Penghua\data\DEM' + '\\' + Location[4] + '\\merged\\repro'
 
-inputDEM =  DEM + '\\astgtm2_DEM_combined_repro.tif'
+inputDEM =  DEM + '\\astgtm2_DEM_repro.tif'
 
 outputDEM = []
 

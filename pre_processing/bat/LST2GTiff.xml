@@ -4,7 +4,7 @@
     <operator>Read</operator>
     <sources/>
     <parameters class="com.bc.ceres.binding.dom.XppDomElement">
-      <file>E:\Penghua\data\LST\Lybien-2\2017.01.31\0131\MOD11A1.A2017031.h19v06.041.2017032105614.hdf</file>
+      <file>E:\Penghua\data\LST\Lybien-2\new_selected_data\2016.04.22\MOD11A1.A2016112.h19v06.041.2016113091432.hdf</file>
     </parameters>
   </node>
   <node id="Subset">
@@ -45,7 +45,7 @@
       <tileSizeY/>
       <orthorectify>false</orthorectify>
       <elevationModelName/>
-      <noDataValue/>
+      <noDataValue>-9999.0</noDataValue>
       <includeTiePointGrids>true</includeTiePointGrids>
       <addDeltaBands>false</addDeltaBands>
     </parameters>
@@ -56,7 +56,7 @@
       <sourceProduct refid="Reproject"/>
     </sources>
     <parameters class="com.bc.ceres.binding.dom.XppDomElement">
-      <file>E:\Penghua\data\LST\Lybien-2\2017.01.31\0131\MOD11A1.A2017031.h19v06.041.2017032105614.tif</file>
+      <file>E:\Penghua\data\LST\Lybien-2\new_selected_data\2016.04.22\MOD11A1.A2016112.h19v06.041.2016113091432.tif</file>
       <formatName>GeoTIFF-BigTIFF</formatName>
     </parameters>
   </node>
@@ -66,10 +66,10 @@
             <displayPosition x="37.0" y="134.0"/>
     </node>
     <node id="Subset">
-      <displayPosition x="193.0" y="139.0"/>
+      <displayPosition x="183.0" y="134.0"/>
     </node>
     <node id="Reproject">
-      <displayPosition x="320.0" y="141.0"/>
+      <displayPosition x="319.0" y="134.0"/>
     </node>
     <node id="Write">
             <displayPosition x="455.0" y="135.0"/>

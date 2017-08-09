@@ -76,7 +76,7 @@ UTM_zone = {'Etna':'EPSG:32633', 'Demmin':'EPSG:32633', 'Lascar':'EPSG:32719', '
                 
 #reproject TET images to UTM coord. system
 
-sourFile = r'E:\Penghua\data\georeferenced_TET' + '\\' + location[3] + '\\new_selected_data'
+sourFile = r'E:\Penghua\data\georeferenced_TET' + '\\' + location[4] + '\\new_selected_data'
 
 os.chdir(sourFile)
 
@@ -90,12 +90,12 @@ for files in os.listdir(sourFile):
                 
                 inFileLoc = os.path.abspath(files) + '\\' + fil
 #                print inFileLoc
-                wgs2utm(inFileLoc, UTM_zone[location[3]], True, [150.0,150.0])
+                wgs2utm(inFileLoc, UTM_zone[location[4]], True, [150.0,150.0])
 
 
 #reproject water vapor data to UTM coord. system
 
-sourFile = r'E:\Penghua\data\corresponding_water_vapor' + '\\' + location[3] + '\\new_selected_data'
+sourFile = r'E:\Penghua\data\corresponding_water_vapor' + '\\' + location[4] + '\\new_selected_data'
 
 os.chdir(sourFile)
 
@@ -109,7 +109,7 @@ for files in os.listdir(sourFile):
                 
                 inFileLoc = os.path.abspath(files) + '\\' + fil
 #                print inFileLoc
-                wgs2utm(inFileLoc, UTM_zone[location[3]], True, [150.0,150.0])
+                wgs2utm(inFileLoc, UTM_zone[location[4]], True, [150.0,150.0])
 
 
 #reproject DEM to UTM coord. system

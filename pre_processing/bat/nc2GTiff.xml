@@ -4,7 +4,7 @@
     <operator>Read</operator>
     <sources/>
     <parameters class="com.bc.ceres.binding.dom.XppDomElement">
-      <file>E:\Penghua\data\SST\Demmin\2017.03.24\A2017083004000.L2_LAC_SST.nc</file>
+      <file>E:\Penghua\data\SST\Etna\new_selected_data2\2017.06.19\A2017170005000.L2_LAC_SST4.nc</file>
     </parameters>
   </node>
   <node id="Subset">
@@ -13,7 +13,7 @@
       <sourceProduct refid="Read"/>
     </sources>
     <parameters class="com.bc.ceres.binding.dom.XppDomElement">
-      <sourceBands>sst</sourceBands>
+      <sourceBands>sst4</sourceBands>
       <region>0,0,1354,2030</region>
       <geoRegion/>
       <subSamplingX>1</subSamplingX>
@@ -45,7 +45,7 @@
       <tileSizeY/>
       <orthorectify>false</orthorectify>
       <elevationModelName/>
-      <noDataValue/>
+      <noDataValue>-9999.0</noDataValue>
       <includeTiePointGrids>true</includeTiePointGrids>
       <addDeltaBands>false</addDeltaBands>
     </parameters>
@@ -56,8 +56,8 @@
       <sourceProduct refid="Reproject"/>
     </sources>
     <parameters class="com.bc.ceres.binding.dom.XppDomElement">
-      <file>E:\Penghua\data\SST\Demmin\2017.03.24\A2017083004000.L2_LAC_SST_repro.tif</file>
-      <formatName>GeoTIFF</formatName>
+      <file>E:\Penghua\data\SST\Etna\new_selected_data2\2017.06.19\A2017170005000.L2_LAC_SST.tif</file>
+      <formatName>GeoTIFF-BigTIFF</formatName>
     </parameters>
   </node>
   <applicationData id="Presentation">
@@ -66,10 +66,10 @@
             <displayPosition x="37.0" y="134.0"/>
     </node>
     <node id="Subset">
-      <displayPosition x="166.0" y="137.0"/>
+      <displayPosition x="184.0" y="135.0"/>
     </node>
     <node id="Reproject">
-      <displayPosition x="300.0" y="139.0"/>
+      <displayPosition x="322.0" y="136.0"/>
     </node>
     <node id="Write">
             <displayPosition x="455.0" y="135.0"/>
