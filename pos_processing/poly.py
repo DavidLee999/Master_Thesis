@@ -74,7 +74,22 @@ def raster2shp( rasterfn, bandNum ):
     dst_layer.CreateField( fd )
     dst_field = 0
     
-    gdal.Polygonize( band, None, dst_layer, dst_field, [], callback = None)
+    gdal.Polygonize(band, None, dst_layer, dst_field, [], callback = None)
+    
+    featNum = dst_layer.GetFeatureCount()
+    
+    for i in range(featNum):
+        
+        feat = dst_layer.GetFeature(i)
+        
+        Fid = feat.GetFID()
+        
+        feat.SetField('DN', Fid)
+        
+        dst_layer.SetFeature(feat)
+    
+    
+    
 
     
 #    lyr = dst_ds.GetLayer()

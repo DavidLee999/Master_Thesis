@@ -227,8 +227,8 @@ tet_radiance = r'E:\Penghua\data\Etna\2014.06.22\TET\FBI_TET1_20140622T232052_20
 #    
 #    os.mkdir(os.path.join(os.path.split(shpfile)[0], 'temp'))
    
-#sta = main(shpfile, tet_radiance)
-l = centerPos(0, shpfile, tet_radiance)
+sta = main(shpfile, rasterfile)
+#l = centerPos(0, shpfile, tet_radiance)
 
 #shutil.rmtree(os.path.join(os.path.split(shpfile)[0], 'temp'))
 

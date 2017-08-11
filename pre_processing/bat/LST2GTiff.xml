@@ -4,7 +4,7 @@
     <operator>Read</operator>
     <sources/>
     <parameters class="com.bc.ceres.binding.dom.XppDomElement">
-      <file>E:\Penghua\data\LST\Lybien-2\new_selected_data\2016.04.22\MOD11A1.A2016112.h19v06.041.2016113091432.hdf</file>
+      <file>E:\Penghua\data\LST\Lybien-2\new_selected_data\2016.09.29\MOD11A1.A2016272.h19v06.041.2016273092418.hdf</file>
     </parameters>
   </node>
   <node id="Subset">
@@ -56,7 +56,7 @@
       <sourceProduct refid="Reproject"/>
     </sources>
     <parameters class="com.bc.ceres.binding.dom.XppDomElement">
-      <file>E:\Penghua\data\LST\Lybien-2\new_selected_data\2016.04.22\MOD11A1.A2016112.h19v06.041.2016113091432.tif</file>
+      <file>E:\Penghua\data\LST\Lybien-2\new_selected_data\2016.09.29\MOD11A1.A2016272.h19v06.041.2016273092418.tif</file>
       <formatName>GeoTIFF-BigTIFF</formatName>
     </parameters>
   </node>

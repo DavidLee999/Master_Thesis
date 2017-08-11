@@ -24,7 +24,7 @@ def wgs2utm(inFileLoc, zone, resample=False, pixel_size = None, nodata_dst = -99
     
     img_name, postfix = os.path.splitext(img)
     
-    outFileLoc = resultImgPath + '\\' + img_name + '_repro' + postfix
+    outFileLoc = resultImgPath + '\\' + img_name + '_LST_repro' + postfix
 
     
     L = ['gdalwarp']
@@ -76,40 +76,40 @@ UTM_zone = {'Etna':'EPSG:32633', 'Demmin':'EPSG:32633', 'Lascar':'EPSG:32719', '
                 
 #reproject TET images to UTM coord. system
 
-sourFile = r'E:\Penghua\data\georeferenced_TET' + '\\' + location[4] + '\\new_selected_data'
-
-os.chdir(sourFile)
-
-for files in os.listdir(sourFile):
-    
-    if os.path.isdir(files) == True:
-        
-        for fil in os.listdir(files):
-            
-            if fil.endswith('.tif') and 'near' in fil :
-                
-                inFileLoc = os.path.abspath(files) + '\\' + fil
-#                print inFileLoc
-                wgs2utm(inFileLoc, UTM_zone[location[4]], True, [150.0,150.0])
+#sourFile = r'E:\Penghua\data\georeferenced_TET' + '\\' + location[4] + '\\new_selected_data'
+#
+#os.chdir(sourFile)
+#
+#for files in os.listdir(sourFile):
+#    
+#    if os.path.isdir(files) == True:
+#        
+#        for fil in os.listdir(files):
+#            
+#            if fil.endswith('.tif') and 'near' in fil :
+#                
+#                inFileLoc = os.path.abspath(files) + '\\' + fil
+##                print inFileLoc
+#                wgs2utm(inFileLoc, UTM_zone[location[4]], True, [150.0,150.0])
 
 
 #reproject water vapor data to UTM coord. system
 
-sourFile = r'E:\Penghua\data\corresponding_water_vapor' + '\\' + location[4] + '\\new_selected_data'
-
-os.chdir(sourFile)
-
-for files in os.listdir(sourFile):
-    
-    if os.path.isdir(files) == True:
-        
-        for fil in os.listdir(files):
-            
-            if fil.endswith('.tif') and 'water' in fil:
-                
-                inFileLoc = os.path.abspath(files) + '\\' + fil
-#                print inFileLoc
-                wgs2utm(inFileLoc, UTM_zone[location[4]], True, [150.0,150.0])
+#sourFile = r'E:\Penghua\data\corresponding_water_vapor' + '\\' + location[4] + '\\new_selected_data'
+#
+#os.chdir(sourFile)
+#
+#for files in os.listdir(sourFile):
+#    
+#    if os.path.isdir(files) == True:
+#        
+#        for fil in os.listdir(files):
+#            
+#            if fil.endswith('.tif') and 'water' in fil:
+#                
+#                inFileLoc = os.path.abspath(files) + '\\' + fil
+##                print inFileLoc
+#                wgs2utm(inFileLoc, UTM_zone[location[4]], True, [150.0,150.0])
 
 
 #reproject DEM to UTM coord. system
@@ -144,18 +144,18 @@ for files in os.listdir(sourFile):
 #            wgs2utm(inFileLoc, UTM_zone[location[5]], True, [150,150])
 
 
-#sourFile = r'E:\Penghua\data\SST' + '\\' + location[1]
-#
-#os.chdir(sourFile)
-#
-#for files in os.listdir(sourFile):
-#    
-#    if os.path.isdir(files) == True:
-#        
-#        for fil in os.listdir(files):
-#            
-#            if fil.endswith('.tif') and 'UTM' in fil:
-#                
-#                inFileLoc = os.path.abspath(files) + '\\' + fil
-#                                           
-#                wgs2utm(inFileLoc, UTM_zone[location[1]], True, [150,150])
+sourFile = r'E:\Penghua\data\LST' + '\\' + location[4] + r'\new_selected_data'
+
+os.chdir(sourFile)
+
+for files in os.listdir(sourFile):
+    
+    if os.path.isdir(files) == True:
+        
+        for fil in os.listdir(files):
+            
+            if fil.endswith('.tif') and 'MOD' in fil:
+                
+                inFileLoc = os.path.abspath(files) + '\\' + fil
+                                           
+                wgs2utm(inFileLoc, UTM_zone[location[4]], True, [150.0,150.0])
