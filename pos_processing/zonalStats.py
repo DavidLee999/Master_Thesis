@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 import os, shutil
 import xlrd, xlwt
 
-def zonal_stats(FID, input_zone_polygon, input_value_raster):
+def zonal_stats(FID, input_zone_polygon, input_value_raster, band, noDataValue):
     
     # Open data
     raster = gdal.Open(input_value_raster)
@@ -103,23 +103,22 @@ def zonal_stats(FID, input_zone_polygon, input_value_raster):
         
 
     # Read raster as arrays
-    banddataraster = raster.GetRasterBand(1)
-    banddataraster.SetNoDataValue( -9999 )
+    banddataraster = raster.GetRasterBand(band)
+    # banddataraster.SetNoDataValue( -9999 )
     dataraster = banddataraster.ReadAsArray(xoff, yoff, xcount, ycount).astype(numpy.float)
-    logic = numpy.where( dataraster == -9999 ) # no_data value
-              
+    logic = numpy.where( dataraster == noDataValue) # no_data value
+          
     bandmask = target_ds.GetRasterBand(1)
     datamask = bandmask.ReadAsArray(0, 0, xcount, ycount).astype(numpy.float)
     datamask[logic] = 0.0
             
     # Mask zone of raster
     zoneraster = numpy.ma.masked_array(dataraster, numpy.logical_not(datamask))
-
+    
     # Calculate statistics of zonal raster
     return numpy.mean(zoneraster)
 
-
-def loop_zonal_stats(input_zone_polygon, input_value_raster):
+def loop_zonal_stats(input_zone_polygon, input_value_raster, band, noDataValue):
 
     shp = ogr.Open(input_zone_polygon)
     lyr = shp.GetLayer()
@@ -128,12 +127,12 @@ def loop_zonal_stats(input_zone_polygon, input_value_raster):
 
     for FID in featList:
         #feat = lyr.GetFeature(FID)
-        meanValue = zonal_stats(FID, input_zone_polygon, input_value_raster)
+        meanValue = zonal_stats(FID, input_zone_polygon, input_value_raster, band, noDataValue)
         statDict[FID] = meanValue
     return statDict
 
-def main(input_zone_polygon, input_value_raster):
-    return loop_zonal_stats(input_zone_polygon, input_value_raster)
+def main(input_zone_polygon, input_value_raster, band, noDataValue):
+    return loop_zonal_stats(input_zone_polygon, input_value_raster, band, noDataValue)
 
 def centerPos( FID, input_zone_polygon, input_value_raster ):
     
@@ -217,9 +216,9 @@ def centerPos( FID, input_zone_polygon, input_value_raster ):
 #    print 'Returns for each feature a dictionary item (FID) with the statistical values in the following order: Average, Mean, Medain, Standard Deviation, Variance'
 #    print main( sys.argv[1], sys.argv[2] )
 
-shpfile = r'E:\Penghua\data\Etna\2014.06.22\TET\ac_results_1.05\Mask\sub_pixel_tem.shp'
+shpfile = r'E:\Penghua\data\Etna\2014.06.22\TET\ac_results_1.05_new\Mask\fire_mask.shp'
 
-rasterfile = r'E:\Penghua\data\Etna\2014.06.22\TET\ac_results_1.05\FBI_TET1_20140622T232052_20140622T232155_L2_002589_WHM_cobined_MIR_TIR_tem.tif'
+rasterfile = r'E:\Penghua\data\Etna\2014.06.22\TET\ac_results_1.05_new\FBI_TET1_20140622T232052_20140622T232155_L2_002589_WHM_cobined_MIR_TIR_tem.tif'
 
 tet_radiance = r'E:\Penghua\data\Etna\2014.06.22\TET\FBI_TET1_20140622T232052_20140622T232155_L2_002589_WHM_MWIR_near_repro_cut.tif'
 
@@ -227,7 +226,7 @@ tet_radiance = r'E:\Penghua\data\Etna\2014.06.22\TET\FBI_TET1_20140622T232052_20
 #    
 #    os.mkdir(os.path.join(os.path.split(shpfile)[0], 'temp'))
    
-sta = main(shpfile, rasterfile)
+sta = main(shpfile, tet_radiance, 1, -9999)
 #l = centerPos(0, shpfile, tet_radiance)
 
 #shutil.rmtree(os.path.join(os.path.split(shpfile)[0], 'temp'))

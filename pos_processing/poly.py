@@ -39,8 +39,8 @@ def array2raster( newRasterfn, rasterfn, array ):
     outband.FlushCache()
     
 def createMaskArray( array, MaskValue ):
-    logicL = np.where( array >= MaskValue )
-    logicS = np.where( array < MaskValue )
+    logicL = np.where( array > MaskValue )
+    logicS = np.where( array <= MaskValue )
     
     array[logicL] = 1
     array[logicS] = 0
@@ -61,7 +61,7 @@ def raster2shp( rasterfn, bandNum ):
     band = raster.GetRasterBand( bandNum )
     
     drv = ogr.GetDriverByName('ESRI Shapefile')
-    dst_layername = 'sub_pixel_tem'
+    dst_layername = 'fire_mask'
     dst_ds = drv.CreateDataSource( dst_layername + '.shp')
     
     srs = osr.SpatialReference()
@@ -97,7 +97,7 @@ def raster2shp( rasterfn, bandNum ):
 #    lyr.DeleteFeature(lyr.GetFeatureCount() - 1)
 
 
-src_ds = r'E:\Penghua\data\Etna\2014.06.22\TET\ac_results_1.05\FBI_TET1_20140622T232052_20140622T232155_L2_002589_WHM_cobined_MIR_TIR_tem.tif'
+src_ds = r'E:\Penghua\data\Etna\2014.06.22\TET\ac_results_1.05_new\FBI_TET1_20140622T232052_20140622T232155_L2_002589_WHM_cobined_MIR_TIR_tem.tif'
 
 outputfolder = os.path.join( os.path.split(src_ds)[0], 'Mask' )
 
@@ -106,10 +106,10 @@ if os.path.exists( outputfolder ) == False:
     
 os.chdir( outputfolder )
 
-newRaster = os.path.join( outputfolder, 'sub_pixel_tem.tif' )
+newRaster = os.path.join( outputfolder, 'fire_mask.tif' )
 
-array = raster2array( src_ds, 4 )
-array = createMaskArray( array, 1 )
+array = raster2array( src_ds, 3 )
+array = createMaskArray( array, 0 )
 array2raster( newRaster, src_ds, array)
 
 raster2shp( newRaster, 1)
