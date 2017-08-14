@@ -115,6 +115,7 @@ def clusterTem(FID, input_zone_polygon, input_value_raster, bg_tem, NoDataValue 
     logic = numpy.where( dataraster == NoDataValue ) # no_data value
     
     MIR_tem_band = raster.GetRasterBand(1)
+    TIR_tem_band = raster.GetRasterBand(2)
     sub_pix_tem_band = raster.GetRasterBand(4)
     sub_pix_area_band = raster.GetRasterBand(5)
 
@@ -131,15 +132,30 @@ def clusterTem(FID, input_zone_polygon, input_value_raster, bg_tem, NoDataValue 
     datamask[logic] = 0.0
     shift = numpy.where(datamask == 1)
     
-    for i in range(shift[0].shape[0]):
-        
+    for i in range(1): #in range(shift[0].shape[0]):
+
         loc = [xoff + shift[0][i], yoff + shift[1][i]]
         
         offset = [int(loc[0] - 10), int(loc[1] - 10)]
         
-        bg_mask = banddataraster.ReadAsArray(offset[0], offset[1], 5, 5)
+        bg_mask = banddataraster.ReadAsArray(offset[0], offset[1], 22, 22)
+        bg_mir = MIR_tem_band.ReadAsArray(offset[0], offset[1], 22, 22)
+        bg_tir = TIR_tem_band.ReadAsArray(offset[0], offset[1], 22, 22)
         
-        print bg_mask
+        logic1 = numpy.where(bg_tir > 265)
+        logic2 = numpy.where(bg_mir - bg_tir < 30)
+        
+        bg_area = bg_tir[logic1 and logic2]
+        
+        bg_mean = numpy.mean(bg_area)
+        bg_stddev = numpy.std(bg_area)
+        
+        bg_tem = bg_mean - bg_stddev
+    
+    sub_tem = sub_pix_tem_array[shift[0][0]][shift[1][0]]
+    
+    print sub_tem
+    print sub_pix_tem_array
     
     # Mask zone of raster
     zoneraster = numpy.ma.masked_array(dataraster, numpy.logical_not(datamask))
