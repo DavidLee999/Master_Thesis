@@ -5,7 +5,7 @@ Created on Fri Aug 11 10:32:06 2017
 @author: li_pe
 """
 
-import gdal, ogr, osr, numpy
+import gdal, ogr, osr, numpy, math
 import sys
 import matplotlib.pyplot as plt
 import os, shutil
@@ -109,7 +109,7 @@ def clusterTem(FID, input_zone_polygon, input_value_raster, bg_tem, NoDataValue 
         
 
     # Read raster as arrays
-    banddataraster = raster.GetRasterBand(1)
+    banddataraster = raster.GetRasterBand(4)
     # banddataraster.SetNoDataValue( -9999 )
     dataraster = banddataraster.ReadAsArray(xoff, yoff, xcount, ycount).astype(numpy.float)
     logic = numpy.where( dataraster == NoDataValue ) # no_data value
@@ -130,32 +130,52 @@ def clusterTem(FID, input_zone_polygon, input_value_raster, bg_tem, NoDataValue 
     bandmask = target_ds.GetRasterBand(1)
     datamask = bandmask.ReadAsArray(0, 0, xcount, ycount).astype(numpy.float)
     datamask[logic] = 0.0
-    shift = numpy.where(datamask == 1)
+            
+    zone = numpy.ma.masked_array(sub_pix_tem_array, numpy.logical_not(datamask))
     
-    for i in range(1): #in range(shift[0].shape[0]):
-
-        loc = [xoff + shift[0][i], yoff + shift[1][i]]
-        
-        offset = [int(loc[0] - 10), int(loc[1] - 10)]
-        
-        bg_mask = banddataraster.ReadAsArray(offset[0], offset[1], 22, 22)
-        bg_mir = MIR_tem_band.ReadAsArray(offset[0], offset[1], 22, 22)
-        bg_tir = TIR_tem_band.ReadAsArray(offset[0], offset[1], 22, 22)
-        
-        logic1 = numpy.where(bg_tir > 265)
-        logic2 = numpy.where(bg_mir - bg_tir < 30)
-        
-        bg_area = bg_tir[logic1 and logic2]
-        
-        bg_mean = numpy.mean(bg_area)
-        bg_stddev = numpy.std(bg_area)
-        
-        bg_tem = bg_mean - bg_stddev
+    rad = (k1_tir / (numpy.exp(k2_tir / zone) - 1)) / 1000
+          
+    m  = numpy.mean( rad )
+    print zone
+    print numpy.mean(zone)
+    tem = k2_tir / math.log(k1_tir/(m*1000) + 1, math.e)    
     
-    sub_tem = sub_pix_tem_array[shift[0][0]][shift[1][0]]
+    print tem
     
-    print sub_tem
-    print sub_pix_tem_array
+#    for i in range(1): #in range(shift[0].shape[0]):
+#
+#        loc = [xoff + shift[0][i], yoff + shift[1][i]]
+#        
+#        offset = [int(loc[0] - 10), int(loc[1] - 10)]
+#        
+#        bg_mask = banddataraster.ReadAsArray(offset[0], offset[1], 22, 22)
+#        bg_mir = MIR_tem_band.ReadAsArray(offset[0], offset[1], 22, 22)
+#        bg_tir = TIR_tem_band.ReadAsArray(offset[0], offset[1], 22, 22)
+#        
+#        logic1 = numpy.where(bg_tir > 265)
+#        logic2 = numpy.where(bg_mir - bg_tir < 30)
+#        
+#        bg_area = bg_tir[logic1 and logic2]
+#        
+#        bg_mean = numpy.mean(bg_area)
+#        bg_stddev = numpy.std(bg_area)
+#        
+#        bg_tem = bg_mean - bg_stddev
+#    
+#    
+#    sub_tem = sub_pix_tem_array[shift[0][0]][shift[1][0]]
+#    
+#    sub_area = sub_pix_area_array[shift[0][0]][shift[1][0]]
+#    
+#    bg_rad = (k1_tir / (numpy.exp(k2_tir / bg_tem) - 1)) / 1000
+#    
+#    sub_rad = (k1_tir / (numpy.exp(k2_tir / sub_tem) - 1)) / 1000
+#              
+#    rad = sub_area * sub_rad + (1 - sub_area) * bg_rad
+#                   
+#    tem = k2_tir / math.log(k1_tir/(rad*1000) + 1, math.e)    
+#    print tem
+#    print MIR_tem_array[shift[0][0]][shift[1][0]]
     
     # Mask zone of raster
     zoneraster = numpy.ma.masked_array(dataraster, numpy.logical_not(datamask))
@@ -172,9 +192,9 @@ def clusterTem(FID, input_zone_polygon, input_value_raster, bg_tem, NoDataValue 
     # Calculate statistics of zonal raster
     return numpy.mean(zoneraster)
 
-shpfile = r'E:\Penghua\data\Etna\2014.06.22\TET\ac_results_1.05\Mask\sub_pixel_tem.shp'
+shpfile = r'E:\Penghua\data\Etna\2014.06.22\TET\ac_results_1.05_new\Mask\fire_mask.shp'
 
-rasterfile = r'E:\Penghua\data\Etna\2014.06.22\TET\ac_results_1.05\FBI_TET1_20140622T232052_20140622T232155_L2_002589_WHM_cobined_MIR_TIR_tem.tif'
+rasterfile = r'E:\Penghua\data\Etna\2014.06.22\TET\ac_results_1.05_new\FBI_TET1_20140622T232052_20140622T232155_L2_002589_WHM_cobined_MIR_TIR_tem.tif'
 
 tet_radiance = r'E:\Penghua\data\Etna\2014.06.22\TET\FBI_TET1_20140622T232052_20140622T232155_L2_002589_WHM_MWIR_near_repro_cut.tif'
 
