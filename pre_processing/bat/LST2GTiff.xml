@@ -55,8 +55,8 @@
     <sources>
       <sourceProduct refid="Reproject"/>
     </sources>
-    <parameters class="com.bc.ceres.binding.dom.XppDomElement">
       <file>E:\Penghua\data\LST\Lybien-2\new_selected_data\2016.09.29\MOD11A1.A2016272.h19v06.041.2016273092418.tif</file>
+    <parameters class="com.bc.ceres.binding.dom.XppDomElement">
       <formatName>GeoTIFF-BigTIFF</formatName>
     </parameters>
   </node>

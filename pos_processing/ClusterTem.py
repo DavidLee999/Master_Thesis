@@ -17,7 +17,7 @@ k2_mir = 3821.000
 k1_tir = 2105042
 k2_tir = 1613.220
     
-def clusterTem(FID, input_zone_polygon, input_value_raster, bg_tem, NoDataValue = -9999):
+def clusterTem(FID, input_zone_polygon, input_value_raster, NoDataValue = -9999):
     
     # Open data
     raster = gdal.Open(input_value_raster)
@@ -115,13 +115,14 @@ def clusterTem(FID, input_zone_polygon, input_value_raster, bg_tem, NoDataValue 
     logic = numpy.where( dataraster == NoDataValue ) # no_data value
     
     MIR_tem_band = raster.GetRasterBand(1)
-    TIR_tem_band = raster.GetRasterBand(2)
+#    TIR_tem_band = raster.GetRasterBand(2)
     sub_pix_tem_band = raster.GetRasterBand(4)
     sub_pix_area_band = raster.GetRasterBand(5)
 
     MIR_tem_array = MIR_tem_band.ReadAsArray(xoff, yoff, xcount, ycount).astype(numpy.float)
     sub_pix_tem_array = sub_pix_tem_band.ReadAsArray(xoff, yoff, xcount, ycount).astype(numpy.float)
     sub_pix_area_array = sub_pix_area_band.ReadAsArray(xoff, yoff, xcount, ycount).astype(numpy.float)
+    logic = numpy.where( sub_pix_tem_array == NoDataValue ) # no_data value
     
     #bg_area_array = numpy.ones(MIR_tem_array.shape, numpy.float) - sub_pix_area_array
     
@@ -131,16 +132,18 @@ def clusterTem(FID, input_zone_polygon, input_value_raster, bg_tem, NoDataValue 
     datamask = bandmask.ReadAsArray(0, 0, xcount, ycount).astype(numpy.float)
     datamask[logic] = 0.0
             
-    zone = numpy.ma.masked_array(sub_pix_tem_array, numpy.logical_not(datamask))
-    
-    rad = (k1_tir / (numpy.exp(k2_tir / zone) - 1)) / 1000
-          
-    m  = numpy.mean( rad )
-    print zone
-    print numpy.mean(zone)
-    tem = k2_tir / math.log(k1_tir/(m*1000) + 1, math.e)    
-    
+    valid_tem = numpy.ma.masked_array(sub_pix_tem_array, numpy.logical_not(datamask))
+    valid_area = numpy.ma.masked_array(sub_pix_area_array, numpy.logical_not(datamask))
+    rad = (k1_tir / (numpy.exp(k2_tir / valid_tem) - 1)) / 1000   
+    rad_weightedAverage = numpy.average(rad, weights = valid_area)
+    #print zone
+    #print numpy.mean(zone)
+    tem = k2_tir / math.log(k1_tir/(rad_weightedAverage*1000) + 1, math.e)
+    print "feature %d" %FID    
     print tem
+    print numpy.average(valid_tem, weights = valid_area)
+    print numpy.mean(valid_tem)
+    #print tem
     
 #    for i in range(1): #in range(shift[0].shape[0]):
 #
@@ -185,14 +188,22 @@ def clusterTem(FID, input_zone_polygon, input_value_raster, bg_tem, NoDataValue 
     sub_pix_area = numpy.ma.masked_array(sub_pix_area_array, numpy.logical_not(datamask))
     #bg_area = numpy.ma.masked_array(bg_area_array, numpy.logical_not(datamask))
     
-    bg_area = numpy.ones(MIR_tem_array.shape, numpy.float) - sub_pix_area
-    
-    tem_avg = numpy.multiply(bg_area, bg) + numpy.multiply(sub_pix_tem, sub_pix_area)
+#    bg_area = numpy.ones(MIR_tem_array.shape, numpy.float) - sub_pix_area
+#    
+#    tem_avg = numpy.multiply(bg_area, bg) + numpy.multiply(sub_pix_tem, sub_pix_area)
     
     # Calculate statistics of zonal raster
     return numpy.mean(zoneraster)
 
-shpfile = r'E:\Penghua\data\Etna\2014.06.22\TET\ac_results_1.05_new\Mask\fire_mask.shp'
+def loop_clusterTem(shpfile, rasterfile, noDataValue):
+    shp = ogr.Open(shpfile)
+    lyr = shp.GetLayer()
+    featNum = lyr.GetFeatureCount()
+    
+    for i in range(featNum):
+        clusterTem(i, shpfile, rasterfile, noDataValue)
+        
+shpfile = r'E:\Penghua\data\Etna\2014.06.22\TET\ac_results_1.05_new\Mask\sub_tem.shp'
 
 rasterfile = r'E:\Penghua\data\Etna\2014.06.22\TET\ac_results_1.05_new\FBI_TET1_20140622T232052_20140622T232155_L2_002589_WHM_cobined_MIR_TIR_tem.tif'
 
@@ -200,6 +211,6 @@ tet_radiance = r'E:\Penghua\data\Etna\2014.06.22\TET\FBI_TET1_20140622T232052_20
 
 alpha = r'E:\Penghua\data\georeferenced_TET\Etna\new_selected_data\alpha_channel\FBI_TET1_20140622T232052_20140622T232155_L2_002589_WHM_MWIR_near_repro_alpha.shp'
 
-bg = zonalStats.zonal_stats(0, alpha, rasterfile, 2, -9999)
+#bg = zonalStats.zonal_stats(0, alpha, rasterfile, 2, -9999)
 
-a = clusterTem(0, shpfile, rasterfile, bg, 0)
+a = loop_clusterTem(shpfile, rasterfile, 0)

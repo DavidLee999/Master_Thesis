@@ -61,7 +61,7 @@ def raster2shp( rasterfn, bandNum ):
     band = raster.GetRasterBand( bandNum )
     
     drv = ogr.GetDriverByName('ESRI Shapefile')
-    dst_layername = 'fire_mask'
+    dst_layername = 'sub_tem'
     dst_ds = drv.CreateDataSource( dst_layername + '.shp')
     
     srs = osr.SpatialReference()
@@ -74,8 +74,8 @@ def raster2shp( rasterfn, bandNum ):
     dst_layer.CreateField( fd )
     dst_field = 0
     
-    gdal.Polygonize(band, None, dst_layer, dst_field, [], callback = None)
-    
+    gdal.Polygonize(band, None, dst_layer, dst_field, ["8CONNECTED=8"], callback = None)
+   
     featNum = dst_layer.GetFeatureCount()
     
     for i in range(featNum):
@@ -106,9 +106,9 @@ if os.path.exists( outputfolder ) == False:
     
 os.chdir( outputfolder )
 
-newRaster = os.path.join( outputfolder, 'fire_mask.tif' )
+newRaster = os.path.join( outputfolder, 'sub_tem.tif' )
 
-array = raster2array( src_ds, 3 )
+array = raster2array( src_ds, 4 )
 array = createMaskArray( array, 0 )
 array2raster( newRaster, src_ds, array)
 
