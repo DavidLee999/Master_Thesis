@@ -11,11 +11,17 @@ import matplotlib.pyplot as plt
 import os, shutil
 import zonalStats
 
-k1_mir = 155890700
-k2_mir = 3821.000
+k1_mir1 = 114191600
+k2_mir1 = 3677.661
 
-k1_tir = 2105042
-k2_tir = 1613.220
+k1_tir1 = 2105041
+k2_tir1 = 1613.220
+
+k1_mir2 = 155890700
+k2_mir2 = 3821.000
+
+k1_tir2 = 2125447
+k2_tir2 = 1617.380
     
 def clusterTem(FID, input_zone_polygon, input_value_raster, NoDataValue = -9999):
     
@@ -114,12 +120,12 @@ def clusterTem(FID, input_zone_polygon, input_value_raster, NoDataValue = -9999)
     dataraster = banddataraster.ReadAsArray(xoff, yoff, xcount, ycount).astype(numpy.float)
     logic = numpy.where( dataraster == NoDataValue ) # no_data value
     
-    MIR_tem_band = raster.GetRasterBand(1)
+#    MIR_tem_band = raster.GetRasterBand(1)
 #    TIR_tem_band = raster.GetRasterBand(2)
     sub_pix_tem_band = raster.GetRasterBand(4)
     sub_pix_area_band = raster.GetRasterBand(5)
 
-    MIR_tem_array = MIR_tem_band.ReadAsArray(xoff, yoff, xcount, ycount).astype(numpy.float)
+#    MIR_tem_array = MIR_tem_band.ReadAsArray(xoff, yoff, xcount, ycount).astype(numpy.float)
     sub_pix_tem_array = sub_pix_tem_band.ReadAsArray(xoff, yoff, xcount, ycount).astype(numpy.float)
     sub_pix_area_array = sub_pix_area_band.ReadAsArray(xoff, yoff, xcount, ycount).astype(numpy.float)
     logic = numpy.where( sub_pix_tem_array == NoDataValue ) # no_data value
@@ -134,11 +140,29 @@ def clusterTem(FID, input_zone_polygon, input_value_raster, NoDataValue = -9999)
             
     valid_tem = numpy.ma.masked_array(sub_pix_tem_array, numpy.logical_not(datamask))
     valid_area = numpy.ma.masked_array(sub_pix_area_array, numpy.logical_not(datamask))
-    rad = (k1_tir / (numpy.exp(k2_tir / valid_tem) - 1)) / 1000   
+    
+    rad = valid_tem.copy()
+    
+    logic1 = numpy.where(rad <= 400)
+    logic2 = numpy.where(rad > 400)
+    
+    rad[logic1] = (k1_tir1 / (numpy.exp(k2_tir1 / valid_tem[logic1]) - 1)) / 1000
+    rad[logic2] = (k1_tir2 / (numpy.exp(k2_tir2 / valid_tem[logic2]) - 1)) / 1000
+    #rad = (k1_tir / (numpy.exp(k2_tir / valid_tem) - 1)) / 1000   
     rad_weightedAverage = numpy.average(rad, weights = valid_area)
+    
+    rad400 = (k1_tir1 / (numpy.exp(k2_tir1 / 400) - 1)) / 1000
+             
+    if rad_weightedAverage <= rad400:
+        
+        tem = k2_tir1 / math.log(k1_tir1 / (rad_weightedAverage*1000) + 1, math.e)
+    
+    elif rad_weightedAverage > rad400:
+        
+        tem = k2_tir2 / math.log(k1_tir2 / (rad_weightedAverage*1000) + 1, math.e)
     #print zone
     #print numpy.mean(zone)
-    tem = k2_tir / math.log(k1_tir/(rad_weightedAverage*1000) + 1, math.e)
+    #tem = k2_tir / math.log(k1_tir / (rad_weightedAverage*1000) + 1, math.e)
     print "feature %d" %FID    
     print tem
     print numpy.average(valid_tem, weights = valid_area)
@@ -177,21 +201,7 @@ def clusterTem(FID, input_zone_polygon, input_value_raster, NoDataValue = -9999)
 #    rad = sub_area * sub_rad + (1 - sub_area) * bg_rad
 #                   
 #    tem = k2_tir / math.log(k1_tir/(rad*1000) + 1, math.e)    
-#    print tem
-#    print MIR_tem_array[shift[0][0]][shift[1][0]]
-    
-    # Mask zone of raster
-    zoneraster = numpy.ma.masked_array(dataraster, numpy.logical_not(datamask))
- 
-    MIR_tem = numpy.ma.masked_array(MIR_tem_array, numpy.logical_not(datamask))
-    sub_pix_tem = numpy.ma.masked_array(sub_pix_tem_array, numpy.logical_not(datamask))
-    sub_pix_area = numpy.ma.masked_array(sub_pix_area_array, numpy.logical_not(datamask))
-    #bg_area = numpy.ma.masked_array(bg_area_array, numpy.logical_not(datamask))
-    
-#    bg_area = numpy.ones(MIR_tem_array.shape, numpy.float) - sub_pix_area
-#    
-#    tem_avg = numpy.multiply(bg_area, bg) + numpy.multiply(sub_pix_tem, sub_pix_area)
-    
+
     # Calculate statistics of zonal raster
     return numpy.mean(zoneraster)
 
@@ -200,7 +210,7 @@ def loop_clusterTem(shpfile, rasterfile, noDataValue):
     lyr = shp.GetLayer()
     featNum = lyr.GetFeatureCount()
     
-    for i in range(featNum):
+    for i in range(featNum - 1):
         clusterTem(i, shpfile, rasterfile, noDataValue)
         
 shpfile = r'E:\Penghua\data\Etna\2014.06.22\TET\ac_results_1.05_new\Mask\sub_tem.shp'
