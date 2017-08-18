@@ -33,38 +33,40 @@ location = ['Etna', 'Demmin', 'Lascar', 'Lybien-1', 'Lybien-2', 'Portugal']
 
 UTM_zone = {'Etna':'EPSG:32633', 'Demmin':'EPSG:32633', 'Lascar':'EPSG:32719', 'Lybien-1':'EPSG:32634', 'Lybien-2':'EPSG:32633', 'Portugal':'EPSG:32629'}
 
-#sourFile = r'E:\Penghua\data' + '\\' + location[0]
-#
-#os.chdir(sourFile)
+sourFile = r'E:\Penghua\data' + '\\' + location[0]
 
-#for files in os.listdir(sourFile):
-#    
-#    if '0' in files:
-#        
-#        tet_files = os.path.join( os.path.abspath(files), 'TET' )
-#        
-#        os.chdir(tet_files)
-#    
-#        for res in os.listdir( tet_files ):
-#            
-#            if os.path.isdir(os.path.abspath(res)) == True and 'ac_results' in res:
-#                
-#                for img in os.listdir(res):
-#                
-#                    if img.endswith('.tif') and 'tem' in img:
-#                        
-#                        inFileLoc = os.path.join(os.path.abspath(res), img)
-#                        
-#                        abspath, postfix = os.path.splitext(inFileLoc)
-#                        
-#                        outFileLoc1 = abspath + '_MIR_only.tif'
-#                        
-#                        outFileLoc2 = abspath + '_TIR_only.tif'
+os.chdir(sourFile)
+
+#time = []
+
+for files in os.listdir(sourFile):
+    
+    if '0' in files and files in time:
+        
+        tet_files = os.path.join( os.path.abspath(files), 'TET' )
+        
+        os.chdir(tet_files)
+    
+        for res in os.listdir( tet_files ):
+            
+            if os.path.isdir(os.path.abspath(res)) == True and '1.00' in res and '9.1' not in res:
+                
+                for img in os.listdir(res):
+                
+                    if img.endswith('.tif') and 'tem' in img:
+                        
+                        inFileLoc = os.path.join(os.path.abspath(res), img)
+
+                        abspath, postfix = os.path.splitext(inFileLoc)
+                        
+                        outFileLoc1 = abspath + '_MIR_only.tif'
+                        
+                        outFileLoc2 = abspath + '_TIR_only.tif'
 
                         
-#                        band_separate(inFileLoc, outFileLoc1, 1)
-#                        
-#                        band_separate(inFileLoc, outFileLoc2, 2)
+                        band_separate(inFileLoc, outFileLoc1, 1)
+                        
+                        band_separate(inFileLoc, outFileLoc2, 2)
 
 #                sc1 = os.path.join(tet_files, r'ac_results_1.00')
 #                
@@ -85,7 +87,7 @@ UTM_zone = {'Etna':'EPSG:32633', 'Demmin':'EPSG:32633', 'Lascar':'EPSG:32719', '
 #                        band_separate(inFileLoc, outFileLoc2, 2)
                 
     
-#    os.chdir(sourFile)
+    os.chdir(sourFile)
                         
 #sourFile = r'E:\Penghua\data\corresponding_water_vapor' + '\\' + location[4] + '\\new_selected_data'
 #
@@ -133,22 +135,22 @@ UTM_zone = {'Etna':'EPSG:32633', 'Demmin':'EPSG:32633', 'Lascar':'EPSG:32719', '
 #            
 #        band_separate(inFileLoc, outFileLoc2, 3)
 
-name = '_UTM33N.tif'
-
-sourFile = r'E:\Penghua\data\LST' + '\\' + location[3] + r'\new_selected_data'
-
-os.chdir(sourFile)
-
-for files in os.listdir(sourFile):
-    
-    if os.path.isdir(files) == True:
-        
-        for fil in os.listdir(files):
-            
-            if fil.endswith('.tif') and 'MOD' in fil:
-                
-                inFileLoc = os.path.abspath(files) + '\\' + fil
-                                    
-                outFileLoc = os.path.splitext(inFileLoc)[0] + name
-                                          
-                band_separate(inFileLoc, outFileLoc, 1)               
+#name = '_UTM33N.tif'
+#
+#sourFile = r'E:\Penghua\data\LST' + '\\' + location[3] + r'\new_selected_data'
+#
+#os.chdir(sourFile)
+#
+#for files in os.listdir(sourFile):
+#    
+#    if os.path.isdir(files) == True:
+#        
+#        for fil in os.listdir(files):
+#            
+#            if fil.endswith('.tif') and 'MOD' in fil:
+#                
+#                inFileLoc = os.path.abspath(files) + '\\' + fil
+#                                    
+#                outFileLoc = os.path.splitext(inFileLoc)[0] + name
+#                                          
+#                band_separate(inFileLoc, outFileLoc, 1)               
