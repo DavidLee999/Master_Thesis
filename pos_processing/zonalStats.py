@@ -107,7 +107,12 @@ def zonal_stats(FID, input_zone_polygon, input_value_raster, band, noDataValue):
     # banddataraster.SetNoDataValue( -9999 )
     dataraster = banddataraster.ReadAsArray(xoff, yoff, xcount, ycount).astype(numpy.float)
     logic = numpy.where( dataraster == noDataValue) # no_data value
-          
+    
+    percent = 1 - float(len(logic[0])) / dataraster.size
+    if percent < 0.4:
+        print 'In the scene %s within the shapefile %s, the valid pixels are too few to do a average. (percentage: %f)' %(input_value_raster, input_zone_polygon, float(len(logic[0])) / dataraster.size)
+        return 0.0
+    
     bandmask = target_ds.GetRasterBand(1)
     datamask = bandmask.ReadAsArray(0, 0, xcount, ycount).astype(numpy.float)
     datamask[logic] = 0.0
@@ -231,6 +236,7 @@ def centerPos( FID, input_zone_polygon, input_value_raster ):
 
 #shutil.rmtree(os.path.join(os.path.split(shpfile)[0], 'temp'))
 
+
 shpFile = r'E:\Penghua\data\Etna\shapefiles'
 
 shp = []
@@ -246,6 +252,7 @@ for files in os.listdir(shpFile):
 sourFile = r'E:\Penghua\data\Etna' #\self_test
 
 os.chdir(sourFile)
+
 
 #filename = xlwt.Workbook()
 #
@@ -325,13 +332,13 @@ os.chdir(sourFile)
 #                    
 #                    sc_tir1.append((main(shp[1], TET_tem_TIR)[0]+main(shp[3], TET_tem_TIR)[0]+main(shp[4], TET_tem_TIR)[0]) / 3.0)
 
-scale_factor = ['1.00']#, '1.05', '1.10', '1.15', '1.20']
 
+scale_factor = ['1.00', '1.05', '1.10', '1.15', '1.20']
 
-sc_mir = [[]]#, [], [], [], []]
-sc_tir = [[]]#, [], [], [], []]
-#time = []
-#
+sc_mir = [[], [], [], [], []]
+sc_tir = [[], [], [], [], []]
+time = []
+
 for i in range(len(scale_factor)):
     
     #print scale_factor[i]
@@ -339,7 +346,7 @@ for i in range(len(scale_factor)):
     
     for files in os.listdir(sourFile):
         
-        if ('0' in files) and files in time: #('2017' not in files) and
+        if files == '2014.09.09': #if ('0' in files) and ('2017' not in files): #files in time: 
             
             
 #            print files
@@ -348,18 +355,17 @@ for i in range(len(scale_factor)):
 #            
 #            sheet2.write(0, count, files)
             
-            ac_folder = os.path.join(os.path.abspath(files), r'TET\ac_results_%s_9.1' %scale_factor[i]) #\compared _9.1
+            ac_folder = os.path.join(os.path.abspath(files), r'TET\ac_results_%s\compared' %scale_factor[i]) #\compared _9.1
             
             
-            if os.path.exists(os.path.join(os.path.abspath(files), r'TET\ac_results_%s_9.1' %scale_factor[i])) == True:
+            if os.path.exists(os.path.join(os.path.abspath(files), r'TET\ac_results_%s\compared' %scale_factor[i])) == True:
             
-                ac_results = os.path.join(os.path.abspath(files), r'TET\ac_results_%s_9.1' %scale_factor[i])
+                ac_results = os.path.join(os.path.abspath(files), r'TET\ac_results_%s\compared' %scale_factor[i])
                 
-#                if i == 0:
-#                
-#                    time.append(files)
+                if i == 0:
+                
+                    time.append(files)
                     
-#                shutil.rmtree(ac_results)
                 
                 if os.path.exists(os.path.join(ac_results, 'temp')) == False:
     
@@ -367,14 +373,15 @@ for i in range(len(scale_factor)):
             
                 for fil in os.listdir(ac_results):
                 
-                    if  fil.endswith('.tif') and 'MIR_only' in fil: #fil.endswith('.tif') and
+                    if  fil.endswith('.tif') and 'MIR' in fil: #fil.endswith('.tif') and
                     
                         TET_tem_MIR = os.path.join(ac_results, fil)
 #                        print TET_tem_MIR
-                    if  fil.endswith('.tif') and 'TIR_only' in fil:
+                    if  fil.endswith('.tif') and 'TIR' in fil:
                     
                         TET_tem_TIR = os.path.join(ac_results, fil)
 #                        print TET_tem_TIR
+
 
 #            MIR_rect2 = main(shp[1], TET_tem_MIR)
 #            
@@ -403,6 +410,7 @@ for i in range(len(scale_factor)):
 ##            
 #            count = count + 1                         
                 
+
 #                if files == '2016.09.16':
                 sc_mir[i].append((main(shp[1], TET_tem_MIR, 1, 0.0)[0] + main(shp[3], TET_tem_MIR, 1, 0.0)[0] + main(shp[4], TET_tem_MIR, 1, 0.0)[0] + main(shp[5], TET_tem_MIR, 1, 0.0)[0]) / 4.0)
                 
@@ -456,7 +464,7 @@ for i in range(len(scale_factor)):
 #plt.legend([p1,p2,p3,p4,p5], ['scale factor 1.00','scale factor 1.05','scale factor 1.10','scale factor 1.15','scale factor 1.20'],prop={'size':7})
 #fig1.tight_layout()
 #plt.grid()
-#fig1.savefig(os.path.join(r'E:\Penghua\results\ComSST\Etna2', r'Etna_scf_mir.png'), dpi=200)
+##fig1.savefig(os.path.join(r'E:\Penghua\results\ComSST\Etna2', r'Etna_scf_mir.png'), dpi=200)
 #plt.show()
 #
 #fig1, ax1 = plt.subplots()
@@ -467,14 +475,14 @@ for i in range(len(scale_factor)):
 #p5, = ax1.plot(sc_tir[4], 'co-')
 #p6, = ax1.plot(zero[0], 'b--')
 #ax1.set_title('Temperature Differences with MODIS SST for Etna Scenes (TIR band)')
-#ax1.set_xlabel('time')
+#ax1.set_xlabel('tnaime')
 #ax1.set_ylabel('Temperature Differences [K]')
 #ax1.set_xticks(range(13))
 #ax1.set_xticklabels(time, rotation=30, fontsize=6)
 #plt.legend([p1,p2,p3,p4,p5], ['scale factor 1.00','scale factor 1.05','scale factor 1.10','scale factor 1.15','scale factor 1.20'],prop={'size':7})
 #fig1.tight_layout()
 #plt.grid()
-#fig1.savefig(os.path.join(r'E:\Penghua\results\ComSST\Etna2', r'Etna_scf_test_tir.png'), dpi=200)
+##fig1.savefig(os.path.join(r'E:\Penghua\results\ComSST\Etna2', r'Etna_scf_test_tir.png'), dpi=200)
 #plt.show()
 #
 #

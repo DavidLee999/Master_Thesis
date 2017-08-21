@@ -115,13 +115,13 @@ def cal (inputimg):
 
 Location = ['Etna', 'Demmin', 'Lascar', 'Lybien-1', 'Lybien-2', 'Portugal']
 
-sourFile = r'E:\Penghua\data' + '\\' + Location[0] + r'\self_test'
+sourFile = r'E:\Penghua\data' + '\\' + Location[0]
 
 os.chdir(sourFile)
 
 for files in os.listdir(sourFile):
     
-    if '0' in files: #files == '2016.10.25': #
+    if '0' in files and files == '2014.09.09': #
         
         folder = os.path.join(os.path.abspath(files), r'TET')
         
