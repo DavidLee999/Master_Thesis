@@ -96,6 +96,8 @@ def compare ( TET_tem_path, SST_tem_path, outputFile ):
     TIR_bandOut = TIR_out.GetRasterBand(1)
     TIR_bandOut.SetNoDataValue(0.0)
     gdalnumeric.BandWriteArray(TIR_bandOut, diff_TIR)
+    
+    print 'end'
 
 def cal (inputimg):
     
@@ -115,13 +117,13 @@ def cal (inputimg):
 
 Location = ['Etna', 'Demmin', 'Lascar', 'Lybien-1', 'Lybien-2', 'Portugal']
 
-sourFile = r'E:\Penghua\data' + '\\' + Location[0]
+sourFile = r'E:\Penghua\data' + '\\' + Location[5] #+ r'\self_test'
 
 os.chdir(sourFile)
 
 for files in os.listdir(sourFile):
     
-    if '0' in files and files == '2014.09.09': #
+    if '0' in files and files == '2016.08.14':
         
         folder = os.path.join(os.path.abspath(files), r'TET')
         
@@ -149,7 +151,7 @@ for files in os.listdir(sourFile):
                         if lst_img.endswith('.tif') and 'SST' in lst_img:
                             
                             lst_tem = os.path.join(LST, lst_img)
-                            #print lst_tem
+#                            print lst_tem
                     compare(tet_tem, lst_tem, outputFile)
                     
                     os.chdir(sourFile)
