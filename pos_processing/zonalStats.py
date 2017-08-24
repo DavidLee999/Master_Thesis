@@ -333,13 +333,13 @@ os.chdir(sourFile)
 #                    sc_tir1.append((main(shp[1], TET_tem_TIR)[0]+main(shp[3], TET_tem_TIR)[0]+main(shp[4], TET_tem_TIR)[0]) / 3.0)
 
 
-scale_factor = ['1.00', '1.05', '1.10', '1.15', '1.20']
+scale_factor = ['1.00']#, '1.05', '1.10', '1.15', '1.20']
 
 #scale_factor = ['0.50', '0.55', '0.60', '0.65', '0.70', '0.75', '0.80', '0.85', '0.90']
 
-sc_mir = [[], [], [], [], []]#, [], [], [], []]
-sc_tir = [[], [], [], [], []]#, [], [], [], []]
-time = []
+sc_mir = [[]]#, [], [], [], []]#, [], [], [], []]
+sc_tir = [[]]#, [], [], [], []]#, [], [], [], []]
+#time = []
 
 for i in range(len(scale_factor)):
     
@@ -348,7 +348,7 @@ for i in range(len(scale_factor)):
     
     for files in os.listdir(sourFile):
         
-        if ('0' in files) and ('2017' not in files): #files in time: 
+        if ('0' in files) and files in time: #files in time: ('2017' not in files)
             
             
 #            print files
@@ -357,16 +357,16 @@ for i in range(len(scale_factor)):
 #            
 #            sheet2.write(0, count, files)
             
-            ac_folder = os.path.join(os.path.abspath(files), r'TET\ac_results_%s\compared' %scale_factor[i]) #\compared _9.1
+            ac_folder = os.path.join(os.path.abspath(files), r'TET\ac_results_%s' %scale_factor[i]) #\compared _9.1
             
             
-            if os.path.exists(os.path.join(os.path.abspath(files), r'TET\ac_results_%s\compared' %scale_factor[i])) == True:
+            if os.path.exists(os.path.join(os.path.abspath(files), r'TET\ac_results_%s' %scale_factor[i])) == True:
             
-                ac_results = os.path.join(os.path.abspath(files), r'TET\ac_results_%s\compared' %scale_factor[i])
+                ac_results = os.path.join(os.path.abspath(files), r'TET\ac_results_%s' %scale_factor[i])
                 
-                if i == 0:
-                
-                    time.append(files)
+#                if i == 0:
+#                
+#                    time.append(files)
                     
                 
                 if os.path.exists(os.path.join(ac_results, 'temp')) == False:
@@ -375,11 +375,11 @@ for i in range(len(scale_factor)):
             
                 for fil in os.listdir(ac_results):
                 
-                    if  fil.endswith('.tif') and 'MIR' in fil: #fil.endswith('.tif') and
+                    if  fil.endswith('.tif') and 'MIR_only' in fil: #fil.endswith('.tif') and
                     
                         TET_tem_MIR = os.path.join(ac_results, fil)
-#                        print TET_tem_MIR
-                    if  fil.endswith('.tif') and 'TIR' in fil:
+                        print TET_tem_MIR
+                    if  fil.endswith('.tif') and 'TIR_only' in fil:
                     
                         TET_tem_TIR = os.path.join(ac_results, fil)
 #                        print TET_tem_TIR

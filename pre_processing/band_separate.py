@@ -33,7 +33,7 @@ location = ['Etna', 'Demmin', 'Lascar', 'Lybien-1', 'Lybien-2', 'Portugal']
 
 UTM_zone = {'Etna':'EPSG:32633', 'Demmin':'EPSG:32633', 'Lascar':'EPSG:32719', 'Lybien-1':'EPSG:32634', 'Lybien-2':'EPSG:32633', 'Portugal':'EPSG:32629'}
 
-sourFile = r'E:\Penghua\data' + '\\' + location[0]
+sourFile = r'E:\Penghua\data' + '\\' + location[3]
 
 os.chdir(sourFile)
 
@@ -49,14 +49,14 @@ for files in os.listdir(sourFile):
     
         for res in os.listdir( tet_files ):
             
-            if os.path.isdir(os.path.abspath(res)) == True and '1.00' in res and '9.1' not in res:
+            if os.path.isdir(os.path.abspath(res)) == True and '1.00' in res: # and '9.1' not in res:
                 
                 for img in os.listdir(res):
                 
                     if img.endswith('.tif') and 'tem' in img:
                         
                         inFileLoc = os.path.join(os.path.abspath(res), img)
-
+#                        print inFileLoc
                         abspath, postfix = os.path.splitext(inFileLoc)
                         
                         outFileLoc1 = abspath + '_MIR_only.tif'

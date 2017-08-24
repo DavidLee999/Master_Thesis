@@ -33,7 +33,7 @@ def compare ( TET_tem_path, SST_tem_path, outputFile ):
 #    MIR_deg = MIR_data + default_tem
 #    TIR_deg = TIR_data + default_tem
 
-    SST_K = SST_data + default_tem
+    SST_K = SST_data # + default_tem
     diff_MIR = MIR_data - SST_K
     diff_TIR = TIR_data - SST_K
     
@@ -142,7 +142,7 @@ for files in os.listdir(sourFile):
                         if img.endswith('.tif') and 'tem' in img:
                             
                             tet_tem = os.path.join(f, img)
-                            print tet_tem
+#                            print tet_tem
                     outputFile = os.path.join(f, 'compared')
 #                    if os.path.exists(outputFile) == True:
 #                        shutil.rmtree(outputFile)
@@ -151,8 +151,8 @@ for files in os.listdir(sourFile):
                         if lst_img.endswith('.tif') and 'LST' in lst_img:
                             
                             lst_tem = os.path.join(LST, lst_img)
-                            print lst_tem
-#                    compare(tet_tem, lst_tem, outputFile)
+#                            print lst_tem
+                    compare(tet_tem, lst_tem, outputFile)
                     
                     os.chdir(sourFile)
 
