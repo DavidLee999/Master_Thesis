@@ -237,7 +237,7 @@ def centerPos( FID, input_zone_polygon, input_value_raster ):
 #shutil.rmtree(os.path.join(os.path.split(shpfile)[0], 'temp'))
 
 
-shpFile = r'E:\Penghua\data\Portugal\shapefiles'
+shpFile = r'E:\Penghua\data\Lybien-1\shapefiles'
 
 shp = []
 
@@ -249,7 +249,7 @@ for files in os.listdir(shpFile):
         
         shp.append(os.path.abspath(files)) 
 
-sourFile = r'E:\Penghua\data\Portugal' #\self_test
+sourFile = r'E:\Penghua\data\Lybien-1' #\self_test
 
 os.chdir(sourFile)
 
@@ -413,54 +413,54 @@ for i in range(len(scale_factor)):
 #            count = count + 1                         
                 
 
-                if files == '2016.08.14':
+#                if files == '2016.08.14':
     
-                    calcRes = []
+                calcRes = []
                 
-                    calcRes.append((main(shp[0], TET_tem_MIR, 1, 0.0)[0]))
+                calcRes.append((main(shp[0], TET_tem_MIR, 1, 0.0)[0]))
                     
-                    calcRes.append((main(shp[1], TET_tem_MIR, 1, 0.0)[0]))
+                calcRes.append((main(shp[1], TET_tem_MIR, 1, 0.0)[0]))
                     
-                    calcRes.append((main(shp[2], TET_tem_MIR, 1, 0.0)[0]))
+                calcRes.append((main(shp[2], TET_tem_MIR, 1, 0.0)[0]))
                 
-#                    calcRes.append((main(shp[3], TET_tem_MIR, 1, 0.0)[0]))
+                calcRes.append((main(shp[3], TET_tem_MIR, 1, 0.0)[0]))
             
-#                    calcRes.append((main(shp[4], TET_tem_MIR, 1, 0.0)[0]))
+                calcRes.append((main(shp[4], TET_tem_MIR, 1, 0.0)[0]))
                 
 #                    calcRes.append((main(shp[5], TET_tem_MIR, 1, 0.0)[0]))
                 
-                    calcRes = numpy.array(calcRes)
+                calcRes = numpy.array(calcRes)
                 
-                    non = numpy.where(calcRes == 0)
+                non = numpy.where(calcRes == 0)
                 
-                    aver = numpy.sum(calcRes) / (len(calcRes) - len(non[0]))
+                aver = numpy.sum(calcRes) / (len(calcRes) - len(non[0]))
                 
                 
-                    sc_mir[i].append(aver)
+                sc_mir[i].append(aver)
                 
 #                sc_mir[i].append((main(shp[1], TET_tem_MIR, 1, 0.0)[0] + main(shp[3], TET_tem_MIR, 1, 0.0)[0] + main(shp[4], TET_tem_MIR, 1, 0.0)[0] + main(shp[5], TET_tem_MIR, 1, 0.0)[0]) / 4.0)
 
-                    calcRes = []
+                calcRes = []
                 
-                    calcRes.append((main(shp[0], TET_tem_TIR, 1, 0.0)[0]))
+                calcRes.append((main(shp[0], TET_tem_TIR, 1, 0.0)[0]))
                     
-                    calcRes.append((main(shp[1], TET_tem_TIR, 1, 0.0)[0]))
+                calcRes.append((main(shp[1], TET_tem_TIR, 1, 0.0)[0]))
                     
-                    calcRes.append((main(shp[2], TET_tem_TIR, 1, 0.0)[0]))
+                calcRes.append((main(shp[2], TET_tem_TIR, 1, 0.0)[0]))
                 
-#                    calcRes.append((main(shp[3], TET_tem_TIR, 1, 0.0)[0]))
+                calcRes.append((main(shp[3], TET_tem_TIR, 1, 0.0)[0]))
 #                
-#                    calcRes.append((main(shp[4], TET_tem_TIR, 1, 0.0)[0]))
+                calcRes.append((main(shp[4], TET_tem_TIR, 1, 0.0)[0]))
                 
 #                    calcRes.append((main(shp[5], TET_tem_TIR, 1, 0.0)[0]))
                 
-                    calcRes = numpy.array(calcRes)
+                calcRes = numpy.array(calcRes)
                 
-                    non = numpy.where(calcRes == 0)
+                non = numpy.where(calcRes == 0)
                 
-                    aver = numpy.sum(calcRes) / (len(calcRes) - len(non[0]))
+                aver = numpy.sum(calcRes) / (len(calcRes) - len(non[0]))
                 
-                    sc_tir[i].append(aver)
+                sc_tir[i].append(aver)
                 
 #                sc_tir[i].append((main(shp[1], TET_tem_TIR, 1, 0.0)[0] + main(shp[3], TET_tem_TIR, 1, 0.0)[0] + main(shp[4], TET_tem_TIR, 1, 0.0)[0] + main(shp[5], TET_tem_TIR, 1, 0.0)[0]) / 4.0)
                 

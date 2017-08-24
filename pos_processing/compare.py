@@ -117,17 +117,17 @@ def cal (inputimg):
 
 Location = ['Etna', 'Demmin', 'Lascar', 'Lybien-1', 'Lybien-2', 'Portugal']
 
-sourFile = r'E:\Penghua\data' + '\\' + Location[5] #+ r'\self_test'
+sourFile = r'E:\Penghua\data' + '\\' + Location[3] #+ r'\self_test'
 
 os.chdir(sourFile)
 
 for files in os.listdir(sourFile):
     
-    if '0' in files and files == '2016.08.14':
+    if '0' in files: # and files == '2016.08.14':
         
         folder = os.path.join(os.path.abspath(files), r'TET')
         
-        LST = os.path.join(os.path.abspath(files), r'SST')
+        LST = os.path.join(os.path.abspath(files), r'LST')
         
         for fil in os.listdir(folder):
             
@@ -142,17 +142,17 @@ for files in os.listdir(sourFile):
                         if img.endswith('.tif') and 'tem' in img:
                             
                             tet_tem = os.path.join(f, img)
-#                            print tet_tem
+                            print tet_tem
                     outputFile = os.path.join(f, 'compared')
 #                    if os.path.exists(outputFile) == True:
 #                        shutil.rmtree(outputFile)
                     for lst_img in os.listdir(LST):
                         
-                        if lst_img.endswith('.tif') and 'SST' in lst_img:
+                        if lst_img.endswith('.tif') and 'LST' in lst_img:
                             
                             lst_tem = os.path.join(LST, lst_img)
-#                            print lst_tem
-                    compare(tet_tem, lst_tem, outputFile)
+                            print lst_tem
+#                    compare(tet_tem, lst_tem, outputFile)
                     
                     os.chdir(sourFile)
 
