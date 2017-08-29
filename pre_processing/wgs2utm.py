@@ -42,8 +42,8 @@ def wgs2utm(inFileLoc, zone, resample=False, pixel_size = None, nodata_dst = -99
     L.append(inFileLoc)
     
     L.append(outFileLoc)
-    
-    subprocess.call(L)
+    print L
+#    subprocess.call(L)
     
     print 'end'
 

@@ -237,7 +237,7 @@ def centerPos( FID, input_zone_polygon, input_value_raster ):
 #shutil.rmtree(os.path.join(os.path.split(shpfile)[0], 'temp'))
 
 
-shpFile = r'E:\Penghua\data\Lybien-1\shapefiles'
+shpFile = r'E:\Penghua\data\Lybien-2\shapefiles'
 
 shp = []
 
@@ -249,7 +249,7 @@ for files in os.listdir(shpFile):
         
         shp.append(os.path.abspath(files)) 
 
-sourFile = r'E:\Penghua\data\Lybien-1' #\self_test
+sourFile = r'E:\Penghua\data\Lybien-2' #\self_test
 
 os.chdir(sourFile)
 
@@ -339,7 +339,7 @@ scale_factor = ['1.00', '1.05', '1.10', '1.15', '1.20']
 
 sc_mir = [[], [], [], [], []]#, [], [], [], []]
 sc_tir = [[], [], [], [], []]#, [], [], [], []]
-#time = []
+time = []
 
 for i in range(len(scale_factor)):
     
@@ -348,7 +348,7 @@ for i in range(len(scale_factor)):
     
     for files in os.listdir(sourFile):
         
-        if ('0' in files) and files in time: #files in time: ('2017' not in files)
+        if ('0' in files) and ('2017' not in files): #files in time: ('2017' not in files)
             
             
 #            print files
@@ -357,16 +357,16 @@ for i in range(len(scale_factor)):
 #            
 #            sheet2.write(0, count, files)
             
-            ac_folder = os.path.join(os.path.abspath(files), r'TET\ac_results_%s_9.1\compared' %scale_factor[i]) #\compared _9.1
+            ac_folder = os.path.join(os.path.abspath(files), r'TET\ac_results_%s\compared' %scale_factor[i]) #\compared _9.1
             
             
-            if os.path.exists(os.path.join(os.path.abspath(files), r'TET\ac_results_%s_9.1\compared' %scale_factor[i])) == True:
+            if os.path.exists(os.path.join(os.path.abspath(files), r'TET\ac_results_%s\compared' %scale_factor[i])) == True:
             
-                ac_results = os.path.join(os.path.abspath(files), r'TET\ac_results_%s_9.1\compared' %scale_factor[i])
+                ac_results = os.path.join(os.path.abspath(files), r'TET\ac_results_%s\compared' %scale_factor[i])
                 
-#                if i == 0:
-#                
-#                    time.append(files)
+                if i == 0:
+                
+                    time.append(files)
                     
                 
                 if os.path.exists(os.path.join(ac_results, 'temp')) == False:
@@ -541,7 +541,7 @@ for i in range(len(scale_factor)):
 #fig1.savefig(os.path.join(r'E:\Penghua\results\comLST\Lybia-1', r'diff_emi1.png'), dpi=200)
 #plt.show()
 #
-#zero = numpy.zeros([1,12])
+#zero = numpy.zeros([1,9])
 #fig1, ax1 = plt.subplots()
 #p1, = ax1.plot(sc_mir[0], 'yo-')
 #p2, = ax1.plot(sc_mir[1], 'go-')
@@ -549,15 +549,15 @@ for i in range(len(scale_factor)):
 #p4, = ax1.plot(sc_mir[3], 'ko-')
 #p5, = ax1.plot(sc_mir[4], 'co-')
 #p6, = ax1.plot(zero[0], 'b--')
-#ax1.set_title('Temperature Differences with MODIS SST for Etna Scenes (MIR band)')
+#ax1.set_title('Temperature Differences with MODIS LST for Lybia-1 Scenes (MIR band)')
 #ax1.set_xlabel('time')
 #ax1.set_ylabel('Temperature Differences [K]')
-#ax1.set_xticks(range(12))
-#ax1.set_xticklabels(time, rotation=30, fontsize=6)
+#ax1.set_xticks(range(9))
+#ax1.set_xticklabels(time, rotation=30, fontsize=9)
 #plt.legend([p1,p2,p3,p4,p5], ['scale factor 1.00','scale factor 1.05','scale factor 1.10','scale factor 1.15','scale factor 1.20'],prop={'size':7})
 #fig1.tight_layout()
 #plt.grid()
-#fig1.savefig(os.path.join(r'E:\Penghua\results\ComSST\Etna2', r'Etna_scf_mir.png'), dpi=200)
+#fig1.savefig(os.path.join(r'E:\Penghua\results\ComLST\Lybia-1', r'Lybia-1_scf_mir.png'), dpi=500)
 #plt.show()
 #
 #fig1, ax1 = plt.subplots()
@@ -567,15 +567,15 @@ for i in range(len(scale_factor)):
 #p4, = ax1.plot(sc_tir[3], 'ko-')
 #p5, = ax1.plot(sc_tir[4], 'co-')
 #p6, = ax1.plot(zero[0], 'b--')
-#ax1.set_title('Temperature Differences with MODIS SST for Etna Scenes (TIR band)')
+#ax1.set_title('Temperature Differences with MODIS LST for Lybia-1 Scenes (TIR band)')
 #ax1.set_xlabel('tnaime')
 #ax1.set_ylabel('Temperature Differences [K]')
-#ax1.set_xticks(range(12))
-#ax1.set_xticklabels(time, rotation=30, fontsize=6)
+#ax1.set_xticks(range(9))
+#ax1.set_xticklabels(time, rotation=30, fontsize=9)
 #plt.legend([p1,p2,p3,p4,p5], ['scale factor 1.00','scale factor 1.05','scale factor 1.10','scale factor 1.15','scale factor 1.20'],prop={'size':7})
 #fig1.tight_layout()
 #plt.grid()
-#fig1.savefig(os.path.join(r'E:\Penghua\results\ComSST\Etna2', r'Etna_scf_test_tir.png'), dpi=200)
+#fig1.savefig(os.path.join(r'E:\Penghua\results\ComLST\Lybia-1', r'Lybia-1_scf_test_tir.png'), dpi=500)
 #plt.show()
 #
 #
@@ -620,15 +620,16 @@ for i in range(len(scale_factor)):
 #ax1.set_title('Best scale factor for each scene (MIR band)')
 #ax1.set_ylabel('scale factor')
 #ax1.set_xlabel('time')
-#ax1.set_xticks(range(12))
-#ax1.set_xticklabels(time, rotation=30, fontsize=7)
+#ax1.set_yticks(numpy.arange(1.05,1.21,0.01))
+#ax1.set_xticks(range(9))
+#ax1.set_xticklabels(time, rotation=30, fontsize=9)
 #fig.tight_layout()
 #plt.grid()
-#fig.savefig(os.path.join(r'E:\Penghua\results\ComSST\Etna2', r'Etna_bsc_mir.png'), dpi=200)
+#fig.savefig(os.path.join(r'E:\Penghua\results\ComLST\Lybia-1', r'Lybia-1_bsc_mir.png'), dpi=500)
 #plt.show()
-#one = 1.15 * numpy.ones([1,12])
+#one = 1.15 * numpy.ones([1,9])
 #p2, = ax1.plot(one[0], 'b--')
-#fig.savefig(os.path.join(r'E:\Penghua\results\ComSST\Etna2', r'Etna_bsc&ssc_mir.png'), dpi=200)
+#fig.savefig(os.path.join(r'E:\Penghua\results\ComLST\Lybia-1', r'Lybia-1_bsc&ssc_mir.png'), dpi=500)
 #plt.show()
 #
 #fig, ax1 = plt.subplots()
@@ -642,26 +643,26 @@ for i in range(len(scale_factor)):
 #ax2.set_ylabel('corresponding $\Delta$T [K]', color='b')
 #ax2.tick_params('y', colors='b')
 #ax1.set_xlabel('time')
-#ax1.set_xticks(range(12))
-#ax1.set_xticklabels(time, rotation=30, fontsize=7)
+#ax1.set_xticks(range(9))
+#ax1.set_xticklabels(time, rotation=30, fontsize=9)
 #fig.tight_layout()
 #plt.grid()
 #plt.legend([p1,p2], [r'best scale factor', r'corresponding $\Delta$T'],prop={'size':7})
-#fig.savefig(os.path.join(r'E:\Penghua\results\ComSST\Etna2', r'Etna_bsc&tem_mir.png'), dpi=200)
+#fig.savefig(os.path.join(r'E:\Penghua\results\ComLST\Lybia-1', r'Lybia-1_bsc&tem_mir.png'), dpi=500)
 #plt.show()
 #
 #fig2, ax1 = plt.subplots()
 #p1, = ax1.plot(diff_tem, 'ro-', markerfacecolor='none')
 #p3, = ax1.plot(sc_mir[3], 'bo--', markerfacecolor='none')
-#ax1.set_title('Temperature Differences with MODIS SST for Etna Scenes (MIR band)')
+#ax1.set_title('Temperature Differences with MODIS LST for Lybia-1 Scenes (MIR band)')
 #ax1.set_ylabel('Temperature Differences [K]')
 #ax1.set_xlabel('time')
-#ax1.set_xticks(range(12))
-#ax1.set_xticklabels(time, rotation=30, fontsize=7)
+#ax1.set_xticks(range(9))
+#ax1.set_xticklabels(time, rotation=30, fontsize=9)
 #plt.legend([p1,p3], [r'smallest $\Delta$T','$\Delta$T for scale factor 1.15'],prop={'size':7})
 #plt.grid()
 #fig2.tight_layout()
-#fig2.savefig(os.path.join(r'E:\Penghua\results\ComSST\Etna2', r'Etna_bsc&temCom_mir.png'), dpi=200)
+#fig2.savefig(os.path.join(r'E:\Penghua\results\ComLST\Lybia-1', r'Lybia-1_bsc&temCom_mir.png'), dpi=500)
 #plt.show()
 #
 #sc = []
@@ -705,23 +706,23 @@ for i in range(len(scale_factor)):
 #ax1.set_title('Best scale factor for each scene (TIR band)')
 #ax1.set_ylabel('scale factor')
 #ax1.set_xlabel('time')
-#ax1.set_xticks(range(12))
-#ax1.set_yticks(numpy.arange(1.0,1.1,0.01))
+#ax1.set_xticks(range(9))
+#ax1.set_yticks(numpy.arange(1.0,1.16,0.01))
 #ax1.set_xticklabels(time, rotation=30, fontsize=7)
 #fig.tight_layout()
 #plt.grid()
-#fig.savefig(os.path.join(r'E:\Penghua\results\ComSST\Etna2', r'Etna_bsc_tir.png'), dpi=200)
+#fig.savefig(os.path.join(r'E:\Penghua\results\ComLST\Lybia-1', r'Lybia-1_bsc_tir.png'), dpi=500)
 #plt.show()
-#one = 1.05 * numpy.ones([1,13])
+#one = 1.05 * numpy.ones([1,9])
 #p2, = ax1.plot(one[0], 'b--')
-#fig.savefig(os.path.join(r'E:\Penghua\results\ComSST\Etna2', r'Etna_bsc&ssc_tir.png'), dpi=200)
+#fig.savefig(os.path.join(r'E:\Penghua\results\ComLST\Lybia-1', r'Lybia-1_bsc&ssc_tir.png'), dpi=500)
 #plt.show()
 #
 #fig, ax1 = plt.subplots()
 #p1, = ax1.plot(b_sc, 'ro-')
 #ax1.set_title('Best scale factor for each scene and corresponding $\Delta$T(TIR band)')
 #ax1.set_ylabel('best scale factor for each scene', color='r')
-#ax1.set_yticks(numpy.arange(1.0,1.1,0.01))
+##ax1.set_yticks(numpy.arange(1.0,1.15,0.01))
 #ax1.tick_params('y', colors='r')
 #
 #ax2 = ax1.twinx()
@@ -729,26 +730,26 @@ for i in range(len(scale_factor)):
 #ax2.set_ylabel('corresponding $\Delta$T [K]', color='b')
 #ax2.tick_params('y', colors='b')
 #ax1.set_xlabel('time')
-#ax1.set_xticks(range(12))
-#ax1.set_xticklabels(time, rotation=30, fontsize=7)
+#ax1.set_xticks(range(9))
+#ax1.set_xticklabels(time, rotation=30, fontsize=9)
 #fig.tight_layout()
 #plt.grid()
 #plt.legend([p1,p2], [r'best scale factor', r'corresponding $\Delta$T'],prop={'size':7})
-#fig.savefig(os.path.join(r'E:\Penghua\results\ComSST\Etna2', r'Etna_bsc&tem_tir.png'), dpi=200)
+#fig.savefig(os.path.join(r'E:\Penghua\results\ComLST\Lybia-1', r'Lybia-1_bsc&tem_tir.png'), dpi=500)
 #plt.show()
 #
 #fig2, ax1 = plt.subplots()
 #p1, = ax1.plot(diff_tem, 'ro-', markerfacecolor='none')
 #p2, = ax1.plot(sc_tir[1], 'bo--', markerfacecolor='none')
-#ax1.set_title('Temperature Differences with MODIS SST for Etna Scenes(TIR band)')
+#ax1.set_title('Temperature Differences with MODIS LST for Lybia-1 Scenes(TIR band)')
 #ax1.set_ylabel('Temperature Differences [K]')
 #ax1.set_xlabel('time')
-#ax1.set_xticks(range(12))
+#ax1.set_xticks(range(9))
 #ax1.set_xticklabels(time, rotation=30, fontsize=7)
 #plt.legend([p1,p2], [r'smallest $\Delta$T',r'$\Delta$T for scale factor 1.05'],prop={'size':7})
 #plt.grid()
 #fig2.tight_layout()
-#fig2.savefig(os.path.join(r'E:\Penghua\results\ComSST\Etna2', r'Etna_bsc&temCom_tir.png'), dpi=200)
+#fig2.savefig(os.path.join(r'E:\Penghua\results\ComLST\Lybia-1', r'Lybia-1_bsc&temCom_tir.png'), dpi=500)
 #plt.show()
 
 
