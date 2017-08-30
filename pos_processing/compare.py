@@ -117,7 +117,7 @@ def cal (inputimg):
 
 Location = ['Etna', 'Demmin', 'Lascar', 'Lybien-1', 'Lybien-2', 'Portugal']
 
-sourFile = r'E:\Penghua\data' + '\\' + Location[4] #+ r'\self_test'
+sourFile = r'E:\Penghua\data' + '\\' + Location[3] #+ r'\self_test'
 
 os.chdir(sourFile)
 

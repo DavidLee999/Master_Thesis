@@ -237,7 +237,7 @@ def centerPos( FID, input_zone_polygon, input_value_raster ):
 #shutil.rmtree(os.path.join(os.path.split(shpfile)[0], 'temp'))
 
 
-shpFile = r'E:\Penghua\data\Lybien-2\shapefiles'
+shpFile = r'E:\Penghua\data\Lybien-1\shapefiles'
 
 shp = []
 
@@ -249,7 +249,7 @@ for files in os.listdir(shpFile):
         
         shp.append(os.path.abspath(files)) 
 
-sourFile = r'E:\Penghua\data\Lybien-2' #\self_test
+sourFile = r'E:\Penghua\data\Lybien-1' #\self_test
 
 os.chdir(sourFile)
 
@@ -348,7 +348,7 @@ for i in range(len(scale_factor)):
     
     for files in os.listdir(sourFile):
         
-        if ('0' in files) and ('2017' not in files): #files in time: ('2017' not in files)
+        if ('0' in files) and ('2017' in files): #files in time: ('2017' not in files)
             
             
 #            print files
