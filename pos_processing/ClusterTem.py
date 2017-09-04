@@ -167,12 +167,13 @@ def clusterTem(FID, input_zone_polygon, input_value_raster, NoDataValue = -9999)
     #print zone
     #print numpy.mean(zone)
     #tem = k2_tir / math.log(k1_tir / (rad_weightedAverage*1000) + 1, math.e)
-#    print "feature %d" %FID    
-#    print tem
-#    print numpy.average(valid_tem, weights = valid_area)
-#    print numpy.mean(valid_tem)
+    print "feature %d" %FID    
+    print tem
+    print numpy.average(valid_tem, weights = valid_area)
+    print numpy.mean(valid_tem)
     #print tem
     
+    return tem
 #    return numpy.mean(zoneraster)
 
 def loop_clusterTem(shpfile, rasterfile, noDataValue):
@@ -180,8 +181,12 @@ def loop_clusterTem(shpfile, rasterfile, noDataValue):
     lyr = shp.GetLayer()
     featNum = lyr.GetFeatureCount()
     
+    statDict = {}
     for i in range(featNum - 1):
-        clusterTem(i, shpfile, rasterfile, noDataValue)
+        mean_tem = clusterTem(i, shpfile, rasterfile, noDataValue)
+        statDict[i] = mean_tem
+               
+    return statDict
 
 def centerPos(FID, input_zone_polygon, input_value_raster, input_bg_raster, noDataValue = 0):
     
@@ -310,16 +315,20 @@ def centerPos(FID, input_zone_polygon, input_value_raster, input_bg_raster, noDa
     center_x = sumX / sum_diff + xoff
     center_y = sumY / sum_diff + yoff
     
-    return[center_y, center_x]
+    return [center_y, center_x]
 
-def loop_centerPos(input_zonal_raster, input_MIR_radiance, input_bg_tem, noDataValue = 0):
+def loop_centerPos(input_zone_polygon, input_MIR_radiance, input_bg_tem, noDataValue = 0):
     
-    shp = ogr.Open(input_zonal_raster)
+    shp = ogr.Open(input_zone_polygon)
     lyr = shp.GetLayer()
-    featNum = lyr.getFeatureCount()
+    featNum = lyr.GetFeatureCount()
     
+    statDict = {}
     for i in range(featNum - 1):
-        centerPos(i, input_zonal_raster, input_MIR_radiance, input_bg_tem, noDataValue)
+        pos = centerPos(i, input_zone_polygon, input_MIR_radiance, input_bg_tem, noDataValue)
+        statDict[i] = pos
+                
+    return statDict
 
        
 shpfile = r'E:\Penghua\data\Etna\2014.06.22\TET\ac_results_1.05_new\Mask\sub_tem.shp'
@@ -334,5 +343,5 @@ alpha = r'E:\Penghua\data\georeferenced_TET\Etna\new_selected_data\alpha_channel
 
 #bg = zonalStats.zonal_stats(0, alpha, rasterfile, 2, -9999)
 
-#a = loop_clusterTem(shpfile, rasterfile, 0)
-b = centerPos(0, shpfile, tet_radiance, bg_tem)
+a = loop_clusterTem(shpfile, rasterfile, 0)
+b = loop_centerPos(shpfile, tet_radiance, bg_tem)
