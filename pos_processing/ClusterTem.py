@@ -126,6 +126,7 @@ def clusterTem(FID, input_zone_polygon, input_value_raster, NoDataValue = -9999)
 #    TIR_tem_band = raster.GetRasterBand(2)
     sub_pix_tem_band = raster.GetRasterBand(4)
     sub_pix_area_band = raster.GetRasterBand(5)
+        
 #    bg_tem_band = bg_raster.GetRasterBand(1)
     
 #    MIR_tem_array = MIR_tem_band.ReadAsArray(xoff, yoff, xcount, ycount).astype(numpy.float)
@@ -141,10 +142,21 @@ def clusterTem(FID, input_zone_polygon, input_value_raster, NoDataValue = -9999)
     bandmask = target_ds.GetRasterBand(1)
     datamask = bandmask.ReadAsArray(0, 0, xcount, ycount).astype(numpy.float)
     datamask[logic] = 0.0
-    print datamask
+
     valid_tem = numpy.ma.masked_array(sub_pix_tem_array, numpy.logical_not(datamask))
     valid_area = numpy.ma.masked_array(sub_pix_area_array, numpy.logical_not(datamask))
     
+    if (raster.RasterCount >= 6):
+        FRP_raster = raster.GetRasterBand(6)
+        FRP_array = FRP_raster.ReadAsArray(xoff, yoff, xcount, ycount).astype(numpy.float)
+        valid_frp = numpy.ma.masked_array(FRP_array, numpy.logical_not(datamask))
+        frp = numpy.sum(valid_frp)
+    else:
+        frp = 0.0
+        
+    
+    Area = 150 * 150 * numpy.mean(valid_area)
+                                 
     rad = valid_tem.copy()
     
     logic1 = numpy.where(rad <= 400)
@@ -173,7 +185,7 @@ def clusterTem(FID, input_zone_polygon, input_value_raster, NoDataValue = -9999)
     print numpy.mean(valid_tem)
     #print tem
     
-    return tem
+    return [tem, Area, frp]
 #    return numpy.mean(zoneraster)
 
 def loop_clusterTem(shpfile, rasterfile, noDataValue):
