@@ -150,7 +150,7 @@ def clusterTem(FID, input_zone_polygon, input_value_raster, NoDataValue = -9999)
         FRP_raster = raster.GetRasterBand(6)
         FRP_array = FRP_raster.ReadAsArray(xoff, yoff, xcount, ycount).astype(numpy.float)
         valid_frp = numpy.ma.masked_array(FRP_array, numpy.logical_not(datamask))
-        frp = numpy.sum(valid_frp)
+        frp = numpy.average(valid_frp, weights = valid_area)
     else:
         frp = 0.0
         
@@ -343,15 +343,23 @@ def loop_centerPos(input_zone_polygon, input_MIR_radiance, input_bg_tem, noDataV
     return statDict
 
        
-shpfile = r'E:\Penghua\data\Etna\2014.06.22\TET\ac_results_1.05_new\Mask\sub_tem.shp'
+#shpfile = r'E:\Penghua\data\Etna\2014.06.22\TET\ac_results_1.05_new\Mask\sub_tem.shp'
+#
+#rasterfile = r'E:\Penghua\data\Etna\2014.06.22\TET\ac_results_1.05_new\FBI_TET1_20140622T232052_20140622T232155_L2_002589_WHM_cobined_MIR_TIR_tem.tif'
+#
+#tet_radiance = r'E:\Penghua\data\Etna\2014.06.22\TET\FBI_TET1_20140622T232052_20140622T232155_L2_002589_WHM_MWIR_near_repro_cut.tif'
+#
+#bg_tem = r'E:\Penghua\data\Etna\2014.06.22\TET\ac_results_1.05_new\FBI_TET1_20140622T232052_20140622T232155_L2_002589_WHM_cobined_MIR_TIR_Tback.tif'
+#
+#alpha = r'E:\Penghua\data\georeferenced_TET\Etna\new_selected_data\alpha_channel\FBI_TET1_20140622T232052_20140622T232155_L2_002589_WHM_MWIR_near_repro_alpha.shp'
 
-rasterfile = r'E:\Penghua\data\Etna\2014.06.22\TET\ac_results_1.05_new\FBI_TET1_20140622T232052_20140622T232155_L2_002589_WHM_cobined_MIR_TIR_tem.tif'
+shpfile = r'E:\Penghua\data\Etna\2014.07.03\TET\ac_results_1.15\Mask\sub_tem.shp'
 
-tet_radiance = r'E:\Penghua\data\Etna\2014.06.22\TET\FBI_TET1_20140622T232052_20140622T232155_L2_002589_WHM_MWIR_near_repro_cut.tif'
+rasterfile = r'E:\Penghua\data\Etna\2014.07.03\TET\ac_results_1.15\FBI_TET1_20140703T232012_20140703T232115_L2_C_CF-00335_cobined_MIR_TIR_tem.tif'
 
-bg_tem = r'E:\Penghua\data\Etna\2014.06.22\TET\ac_results_1.05_new\FBI_TET1_20140622T232052_20140622T232155_L2_002589_WHM_cobined_MIR_TIR_Tback.tif'
+tet_radiance = r'E:\Penghua\data\Etna\2014.07.03\TET\FBI_TET1_20140703T232012_20140703T232115_L2_C_CF-00335_MWIR_near_repro_cut.tif'
 
-alpha = r'E:\Penghua\data\georeferenced_TET\Etna\new_selected_data\alpha_channel\FBI_TET1_20140622T232052_20140622T232155_L2_002589_WHM_MWIR_near_repro_alpha.shp'
+bg_tem = r'E:\Penghua\data\Etna\2014.07.03\TET\ac_results_1.15\FBI_TET1_20140703T232012_20140703T232115_L2_C_CF-00335_cobined_MIR_TIR_Tback.tif'
 
 #bg = zonalStats.zonal_stats(0, alpha, rasterfile, 2, -9999)
 
