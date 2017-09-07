@@ -190,7 +190,7 @@ def clusterTem(FID, input_zone_polygon, input_value_raster, NoDataValue = -9999)
     #print tem
     print 5.6704 * tem * tem * tem * tem * Area/(100000000 * 1000000)
     print 5.6704 * tem * tem * tem * tem * 150 * 150 * (numpy.sum(valid_area) / 4.0)/(100000000 * 1000000)
-    
+    print frp
     return [tem, Area, frp]
 #    return numpy.mean(zoneraster)
 
