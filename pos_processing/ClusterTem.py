@@ -191,7 +191,7 @@ def clusterTem(FID, input_zone_polygon, input_value_raster, NoDataValue = -9999)
 #    print 5.6704 * tem * tem * tem * tem * Area/(100000000 * 1000000)
 #    print 5.6704 * tem * tem * tem * tem * 150 * 150 * (numpy.sum(valid_area) / 4.0)/(100000000 * 1000000)
 
-    return [tem, Area, frp]
+    return [tem, Area, clusterSize, frp]
 #    return numpy.mean(zoneraster)
 
 def loop_clusterTem(shpfile, rasterfile, noDataValue):
