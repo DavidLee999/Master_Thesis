@@ -150,13 +150,13 @@ def clusterTem(FID, input_zone_polygon, input_value_raster, NoDataValue = -9999)
         FRP_raster = raster.GetRasterBand(6)
         FRP_array = FRP_raster.ReadAsArray(xoff, yoff, xcount, ycount).astype(numpy.float)
         valid_frp = numpy.ma.masked_array(FRP_array, numpy.logical_not(datamask))
-        frp = numpy.mean(valid_frp)
+        frp = numpy.sum(valid_frp)
     else:
         frp = 0.0
         
-    
+    print "feature %d" %FID 
     Area = 185 * 185 * (numpy.sum(valid_area) / 4.0)
-#    print Area
+    print 185 * 185 * (numpy.mean(valid_area) / 4.0)
                                  
     rad = valid_tem.copy()
     
@@ -185,7 +185,8 @@ def clusterTem(FID, input_zone_polygon, input_value_raster, NoDataValue = -9999)
 #    print numpy.average(valid_tem, weights = valid_area)
 #    print numpy.mean(valid_tem)
     #print tem
-    print 5.6704 * tem *tem *tem *tem *Area/(100000000 * 1000000)
+    print 5.6704 * tem * tem * tem * tem * Area/(100000000 * 1000000)
+    
     return [tem, Area, frp]
 #    return numpy.mean(zoneraster)
 
