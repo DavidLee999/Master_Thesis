@@ -157,9 +157,9 @@ def clusterTem(FID, input_zone_polygon, input_value_raster, NoDataValue = -9999)
     clusterSize = numpy.where(datamask == 1)[0].size
                              
     print "feature %d" %FID 
-    Area = 150 * 150 * numpy.mean(valid_area) * clusterSize
+    Area = 150 * 150 * numpy.sum(valid_area)
 #    print 150 * 150 * (numpy.mean(valid_area) / 4.0)
-    print numpy.mean(valid_area)
+#    print numpy.mean(valid_area)
                                  
     rad = valid_tem.copy()
     
@@ -188,9 +188,9 @@ def clusterTem(FID, input_zone_polygon, input_value_raster, NoDataValue = -9999)
 #    print numpy.average(valid_tem, weights = valid_area)
 #    print numpy.mean(valid_tem)
     #print tem
-    print 5.6704 * tem * tem * tem * tem * Area/(100000000 * 1000000)
-    print 5.6704 * tem * tem * tem * tem * 150 * 150 * (numpy.sum(valid_area) / 4.0)/(100000000 * 1000000)
-    print frp
+#    print 5.6704 * tem * tem * tem * tem * Area/(100000000 * 1000000)
+#    print 5.6704 * tem * tem * tem * tem * 150 * 150 * (numpy.sum(valid_area) / 4.0)/(100000000 * 1000000)
+
     return [tem, Area, frp]
 #    return numpy.mean(zoneraster)
 
