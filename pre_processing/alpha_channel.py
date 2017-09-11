@@ -25,9 +25,9 @@ def alpha_channel(inFileLoc, outFileLoc, nodata=-9999):
     
 
    
-sourfile = r'E:\Penghua\data\georeferenced_TET\Lybien-2\new_selected_data'
+sourfile = r'E:\Penghua\data\georeferenced_TET\Bardarbunga'
 
-outputfile = r'E:\Penghua\data\georeferenced_TET\Lybien-2\new_selected_data\alpha_channel'
+outputfile = r'E:\Penghua\data\georeferenced_TET\Bardarbunga\alpha_channel'
 
 if os.path.exists(outputfile) == False:
     

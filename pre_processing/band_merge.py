@@ -32,7 +32,7 @@ def band_merge(inputimg, outputimg):
     gdal_merge.main()
     
 
-sourFolder = r'E:\Penghua\data\Lybien-2'
+sourFolder = r'E:\Penghua\data\Bardarbunga'
 
 inputimg = []
 

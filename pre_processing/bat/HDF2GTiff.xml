@@ -4,7 +4,7 @@
     <operator>Read</operator>
     <sources/>
     <parameters class="com.bc.ceres.binding.dom.XppDomElement">
-      <file>E:\Penghua\data\corresponding_water_vapor\Lybien-2\new_selected_data\2017.07.14\MYD05_L2.A2017195.0050.006.2017195165313.hdf</file>
+      <file>E:\Penghua\data\corresponding_water_vapor\Bardarbunga\2014.09.14\MYD05_L2.A2014257.0455.006.2014283191450.hdf</file>
     </parameters>
   </node>
   <node id="Subset">
@@ -30,7 +30,7 @@
     </sources>
     <parameters class="com.bc.ceres.binding.dom.XppDomElement">
       <wktFile/>
-      <crs>EPSG:32633</crs>
+      <crs>EPSG:32628</crs>
       <resampling>Nearest</resampling>
       <referencePixelX/>
       <referencePixelY/>
@@ -56,7 +56,7 @@
       <sourceProduct refid="Reproject"/>
     </sources>
     <parameters class="com.bc.ceres.binding.dom.XppDomElement">
-      <file>E:\Penghua\data\corresponding_water_vapor\Lybien-2\new_selected_data\2017.07.14\MYD05_L2.A2017195.0050.006.2017195165313.tif</file>
+      <file>E:\Penghua\data\corresponding_water_vapor\Bardarbunga\2014.09.14\MYD05_L2.A2014257.0455.006.2014283191450.tif</file>
       <formatName>GeoTIFF-BigTIFF</formatName>
     </parameters>
   </node>
@@ -66,10 +66,10 @@
             <displayPosition x="37.0" y="134.0"/>
     </node>
     <node id="Subset">
-      <displayPosition x="190.0" y="136.0"/>
+      <displayPosition x="172.0" y="135.0"/>
     </node>
     <node id="Reproject">
-      <displayPosition x="336.0" y="128.0"/>
+      <displayPosition x="320.0" y="135.0"/>
     </node>
     <node id="Write">
             <displayPosition x="455.0" y="135.0"/>
