@@ -157,7 +157,7 @@ def clusterTem(FID, input_zone_polygon, input_value_raster, NoDataValue = -9999)
     clusterSize = numpy.where(datamask == 1)[0].size
                              
     print "feature %d" %FID 
-    Area = 150 * 150 * numpy.sum(valid_area)
+    Area = 150 * 150 * numpy.sum(valid_area) / 4.0
 #    print 150 * 150 * (numpy.mean(valid_area) / 4.0)
 #    print numpy.mean(valid_area)
                                  
@@ -191,7 +191,7 @@ def clusterTem(FID, input_zone_polygon, input_value_raster, NoDataValue = -9999)
     print frp
     print 5.6704 * tem * tem * tem * tem * Area/(100000000 * 1000000)
     print 5.6704 * tem * tem * tem * tem * 150 * 150 * (numpy.sum(valid_area) / 4.0)/(100000000 * 1000000)
-
+    frp = 5.6704 * numpy.power(tem, 4) * Area / (100000000 * 1000000)
     return [tem, Area, clusterSize, frp]
 #    return numpy.mean(zoneraster)
 
@@ -350,13 +350,13 @@ def loop_centerPos(input_zone_polygon, input_MIR_radiance, input_bg_tem, noDataV
     return statDict
 
        
-shpfile = r'E:\Penghua\data\Etna\2014.06.22\TET\ac_results_1.05_new\Mask\sub_tem.shp'
+shpfile = r'E:\Penghua\data\Etna\2014.06.22\TET\ac_results\Mask\sub_tem.shp'
 
-rasterfile = r'E:\Penghua\data\Etna\2014.06.22\TET\ac_results_1.05_new\FBI_TET1_20140622T232052_20140622T232155_L2_002589_WHM_cobined_MIR_TIR_tem.tif'
+rasterfile = r'E:\Penghua\data\Etna\2014.06.22\TET\ac_results\FBI_TET1_20140622T232052_20140622T232155_L2_002589_WHM_cobined_MIR_TIR_tem.tif'
 
 tet_radiance = r'E:\Penghua\data\Etna\2014.06.22\TET\FBI_TET1_20140622T232052_20140622T232155_L2_002589_WHM_MWIR_near_repro_cut.tif'
 
-bg_tem = r'E:\Penghua\data\Etna\2014.06.22\TET\ac_results_1.05_new\FBI_TET1_20140622T232052_20140622T232155_L2_002589_WHM_cobined_MIR_TIR_Tback.tif'
+bg_tem = r'E:\Penghua\data\Etna\2014.06.22\TET\ac_results\FBI_TET1_20140622T232052_20140622T232155_L2_002589_WHM_cobined_MIR_TIR_Tback.tif'
 #
 #alpha = r'E:\Penghua\data\georeferenced_TET\Etna\new_selected_data\alpha_channel\FBI_TET1_20140622T232052_20140622T232155_L2_002589_WHM_MWIR_near_repro_alpha.shp'
 
