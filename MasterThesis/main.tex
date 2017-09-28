@@ -1,0 +1,197 @@
+\documentclass[
+12pt, % The default document font size, options: 10pt, 11pt, 12pt
+%oneside, % Two side (alternating margins) for binding by default, uncomment to switch to one side
+english, % ngerman for German
+singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespacing
+%draft, % Uncomment to enable draft mode (no pictures, no links, overfull hboxes indicated)
+%nolistspacing, % If the document is onehalfspacing or doublespacing, uncomment this to set spacing in lists to single
+%liststotoc, % Uncomment to add the list of figures/tables/etc to the table of contents
+%toctotoc, % Uncomment to add the main table of contents to the table of contents
+%parskip, % Uncomment to add space between paragraphs
+%nohyperref, % Uncomment to not load the hyperref package
+headsepline, % Uncomment to get a line under the header
+%chapterinoneline, % Uncomment to place the chapter title next to the number on one line
+%consistentlayout, % Uncomment to change the layout of the declaration, abstract and acknowledgements pages to match the default layout
+]{MastersThesis} % The class file specifying the document structure
+
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+\usepackage[T1]{fontenc} % Output font encoding for international characters
+
+\usepackage{palatino} % Use the Palatino font by default
+
+\usepackage[backend=bibtex,style=authoryear,natbib=true]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
+
+\addbibresource{References.bib} % The filename of the bibliography
+\usepackage{amsmath}
+\usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
+\usepackage{graphicx}
+\usepackage{subfigure}
+
+
+%----------------------------------------------------------------------------------------
+%	MARGIN SETTINGS
+%----------------------------------------------------------------------------------------
+
+\geometry{
+	paper=a4paper, % Change to letterpaper for US letter
+	inner=3.0cm, % Inner margin
+	outer=2.5cm, % Outer margin
+	bindingoffset=.5cm, % Binding offset
+	top=1.5cm, % Top margin
+	bottom=1.5cm, % Bottom margin
+	%showframe, % Uncomment to show how the type block is set on the page
+}
+
+
+%----------------------------------------------------------------------------------------
+%	THESIS INFORMATION
+%----------------------------------------------------------------------------------------
+\thesistitle{Evaluation and improvement of a dual-channel method for detection and quantification of high-temperature events based on FireBIRD data} % Your thesis title, this is used in the title and abstract, print it elsewhere with \ttitle
+\supervisor{Prof. Dr.-Ing. Uwe \textsc{Sörgel}\newline Dr.-Ing Plank \textsc{Plank}} % Your supervisor's name, this is used in the title page, print it elsewhere with \supname
+\examiner{Prof. Dr.-Ing. Uwe \textsc{Sörgel}} % Your examiner's name, this is not currently used anywhere in the template, print it elsewhere with \examname
+\degree{Master of Science} % Your degree name, this is used in the title page and abstract, print it elsewhere with \degreename
+\author{Penghua \textsc{Li}} % Your name, this is used in the title page and abstract, print it elsewhere with \authorname
+\addresses{} % Your address, this is not currently used anywhere in the template, print it elsewhere with \addressname
+
+\subject{Remote Sensing} % Your subject area, this is not currently used anywhere in the template, print it elsewhere with \subjectname
+\keywords{} % Keywords for your thesis, this is not currently used anywhere in the template, print it elsewhere with \keywordnames
+\university{\href{https://www.uni-stuttgart.de}{Universität Stuttgart}} % Your university's name and URL, this is used in the title page and abstract, print it elsewhere with \univname
+\department{\href{http://www.ifp.uni-stuttgart.de}{Institut für Photogrammetrie}} % Your department's name and URL, this is used in the title page and abstract, print it elsewhere with \deptname
+\group{\href{http://www.ifp.uni-stuttgart.de/forschung/Remote_Sensing/index.en.html}{Remote Sensing}} % Your research group's name and URL, this is used in the title page, print it elsewhere with \groupname
+\faculty{\href{http://www.geoengine.uni-stuttgart.de/}{Geomatics Engineering}} % Your faculty's name and URL, this is used in the title page and abstract, print it elsewhere with \facname
+
+\AtBeginDocument{
+\hypersetup{pdftitle=\ttitle} % Set the PDF's title to your title
+\hypersetup{pdfauthor=\authorname} % Set the PDF's author to your name
+\hypersetup{pdfkeywords=\keywordnames} % Set the PDF's keywords to your keywords
+}
+\begin{document}
+
+\frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
+
+\pagestyle{plain} % Default to the plain heading style until the thesis style is called for the body content
+
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\newgeometry{left=1.3cm,right=2.3cm, top=1.5cm, bottom=1.5cm}
+
+\begin{titlepage}
+
+\begin{minipage}[c][\textheight][t]{\textwidth}
+  \centering
+  \begin{minipage}[c]{2cm}%
+    \includegraphics[height=2cm]{ifp.png}%
+  \end{minipage}
+  \hfill
+  \begin{minipage}[c]{8cm}
+    \centering
+    \vspace*{2mm}
+    \LARGE Universität Stuttgart \\[3mm]
+    \Large Institut für Photogrammetrie
+  \end{minipage}
+  \hfill
+  \begin{minipage}[c]{2cm}%
+    \includegraphics[height=2cm]{logo_uni-stuttgart}%
+  \end{minipage}\\[5mm]
+  \rule{\textwidth}{0.5pt}\\[10mm]
+
+%  \vspace*{2cm} % kein Bild: diese Zeile "einkommentieren" ...
+  \vspace*{1cm} % ... und diese "auskommentieren ..."
+  {\LARGE {Evaluation and improvement of a dual-channel method for detection and quantification of high-temperature events based on FireBIRD data}}\\
+  \vspace*{1cm} % ... und diese "auskommentieren" ...
+
+%  \vspace*{4cm} % kein Bild: diese Zeile "einkommentieren" ...
+  \includegraphics[height=6cm]{Geo_logo.jpg}\\[10mm] % ... und diese "auskommentieren"
+
+  \vfill
+
+  \Large Studienarbeit im Studiengang\\[2mm]
+  \textbf{Geomatics Engineering}\\[2mm]
+  an der Universität Stuttgart \\[10mm]
+  Penghua Li\\[10mm]
+	  Stuttgart, May {\the\year}\\[5mm]
+  \rule{\textwidth}{0.5pt}\\[5mm]
+  \begin{minipage}{\textwidth}%
+  \hfill
+  \begin{minipage}[t]{0.13\textwidth}%
+  \large\textbf{Superviser:}\\ \\[3mm]%
+  \large\textbf{Examer:}
+  \end{minipage}
+  \quad
+  \begin{minipage}[t][3.0cm]{0.7\textwidth}%
+    \large Dr.-Ing. Simon Manuel Plank\\
+    Deutsches Zentrum für Luft- und Raumfahrt (DLR)\\[3mm]
+    Prof. Dr.-Ing. Uwe Sörge\\
+    Universität Stuttgart%\\[3mm]
+%    PD Dr.-Ing. Kunz Heinzelmann\\
+%    Polytechnicum Oberstett
+  \end{minipage}
+  \hfill
+  \end{minipage}
+\end{minipage}
+
+\end{titlepage}
+\restoregeometry
+\cleardoublepage
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT PAGE
+%----------------------------------------------------------------------------------------
+\begin{abstract}
+\addchaptertocentry{\abstractname}% Add the abstract to the table of contents
+\noindent \textbf{Key words:}
+\end{abstract}
+
+%----------------------------------------------------------------------------------------
+%	LIST OF CONTENTS/FIGURES/TABLES PAGES
+%----------------------------------------------------------------------------------------
+
+\tableofcontents % Prints the main table of contents
+\listoffigures
+\listoftables
+
+
+%----------------------------------------------------------------------------------------
+%	ABBREVIATIONS
+%----------------------------------------------------------------------------------------
+
+begin{abbreviations}{ll} % Include a list of abbreviations (a table of two columns)
+
+end{abbreviations}
+
+%----------------------------------------------------------------------------------------
+%	ACKNOWLEDGEMENTS
+%----------------------------------------------------------------------------------------
+
+%\begin{acknowledgements}
+%\addchaptertocentry{\acknowledgementname} % Add the acknowledgements to the table of contents
+%\end{acknowledgements}
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - CHAPTERS
+%----------------------------------------------------------------------------------------
+
+\mainmatter % Begin numeric (1,2,3...) page numbering
+
+\pagestyle{thesis} % Return the page headers back to the "thesis" style
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+% Include the chapters of the thesis as separate files from the Chapters folder
+% Uncomment the lines as you write the chapters
+
+\include{Chapters/Chapter1}
+\include{Chapters/Chapter2}
+\include{Chapters/Chapter3}
+\include{Chapters/Chapter4}
+\include{Chapters/Chapter5}
+\include{Chapters/Chapter6}
+%\include{Chapters/Chapter7}
+
+\nocite{*}
+\printbibheading
+\printbibliography[heading=bibintoc]
+%\bibliography{References}
+
+\end{document}

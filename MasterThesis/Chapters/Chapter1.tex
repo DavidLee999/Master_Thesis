@@ -1,0 +1,102 @@
+\chapter{Introduction and motivation}
+
+\label{Chapter1}
+
+% Define some commands to keep the formatting separated from the content 
+\newcommand{\keyword}[1]{\textbf{#1}}
+\newcommand{\tabhead}[1]{\textbf{#1}}
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\file}[1]{\texttt{\bfseries#1}}
+\newcommand{\option}[1]{\texttt{\itshape#1}}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 1
+%----------------------------------------------------------------------------------------
+
+\section{Motivation}
+
+%-----------------------------------
+%	SUBSECTION 1
+%-----------------------------------
+
+\subsection{Impacts of high-temperature events}
+
+High Temperature Events (HTE), such as fire hazards and volcanic eruptions, occur widely all over the worlds and exert great impacts on the environment in both space and time domain from global to local scales. These HTEs, without doubt, play crucial roles for the environental equilibrium \parencite{Reference1}. HTEs might bring benefits at appropriate time and places, for example by rapidly returning nutrients to the soils after vegetation senescence \parencite{Reference2}. However, the potentially hazardous characteristics of HTEs and the serious lack of knowledge about their fundamental role in Earth system processes in the context of global climate change and population explosion will cause a lot of problems \parencite{Reference3}.\\
+
+\noindent One significant and obvious effect of high-temperature events is the release of a host of particulates and gases, which might cause climate chage and serious air pollution. The 2010 eruptions of Eyjafjallajökull, a volcano in Iceland, although relatively samll for volcanic eruptions, ejected a multitude of ashes into the atmosphere, created unprecedented disruptions to European air traffic during 15 - 20 April, costing the aviation industry an estimated \$250 million per day \parencite{Reference4}. Furthermore, the population exposed to the eruption, had a higher prevalence of respiratory and mental symptoms \parencite{Reference5}.\\
+
+\noindent Fire, another kind of high-temperature events, might be one of the most prevalent of all terrestrial disturbance agents for the modification of the Earth's surface and occurs worldwide \parencite{Reference6}. On one hand, severe fires in forests stimulate vegetation regeneration, increase plant biodiversity and optimize vegetation structure \parencite{Reference7}. On the other hand, fires, especially intense fires, can burn up vegetation and create hydrophobic layer on the soil surface or at some depth of the soil, making the soil much more prone to erosion by wind and rain \parencite{Reference8}.\\
+
+\noindent Due to the threats mentioned above, high-temperature events monitoring becomes more and more important. Besides, because of the huge areas affected by high-temperature evnets and its potentially dangerous characteristics, a critical role in the monitoring and investigating of HTE belongs to satellite remote sensing. Higher spatial and spectral resolution data is demanded to better detect and quantificat high-temperature events.\\
+
+%----------------------------------------------------------------------------------------
+%	SUBSECTION 2
+%----------------------------------------------------------------------------------------
+
+\subsection{DLR's missions dedicated to high-temperature events monitoring}
+
+The first DLR's satellite specially designed for HTE monitoring was the Bi-spectral InfraRed Detection (BIRD) satellite. The primary objective of the BIRD satellite was detection and quantitative analysis of high-temperature events like fires and volcanoes. The principal BIRD imaging payload includes the HotSpot Recognition System (HSRS) with one channel in Mid-InfraRed (MIR: 3.4 - 4.2$\mu$m) spectral range and one channel in Thermal-InfraRed (TIR: 8.5 - 9.3 $\mu$m) spectral range, the Wide-Angle Optoelectronic Stereo Scanner (WAOSS-B) with a nadir channel in Near-Infrared (NIR: 0.84 - 0.90$\mu$m) spectral range. The ground resolution was 185 meters in the NIR channel and 370 meters in the MIR and TIR channels \parencite{Reference9}.\\
+
+\noindent After the BIRD mission, DLR continues monitoring of HTE with the new Fire Recognition with Bi-spectral InraRed Detector (FireBIRD) mission. It consists of two small satellites Technology Experiment carrier (TET-1), launched in July 2012, and Berlin InfraRed Optical System (BIROS), launched in June 2016. Together, these two small satellites comprise the FireBIRD mini-constellation \parencite{Reference10}. Both of them carry a HSRS which is identical to BIRD. In addition, there are an additional 3-line VIS camera. Details about the sensors of TET-1 is shown in Table 1.\\
+
+\begin{table}[!ht]
+\caption{Main FireBIRD camera parameters (Altitude 510km) \parencite{Reference11}}
+\centering
+\begin{tabular} {l|l|l}
+ \hline\hline
+   & \textbf{3 line-VIS camera} & \textbf{2 infrared cameras} \\
+ \hline
+ \textbf{Wavelength} & Green: 460 - 560 nm  & MWIR: 3.4 - 4.2 $\mu$m \\
+  & Red: 565 - 725 nm & LWIR: 8.5 - 9.3 $\mu$m \\
+  & NIR: 790 - 930 nm & \\ 
+ \hline
+ \textbf{Focal length} & 90.9 mm & 46.39 mm \\
+ \hline
+ \textbf{FOV} & 19.6$^\circ$ & 19$^\circ$ \\
+ \hline
+ \textbf{Aperture (F-Number} & 3.8 & 2.0 \\
+ \hline
+ \textbf{Detector} & CCD lines & CdHgTe arrays \\
+ \hline
+ \textbf{Pixel size} & 7 $\mu$m $\times$ 7 $\mu$m & 30 $\mu$m $\times$ 30 $\mu$m \\
+ \hline
+ \textbf{No. of pixel} & 3 $\times$ 5,164 & 2 $\times$ 512 staggered \\
+ \hline
+ \textbf{Quantization} & 14 bit & 14 bit \\
+ \hline
+ \textbf{Ground resolution} & 42.4 m & 356 m \\
+ \hline
+ \textbf{Sampling size} & 42.4 m & 178 m \\
+ \hline
+ \textbf{Swath width} & 211 km & 178 km \\
+ \hline
+ \textbf{In-flight calibration} & No & Black body flap \\
+ \hline
+ \textbf{Data rate} & max 44 MBit/s & 0.35 MBit/s \\
+  & nom 11.2 Mbit/s & \\
+ \hline
+ \textbf{Accuracy} & 100 m at ground & 100 m at ground \\
+ \hline\hline
+\end{tabular}
+\label{ParaFireBIRD}
+\end{table}
+   
+
+\noindent Because BIROS is still undergoing an extensive testing program and does not put into use yet, the focus lies on TET-1 imageries in this thsis.\\ 
+
+%----------------------------------------------------------------------------------------
+%	SECTION 2
+%----------------------------------------------------------------------------------------
+
+\section{Outline of the thesis}
+This thesis consist of six chapters. The remaining chapters are organized as follows.\\
+
+\noindent Chapter 2 gives a brief intorduction of thermal infrared remote sensing, including the thermal infrared spectrum, atmospheric windows as well as some basic laws important for the quantitating fire pixels' characteristics. Furthermore, a practical and solid method for detection and characterization of sub-pixel fire and its pixel fraction is reviewed in section 2.2.\\
+
+\noindent Then, a newly developed mehtod, called MITIP, which is used for atmospheric correction and thermal infrared image processing, is introducted in Chapter 3. The required input data for it and the necessary pre-processings are stated in section 3.1. Its procedures and principles, which are based on the theories and method introduced in Chapter2, are given in section 3.2. Section 3.3 gives a description of the outputs of the MITIP.\\
+
+\noindent Chapter 4 presents the validation and improvements of the MITIP method. Its outputs are compared with the MODIS temperature products, namely MODIS Sea Surface Temperature (SST) and MODIS Land Surface Temperature (LST). These comparisons are done by means of time-series analyses for the purpose of further improvements of the MITIP method and finding suitable scale factors for the radiometric correction of TET-1 imageries. Finally, the calibration results are presented and the tests of the choosen scale factors for transferability with imageries of other test sites are shown as well.\\
+
+\noindent In Chapter 5, the processing results of TET imageries of different test sites from the MITIP method are demostrated in section 5.1. The outcomes of the MITIP method and the results of Zhukov's algorithm, which is used to process TET-1 imageries originally, are compared in this chapter. In order to do the comparisons, a procedure is developed to convert the pixel-based results to cluster-based results, which is described in section 5.2. The comparison results are presented in section 5.3.\\
+
+\noindent Finally, the conclusions and outlooks are given in Chapter 6.\\
