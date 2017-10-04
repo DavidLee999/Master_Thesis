@@ -4,7 +4,7 @@
     <operator>Read</operator>
     <sources/>
     <parameters class="com.bc.ceres.binding.dom.XppDomElement">
-      <file>E:\Penghua\data\corresponding_water_vapor\Bardarbunga\2014.09.14\MYD05_L2.A2014257.0455.006.2014283191450.hdf</file>
+      <file>E:\Penghua\data\Portugal\2016.08.11\wv_compared\MYD05_L2.A2016224.1425.006.2016237020912.hdf</file>
     </parameters>
   </node>
   <node id="Subset">
@@ -30,7 +30,7 @@
     </sources>
     <parameters class="com.bc.ceres.binding.dom.XppDomElement">
       <wktFile/>
-      <crs>EPSG:32628</crs>
+      <crs>EPSG:32629</crs>
       <resampling>Nearest</resampling>
       <referencePixelX/>
       <referencePixelY/>
@@ -56,7 +56,7 @@
       <sourceProduct refid="Reproject"/>
     </sources>
     <parameters class="com.bc.ceres.binding.dom.XppDomElement">
-      <file>E:\Penghua\data\corresponding_water_vapor\Bardarbunga\2014.09.14\MYD05_L2.A2014257.0455.006.2014283191450.tif</file>
+      <file>E:\Penghua\data\Portugal\2016.08.11\wv_compared\MYD05_L2.A2016224.1425.006.2016237020912.tif</file>
       <formatName>GeoTIFF-BigTIFF</formatName>
     </parameters>
   </node>

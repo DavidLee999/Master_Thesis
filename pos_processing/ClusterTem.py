@@ -142,10 +142,10 @@ def clusterTem(FID, input_zone_polygon, input_value_raster, NoDataValue = -9999)
     bandmask = target_ds.GetRasterBand(1)
     datamask = bandmask.ReadAsArray(0, 0, xcount, ycount).astype(numpy.float)
     datamask[logic] = 0.0
-
+    
     valid_tem = numpy.ma.masked_array(sub_pix_tem_array, numpy.logical_not(datamask))
     valid_area = numpy.ma.masked_array(sub_pix_area_array, numpy.logical_not(datamask))
-    
+    print dir(valid_tem)
     if (raster.RasterCount >= 6):
         FRP_raster = raster.GetRasterBand(6)
         FRP_array = FRP_raster.ReadAsArray(xoff, yoff, xcount, ycount).astype(numpy.float)
@@ -172,7 +172,7 @@ def clusterTem(FID, input_zone_polygon, input_value_raster, NoDataValue = -9999)
     rad_weightedAverage = numpy.average(rad, weights = valid_area)
     
     rad400 = (k1_tir1 / (numpy.exp(k2_tir1 / 400) - 1)) / 1000
-             
+         
     if rad_weightedAverage <= rad400:
         
         tem = k2_tir1 / math.log(k1_tir1 / (rad_weightedAverage*1000) + 1, math.e)
@@ -180,6 +180,7 @@ def clusterTem(FID, input_zone_polygon, input_value_raster, NoDataValue = -9999)
     elif rad_weightedAverage > rad400:
         
         tem = k2_tir2 / math.log(k1_tir2 / (rad_weightedAverage*1000) + 1, math.e)
+    
     #print zone
     #print numpy.mean(zone)
     #tem = k2_tir / math.log(k1_tir / (rad_weightedAverage*1000) + 1, math.e)
@@ -188,9 +189,9 @@ def clusterTem(FID, input_zone_polygon, input_value_raster, NoDataValue = -9999)
 #    print numpy.average(valid_tem, weights = valid_area)
 #    print numpy.mean(valid_tem)
     #print tem
-    print frp
-    print 5.6704 * tem * tem * tem * tem * Area/(100000000 * 1000000)
-    print 5.6704 * tem * tem * tem * tem * 150 * 150 * (numpy.sum(valid_area) / 4.0)/(100000000 * 1000000)
+#    print frp
+#    print 5.6704 * tem * tem * tem * tem * Area/(100000000 * 1000000)
+#    print 5.6704 * tem * tem * tem * tem * 150 * 150 * (numpy.sum(valid_area) / 4.0)/(100000000 * 1000000)
     frp = 5.6704 * numpy.power(tem, 4) * Area / (100000000 * 1000000)
     return [tem, Area, clusterSize, frp]
 #    return numpy.mean(zoneraster)
@@ -350,13 +351,13 @@ def loop_centerPos(input_zone_polygon, input_MIR_radiance, input_bg_tem, noDataV
     return statDict
 
        
-shpfile = r'E:\Penghua\data\Etna\2014.06.22\TET\ac_results\Mask\sub_tem.shp'
-
-rasterfile = r'E:\Penghua\data\Etna\2014.06.22\TET\ac_results\FBI_TET1_20140622T232052_20140622T232155_L2_002589_WHM_cobined_MIR_TIR_tem.tif'
-
-tet_radiance = r'E:\Penghua\data\Etna\2014.06.22\TET\FBI_TET1_20140622T232052_20140622T232155_L2_002589_WHM_MWIR_near_repro_cut.tif'
-
-bg_tem = r'E:\Penghua\data\Etna\2014.06.22\TET\ac_results\FBI_TET1_20140622T232052_20140622T232155_L2_002589_WHM_cobined_MIR_TIR_Tback.tif'
+#shpfile = r'E:\Penghua\data\Etna\2014.06.22\TET\ac_results\Mask\sub_tem.shp'
+#
+#rasterfile = r'E:\Penghua\data\Etna\2014.06.22\TET\ac_results\FBI_TET1_20140622T232052_20140622T232155_L2_002589_WHM_cobined_MIR_TIR_tem.tif'
+#
+#tet_radiance = r'E:\Penghua\data\Etna\2014.06.22\TET\FBI_TET1_20140622T232052_20140622T232155_L2_002589_WHM_MWIR_near_repro_cut.tif'
+#
+#bg_tem = r'E:\Penghua\data\Etna\2014.06.22\TET\ac_results\FBI_TET1_20140622T232052_20140622T232155_L2_002589_WHM_cobined_MIR_TIR_Tback.tif'
 #
 #alpha = r'E:\Penghua\data\georeferenced_TET\Etna\new_selected_data\alpha_channel\FBI_TET1_20140622T232052_20140622T232155_L2_002589_WHM_MWIR_near_repro_alpha.shp'
 
@@ -369,6 +370,15 @@ bg_tem = r'E:\Penghua\data\Etna\2014.06.22\TET\ac_results\FBI_TET1_20140622T2320
 #bg_tem = r'E:\Penghua\data\Etna\2014.07.03\TET\ac_results_1.15\FBI_TET1_20140703T232012_20140703T232115_L2_C_CF-00335_cobined_MIR_TIR_Tback.tif'
 
 #bg = zonalStats.zonal_stats(0, alpha, rasterfile, 2, -9999)
+
+shpfile = r'E:\Penghua\data\Chile\2017.01.26\TET\ac_results\Mask\sub_tem.shp'
+
+rasterfile = r'E:\Penghua\data\Chile\2017.01.26\TET\ac_results\FBI_TET1_20170126T063754_20170126T063927_L2_C_SP-00191_cobined_MIR_TIR_tem.tif'
+
+tet_radiance = r'E:\Penghua\data\Chile\2017.01.26\TET\FBI_TET1_20170126T063754_20170126T063927_L2_C_SP-00191_MWIR_near_repro_cut.tif'
+
+bg_tem = r'E:\Penghua\data\Chile\2017.01.26\TET\ac_results\FBI_TET1_20170126T063754_20170126T063927_L2_C_SP-00191_cobined_MIR_TIR_Tback.tif'
+#
 
 a = loop_clusterTem(shpfile, rasterfile, 0)
 b = loop_centerPos(shpfile, tet_radiance, bg_tem)

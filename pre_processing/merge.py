@@ -47,54 +47,55 @@ def merge(sourFile, outputPath, id, name = None, nodata = -9999):
         sourTiff = None
           
     sys.argv = L
-    #print L    
+#    print L    
     gdal_merge.main()
     
     print 'Done.'
 
-sourFile = r'E:\Penghua\data\LST\Lybien-1\new_selected_data'
-
-for files in os.listdir(sourFile):  
+#sourFile = r'E:\Penghua\data\LST\Lybien-1\new_selected_data'
+#
+#for files in os.listdir(sourFile):  
+#    
+#    folder = os.path.join(sourFile, files)
+#    
+#    outputPath = os.path.join(folder, r'MOD11A1_LST.tif')
+#    
+#    L = []  
+#    
+#    L.insert(0,'')
+#        
+#    L.extend(['-o', outputPath, '-of', 'GTiff',  '-a_nodata', '-9999', '-n', '-9999'])
+#    
+#    for img in os.listdir(folder):
+#        
+#        if img.endswith('.tif') and 'MOD' in img:
+#            
+#            L.append(os.path.join(folder, img))
+#            
+#    sys.argv = L
+#    
+#    gdal_merge.main()
     
-    folder = os.path.join(sourFile, files)
-    
-    outputPath = os.path.join(folder, r'MOD11A1_LST.tif')
-    
-    L = []  
-    
-    L.insert(0,'')
-        
-    L.extend(['-o', outputPath, '-of', 'GTiff',  '-a_nodata', '-9999', '-n', '-9999'])
-    
-    for img in os.listdir(folder):
-        
-        if img.endswith('.tif') and 'MOD' in img:
-            
-            L.append(os.path.join(folder, img))
-            
-    sys.argv = L
-    
-    gdal_merge.main()
-    
-#sourFile1 = r'E:\Penghua\data\emissivity_map\emissivity_map_Portugal'
+sourFile1 = r'E:\Penghua\data\emissivity_map\emissivity_map_Chile\030418575278187'
 #
 #sourFile2 = r'E:\Penghua\data\emissivity_map\emissivity_map_Portugal\merged'
 #
-#sourFile3 = r'E:\Penghua\data\DEM\Portugal'
+#sourFile3 = r'E:\Penghua\data\DEM\Chile\030418574118118'
 #
-#name = '_Emissivity_Mean.tif'
+name = '_Emissivity_Mean.tif'
 #
 #id = list(range(37,44))
 #
-#id2 = 'AG100'
+id2 = 'AG100'
 #
 #id3 = 'dem'
-
+outputPath1 = r'E:\Penghua\data\emissivity_map\emissivity_map_Chile\030418575278187\merged\emissivity_map_Chile.tif'
+merge(sourFile1, outputPath1, id2, name)
 #for id1 in id:
 #    
 #    id1_s = str(id1)
 #    
-#    outputPath1 = r'E:\Penghua\data\emissivity_map\emissivity_map_Portugal\merged\AG100.v003.' + id1_s + '.tif'
+#    outputPath1 = r'E:\Penghua\data\DEM\Chile\030418574118118\merged\ASTGTM' + id2 + '.tif'
 #
 #    merge(sourFile1, outputPath1, id1_s, name)
 #
@@ -103,6 +104,21 @@ for files in os.listdir(sourFile):
 #    
 #merge(sourFile2, outputPath2, id2)
 
+
+#import os, glob
+#
+#dir_name=r"E:\Penghua\data\emissivity_map\emissivity_map_Chile\030418575278187"
+#directories = filter(os.path.isdir, os.listdir(dir_name))
+#print(directories)
+#
+#for dir in directories:
+#  #print(dir)
+#  glob.glob(dir+"*_Emissivity_Mean.tif")
+#  for file in glob.glob(dir+"\*_Emissivity_Mean.tif"):
+#    print(file)
+#    
+#    outputPath1 = file
+#    merge(sourFile1, outputPath1, id1_s, name)
 
 #outputPath3 = sourFile3 + '\\merged\\astgtm2_DEM.tif'
 #

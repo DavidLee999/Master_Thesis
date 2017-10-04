@@ -97,7 +97,7 @@ def raster2shp( rasterfn, bandNum ):
 #    lyr.DeleteFeature(lyr.GetFeatureCount() - 1)
 
 
-src_ds = r'E:\Penghua\data\Bardarbunga\2014.09.22\TET\ac_results\FBI_TET1_20140922T015526_20140922T015628_L2_C_EL-00453_cobined_MIR_TIR_tem.tif'
+src_ds = r'E:\Penghua\data\Chile\2017.01.26\TET\ac_results\FBI_TET1_20170126T063754_20170126T063927_L2_C_SP-00191_cobined_MIR_TIR_tem.tif'
 
 outputfolder = os.path.join( os.path.split(src_ds)[0], 'Mask' )
 

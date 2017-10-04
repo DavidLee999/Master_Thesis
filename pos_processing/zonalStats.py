@@ -237,7 +237,7 @@ def centerPos( FID, input_zone_polygon, input_value_raster ):
 #shutil.rmtree(os.path.join(os.path.split(shpfile)[0], 'temp'))
 
 
-shpFile = r'E:\Penghua\data\Lybien-1\shapefiles'
+shpFile = r'E:\Penghua\data\Etna\shapefiles'
 
 shp = []
 
@@ -249,7 +249,7 @@ for files in os.listdir(shpFile):
         
         shp.append(os.path.abspath(files)) 
 
-sourFile = r'E:\Penghua\data\Lybien-1' #\self_test
+sourFile = r'E:\Penghua\data\Etna' #\self_test
 
 os.chdir(sourFile)
 
@@ -333,12 +333,12 @@ os.chdir(sourFile)
 #                    sc_tir1.append((main(shp[1], TET_tem_TIR)[0]+main(shp[3], TET_tem_TIR)[0]+main(shp[4], TET_tem_TIR)[0]) / 3.0)
 
 
-scale_factor = ['1.00', '1.05', '1.10', '1.15', '1.20']
+scale_factor = ['1.00']#, '1.05', '1.10', '1.15', '1.20']
 
 #scale_factor = ['0.50', '0.55', '0.60', '0.65', '0.70', '0.75', '0.80', '0.85', '0.90']
 
-sc_mir = [[], [], [], [], []]#, [], [], [], []]
-sc_tir = [[], [], [], [], []]#, [], [], [], []]
+sc_mir = [[]]#, [], [], [], []]#, [], [], [], []]
+sc_tir = [[]]#, [], [], [], []]#, [], [], [], []]
 time = []
 
 for i in range(len(scale_factor)):
@@ -348,7 +348,7 @@ for i in range(len(scale_factor)):
     
     for files in os.listdir(sourFile):
         
-        if ('0' in files) and ('2017' in files): #files in time: ('2017' not in files)
+        if ('0' in files) and ('2017' not in files): #files in time: ('2017' not in files)
             
             
 #            print files
@@ -417,17 +417,17 @@ for i in range(len(scale_factor)):
     
                 calcRes = []
                 
-                calcRes.append((main(shp[0], TET_tem_MIR, 1, 0.0)[0]))
+                #calcRes.append((main(shp[0], TET_tem_MIR, 1, 0.0)[0]))
                     
                 calcRes.append((main(shp[1], TET_tem_MIR, 1, 0.0)[0]))
                     
-                calcRes.append((main(shp[2], TET_tem_MIR, 1, 0.0)[0]))
+                #calcRes.append((main(shp[2], TET_tem_MIR, 1, 0.0)[0]))
                 
                 calcRes.append((main(shp[3], TET_tem_MIR, 1, 0.0)[0]))
             
                 calcRes.append((main(shp[4], TET_tem_MIR, 1, 0.0)[0]))
                 
-#                    calcRes.append((main(shp[5], TET_tem_MIR, 1, 0.0)[0]))
+                calcRes.append((main(shp[5], TET_tem_MIR, 1, 0.0)[0]))
                 
                 calcRes = numpy.array(calcRes)
                 
@@ -442,17 +442,17 @@ for i in range(len(scale_factor)):
 
                 calcRes = []
                 
-                calcRes.append((main(shp[0], TET_tem_TIR, 1, 0.0)[0]))
+                #calcRes.append((main(shp[0], TET_tem_TIR, 1, 0.0)[0]))
                     
                 calcRes.append((main(shp[1], TET_tem_TIR, 1, 0.0)[0]))
                     
-                calcRes.append((main(shp[2], TET_tem_TIR, 1, 0.0)[0]))
+                #calcRes.append((main(shp[2], TET_tem_TIR, 1, 0.0)[0]))
                 
                 calcRes.append((main(shp[3], TET_tem_TIR, 1, 0.0)[0]))
 #                
                 calcRes.append((main(shp[4], TET_tem_TIR, 1, 0.0)[0]))
                 
-#                    calcRes.append((main(shp[5], TET_tem_TIR, 1, 0.0)[0]))
+                calcRes.append((main(shp[5], TET_tem_TIR, 1, 0.0)[0]))
                 
                 calcRes = numpy.array(calcRes)
                 

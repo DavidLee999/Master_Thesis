@@ -33,7 +33,7 @@ def compare ( TET_tem_path, SST_tem_path, outputFile ):
 #    MIR_deg = MIR_data + default_tem
 #    TIR_deg = TIR_data + default_tem
 
-    SST_K = SST_data # + default_tem
+    SST_K = SST_data + default_tem
     diff_MIR = MIR_data - SST_K
     diff_TIR = TIR_data - SST_K
     
@@ -117,7 +117,7 @@ def cal (inputimg):
 
 Location = ['Etna', 'Demmin', 'Lascar', 'Lybien-1', 'Lybien-2', 'Portugal']
 
-sourFile = r'E:\Penghua\data' + '\\' + Location[3] #+ r'\self_test'
+sourFile = r'E:\Penghua\data' + '\\' + Location[5] #+ r'\self_test'
 
 os.chdir(sourFile)
 
@@ -127,7 +127,7 @@ for files in os.listdir(sourFile):
         
         folder = os.path.join(os.path.abspath(files), r'TET')
         
-        LST = os.path.join(os.path.abspath(files), r'LST')
+        LST = os.path.join(os.path.abspath(files), r'SST')
         
         for fil in os.listdir(folder):
             
@@ -148,7 +148,7 @@ for files in os.listdir(sourFile):
 #                        shutil.rmtree(outputFile)
                     for lst_img in os.listdir(LST):
                         
-                        if lst_img.endswith('.tif') and 'LST' in lst_img:
+                        if lst_img.endswith('.tif') and 'SST' in lst_img:
                             
                             lst_tem = os.path.join(LST, lst_img)
 #                            print lst_tem

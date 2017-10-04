@@ -1,0 +1,65 @@
+SET MYPATH=E:\Penghua\data\DEM\Chile\030418574118118
+
+FOR %i IN (%MYPATH%\*.zip) DO (e:\Penghua\software\unzip\bin\unzip.exe %i)
+
+FOR %i IN (%MYPATH%\*.zip) DO dir %i
+
+python gdal_merge.py -of GTiff -a_nodata -9999 
+
+
+
+for %i in (%MYPATH%\*_dem.tif) do echo %i
+
+SET MYPATH=E:\Penghua\data\DEM\Chile\030418574118118
+python gdal_merge.py -of GTiff -a_nodata -9999 -o %MYPATH%\merged\astgtm2_DEM.tif %MYPATH%\*_dem.tif
+
+
+import os, sys
+
+#gm = os.path.join(r'C:\Users\li_pe\AppData\Local\Continuum\Anaconda2\pkgs\gdal-2.1.0-py27_0\Scripts\gdal_merge.py')
+sys.path.append(r'C:\Users\li_pe\AppData\Local\Continuum\Anaconda2\pkgs\gdal-2.1.0-py27_0\Scripts')
+
+import gdal_merge
+
+def merge(sourFile, outputPath, id, name = None, nodata = -9999):
+    
+    os.chdir(sourFile)
+    
+    L = []  
+    
+    L.insert(0,'')
+        
+    L.extend(['-o', outputPath, '-of', 'GTiff',  '-a_nodata', '-9999', '-n', str(nodata)])  
+        
+    if os.path.exists(os.path.dirname(outputPath)) == False:
+            
+        os.makedirs(os.path.dirname(outputPath))
+
+    for file in os.listdir(sourFile):
+        
+        if os.path.isdir(file) and id in file:
+            
+            sourTiff = sourFile + '\\' + file + '\\' + file + name
+            
+            L.append(sourTiff)
+            
+        elif file.endswith('.tif') and id in file:
+            
+            sourTiff = sourFile + '\\' + file 
+            
+            L.append(sourTiff)
+            
+        sourTiff = None
+          
+    sys.argv = L
+    #print L    
+    gdal_merge.main()
+    
+    print 'Done.'
+	
+	
+sourFile3 = r'E:\Penghua\data\DEM\Chile\030418574118118'
+id3 = 'dem'
+outputPath3 = sourFile3 + '\\merged\\astgtm2_DEM.tif'
+
+merge(sourFile3, outputPath3, id3)
