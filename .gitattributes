@@ -1,6 +1,0 @@
-# Auto detect text files and perform LF normalization
-#* text=python
-*.R linguist-language=python
-*.txt linguist-language=python
-*.bat linguist-language=python
-*.xml linguist-language=python
