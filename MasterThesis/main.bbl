@@ -1,0 +1,806 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.8 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\sortlist[entry]{nyt/global/}
+  \entry{Reference6}{book}{}
+    \name{author}{2}{}{%
+      {{hash=BW}{%
+         family={Bond},
+         familyi={B\bibinitperiod},
+         given={W.J.},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=vWB}{%
+         prefix={van},
+         prefixi={v\bibinitperiod},
+         family={Wilgen},
+         familyi={W\bibinitperiod},
+         given={B.W.},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer Netherlands}%
+    }
+    \strng{namehash}{BWWBv1}
+    \strng{fullhash}{BWWBv1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1996}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{pages}{263}
+    \field{title}{Fire and Plants}
+    \list{location}{1}{%
+      {Doodrecht, the Netherlands}%
+    }
+    \field{year}{1996}
+  \endentry
+
+  \entry{Reference3}{article}{}
+    \name{author}{22}{}{%
+      {{hash=BD}{%
+         family={Bowman},
+         familyi={B\bibinitperiod},
+         given={D.M.J.S.},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=BJ}{%
+         family={Balch},
+         familyi={B\bibinitperiod},
+         given={J.K.},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=AP}{%
+         family={Artaxo},
+         familyi={A\bibinitperiod},
+         given={P.},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=BW}{%
+         family={Bond},
+         familyi={B\bibinitperiod},
+         given={W.J.},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=CJ}{%
+         family={Carlson},
+         familyi={C\bibinitperiod},
+         given={J.M.},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=MC}{%
+         family={M.A.},
+         familyi={M\bibinitperiod},
+         given={Cochrane},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=DC}{%
+         family={D'Antonio},
+         familyi={D\bibinitperiod},
+         given={C.M.},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=DR}{%
+         family={DeFries},
+         familyi={D\bibinitperiod},
+         given={R.S.},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=DJ}{%
+         family={Doyle},
+         familyi={D\bibinitperiod},
+         given={J.C.},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=HS}{%
+         family={Harrison},
+         familyi={H\bibinitperiod},
+         given={S.P.},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=JF}{%
+         family={Johnston},
+         familyi={J\bibinitperiod},
+         given={F.H.},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=KJ}{%
+         family={Keeley},
+         familyi={K\bibinitperiod},
+         given={J.E.},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=KM}{%
+         family={Krawchuk},
+         familyi={K\bibinitperiod},
+         given={M.A.},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=KC}{%
+         family={Kull},
+         familyi={K\bibinitperiod},
+         given={C.A.},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=MJ}{%
+         family={Marston},
+         familyi={M\bibinitperiod},
+         given={J.B.},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=MM}{%
+         family={Moritz},
+         familyi={M\bibinitperiod},
+         given={M.A.},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=PI}{%
+         family={Prentice},
+         familyi={P\bibinitperiod},
+         given={I.C.},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=RC}{%
+         family={Roos},
+         familyi={R\bibinitperiod},
+         given={C.I.},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=SA}{%
+         family={Scott},
+         familyi={S\bibinitperiod},
+         given={A.C.},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=ST}{%
+         family={Swetnam},
+         familyi={S\bibinitperiod},
+         given={T.W.},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=vdWG}{%
+         prefix={van\bibnamedelima der},
+         prefixi={v\bibinitperiod\bibinitdelim d\bibinitperiod},
+         family={Werf},
+         familyi={W\bibinitperiod},
+         given={G.R.},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=PS}{%
+         family={Pyne},
+         familyi={P\bibinitperiod},
+         given={S.J.},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BD+1}
+    \strng{fullhash}{BDBJAPBWCJMCDCDRDJHSJFKJKMKCMJMMPIRCSASTWGvdPS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2009}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{pages}{481\bibrangedash 484}
+    \field{title}{Fire in the Earth System}
+    \field{volume}{324}
+    \field{journaltitle}{Science}
+    \field{month}{04}
+    \field{year}{2009}
+  \endentry
+
+  \entry{Reference5}{article}{}
+    \name{author}{12}{}{%
+      {{hash=CHK}{%
+         family={Carlsen},
+         familyi={C\bibinitperiod},
+         given={Hanne\bibnamedelima Krage},
+         giveni={H\bibinitperiod\bibinitdelim K\bibinitperiod},
+      }}%
+      {{hash=HA}{%
+         family={Hauksdottir},
+         familyi={H\bibinitperiod},
+         given={Arna},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=VUA}{%
+         family={Valdimarsdottir},
+         familyi={V\bibinitperiod},
+         given={Unnur\bibnamedelima Anna},
+         giveni={U\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=GT}{%
+         family={G{\'\i}slason},
+         familyi={G\bibinitperiod},
+         given={Thorarinn},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=EG}{%
+         family={Einarsdottir},
+         familyi={E\bibinitperiod},
+         given={Gunnlaug},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=RH}{%
+         family={Runolfsson},
+         familyi={R\bibinitperiod},
+         given={Halldor},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=BH}{%
+         family={Briem},
+         familyi={B\bibinitperiod},
+         given={Haraldur},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=FRG}{%
+         family={Finnbjornsdottir},
+         familyi={F\bibinitperiod},
+         given={Ragnhildur\bibnamedelima Gudrun},
+         giveni={R\bibinitperiod\bibinitdelim G\bibinitperiod},
+      }}%
+      {{hash=GS}{%
+         family={Gudmundsson},
+         familyi={G\bibinitperiod},
+         given={Sigurdur},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=KTB}{%
+         family={Kolbeinsson},
+         familyi={K\bibinitperiod},
+         given={Thorir\bibnamedelima Bj{\"o}rn},
+         giveni={T\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+      {{hash=TT}{%
+         family={Thorsteinsson},
+         familyi={T\bibinitperiod},
+         given={Throstur},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=PG}{%
+         family={P{\'e}tursd{\'o}ttir},
+         familyi={P\bibinitperiod},
+         given={Gudrun},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {British Medical Journal Publishing Group}%
+    }
+    \strng{namehash}{CHK+1}
+    \strng{fullhash}{CHKHAVUAGTEGRHBHFRGGSKTBTTPG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2012}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{abstract}{%
+    Objectives The study aimed to determine whether exposure to a volcanic
+  eruption was associated with increased prevalence of physical and/or mental
+  symptoms. Design Cohort, with non-exposed control group. Setting Natural
+  disasters like volcanic eruptions constitute a major public-health threat.
+  The Icelandic volcano Eyjafjallaj{\"o}kull exposed residents in southern
+  Iceland to continuous ash fall for more than 5 weeks in spring 2010. This
+  study was conducted during November 2010{\textendash}March 2011,
+  6{\textendash}9 months after the Eyjafjallaj{\"o}kull eruption. Participants
+  Adult (18{\textendash}80 years of age) eruption-exposed South Icelanders
+  (N=1148) and a control population of residents of Skagafj{\"o}r{\dh}ur, North
+  Iceland (N=510). The participation rate was 72\%. Main outcome measures
+  Physical symptoms in the previous year (chronic), in the previous month
+  (recent), General Health Questionnaire (GHQ-12) measured psychological
+  morbidity. Results The likelihood of having symptoms during the last month
+  was higher in the exposed population, such as; tightness in the chest (OR
+  2.5; 95\% CI 1.1 to 5.8), cough (OR 2.6; 95\% CI 1.7 to 3.9), phlegm (OR 2.1;
+  95\% CI 1.3 to 3.2), eye irritation (OR 2.9; 95\% CI 2.0 to 4.1) and
+  psychological morbidity symptoms (OR 1.3; 95\% CI 1.0 to 1.7). Respiratory
+  symptoms during the last 12 months were also more common in the exposed
+  population; cough (OR 2.2; 95\% CI 1.6 to 2.9), dyspnoea (OR 1.6; 95\% CI 1.1
+  to 2.3), although the prevalence of underlying asthma and heart disease was
+  similar. Twice as many in the exposed population had two or more symptoms
+  from nose, eyes or upper-respiratory tract (24\% vs 13\%, p\&lt;0.001); these
+  individuals were also more likely to experience psychological morbidity (OR
+  4.7; 95\% CI 3.4 to 6.5) compared with individuals with no symptoms. Most
+  symptoms exhibited a dose{\textendash}response pattern within the exposed
+  population, corresponding to low, medium and high exposure to the eruption.
+  Conclusions 6{\textendash}9 months after the Eyjafjallaj{\"o}kull eruption,
+  residents living in the exposed area, particularly those closest to the
+  volcano, had markedly increased prevalence of various physical symptoms. A
+  portion of the exposed population reported multiple symptoms and may be at
+  risk for long-term physical and psychological morbidity. Studies of long-term
+  consequences are therefore warranted.%
+    }
+    \field{number}{6}
+    \field{pages}{1\bibrangedash 11}
+    \field{title}{Health effects following the Eyjafjallaj{\"o}kull volcanic
+  eruption: a cohort study}
+    \field{volume}{2}
+    \field{journaltitle}{BMJ Open}
+    \field{month}{01}
+    \field{year}{2012}
+  \endentry
+
+  \entry{Reference1}{book}{}
+    \name{editor}{1}{}{%
+      {{hash=CE}{%
+         family={Chuvieco},
+         familyi={C\bibinitperiod},
+         given={E.},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer Netherlands}%
+    }
+    \strng{namehash}{CE1}
+    \strng{fullhash}{CE1}
+    \field{labelnamesource}{editor}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2008}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{pages}{223}
+    \field{title}{Earth Observation of Global Change: The Role of Satellite
+  Remote Sensing in Monitoring the Global Environment}
+    \list{location}{1}{%
+      {Doodrecht, the Netherlands}%
+    }
+    \field{year}{2008}
+  \endentry
+
+  \entry{Reference11}{inproceedings}{}
+    \name{author}{10}{}{%
+      {{hash=FO}{%
+         family={Frauenberger},
+         familyi={F\bibinitperiod},
+         given={Olaf},
+         giveni={O\bibinitperiod},
+      }}%
+      {{hash=BE}{%
+         family={Borg},
+         familyi={B\bibinitperiod},
+         given={Erik},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=BA}{%
+         family={B{\"o}rner},
+         familyi={B\bibinitperiod},
+         given={Anko},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=HW}{%
+         family={Halle},
+         familyi={H\bibinitperiod},
+         given={Winfried},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=LE}{%
+         family={Lorenz},
+         familyi={L\bibinitperiod},
+         given={Eckehard},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=MS}{%
+         family={Mitchell},
+         familyi={M\bibinitperiod},
+         given={Simon},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=PC}{%
+         family={Paproth},
+         familyi={P\bibinitperiod},
+         given={Carsten},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=ST}{%
+         family={S{\"a}uberlich},
+         familyi={S\bibinitperiod},
+         given={Thomas},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=TT}{%
+         family={Terzibaschian},
+         familyi={T\bibinitperiod},
+         given={Thomas},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=WJ}{%
+         family={Wohlfeil},
+         familyi={W\bibinitperiod},
+         given={J{\"u}rgen},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \name{editor}{3}{}{%
+      {{hash=SR}{%
+         family={Sandau},
+         familyi={S\bibinitperiod},
+         given={Rainer},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=RHP}{%
+         family={R{\"o}ser},
+         familyi={R\bibinitperiod},
+         given={Hans-Peter},
+         giveni={H\bibinitperiod-P\bibinitperiod},
+      }}%
+      {{hash=VA}{%
+         family={Valenzuela},
+         familyi={V\bibinitperiod},
+         given={Arnoldo},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Wissenschaft und Technik Verlag Berlin}%
+    }
+    \keyw{Small Satellite Constellation, Infrared Instruments, High Temperature
+  Events, impact on the climatic processes, Bi- Spectral Method}
+    \strng{namehash}{FO+1}
+    \strng{fullhash}{FOBEBAHWLEMSPCSTTTWJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2015}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \field{booktitle}{Proc. 10th IAA Symposium Small Satellites for Earth
+  Observation}
+    \field{pages}{163\bibrangedash 166}
+    \field{series}{Small Satellites for Earth Observation}
+    \field{title}{Results on verification and validation of OOV-TET1
+  multi-spectral camera observations within the FireBIRD project}
+    \field{volume}{10}
+    \field{year}{2015}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{Reference8}{article}{}
+    \name{author}{1}{}{%
+      {{hash=GEJ}{%
+         family={Gabet},
+         familyi={G\bibinitperiod},
+         given={Emmanuel\bibnamedelima J.},
+         giveni={E\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {John Wiley & Sons, Ltd.}%
+    }
+    \keyw{erosion, geomorphology, fire, sage scrub, hydrophobic soils}
+    \strng{namehash}{GEJ1}
+    \strng{fullhash}{GEJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2003}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{number}{12}
+    \field{pages}{1341\bibrangedash 1348}
+    \field{title}{Post-fire thin debris flows: sediment transport and numerical
+  modelling}
+    \field{volume}{28}
+    \field{journaltitle}{Earth Surface Processes and Landforms}
+    \field{year}{2003}
+  \endentry
+
+  \entry{Reference4}{article}{}
+    \name{author}{6}{}{%
+      {{hash=GMT}{%
+         family={Gudmundsson},
+         familyi={G\bibinitperiod},
+         given={Magnús\bibnamedelima T.},
+         giveni={M\bibinitperiod\bibinitdelim T\bibinitperiod},
+      }}%
+      {{hash=PR}{%
+         family={Pedersen},
+         familyi={P\bibinitperiod},
+         given={Rikke},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=VK}{%
+         family={Vogfjörd},
+         familyi={V\bibinitperiod},
+         given={Kristín},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=TB}{%
+         family={Thorbjarnardóttir},
+         familyi={T\bibinitperiod},
+         given={Bergthöra},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=JS}{%
+         family={Jakobsdóttir},
+         familyi={J\bibinitperiod},
+         given={Steinunn},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=RMJ}{%
+         family={Roberts},
+         familyi={R\bibinitperiod},
+         given={Matthew\bibnamedelima J.},
+         giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \keyw{General or miscellaneous, Effusive volcanism, Atmospheric effects,
+  Volcanic hazards and risks, Iceland, eruption, Eyjafjallajökull volcano}
+    \strng{namehash}{GMT+1}
+    \strng{fullhash}{GMTPRVKTBJSRMJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2010}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{number}{21}
+    \field{pages}{190\bibrangedash 191}
+    \field{title}{Eruptions of Eyjafjallajökull Volcano, Iceland}
+    \field{volume}{91}
+    \field{journaltitle}{Eos, Transactions American Geophysical Union}
+    \field{month}{05}
+    \field{year}{2010}
+  \endentry
+
+  \entry{Reference7}{article}{}
+    \name{author}{11}{}{%
+      {{hash=MMA}{%
+         family={Moritz},
+         familyi={M\bibinitperiod},
+         given={Max\bibnamedelima A.},
+         giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=BE}{%
+         family={Batllori},
+         familyi={B\bibinitperiod},
+         given={Enric},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=BRA}{%
+         family={Bradstock},
+         familyi={B\bibinitperiod},
+         given={Ross\bibnamedelima A.},
+         giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=GAM}{%
+         family={Gill},
+         familyi={G\bibinitperiod},
+         given={A.\bibnamedelima Malcolm},
+         giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+      {{hash=HJ}{%
+         family={Handmer},
+         familyi={H\bibinitperiod},
+         given={John},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=HPF}{%
+         family={Hessburg},
+         familyi={H\bibinitperiod},
+         given={Paul\bibnamedelima F.},
+         giveni={P\bibinitperiod\bibinitdelim F\bibinitperiod},
+      }}%
+      {{hash=LJ}{%
+         family={Leonard},
+         familyi={L\bibinitperiod},
+         given={Justin},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=MS}{%
+         family={McCaffrey},
+         familyi={M\bibinitperiod},
+         given={Sarah},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=ODC}{%
+         family={Odion},
+         familyi={O\bibinitperiod},
+         given={Dennis\bibnamedelima C.},
+         giveni={D\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=ST}{%
+         family={Schoennagel},
+         familyi={S\bibinitperiod},
+         given={Tania},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=SAD}{%
+         family={Syphard},
+         familyi={S\bibinitperiod},
+         given={Alexandra\bibnamedelima D.},
+         giveni={A\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Nature Publishing Group}%
+    }
+    \strng{namehash}{MMA+1}
+    \strng{fullhash}{MMABEBRAGAMHJHPFLJMSODCSTSAD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2014}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{number}{7525}
+    \field{pages}{58\bibrangedash 66}
+    \field{title}{{Learning to coexist with wildfire}}
+    \field{volume}{515}
+    \field{journaltitle}{Nature}
+    \field{month}{11}
+    \field{year}{2014}
+  \endentry
+
+  \entry{Reference10}{inproceedings}{}
+    \name{author}{6}{}{%
+      {{hash=RG}{%
+         family={Rücker},
+         familyi={R\bibinitperiod},
+         given={Gernot},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=LE}{%
+         family={Lorenz},
+         familyi={L\bibinitperiod},
+         given={Eckehard},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=HA}{%
+         family={Hoffmann},
+         familyi={H\bibinitperiod},
+         given={Anja},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=OD}{%
+         family={Oertel},
+         familyi={O\bibinitperiod},
+         given={Dieter},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=TJ}{%
+         family={Tiemann},
+         familyi={T\bibinitperiod},
+         given={Joachim},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=HW}{%
+         family={Halle},
+         familyi={H\bibinitperiod},
+         given={Winfried},
+         giveni={W\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{RG+1}
+    \strng{fullhash}{RGLEHAODTJHW1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2011}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{booktitle}{Proc. 5th International Wildland Fire Conference, Sun
+  City, South Africa, 9 - 13 May 2011}
+    \field{title}{High Resolution Active Fire Monitoring for Global Change
+  Analysis: The Upcoming FireBIRD Satellite Mission}
+    \field{month}{05}
+    \field{year}{2011}
+  \endentry
+
+  \entry{Reference2}{report}{}
+    \name{author}{5}{}{%
+      {{hash=ZB}{%
+         family={Zhukov},
+         familyi={Z\bibinitperiod},
+         given={B.},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=LE}{%
+         family={Lorenz},
+         familyi={L\bibinitperiod},
+         given={E.},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=OD}{%
+         family={Oertel},
+         familyi={O\bibinitperiod},
+         given={D.},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=WM}{%
+         family={Wooster},
+         familyi={W\bibinitperiod},
+         given={M.},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=RG}{%
+         family={Roberts},
+         familyi={R\bibinitperiod},
+         given={G.},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \keyw{Kleinsatelliten, Erdbeobachtung, Infrarot-Fernerkundung,
+  Feuererkennung, bi-spektrale infrarote Detektion, Ableitung von
+  Feuerparametern, Fehleranalyse, error analysis, fire characteristics
+  retrieval, bi-spectral infrared detection, fire detection, infrared remote
+  sensing, earth observation, small satellites}
+    \strng{namehash}{ZB+1}
+    \strng{fullhash}{ZBLEODWMRG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2005}
+    \field{extrayear}{1}
+    \field{sortinit}{Z}
+    \field{sortinithash}{Z}
+    \field{note}{LIDO-Berichtsjahr=2005,}
+    \field{pages}{96}
+    \field{title}{Experience of detection and quantitative characterization of
+  fires during the experimental small satellite mission BIRD}
+    \field{type}{techreport}
+    \field{month}{04}
+    \field{year}{2005}
+  \endentry
+
+  \entry{Reference9}{article}{}
+    \name{author}{5}{}{%
+      {{hash=ZB}{%
+         family={Zhukov},
+         familyi={Z\bibinitperiod},
+         given={Boris},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=BK}{%
+         family={Briess},
+         familyi={B\bibinitperiod},
+         given={Klaus},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=LE}{%
+         family={Lorenz},
+         familyi={L\bibinitperiod},
+         given={Eckehard},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=OD}{%
+         family={Oertel},
+         familyi={O\bibinitperiod},
+         given={Dieter},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=SW}{%
+         family={Skrbek},
+         familyi={S\bibinitperiod},
+         given={Wolfgang},
+         giveni={W\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ZB+2}
+    \strng{fullhash}{ZBBKLEODSW1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2005}
+    \field{extrayear}{2}
+    \field{sortinit}{Z}
+    \field{sortinithash}{Z}
+    \field{note}{4th IAA International Symposium on Small Satellites for Earth
+  Observation}
+    \field{number}{1}
+    \field{pages}{65 \bibrangedash  71}
+    \field{title}{Detection and analysis of high-temperature events in the BIRD
+  mission}
+    \field{volume}{56}
+    \field{journaltitle}{Acta Astronautica}
+    \field{year}{2005}
+  \endentry
+\endsortlist
+\endinput
