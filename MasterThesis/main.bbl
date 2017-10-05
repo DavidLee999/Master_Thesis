@@ -642,6 +642,44 @@
     \field{year}{2014}
   \endentry
 
+  \entry{Reference12}{article}{}
+    \name{author}{3}{}{%
+      {{hash=PN}{%
+         family={Pergola},
+         familyi={P\bibinitperiod},
+         given={N.},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=MF}{%
+         family={Marchese},
+         familyi={M\bibinitperiod},
+         given={F.},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=TV}{%
+         family={Tramutoli},
+         familyi={T\bibinitperiod},
+         given={V.},
+         giveni={V\bibinitperiod},
+      }}%
+    }
+    \keyw{Thermal features}
+    \strng{namehash}{PNMFTV1}
+    \strng{fullhash}{PNMFTV1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2004}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{number}{3}
+    \field{pages}{311 \bibrangedash  327}
+    \field{title}{Automated detection of thermal features of active volcanoes
+  by means of infrared AVHRR records}
+    \field{volume}{93}
+    \field{journaltitle}{Remote Sensing of Environment}
+    \field{year}{2004}
+  \endentry
+
   \entry{Reference10}{inproceedings}{}
     \name{author}{6}{}{%
       {{hash=RG}{%
