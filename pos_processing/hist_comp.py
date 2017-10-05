@@ -135,7 +135,7 @@ for i in range(len(shpFileName)):
     differences.append(diffzoneraster)
     
 # plot
-# subplot, 2 rows, 4 columns
+# subplot, 3 rows, 1 columns
 for i in range(len(shpFileName)):
     fig, axes = plt.subplots(3, 1)
     axes.flatten()
