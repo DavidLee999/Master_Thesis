@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2017.9.5)  5 OCT 2017 17:16
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2017.9.5)  5 OCT 2017 21:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1731,16 +1731,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--29
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 30--31
-
- []
-
 1: section
 [1
 
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 30--31
+
+ []
+
+
 Overfull \hbox (0.75613pt too wide) in paragraph at lines 36--36
 []\T1/ppl/b/n/14.4 DLR's mis-sions ded-i-cated to high-temperature events mon-
  []
@@ -1754,6 +1754,12 @@ r-ing was the Bi-spectral
 
 Underfull \hbox (badness 10000) in paragraph at lines 38--39
 
+ []
+
+
+Overfull \hbox (1.1834pt too wide) in paragraph at lines 40--41
+\T1/ppl/m/n/12 mon-i-tor-ing with the new Fire Recog-ni-tion with Bi-spectral I
+n-raRed De-tec-tor (Fire-
  []
 
 
@@ -1776,12 +1782,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 94--95
 
  []
 
-
+[2]
 Underfull \hbox (badness 10000) in paragraph at lines 96--97
 
  []
 
-[2]
+
 Underfull \hbox (badness 10000) in paragraph at lines 98--99
 
  []
@@ -1791,12 +1797,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 100--101
 
  []
 
-)
+[3])
 Underfull \hbox (badness 10000) in paragraph at lines 102--185
 
  []
 
-[3] [4]
+[4]
 \openout2 = `Chapters/Chapter2.aux'.
 
  (./Chapters/Chapter2.tex
@@ -1882,10 +1888,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 Here is how much of TeX's memory you used:
  32585 strings out of 493005
  658131 string characters out of 6137957
- 895027 words of memory out of 5000000
+ 894027 words of memory out of 5000000
  36225 multiletter control sequences out of 15000+600000
  28034 words of font info for 58 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 54i,19n,75p,10379b,6096s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 54i,20n,75p,10379b,6096s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on main.pdf (27 pages).

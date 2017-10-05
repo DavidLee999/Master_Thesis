@@ -2,8 +2,8 @@
 \defcounter {refsection}{0}\relax 
 \select@language {english}
 \contentsline {chapter}{Abstract}{iii}{section*.1}
-\contentsline {chapter}{\numberline {1}Introduction and motivation}{1}{chapter.7}
-\contentsline {section}{\numberline {1.1}Motivation}{1}{section.8}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.7}
+\contentsline {section}{\numberline {1.1}Introduction}{1}{section.8}
 \contentsline {subsection}{\numberline {1.1.1}Impacts of high-temperature events}{1}{subsection.9}
 \contentsline {subsection}{\numberline {1.1.2}DLR's missions dedicated to high-temperature events monitoring}{2}{subsection.10}
 \contentsline {section}{\numberline {1.2}Outline of the thesis}{2}{section.12}
