@@ -9,7 +9,7 @@ import gdal, ogr, osr, numpy, math
 import sys
 import matplotlib.pyplot as plt
 import os, shutil
-import zonalStats
+#import zonalStats
 
 #below 400K
 k1_mir1 = 114191600
@@ -36,9 +36,9 @@ def clusterTem(FID, input_zone_polygon, input_value_raster, NoDataValue = -9999)
     transform = raster.GetGeoTransform()
     xOrigin = transform[0]
     yOrigin = transform[3]
-    pixelWidth = int(transform[1])
-    pixelHeight = int(transform[5])
-
+    pixelWidth = transform[1] # int(transform[1])
+    pixelHeight = transform[5]
+    
     # Reproject vector geometry to same projection as raster
     sourceSR = lyr.GetSpatialRef()
     targetSR = osr.SpatialReference()
@@ -82,8 +82,9 @@ def clusterTem(FID, input_zone_polygon, input_value_raster, NoDataValue = -9999)
     # Specify offset and rows and columns to read
     xoff = int((xmin - xOrigin)/pixelWidth)
     yoff = int((yOrigin - ymax)/pixelWidth)
-    xcount = int((xmax - xmin)/pixelWidth)
-    ycount = int((ymax - ymin)/pixelWidth)
+    xcount = int((xmax - xmin)/pixelWidth) + 1
+    ycount = int((ymax - ymin)/pixelWidth) + 1
+    
     
     # Create memory target raster
     target_ds = gdal.GetDriverByName('MEM').Create('', xcount, ycount, 1, gdal.GDT_Byte)
@@ -115,7 +116,7 @@ def clusterTem(FID, input_zone_polygon, input_value_raster, NoDataValue = -9999)
         # Rasterize zone polygon to raster
         gdal.RasterizeLayer(target_ds, [1], lyr, burn_values=[1])
         
-
+    
     # Read raster as arrays
     #banddataraster = raster.GetRasterBand(4)
     # banddataraster.SetNoDataValue( -9999 )
@@ -132,6 +133,7 @@ def clusterTem(FID, input_zone_polygon, input_value_raster, NoDataValue = -9999)
 #    MIR_tem_array = MIR_tem_band.ReadAsArray(xoff, yoff, xcount, ycount).astype(numpy.float)
     sub_pix_tem_array = sub_pix_tem_band.ReadAsArray(xoff, yoff, xcount, ycount).astype(numpy.float)
     sub_pix_area_array = sub_pix_area_band.ReadAsArray(xoff, yoff, xcount, ycount).astype(numpy.float)
+    
 #    bg_tem_array = bg_tem_band.ReadAsArray(xoff, yoff, xcount, ycount).astype(numpy.float)
     logic = numpy.where( sub_pix_tem_array == NoDataValue ) # no_data value
     
@@ -141,23 +143,27 @@ def clusterTem(FID, input_zone_polygon, input_value_raster, NoDataValue = -9999)
                               
     bandmask = target_ds.GetRasterBand(1)
     datamask = bandmask.ReadAsArray(0, 0, xcount, ycount).astype(numpy.float)
+
+    test = numpy.ma.masked_array(sub_pix_area_array, numpy.logical_not(datamask))
+
+    if (test == 0).all() == True:
+        return [0, 0]
+    
     datamask[logic] = 0.0
     
     valid_tem = numpy.ma.masked_array(sub_pix_tem_array, numpy.logical_not(datamask))
     valid_area = numpy.ma.masked_array(sub_pix_area_array, numpy.logical_not(datamask))
-    print dir(valid_tem)
-    if (raster.RasterCount >= 6):
-        FRP_raster = raster.GetRasterBand(6)
-        FRP_array = FRP_raster.ReadAsArray(xoff, yoff, xcount, ycount).astype(numpy.float)
-        valid_frp = numpy.ma.masked_array(FRP_array, numpy.logical_not(datamask))
-        frp = numpy.sum(valid_frp)
-    else:
-        frp = 0.0
+    
+#    if (raster.RasterCount >= 6):
+#        FRP_raster = raster.GetRasterBand(6)
+#        FRP_array = FRP_raster.ReadAsArray(xoff, yoff, xcount, ycount).astype(numpy.float)
+#        valid_frp = numpy.ma.masked_array(FRP_array, numpy.logical_not(datamask))
+#        frp = numpy.sum(valid_frp)
+#    else:
+#        frp = 0.0
     
     clusterSize = numpy.where(datamask == 1)[0].size
                              
-    print "feature %d" %FID 
-    Area = 150 * 150 * numpy.sum(valid_area) / 4.0
 #    print 150 * 150 * (numpy.mean(valid_area) / 4.0)
 #    print numpy.mean(valid_area)
                                  
@@ -192,8 +198,8 @@ def clusterTem(FID, input_zone_polygon, input_value_raster, NoDataValue = -9999)
 #    print frp
 #    print 5.6704 * tem * tem * tem * tem * Area/(100000000 * 1000000)
 #    print 5.6704 * tem * tem * tem * tem * 150 * 150 * (numpy.sum(valid_area) / 4.0)/(100000000 * 1000000)
-    frp = 5.6704 * numpy.power(tem, 4) * Area / (100000000 * 1000000)
-    return [tem, Area, clusterSize, frp]
+
+    return [tem, clusterSize]
 #    return numpy.mean(zoneraster)
 
 def loop_clusterTem(shpfile, rasterfile, noDataValue):
@@ -361,23 +367,27 @@ def loop_centerPos(input_zone_polygon, input_MIR_radiance, input_bg_tem, noDataV
 #
 #alpha = r'E:\Penghua\data\georeferenced_TET\Etna\new_selected_data\alpha_channel\FBI_TET1_20140622T232052_20140622T232155_L2_002589_WHM_MWIR_near_repro_alpha.shp'
 
-#shpfile = r'E:\Penghua\data\Etna\2014.07.03\TET\ac_results_1.15\Mask\sub_tem.shp'
-#
-#rasterfile = r'E:\Penghua\data\Etna\2014.07.03\TET\ac_results_1.15\FBI_TET1_20140703T232012_20140703T232115_L2_C_CF-00335_cobined_MIR_TIR_tem.tif'
-#
-#tet_radiance = r'E:\Penghua\data\Etna\2014.07.03\TET\FBI_TET1_20140703T232012_20140703T232115_L2_C_CF-00335_MWIR_near_repro_cut.tif'
-#
-#bg_tem = r'E:\Penghua\data\Etna\2014.07.03\TET\ac_results_1.15\FBI_TET1_20140703T232012_20140703T232115_L2_C_CF-00335_cobined_MIR_TIR_Tback.tif'
+
+
+shpfile = r'E:\Penghua\data\Bardarbunga\2014.09.14\TET\ac_results\Mask\sub_tem.shp'
+
+rasterfile = r'E:\Penghua\data\Bardarbunga\2014.09.14\TET\ac_results\FBI_TET1_20140914T022014_20140914T022136_L2_C_EL-00420_cobined_MIR_TIR_tem.tif'
+
+tet_radiance = r'E:\Penghua\data\Bardarbunga\2014.09.14\TET\FBI_TET1_20140914T022014_20140914T022136_L2_C_EL-00420_MWIR_near_repro_cut.tif'
+
+bg_tem = r'E:\Penghua\data\Bardarbunga\2014.09.14\TET\ac_results\FBI_TET1_20140914T022014_20140914T022136_L2_C_EL-00420_cobined_MIR_TIR_Tback.tif'
 
 #bg = zonalStats.zonal_stats(0, alpha, rasterfile, 2, -9999)
 
-shpfile = r'E:\Penghua\data\Chile\2017.01.26\TET\ac_results\Mask\sub_tem.shp'
 
-rasterfile = r'E:\Penghua\data\Chile\2017.01.26\TET\ac_results\FBI_TET1_20170126T063754_20170126T063927_L2_C_SP-00191_cobined_MIR_TIR_tem.tif'
 
-tet_radiance = r'E:\Penghua\data\Chile\2017.01.26\TET\FBI_TET1_20170126T063754_20170126T063927_L2_C_SP-00191_MWIR_near_repro_cut.tif'
-
-bg_tem = r'E:\Penghua\data\Chile\2017.01.26\TET\ac_results\FBI_TET1_20170126T063754_20170126T063927_L2_C_SP-00191_cobined_MIR_TIR_Tback.tif'
+#shpfile = r'E:\Penghua\data\Chile\2017.01.26\TET\ac_results\Mask\sub_tem.shp'
+#
+#rasterfile = r'E:\Penghua\data\Chile\2017.01.26\TET\ac_results\FBI_TET1_20170126T063754_20170126T063927_L2_C_SP-00191_cobined_MIR_TIR_tem.tif'
+#
+#tet_radiance = r'E:\Penghua\data\Chile\2017.01.26\TET\FBI_TET1_20170126T063754_20170126T063927_L2_C_SP-00191_MWIR_near_repro_cut.tif'
+#
+#bg_tem = r'E:\Penghua\data\Chile\2017.01.26\TET\ac_results\FBI_TET1_20170126T063754_20170126T063927_L2_C_SP-00191_cobined_MIR_TIR_Tback.tif'
 #
 
 a = loop_clusterTem(shpfile, rasterfile, 0)
