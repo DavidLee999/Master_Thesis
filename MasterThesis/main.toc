@@ -9,9 +9,9 @@
 \contentsline {section}{\numberline {1.2}Outline of the thesis}{2}{section.12}
 \contentsline {chapter}{\numberline {2}Theoretical background of thermal infrared remote sensing}{5}{chapter.13}
 \contentsline {section}{\numberline {2.1}Principles of thermal infrared remote sensing}{5}{section.14}
-\contentsline {subsection}{\numberline {2.1.1}The thermal infrared domain and atmospheric windows}{5}{subsection.15}
-\contentsline {subsection}{\numberline {2.1.2}The Planck's law and Stefan-Boltzmann law}{5}{subsection.16}
-\contentsline {section}{\numberline {2.2}A dual-channel method for the identification of subresolution high temperature sources}{5}{section.17}
+\contentsline {subsection}{\numberline {2.1.1}The thermal infrared domain and atmospheric windows}{6}{subsection.15}
+\contentsline {subsection}{\numberline {2.1.2}The Planck's law and Stefan-Boltzmann law}{6}{subsection.16}
+\contentsline {section}{\numberline {2.2}A dual-channel method for the identification of subresolution high temperature sources}{6}{section.17}
 \contentsline {chapter}{\numberline {3}The MITIP, an atmospheric correction and image processing method}{7}{chapter.18}
 \contentsline {section}{\numberline {3.1}Data preparation and pre-processing}{7}{section.19}
 \contentsline {subsection}{\numberline {3.1.1}Data preparation}{7}{subsection.20}

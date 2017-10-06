@@ -344,7 +344,7 @@
       }}%
     }
     \list{publisher}{1}{%
-      {Springer Netherlands}%
+      {Springer Dordrecht}%
     }
     \strng{namehash}{CE1}
     \strng{fullhash}{CE1}
@@ -360,6 +360,44 @@
       {Doodrecht, the Netherlands}%
     }
     \field{year}{2008}
+  \endentry
+
+  \entry{Reference203}{article}{}
+    \name{author}{3}{}{%
+      {{hash=FLP}{%
+         family={Flynn},
+         familyi={F\bibinitperiod},
+         given={Luke\bibnamedelima P.},
+         giveni={L\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+      {{hash=HAJ}{%
+         family={Harris},
+         familyi={H\bibinitperiod},
+         given={Andrew\bibnamedelima J.L.},
+         giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=WR}{%
+         family={Wright},
+         familyi={W\bibinitperiod},
+         given={Robert},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{FLPHAJWR1}
+    \strng{fullhash}{FLPHAJWR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2001}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \field{note}{Landsat 7}
+    \field{number}{1}
+    \field{pages}{180 \bibrangedash  193}
+    \field{title}{Improved identification of volcanic features using Landsat 7
+  ETM+}
+    \field{volume}{78}
+    \field{journaltitle}{Remote Sensing of Environment}
+    \field{year}{2001}
   \endentry
 
   \entry{Reference11}{inproceedings}{}
@@ -554,6 +592,40 @@
     \field{year}{2010}
   \endentry
 
+  \entry{Reference204}{book}{}
+    \name{author}{2}{}{%
+      {{hash=KC}{%
+         family={Kuenzer},
+         familyi={K\bibinitperiod},
+         given={Claudia},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=DS}{%
+         family={Dech},
+         familyi={D\bibinitperiod},
+         given={Stefan},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer Dordrecht}%
+    }
+    \strng{namehash}{KCDS1}
+    \strng{fullhash}{KCDS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2013}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{booktitle}{Remote sensing and digital image processing series}
+    \field{pages}{537}
+    \field{title}{Thermal Infrared Remote Sensing: Sensors, Methods,
+  Applications}
+    \field{volume}{17}
+    \field{month}{07}
+    \field{year}{2013}
+  \endentry
+
   \entry{Reference7}{article}{}
     \name{author}{11}{}{%
       {{hash=MMA}{%
@@ -680,6 +752,34 @@
     \field{year}{2004}
   \endentry
 
+  \entry{Reference206}{inproceedings}{}
+    \name{author}{1}{}{%
+      {{hash=PA}{%
+         family={Prakash},
+         familyi={P\bibinitperiod},
+         given={A},
+         giveni={A},
+      }}%
+    }
+    \strng{namehash}{PA1}
+    \strng{fullhash}{PA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2000}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{booktitle}{International Archives of Photogrammetry and Remote
+  Sensing}
+    \field{pages}{239\bibrangedash 243}
+    \field{title}{Thermal remote sensing: concepts, issues and applications}
+    \field{volume}{33}
+    \list{location}{1}{%
+      {Amsterdam}%
+    }
+    \field{month}{01}
+    \field{year}{2000}
+  \endentry
+
   \entry{Reference10}{inproceedings}{}
     \name{author}{6}{}{%
       {{hash=RG}{%
@@ -732,6 +832,90 @@
   Analysis: The Upcoming FireBIRD Satellite Mission}
     \field{month}{05}
     \field{year}{2011}
+  \endentry
+
+  \entry{Reference202}{thesis}{}
+    \name{author}{1}{}{%
+      {{hash=TA}{%
+         family={Tetzlaff},
+         familyi={T\bibinitperiod},
+         given={Anke},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \keyw{coal fires, fire remote sensing, thermal infrared, China, ASTER, ETM,
+  BIRD}
+    \strng{namehash}{TA1}
+    \strng{fullhash}{TA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2004}
+    \field{sortinit}{T}
+    \field{sortinithash}{T}
+    \field{title}{Coal fire quantification using ASTER, ETM and BIRD satellite
+  instrument data}
+    \list{institution}{1}{%
+      {Ludwig-Maximilians-Universit{\"a}t M{\"u}nchen}%
+    }
+    \field{type}{phdthesis}
+    \field{month}{12}
+    \field{year}{2004}
+  \endentry
+
+  \entry{Reference201}{book}{}
+    \name{author}{2}{}{%
+      {{hash=TP}{%
+         family={Tipler},
+         familyi={T\bibinitperiod},
+         given={P.A.},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=MG}{%
+         family={Mosca},
+         familyi={M\bibinitperiod},
+         given={G.P.},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {W. H. Freeman}%
+    }
+    \strng{namehash}{TPMG1}
+    \strng{fullhash}{TPMG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2007}
+    \field{sortinit}{T}
+    \field{sortinithash}{T}
+    \field{edition}{6th edition}
+    \field{title}{Physics for scientists and engineers}
+    \field{year}{2007}
+  \endentry
+
+  \entry{Reference205}{article}{}
+    \name{author}{1}{}{%
+      {{hash=TAP}{%
+         family={Trishchenko},
+         familyi={T\bibinitperiod},
+         given={Alexander\bibnamedelima P.},
+         giveni={A\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{TAP1}
+    \strng{fullhash}{TAP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2006}
+    \field{sortinit}{T}
+    \field{sortinithash}{T}
+    \field{number}{2}
+    \field{pages}{198\bibrangedash 210}
+    \field{title}{Solar Irradiance and Effective Brightness Temperature for
+  SWIR Channels of AVHRR/NOAA and GOES Imagers}
+    \field{volume}{23}
+    \field{journaltitle}{Journal of Atmospheric and Oceanic Technology}
+    \field{month}{02}
+    \field{year}{2006}
   \endentry
 
   \entry{Reference2}{report}{}
