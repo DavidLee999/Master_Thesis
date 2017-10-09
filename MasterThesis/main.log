@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2017.9.5)  6 OCT 2017 15:15
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2017.9.5)  9 OCT 2017 16:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1822,13 +1822,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 17--18
 
  []
 
-)
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--25
+
+ []
+
 1: section
 [5
 
 
 
-] [6]
+]
+File: Figures/The_thermal_infrared_wavelength_domain.eps Graphic file (type eps
+)
+ <Figures/The_thermal_infrared_wavelength_domain.eps>
+Underfull \hbox (badness 10000) in paragraph at lines 32--33
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 34--35
+
+ []
+
+) [6]
 \openout2 = `Chapters/Chapter3.aux'.
 
  (./Chapters/Chapter3.tex
@@ -1908,12 +1925,12 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 32620 strings out of 493005
- 658911 string characters out of 6137957
+ 32625 strings out of 493005
+ 659048 string characters out of 6137957
  894027 words of memory out of 5000000
- 36260 multiletter control sequences out of 15000+600000
+ 36264 multiletter control sequences out of 15000+600000
  28034 words of font info for 58 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 54i,20n,76p,10379b,6096s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 54i,20n,76p,10379b,6097s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on main.pdf (28 pages).
