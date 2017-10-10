@@ -11,7 +11,16 @@ This chapter reviews some fundamentals of thermal remote sensing (Section 2.1), 
 %----------------------------------------------------------------------------------------
 
 \section{Principles of thermal infrared remote sensing}
-Thermal remote sensing depends on the fact that any object with a temperature above absolute zero (0 K or -273.15 $^\circ$C) emits electromagnetic (EM) radiation in the infrared range. For example, the Earth we live has an average temperature around 300 K and its peak emittance is near 10 $\mu$m, which falls on thermal infrared (TIR) domain \parencite {Reference201, Reference202}. The spectral composition and intensity of the emited radiation are determined by its surface temperature, which is also called kinetic temperature $T_{kin}$,  and the emissivity of the object \parencite{Reference207}. The emissivity $\epsilon_{\lambda}$, $\epsilon$ for short, is a ratio of the radiant flux of an object at a certain temperature to the radiant flux of a blackbody at the same temperature, representing the effectiveness of the object in emitting energy as thermal radiation. The blackbody is an idealized physical object that aborbs and re-emits all incident EM radiation, which means its emissivity is 1 \parencite{Reference206, Reference204}. The emissivity varies as a function of wavelength $\lambda$ and also depends on the surface type of the object, but is not temperature-dependent \parencite{Reference203}.\\
+Thermal remote sensing depends on the fact that any object with a temperature above absolute zero (0 K or -273.15 $^\circ$C) emits electromagnetic (EM) radiation in the infrared range. For example, the Earth we live has an average temperature around 300 K and its peak emittance is near 10 $\mu$m, which falls on thermal infrared (TIR) domain \parencite {Reference201, Reference202}. The spectral composition and intensity of the emited radiation are determined by its surface temperature, which is also called kinetic temperature $T_{kin}$,  and the emissivity of the object \parencite{Reference207}. The emissivity $\varepsilon_{\lambda}$, $\varepsilon$ for short, is a ratio of the radiant flux of an object at a certain temperature to the radiant flux of a blackbody at the same temperature (Equation \eqref{eq1}), representing the effectiveness of the object in emitting energy as thermal radiation. The blackbody is an idealized physical object that aborbs and re-emits all incident EM radiation, which means its emissivity is 1 \parencite{Reference206, Reference204}. The emissivity varies as a function of wavelength $\lambda$ and also depends on the surface type of the object, but is not temperature-dependent \parencite{Reference203}.\\
+\begin{equation}
+\label{eq1}
+\varepsilon_{\lambda} = \frac{L_{gb, \lambda}(T_{kin})}{L_{gb, \lambda}(T_{kin})}
+\end{equation}
+
+\noindent with:\\
+\indent $T_{kin}$ = kinetic temperature [K]\\
+\indent $L_{gb, \lambda}(T_{kin})$ = radiance of an object with temperature $T_{kin}$ at a certain wavelength [$W m^{-2} sr^{-1} \mu m^{-1}$]\\
+\indent $L_{bb, \lambda}(T_{kin})$ = radiance of blackbody with temperature $T_{kin}$ at a certain wavelength [$W m^{-2} sr^{-1} \mu m^{-1}$]\\
 
 % Thus these sensors will produce thermal radiance images which record the equivalent blackbody radiances of the object on the Eearth's surface 
 \noindent The satellite remote sensing snesors responsive in the thermal infrared domain are capable to record the EM radiations emited by Earth surface objects \parencite{Reference204}. With the recorded radiation the derivation of the radiant temperature $T_{rad}$ is possible. Radiant temperature $T_{rad}$ is the actual temperature obtained from the measurement of the sensor, representing temperature of a equivalent blackbody \parencite{Reference206}. Notice that the radiant temperature $T_{rad}$ and the kinematic temperature $T_{kin}$ are two different terms and the conversion between them will be introduced later.\\
@@ -20,8 +29,8 @@ Thermal remote sensing depends on the fact that any object with a temperature ab
 %	SUBSECTION 1
 %-----------------------------------
 
-\subsection{The thermal infrared  domain and atmospheric windows}
-There is no strict or physical definition of the thermal infrared domain. Usually the thermal infrared wavelength domain spread from around 3 to 14 $\mu$m. Within this range, there are two atomspheric windows in the 3 - 5 $\mu$m range and in the 8 - 14 $\mu$m range \parencite{Reference204}. \\
+\subsection{The thermal infrared domain and atmospheric windows}
+There is no strict definition of the thermal infrared domain. Usually, the thermal infrared wavelength domain spread from around 3 to 14 $\mu$m. Within this range, there are two atomspheric windows in the 3 - 5 $\mu$m range and in the 8 - 14 $\mu$m range \parencite{Reference204}. \\
 
 \begin{figure}[!htbp]
   \centering\includegraphics[width=0.8\textwidth]{The_thermal_infrared_wavelength_domain.eps}
@@ -29,15 +38,48 @@ There is no strict or physical definition of the thermal infrared domain. Usuall
   \label{fig:TIRdomain}
 \end{figure}
 
-\noindent The spectrum range 8 - 14 $\mu$m, which is called Long-Wavelength InfRared (LWIR), is the thermal imaging region. Within this range, sensors are able to obtain a completely passive image of objects based on the thermal emissions only and no illumination required. There is only a absorption of OZone which might merely neglected by the sensor. The sepectrum range 3 - 5 $\mu$m is called Mid-Wavelength InfraRed (MWIR). Sensors responsive to this specturm range will capture reflected sunlight which contaminates the object-emitted thermal signal. So More attention should be paid when dealing with day-time 3 - 5 $\mu$m MWIR imagery. \\
+\noindent The spectrum range 8 - 14 $\mu$m, which is called Long-Wavelength InfRared (LWIR), is the thermal imaging region. Within this range, sensors are able to obtain a completely passive image based on the thermal radiation emitted by objects itself and no illumination required. There is only a absorption of OZone which is neglected by sensors. The sepectrum range 3 - 5 $\mu$m is called Mid-Wavelength InfraRed (MWIR). Sensors responsive to this specturm range will capture reflected sunlight which contaminates the object-emitted thermal signal. So More attention should be paid when dealing with day-time 3 - 5 $\mu$m MWIR imagery. \\
 
-\noindent In this thesis, we will focus on the night-time TET-1 imagery only. \\
+\noindent In this thesis, we focus on the night-time TET-1 scene only. \\
 
 %-----------------------------------
 %	SUBSECTION 2
 %-----------------------------------
 
 \subsection{The Planck's law and Stefan-Boltzmann law}
+Planck's blackbody radiation law, Planck's law for short, describes the spectral density of electromagnetic radiation $B_{\lambda}(T_{kin})$ emitted by a blackbody at a given wavelength $\lambda$ as a function of the blackbody's absolute temperature \parencite{Reference208}. Given a certain wavelength $\lambda$, the spectral radiance $B_{\lambda}(T_{kin})$ can be computed from the body's temperature:
+\begin{equation}
+\label{eq2}
+B_{\lambda}(T_{kin}) = L_{bb, \lambda}(T_{kin}) = \frac{2hc^2}{\lambda ^5} \frac{1}{e^{\frac{hc}{\lambda k T_{kin}}} - 1}
+\end{equation}
+
+\noindent with:\\
+\indent $B_{\lambda}(T_{kin})$ = spectral radiance of blackbody with temperature $T_{kin}$ at wavelength $\lambda$\\
+\indent $h$ = Planck's constant [$6.626 \cdot 10^{34} J s$]\\
+\indent $c$ = speed of light in vacuum [$2.9979246 \cdot 10^8 m s^{-1}$]\\
+\indent $\lambda$ = wavelength [$\mu m$]\\
+\indent $e$ = Euler's number\\
+\indent $k$ = Boltzmann constant [$1.3806 \cdot 10^{-23} J K^{-1}$]\\
+
+\noindent By inverting Equation \eqref{eq2}, the temperature of a blackbody at a certain wavelength $\lambda$ can be calculated.\\
+
+\noindent The Stefan-Boltzmann law describes the power radiated from a blackbody in terms of its temperature \parencite{Reference201, Reference209}.
+\begin{equation}
+\label{eq3}
+T_{Radbb} = \sigma T_{kin}^4
+\end{equation}
+
+\noindent with:\\
+\indent $T_{Radbb}$ = Radiant flux of a blackbody [$W/m^2$]\\
+\indent $\sigma$ = Stefan-Boltzmann constant [$5.6697 \cdot 10^{-8} W m^{-2} K^{-4}$]\\
+
+\noindent Through Equation \eqref{eq3} we can obtain the relationship between the radiant temperature $T_{rad}$ and the kinetic temperature $T_{kin}$:
+\begin{equation}
+\label{eq4}
+T_{rad} = \sigma ^{\frac{1}{4}} T_{kin}
+\end{equation}
+
+\noindent For a blackbody whose emissivity $\varepsilon$ = 1, its radiant temperature $T_{rad}$ euqals kinetic temperature $T_{kin}$. For all natural materials with an emissivity $\varepsilon <$ 1, radiant temperature $T_{rad}$ is always lower than kinetic temperature $T_{kin}$.
 
 %----------------------------------------------------------------------------------------
 %	SECTION 2

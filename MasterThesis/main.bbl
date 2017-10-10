@@ -742,6 +742,33 @@
     \field{year}{2004}
   \endentry
 
+  \entry{Reference208}{article}{}
+    \name{author}{1}{}{%
+      {{hash=PM}{%
+         family={Planck},
+         familyi={P\bibinitperiod},
+         given={Max},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {WILEY-VCH Verlag}%
+    }
+    \strng{namehash}{PM1}
+    \strng{fullhash}{PM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1900}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{number}{4}
+    \field{pages}{719\bibrangedash 737}
+    \field{title}{Entropie und Temperatur strahlender Wärme}
+    \field{volume}{306}
+    \field{journaltitle}{Annalen der Physik}
+    \field{year}{1900}
+  \endentry
+
   \entry{Reference206}{inproceedings}{}
     \name{author}{1}{}{%
       {{hash=PA}{%
@@ -880,6 +907,46 @@
     \field{edition}{6th edition}
     \field{title}{Physics for scientists and engineers}
     \field{year}{2007}
+  \endentry
+
+  \entry{Reference209}{book}{}
+    \name{author}{3}{}{%
+      {{hash=WJ}{%
+         family={Walker},
+         familyi={W\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=HD}{%
+         family={Halliday},
+         familyi={H\bibinitperiod},
+         given={D.},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=RR}{%
+         family={Resnick},
+         familyi={R\bibinitperiod},
+         given={R.},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Wiley}%
+    }
+    \strng{namehash}{WJHDRR1}
+    \strng{fullhash}{WJHDRR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2008}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \field{edition}{8th edition}
+    \field{pages}{891}
+    \field{title}{Fundamentals of physics}
+    \list{location}{1}{%
+      {New York}%
+    }
+    \field{year}{2008}
   \endentry
 
   \entry{Reference2}{report}{}

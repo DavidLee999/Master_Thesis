@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2017.9.5)  9 OCT 2017 16:51
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2017.9.5)  10 OCT 2017 16:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1818,12 +1818,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 14--15
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 17--18
+Underfull \hbox (badness 10000) in paragraph at lines 20--24
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 24--25
+Underfull \hbox (badness 10000) in paragraph at lines 26--27
 
  []
 
@@ -1833,33 +1833,68 @@ Underfull \hbox (badness 10000) in paragraph at lines 24--25
 
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 33--34
+
+ []
+
 File: Figures/The_thermal_infrared_wavelength_domain.eps Graphic file (type eps
 )
- <Figures/The_thermal_infrared_wavelength_domain.eps>
-Underfull \hbox (badness 10000) in paragraph at lines 32--33
+<Figures/The_thermal_infrared_wavelength_domain.eps>
+Underfull \hbox (badness 10000) in paragraph at lines 41--42
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 34--35
+Underfull \hbox (badness 10000) in paragraph at lines 43--44
 
  []
 
-) [6]
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 56--63
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--65
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 72--75
+
+ []
+
+)
+
+Package scrlayer-scrpage Warning: \headheight to low.
+(scrlayer-scrpage)                At least 28.99998pt needed,
+(scrlayer-scrpage)                but only 20.66669pt found.
+(scrlayer-scrpage)                I'll enlarge \headheight, for further
+(scrlayer-scrpage)                processing, but you should do this yourself,
+(scrlayer-scrpage)                e.g., setting geometry's option
+(scrlayer-scrpage)                `head=28.99998pt'.
+(scrlayer-scrpage)                I'll also decrease \topmargin on input line 1
+86.
+
+
+Overfull \vbox (8.3333pt too high) has occurred while \output is active []
+
+
+[7]
 \openout2 = `Chapters/Chapter3.aux'.
 
- (./Chapters/Chapter3.tex
-Chapter 3.
-)
-1: section
-[7
+ (./Chapters/Chapter3.tex [8
 
 
 
 ]
+Chapter 3.
+)
+1: section
+[9]
 \openout2 = `Chapters/Chapter4.aux'.
 
- (./Chapters/Chapter4.tex [8
+ (./Chapters/Chapter4.tex [10
 
 
 
@@ -1867,10 +1902,10 @@ Chapter 3.
 Chapter 4.
 )
 1: section
-[9]
+[11]
 \openout2 = `Chapters/Chapter5.aux'.
 
- (./Chapters/Chapter5.tex [10
+ (./Chapters/Chapter5.tex [12
 
 
 
@@ -1878,10 +1913,10 @@ Chapter 4.
 Chapter 5.
 )
 1: section
-[11]
+[13]
 \openout2 = `Chapters/Chapter6.aux'.
 
- (./Chapters/Chapter6.tex [12
+ (./Chapters/Chapter6.tex [14
 
 
 
@@ -1889,7 +1924,7 @@ Chapter 5.
 Chapter 6.
 )
 1: section
-[13] [14
+[15] [16
 
 
 ]
@@ -1911,9 +1946,9 @@ ng ASTER, ETM and BIRD satel-
  []
 
 1: section
-[15]
+[17]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 196.
- [16]
+ [18]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 196.
  (./main.aux (./Chapters/Chapter1.aux) (./Chapters/Chapter2.aux)
 (./Chapters/Chapter3.aux) (./Chapters/Chapter4.aux) (./Chapters/Chapter5.aux)
@@ -1925,12 +1960,12 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 32625 strings out of 493005
- 659048 string characters out of 6137957
+ 32638 strings out of 493005
+ 659273 string characters out of 6137957
  894027 words of memory out of 5000000
- 36264 multiletter control sequences out of 15000+600000
+ 36277 multiletter control sequences out of 15000+600000
  28034 words of font info for 58 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 54i,20n,76p,10379b,6097s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 57i,20n,77p,10379b,6097s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (28 pages).
+Output written on main.pdf (30 pages).
