@@ -327,6 +327,31 @@
     \field{year}{2008}
   \endentry
 
+  \entry{Reference210}{article}{}
+    \name{author}{1}{}{%
+      {{hash=DJ}{%
+         family={Dozier},
+         familyi={D\bibinitperiod},
+         given={Jeff},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DJ1}
+    \strng{fullhash}{DJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1981}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{number}{Supplement C}
+    \field{pages}{221 \bibrangedash  229}
+    \field{title}{A method for satellite identification of surface temperature
+  fields of subpixel resolution}
+    \field{volume}{11}
+    \field{journaltitle}{Remote Sensing of Environment}
+    \field{year}{1981}
+  \endentry
+
   \entry{Reference203}{article}{}
     \name{author}{3}{}{%
       {{hash=FLP}{%
@@ -588,6 +613,37 @@
     \field{volume}{17}
     \field{month}{07}
     \field{year}{2013}
+  \endentry
+
+  \entry{Reference211}{article}{}
+    \name{author}{2}{}{%
+      {{hash=MM}{%
+         family={Matson},
+         familyi={M\bibinitperiod},
+         given={M},
+         giveni={M},
+      }}%
+      {{hash=DJ}{%
+         family={Dozier},
+         familyi={D\bibinitperiod},
+         given={Jeff},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MMDJ1}
+    \strng{fullhash}{MMDJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1981}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{pages}{1311\bibrangedash 1318}
+    \field{title}{Identification of subresolution high temperature sources
+  using thermal IR sensor}
+    \field{volume}{47}
+    \field{journaltitle}{Photogrammetric Engineering and Remote Sensing}
+    \field{month}{01}
+    \field{year}{1981}
   \endentry
 
   \entry{Reference207}{book}{}

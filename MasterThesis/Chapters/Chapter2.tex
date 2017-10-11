@@ -14,7 +14,7 @@ This chapter reviews some fundamentals of thermal remote sensing (Section 2.1), 
 Thermal remote sensing depends on the fact that any object with a temperature above absolute zero (0 K or -273.15 $^\circ$C) emits electromagnetic (EM) radiation in the infrared range. For example, the Earth we live has an average temperature around 300 K and its peak emittance is near 10 $\mu$m, which falls on thermal infrared (TIR) domain \parencite {Reference201, Reference202}. The spectral composition and intensity of the emited radiation are determined by its surface temperature, which is also called kinetic temperature $T_{kin}$,  and the emissivity of the object \parencite{Reference207}. The emissivity $\varepsilon_{\lambda}$, $\varepsilon$ for short, is a ratio of the radiant flux of an object at a certain temperature to the radiant flux of a blackbody at the same temperature (Equation \eqref{eq1}), representing the effectiveness of the object in emitting energy as thermal radiation. The blackbody is an idealized physical object that aborbs and re-emits all incident EM radiation, which means its emissivity is 1 \parencite{Reference206, Reference204}. The emissivity varies as a function of wavelength $\lambda$ and also depends on the surface type of the object, but is not temperature-dependent \parencite{Reference203}.\\
 \begin{equation}
 \label{eq1}
-\varepsilon_{\lambda} = \frac{L_{gb, \lambda}(T_{kin})}{L_{gb, \lambda}(T_{kin})}
+\varepsilon_{\lambda} = \frac{L_{gb, \lambda}(T_{kin})}{L_{bb, \lambda}(T_{kin})}
 \end{equation}
 
 \noindent with:\\
@@ -47,14 +47,14 @@ There is no strict definition of the thermal infrared domain. Usually, the therm
 %-----------------------------------
 
 \subsection{The Planck's law and Stefan-Boltzmann law}
-Planck's blackbody radiation law, Planck's law for short, describes the spectral density of electromagnetic radiation $B_{\lambda}(T_{kin})$ emitted by a blackbody at a given wavelength $\lambda$ as a function of the blackbody's absolute temperature \parencite{Reference208}. Given a certain wavelength $\lambda$, the spectral radiance $B_{\lambda}(T_{kin})$ can be computed from the body's temperature:
+Planck's blackbody radiation law, Planck's law for short, describes the spectral density of electromagnetic radiation $B_{\lambda}(T_{rad})$ emitted by a blackbody at a given wavelength $\lambda$ as a function of the blackbody's absolute temperature \parencite{Reference208}. Given a certain wavelength $\lambda$, the spectral radiance $B_{\lambda}(T_{rad})$ can be computed from the body's temperature:\\
 \begin{equation}
 \label{eq2}
-B_{\lambda}(T_{kin}) = L_{bb, \lambda}(T_{kin}) = \frac{2hc^2}{\lambda ^5} \frac{1}{e^{\frac{hc}{\lambda k T_{kin}}} - 1}
+B_{\lambda}(T_{rad}) = L_{bb, \lambda}(T_{rad}) = \frac{2hc^2}{\lambda ^5} \frac{1}{e^{\frac{hc}{\lambda k T_{rad}}} - 1}
 \end{equation}
 
 \noindent with:\\
-\indent $B_{\lambda}(T_{kin})$ = spectral radiance of blackbody with temperature $T_{kin}$ at wavelength $\lambda$\\
+\indent $B_{\lambda}(T_{rad})$ = spectral radiance of blackbody with temperature $T_{rad}$ at wavelength $\lambda$\\
 \indent $h$ = Planck's constant [$6.626 \cdot 10^{34} J s$]\\
 \indent $c$ = speed of light in vacuum [$2.9979246 \cdot 10^8 m s^{-1}$]\\
 \indent $\lambda$ = wavelength [$\mu m$]\\
@@ -62,10 +62,14 @@ B_{\lambda}(T_{kin}) = L_{bb, \lambda}(T_{kin}) = \frac{2hc^2}{\lambda ^5} \frac
 \indent $k$ = Boltzmann constant [$1.3806 \cdot 10^{-23} J K^{-1}$]\\
 
 \noindent By inverting Equation \eqref{eq2}, the temperature of a blackbody at a certain wavelength $\lambda$ can be calculated.\\
-
-\noindent The Stefan-Boltzmann law describes the power radiated from a blackbody in terms of its temperature \parencite{Reference201, Reference209}.
 \begin{equation}
 \label{eq3}
+T_{rad} = B_{\lambda}^{-1}(L_{bb}) = \frac{hc}{k \cdot \lambda \cdot ln(\frac{2hc^2}{L_{bb} \cdot \lambda ^5 \cdot 10^6} + 1)}
+\end{equation}
+
+\noindent The Stefan-Boltzmann law describes the power radiated from a blackbody in terms of its temperature \parencite{Reference201, Reference209}.\\
+\begin{equation}
+\label{eq4}
 T_{Radbb} = \sigma T_{kin}^4
 \end{equation}
 
@@ -73,19 +77,31 @@ T_{Radbb} = \sigma T_{kin}^4
 \indent $T_{Radbb}$ = Radiant flux of a blackbody [$W/m^2$]\\
 \indent $\sigma$ = Stefan-Boltzmann constant [$5.6697 \cdot 10^{-8} W m^{-2} K^{-4}$]\\
 
-\noindent Through Equation \eqref{eq3} we can obtain the relationship between the radiant temperature $T_{rad}$ and the kinetic temperature $T_{kin}$:
+\noindent Through Equation \eqref{eq4} we can obtain the relationship between the radiant temperature $T_{rad}$ and the kinetic temperature $T_{kin}$:\\
 \begin{equation}
-\label{eq4}
+\label{eq5}
 T_{rad} = \sigma ^{\frac{1}{4}} T_{kin}
 \end{equation}
 
-\noindent For a blackbody whose emissivity $\varepsilon$ = 1, its radiant temperature $T_{rad}$ euqals kinetic temperature $T_{kin}$. For all natural materials with an emissivity $\varepsilon <$ 1, radiant temperature $T_{rad}$ is always lower than kinetic temperature $T_{kin}$.
+\noindent For a blackbody whose emissivity $\varepsilon$ = 1, its radiant temperature $T_{rad}$ euqals kinetic temperature $T_{kin}$. For all natural materials with an emissivity $\varepsilon <$ 1, radiant temperature $T_{rad}$ is always lower than kinetic temperature $T_{kin}$.\\
+
+\noindent This is a crucial fact in thermal remote sensing data analysis because it reveals how important the emissivity is: objects with the same radiant temperature $T_{rad}$ measured at sensor might vary significantly in their kinetic temperatures $T_{kin}$ due to the considerable differences among their emissivities.\\
 
 %----------------------------------------------------------------------------------------
 %	SECTION 2
 %----------------------------------------------------------------------------------------
 
 \section{A dual-channel method for the identification of subresolution high temperature sources}
+From satellites which contain more than one channel in the thermal infrared spectral region, it is possible to measure suface temperature fields of sub-pixel spatial resolution. Because of the differnet responses of Planck's function at different wavelength, the radiant temperatures measured in two channels may be expressed in terms of contributions from two temperature fields, each occupying a portion of the pixel \parencite{Reference210, Reference211}.
+
+As mentioned before, The TET-1 satellite's payload includes a HSRS with two thermal infrared spectral bands, one MIR band and one TIR band. Assume that the TET-1 scene contains sub-pixel high-temperature targets. Such “mixed pixels'' compose of a target at temperature $T_t$, which we call it effective target temperature, occupying portion $p$, which we call it effective target pixel fraction, of the pixel (where $0 \leqslant p \leqslant 1$) and a background temperature $T_b$ which occupies the remaining portion $(1 - p)$. The measured black body radiance $L_{bb, \lambda}$can be writen as:\\
+\begin{equation}
+\begin{aligned}
+\label{eq5}
+L_{bb, 1}(T_{rad, 1}) = pL_{bb, 1}(T_t) + (1 - p)L_{rad, 1}(T_b)\\
+L_{bb, 2}(T_{rad, 2}) = pL_{bb, 2}(T_t) + (1 - p)L_{rad, 2}(T_b)
+\end{aligned}
+\end{equation}
 
 %----------------------------------------------------------------------------------------
 %	SECTION 3

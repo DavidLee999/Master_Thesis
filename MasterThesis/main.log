@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2017.9.5)  10 OCT 2017 16:42
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2017.9.5)  11 OCT 2017 12:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1221,6 +1221,16 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
 LaTeX Info: Redefining \[ on input line 2817.
 LaTeX Info: Redefining \] on input line 2818.
 )
+(c:/texlive/2017/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(c:/texlive/2017/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
 (c:/texlive/2017/texmf-dist/tex/latex/csquotes/csquotes.sty
 Package: csquotes 2017/03/11 v5.2b context-sensitive quotations (JAW)
 \csq@reset=\count354
@@ -1265,72 +1275,72 @@ Package: subfigure 2002/03/15 v2.1.5 subfigure package
 .................................................
 . LaTeX info: "xparse/redefine-command"
 . 
-. Redefining command \@title with sig. ' ' on line 49.
+. Redefining command \@title with sig. ' ' on line 50.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \ttitle with sig. ' ' on line 49.
+. Defining command \ttitle with sig. ' ' on line 50.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \supname with sig. ' ' on line 50.
+. Defining command \supname with sig. ' ' on line 51.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \examname with sig. ' ' on line 51.
+. Defining command \examname with sig. ' ' on line 52.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \degreename with sig. ' ' on line 52.
+. Defining command \degreename with sig. ' ' on line 53.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \authorname with sig. ' ' on line 53.
+. Defining command \authorname with sig. ' ' on line 54.
 .................................................
 .................................................
 . LaTeX info: "xparse/redefine-command"
 . 
-. Redefining command \@author with sig. ' ' on line 53.
+. Redefining command \@author with sig. ' ' on line 54.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \addressname with sig. ' ' on line 54.
+. Defining command \addressname with sig. ' ' on line 55.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \subjectname with sig. ' ' on line 56.
+. Defining command \subjectname with sig. ' ' on line 57.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \keywordnames with sig. ' ' on line 57.
+. Defining command \keywordnames with sig. ' ' on line 58.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \univname with sig. ' ' on line 58.
+. Defining command \univname with sig. ' ' on line 59.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \deptname with sig. ' ' on line 59.
+. Defining command \deptname with sig. ' ' on line 60.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \groupname with sig. ' ' on line 60.
+. Defining command \groupname with sig. ' ' on line 61.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \facname with sig. ' ' on line 61.
+. Defining command \facname with sig. ' ' on line 62.
 .................................................
 
 (c:/texlive/2017/texmf-dist/tex/latex/hyperref/hyperref.sty
@@ -1411,7 +1421,7 @@ LaTeX Info: Redefining \pageref on input line 6432.
 )
 Package scrhack Info: hyperref hack deactivated because of
 (scrhack)             detection of hyperref version, that doesn't
-(scrhack)             need that hack, on input line 68.
+(scrhack)             need that hack, on input line 69.
 
 
 Package hyperref Message: Driver (autodetected): hxetex.
@@ -1443,11 +1453,11 @@ tly
 )
 \Hy@SectionHShift=\skip83
 )
-Package hyperref Info: Option `bookmarksopen' set `true' on input line 68.
-Package hyperref Info: Option `hypertexnames' set `false' on input line 68.
-Package hyperref Info: Option `colorlinks' set `true' on input line 68.
-Package hyperref Info: Option `unicode' set `true' on input line 68.
-Package hyperref Info: Option `breaklinks' set `true' on input line 68.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 69.
+Package hyperref Info: Option `hypertexnames' set `false' on input line 69.
+Package hyperref Info: Option `colorlinks' set `true' on input line 69.
+Package hyperref Info: Option `unicode' set `true' on input line 69.
+Package hyperref Info: Option `breaklinks' set `true' on input line 69.
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
 
@@ -1461,25 +1471,25 @@ Package csquotes Info: ... found 'babel' package.
 (./Chapters/Chapter4.aux) (./Chapters/Chapter5.aux) (./Chapters/Chapter6.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Try loading font information for T1+ppl on input line 68.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Try loading font information for T1+ppl on input line 69.
 
 (c:/texlive/2017/texmf-dist/tex/latex/psnfss/t1ppl.fd
 File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
@@ -1532,14 +1542,14 @@ Package caption Info: End \AtBeginDocument code.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package scrlayer Info: Setting magic \footheight to \baselineskip while
-(scrlayer)             \begin{document} on input line 68.
-Package scrbase Info: activating english \abbrevname on input line 68.
-Package scrbase Info: activating english \byname on input line 68.
-Package scrbase Info: activating english \acknowledgementname on input line 68.
+(scrlayer)             \begin{document} on input line 69.
+Package scrbase Info: activating english \abbrevname on input line 69.
+Package scrbase Info: activating english \byname on input line 69.
+Package scrbase Info: activating english \acknowledgementname on input line 69.
 
-Package scrbase Info: activating english \authorshipname on input line 68.
-Package scrbase Info: activating english \constantsname on input line 68.
-Package scrbase Info: activating english \symbolsname on input line 68.
+Package scrbase Info: activating english \authorshipname on input line 69.
+Package scrbase Info: activating english \constantsname on input line 69.
+Package scrbase Info: activating english \symbolsname on input line 69.
 Package biblatex Info: XeTeX detected.
 (biblatex)             Assuming input encoding 'utf8'.
 Package biblatex Info: Automatic encoding selection.
@@ -1558,12 +1568,12 @@ Package biblatex Warning: Biber reported the following issues
 (biblatex)                - Invalid format of field 'month'.
 
 )
-Package biblatex Info: Reference section=0 on input line 68.
-Package biblatex Info: Reference segment=0 on input line 68.
+Package biblatex Info: Reference section=0 on input line 69.
+Package biblatex Info: Reference segment=0 on input line 69.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\ttitle' on input line 68.
+(hyperref)                removing `\ttitle' on input line 69.
 
 (c:/texlive/2017/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
 File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
@@ -1571,14 +1581,14 @@ File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
 )
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\authorname' on input line 68.
+(hyperref)                removing `\authorname' on input line 69.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\keywordnames' on input line 68.
+(hyperref)                removing `\keywordnames' on input line 69.
 
 \AtBeginShipoutBox=\box56
-Package hyperref Info: Link coloring ON on input line 68.
+Package hyperref Info: Link coloring ON on input line 69.
 (c:/texlive/2017/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
@@ -1587,15 +1597,25 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count376
 )
-LaTeX Info: Redefining \ref on input line 68.
-LaTeX Info: Redefining \pageref on input line 68.
-LaTeX Info: Redefining \nameref on input line 68.
+LaTeX Info: Redefining \ref on input line 69.
+LaTeX Info: Redefining \pageref on input line 69.
+LaTeX Info: Redefining \nameref on input line 69.
 
 (./main.out) (./main.out)
 \@outlinefile=\write5
 \openout5 = `main.out'.
 
 \c__siunitx_mathsf_int=\count377
+LaTeX Font Info:    Try loading font information for U+msa on input line 69.
+
+(c:/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 69.
+
+(c:/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
 \c__siunitx_mathtt_int=\count378
 
 1: section
@@ -1639,16 +1659,16 @@ File: Figures/Geo_logo.jpg Graphic file (type QTm)
 
 <use  "Figures/Geo_logo.jpg" >
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <17.28> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 112.
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 113.
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 120.
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 121.
 
-Overfull \hbox (10.43044pt too wide) in paragraph at lines 120--122
+Overfull \hbox (10.43044pt too wide) in paragraph at lines 121--123
 []\T1/ppl/b/n/14.4 Superviser: 
  []
 
 
-Overfull \hbox (18.0pt too wide) in paragraph at lines 83--135
+Overfull \hbox (18.0pt too wide) in paragraph at lines 84--136
 []$[]$ 
  []
 
@@ -1665,7 +1685,7 @@ Overfull \hbox (18.0pt too wide) in paragraph at lines 83--135
  Abstract
 --------------------
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <12> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 145.
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 146.
 1: section
 [3
 
@@ -1673,7 +1693,7 @@ LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <12> not available
 
 ]
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 152.
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 153.
  (./main.toc
 1: section
 [5])
@@ -1798,7 +1818,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 100--101
  []
 
 [3])
-Underfull \hbox (badness 10000) in paragraph at lines 102--185
+Underfull \hbox (badness 10000) in paragraph at lines 102--186
 
  []
 
@@ -1849,6 +1869,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 43--44
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 50--51
+
+ []
+
 [6]
 Underfull \hbox (badness 10000) in paragraph at lines 56--63
 
@@ -1860,38 +1885,49 @@ Underfull \hbox (badness 10000) in paragraph at lines 64--65
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--75
+Underfull \hbox (badness 10000) in paragraph at lines 70--71
 
  []
 
-)
 
-Package scrlayer-scrpage Warning: \headheight to low.
-(scrlayer-scrpage)                At least 28.99998pt needed,
-(scrlayer-scrpage)                but only 20.66669pt found.
-(scrlayer-scrpage)                I'll enlarge \headheight, for further
-(scrlayer-scrpage)                processing, but you should do this yourself,
-(scrlayer-scrpage)                e.g., setting geometry's option
-(scrlayer-scrpage)                `head=28.99998pt'.
-(scrlayer-scrpage)                I'll also decrease \topmargin on input line 1
-86.
+Underfull \hbox (badness 10000) in paragraph at lines 76--79
+
+ []
 
 
-Overfull \vbox (8.3333pt too high) has occurred while \output is active []
+Underfull \hbox (badness 10000) in paragraph at lines 80--81
 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 86--87
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 88--89
+
+ []
 
 [7]
+Missing character: There is no “ in font pplr8t!
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--98
+
+ []
+
+) [8]
 \openout2 = `Chapters/Chapter3.aux'.
 
- (./Chapters/Chapter3.tex [8
+ (./Chapters/Chapter3.tex
+Chapter 3.
+)
+1: section
+[9
 
 
 
 ]
-Chapter 3.
-)
-1: section
-[9]
 \openout2 = `Chapters/Chapter4.aux'.
 
  (./Chapters/Chapter4.tex [10
@@ -1928,44 +1964,47 @@ Chapter 6.
 
 
 ]
-Overfull \hbox (1.33995pt too wide) in paragraph at lines 193--193
+Overfull \hbox (1.33995pt too wide) in paragraph at lines 194--194
 \T1/ppl/m/n/12 nu-mer-i-cal mod-elling^^Q. In: \T1/ppl/m/it/12 Earth Sur-face P
 ro-cesses and Land-forms \T1/ppl/m/n/12 28.12, pp. 1341^^U
  []
 
 
-Overfull \hbox (7.3944pt too wide) in paragraph at lines 193--193
+Overfull \hbox (7.3944pt too wide) in paragraph at lines 194--194
 [][]\T1/ppl/m/n/12 Moritz, Max A. et al. (2014). ^^P  Learn-ing to co-ex-ist wi
 th wild-fire^^Q. In: \T1/ppl/m/it/12 Na-ture \T1/ppl/m/n/12 515.7525,
  []
 
-
-Overfull \hbox (0.2456pt too wide) in paragraph at lines 193--193
+1: section
+[17]
+Overfull \hbox (0.2456pt too wide) in paragraph at lines 194--194
 [][]\T1/ppl/m/n/12 Tetzlaff, Anke (2004). ^^P  Coal fire quan-tifi-ca-tion us-i
 ng ASTER, ETM and BIRD satel-
  []
 
-1: section
-[17]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 196.
- [18]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 196.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 197.
+[18]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 197.
  (./main.aux (./Chapters/Chapter1.aux) (./Chapters/Chapter2.aux)
 (./Chapters/Chapter3.aux) (./Chapters/Chapter4.aux) (./Chapters/Chapter5.aux)
 (./Chapters/Chapter6.aux))
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 196.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 196.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 197.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 197.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 32638 strings out of 493005
- 659273 string characters out of 6137957
- 894027 words of memory out of 5000000
- 36277 multiletter control sequences out of 15000+600000
- 28034 words of font info for 58 fonts, out of 8000000 for 9000
+ 32949 strings out of 493005
+ 662918 string characters out of 6137957
+ 894514 words of memory out of 5000000
+ 36571 multiletter control sequences out of 15000+600000
+ 30085 words of font info for 68 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 57i,20n,77p,10379b,6097s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,20n,76p,10379b,6097s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on main.pdf (30 pages).
