@@ -4,7 +4,7 @@
 
 %description
 %----------------------------------------------------------------------------------------
-
+This chapter gives a brief description about the MITIP method which is an atmospheric correction and image processing method for the TET-1 imagery, developed by Dr. Rudolf at DLR. Data preparation and pre-processing is given in Section 3.1. The processing procedure is descirbed briefly in Section 3.2. The output of MITIP is presented in Section 3.3.\\
 
 %----------------------------------------------------------------------------------------
 %	SECTION 1
@@ -17,11 +17,21 @@
 %-----------------------------------
 
 \subsection{Data preparation}
+The TET-1 imagery input to the MITIP is radiometrically calibrated top-of-atmosphere (TOA) radiance data (Level 1B). In order to acquire ground surface radiance and temperature data, atmospheric correction should be performed first.\\
+
+\noindent The necessary atmospheric correction takes advantage of the fact that in the thermal spectral range water vapor is the dominating disturbing parameter, while aerosols play only a negligible role \parencite{Reference204}. Consequently, in order to simplify the procedure as well, water vapor is the only parameter that taken into account while performing atmosphric correction.Since the water vapor column decreases with elevation, the other paramenter that has to included is the elevation, which is obtained from Digital Elevation Model (DEM).\\
+
+\noindent For the purpose of converting the derived radiant temperature $T_{rad}$ to kinetic temperature $T_{kin}$, emissivity map needs to feed to MITIP as well. So the input files to the MITIP are:
+\begin{itemize}
+\item TET-1 imagery with TOA radiance
+\item Water vapor file
+\item Digital Elevation Model.
+\item Emissivity map
+\end{itemize}
 
 %-----------------------------------
 %	SUBSECTION 2
 %-----------------------------------
-
 
 \subsection{Data pre-processing}
 
