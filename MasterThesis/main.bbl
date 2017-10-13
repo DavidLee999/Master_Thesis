@@ -615,6 +615,75 @@
     \field{year}{2013}
   \endentry
 
+  \entry{Reference303}{article}{}
+    \name{author}{8}{}{%
+      {{hash=LZL}{%
+         family={Li},
+         familyi={L\bibinitperiod},
+         given={Zhao-Liang},
+         giveni={Z\bibinitperiod-L\bibinitperiod},
+      }}%
+      {{hash=WH}{%
+         family={Wu},
+         familyi={W\bibinitperiod},
+         given={Hua},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=WN}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Ning},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=QS}{%
+         family={Qiu},
+         familyi={Q\bibinitperiod},
+         given={Shi},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=SJA}{%
+         family={Sobrino},
+         familyi={S\bibinitperiod},
+         given={José\bibnamedelima A.},
+         giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=WZ}{%
+         family={Wan},
+         familyi={W\bibinitperiod},
+         given={Zhengming},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=TBH}{%
+         family={Tang},
+         familyi={T\bibinitperiod},
+         given={Bo-Hui},
+         giveni={B\bibinitperiod-H\bibinitperiod},
+      }}%
+      {{hash=YG}{%
+         family={Yan},
+         familyi={Y\bibinitperiod},
+         given={Guangjian},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Taylor & Francis}%
+    }
+    \strng{namehash}{LZL+1}
+    \strng{fullhash}{LZLWHWNQSSJAWZTBHYG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2013}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{number}{9-10}
+    \field{pages}{3084\bibrangedash 3127}
+    \field{title}{Land surface emissivity retrieval from satellite data}
+    \field{volume}{34}
+    \field{journaltitle}{International Journal of Remote Sensing}
+    \field{year}{2013}
+  \endentry
+
   \entry{Reference211}{article}{}
     \name{author}{2}{}{%
       {{hash=MM}{%
@@ -907,6 +976,37 @@
     \field{year}{2011}
   \endentry
 
+  \entry{Reference301}{article}{}
+    \name{author}{2}{}{%
+      {{hash=SJW}{%
+         family={Salisbury},
+         familyi={S\bibinitperiod},
+         given={John\bibnamedelima W.},
+         giveni={J\bibinitperiod\bibinitdelim W\bibinitperiod},
+      }}%
+      {{hash=DDM}{%
+         family={D'Aria},
+         familyi={D\bibinitperiod},
+         given={Dana\bibnamedelima M.},
+         giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SJWDDM1}
+    \strng{fullhash}{SJWDDM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1994}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{number}{3}
+    \field{pages}{345 \bibrangedash  361}
+    \field{title}{Emissivity of terrestrial materials in the 3–5 μm
+  atmospheric window}
+    \field{volume}{47}
+    \field{journaltitle}{Remote Sensing of Environment}
+    \field{year}{1994}
+  \endentry
+
   \entry{Reference202}{thesis}{}
     \name{author}{1}{}{%
       {{hash=TA}{%
@@ -963,6 +1063,37 @@
     \field{edition}{6th edition}
     \field{title}{Physics for scientists and engineers}
     \field{year}{2007}
+  \endentry
+
+  \entry{Reference302}{article}{}
+    \name{author}{2}{}{%
+      {{hash=WSJ}{%
+         family={W\bibnamedelima Salisbury},
+         familyi={W\bibinitperiod\bibinitdelim S\bibinitperiod},
+         given={John},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=MDD}{%
+         family={M\bibnamedelima D'Aria},
+         familyi={M\bibinitperiod\bibinitdelim D\bibinitperiod},
+         given={Dana},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WSJMDD1}
+    \strng{fullhash}{WSJMDD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1992}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \field{pages}{83\bibrangedash 106}
+    \field{title}{Emissivity of terrestrial materials in the 8–14 μm
+  atmospheric window}
+    \field{volume}{42}
+    \field{journaltitle}{Remote Sensing of Environment - REMOTE SENS ENVIRON}
+    \field{month}{11}
+    \field{year}{1992}
   \endentry
 
   \entry{Reference209}{book}{}
