@@ -20,21 +20,21 @@
 \contentsline {section}{\numberline {3.3}Outcomes of the MITIP}{13}{section.36}
 \contentsline {chapter}{\numberline {4}Validation and improvement of the MITIP}{15}{chapter.37}
 \contentsline {section}{\numberline {4.1}Analysis of normal temperature environments}{15}{section.38}
-\contentsline {subsection}{\numberline {4.1.1}Data preparation}{15}{subsection.39}
-\contentsline {subsection}{\numberline {4.1.2}Results comparision with MODIS SST and calibration}{15}{subsection.40}
-\contentsline {subsection}{\numberline {4.1.3}transferability test (SST)}{15}{subsection.41}
-\contentsline {subsection}{\numberline {4.1.4}Results comparision with MODIS LST and calibration}{15}{subsection.42}
-\contentsline {subsection}{\numberline {4.1.5}transferability test (LST)}{15}{subsection.43}
-\contentsline {section}{\numberline {4.2}Conclusion of the comparisons and calibrations}{15}{section.44}
-\contentsline {chapter}{\numberline {5}Analysis of high-temperature events}{17}{chapter.45}
-\contentsline {section}{\numberline {5.1}High-temperature events}{17}{section.46}
-\contentsline {subsection}{\numberline {5.1.1}Volcanoes}{17}{subsection.47}
-\contentsline {subsection}{\numberline {5.1.2}Fire events}{17}{subsection.48}
-\contentsline {section}{\numberline {5.2}Comparison with the results of the Zhukov's algorithm}{17}{section.49}
-\contentsline {subsection}{\numberline {5.2.1}Brief description of Zhukov's algorithm}{17}{subsection.50}
-\contentsline {subsection}{\numberline {5.2.2}From pixel-based to cluster-based analysis}{17}{subsection.51}
-\contentsline {subsection}{\numberline {5.2.3}Comparision}{17}{subsection.52}
-\contentsline {chapter}{\numberline {6}Conclusion and outlook}{19}{chapter.53}
-\contentsline {section}{\numberline {6.1}Conclusion}{19}{section.54}
-\contentsline {section}{\numberline {6.2}Outlook}{19}{section.55}
-\contentsline {chapter}{Bibliography}{21}{chapter*.56}
+\contentsline {subsection}{\numberline {4.1.1}Data preparation and processing}{15}{subsection.39}
+\contentsline {subsection}{\numberline {4.1.2}Results comparision with MODIS SST and calibration}{18}{subsection.43}
+\contentsline {subsection}{\numberline {4.1.3}transferability test (SST)}{18}{subsection.44}
+\contentsline {subsection}{\numberline {4.1.4}Results comparision with MODIS LST and calibration}{18}{subsection.45}
+\contentsline {subsection}{\numberline {4.1.5}transferability test (LST)}{18}{subsection.46}
+\contentsline {section}{\numberline {4.2}Conclusion of the comparisons and calibrations}{18}{section.47}
+\contentsline {chapter}{\numberline {5}Analysis of high-temperature events}{19}{chapter.48}
+\contentsline {section}{\numberline {5.1}High-temperature events}{19}{section.49}
+\contentsline {subsection}{\numberline {5.1.1}Volcanoes}{19}{subsection.50}
+\contentsline {subsection}{\numberline {5.1.2}Fire events}{19}{subsection.51}
+\contentsline {section}{\numberline {5.2}Comparison with the results of the Zhukov's algorithm}{19}{section.52}
+\contentsline {subsection}{\numberline {5.2.1}Brief description of Zhukov's algorithm}{19}{subsection.53}
+\contentsline {subsection}{\numberline {5.2.2}From pixel-based to cluster-based analysis}{19}{subsection.54}
+\contentsline {subsection}{\numberline {5.2.3}Comparision}{19}{subsection.55}
+\contentsline {chapter}{\numberline {6}Conclusion and outlook}{21}{chapter.56}
+\contentsline {section}{\numberline {6.1}Conclusion}{21}{section.57}
+\contentsline {section}{\numberline {6.2}Outlook}{21}{section.58}
+\contentsline {chapter}{Bibliography}{23}{chapter*.59}

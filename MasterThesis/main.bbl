@@ -582,6 +582,72 @@
     \field{year}{2010}
   \endentry
 
+  \entry{Reference304}{article}{}
+    \name{author}{3}{}{%
+      {{hash=KAB}{%
+         family={Kahle},
+         familyi={K\bibinitperiod},
+         given={Anne\bibnamedelima B.},
+         giveni={A\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+      {{hash=MDP}{%
+         family={Madura},
+         familyi={M\bibinitperiod},
+         given={Daryl\bibnamedelima P.},
+         giveni={D\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+      {{hash=SJM}{%
+         family={Soha},
+         familyi={S\bibinitperiod},
+         given={James\bibnamedelima M.},
+         giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {OSA}%
+    }
+    \strng{namehash}{KABMDPSJM1}
+    \strng{fullhash}{KABMDPSJM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1980}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{number}{14}
+    \field{pages}{2279\bibrangedash 2290}
+    \field{title}{Middle infrared multispectral aircraft scanner data: analysis
+  for geological applications}
+    \field{volume}{19}
+    \field{journaltitle}{Applied Optics}
+    \field{year}{1980}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{Reference305}{article}{}
+    \name{author}{1}{}{%
+      {{hash=KYJ}{%
+         family={Kaufman},
+         familyi={K\bibinitperiod},
+         given={Yoram\bibnamedelima J.},
+         giveni={Y\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{KYJ1}
+    \strng{fullhash}{KYJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1985}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{number}{1}
+    \field{pages}{21 \bibrangedash  34}
+    \field{title}{The atmospheric effect on the separability of field classes
+  measured from satellites}
+    \field{volume}{18}
+    \field{journaltitle}{Remote Sensing of Environment}
+    \field{year}{1985}
+  \endentry
+
   \entry{Reference204}{book}{}
     \name{author}{2}{}{%
       {{hash=KC}{%
