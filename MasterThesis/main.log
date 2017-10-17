@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2017.9.5)  16 OCT 2017 16:30
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2017.9.5)  17 OCT 2017 16:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2087,6 +2087,10 @@ File: Figures/selectedArea.png Graphic file (type QTm)
 File: Figures/differences.png Graphic file (type QTm)
 
 <use  "Figures/differences.png" >
+Underfull \hbox (badness 10000) in paragraph at lines 52--53
+
+ []
+
 1: section
 [15] [16] [17]) [18]
 \openout2 = `Chapters/Chapter5.aux'.
@@ -2131,14 +2135,13 @@ Overfull \hbox (0.65251pt too wide) in paragraph at lines 194--194
 y re-trieval from satel-lite data^^Q.
  []
 
-
+1: section
+[23]
 Overfull \hbox (7.3944pt too wide) in paragraph at lines 194--194
 [][]\T1/ppl/m/n/12 Moritz, Max A. et al. (2014). ^^P  Learn-ing to co-ex-ist wi
 th wild-fire^^Q. In: \T1/ppl/m/it/12 Na-ture \T1/ppl/m/n/12 515.7525,
  []
 
-1: section
-[23]
 Missing character: There is no – in font pplr8t!
 Missing character: There is no μ in font pplr8t!
 
@@ -2161,17 +2164,21 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 197.
 
 LaTeX Warning: There were multiply-defined labels.
 
+
+Package biblatex Warning: Please rerun LaTeX.
+(biblatex)                Page breaks have changed.
+
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 33021 strings out of 493005
- 664216 string characters out of 6137957
- 896779 words of memory out of 5000000
- 36633 multiletter control sequences out of 15000+600000
+ 33023 strings out of 493005
+ 664291 string characters out of 6137957
+ 897397 words of memory out of 5000000
+ 36635 multiletter control sequences out of 15000+600000
  32106 words of font info for 76 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 56i,20n,78p,10379b,6097s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 57i,20n,78p,10379b,6097s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on main.pdf (36 pages).

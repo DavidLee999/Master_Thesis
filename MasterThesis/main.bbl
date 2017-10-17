@@ -582,6 +582,44 @@
     \field{year}{2010}
   \endentry
 
+  \entry{Reference306}{article}{}
+    \name{author}{3}{}{%
+      {{hash=HGC}{%
+         family={Hulley},
+         familyi={H\bibinitperiod},
+         given={Glynn\bibnamedelima C.},
+         giveni={G\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=HSJ}{%
+         family={Hook},
+         familyi={H\bibinitperiod},
+         given={Simon\bibnamedelima J.},
+         giveni={S\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=BAM}{%
+         family={Baldridge},
+         familyi={B\bibinitperiod},
+         given={Alice\bibnamedelima M.},
+         giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HGCHSJBAM1}
+    \strng{fullhash}{HGCHSJBAM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2009}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{number}{10}
+    \field{pages}{2224 \bibrangedash  2233}
+    \field{title}{Validation of the North American ASTER Land Surface
+  Emissivity Database (NAALSED) version 2.0 using pseudo-invariant sand dune
+  sites}
+    \field{volume}{113}
+    \field{journaltitle}{Remote Sensing of Environment}
+    \field{year}{2009}
+  \endentry
+
   \entry{Reference304}{article}{}
     \name{author}{3}{}{%
       {{hash=KAB}{%
