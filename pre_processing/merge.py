@@ -47,10 +47,40 @@ def merge(sourFile, outputPath, id, name = None, nodata = -9999):
         sourTiff = None
           
     sys.argv = L
-#    print L    
-    gdal_merge.main()
+    print L    
+#    gdal_merge.main()
     
     print 'Done.'
+    
+    
+sourFolder = r'\\fram\exchange\simon\MITIP\DEM\030422138591618'
+outputFoler = r'\\fram\exchange\simon\MITIP\DEM\030422138591618\merged'
+os.chdir(sourFolder)
+
+DEM = []
+for files in os.listdir(sourFolder):
+    if 'ASTG' in files:
+        folder = os.path.abspath(files)
+        for tif in os.listdir(folder):
+            if 'dem' in tif and tif.endswith('.tif'):
+                DEM.append(os.path.join(folder, tif))
+
+outputFile = r'ASTGTM2_DEM_merged.tif'
+
+command = []
+
+command.insert(0, '')
+
+command.extend(['-o', os.path.join(outputFoler, outputFile), '-of', 'GTiff',  '-a_nodata', '-9999', '-n', '-9999'])
+
+command.extend(DEM) 
+
+sys.argv = command
+
+gdal_merge.main()
+                
+    
+    
 
 #sourFile = r'E:\Penghua\data\LST\Lybien-1\new_selected_data'
 #
@@ -76,21 +106,21 @@ def merge(sourFile, outputPath, id, name = None, nodata = -9999):
 #    
 #    gdal_merge.main()
     
-sourFile1 = r'E:\Penghua\data\emissivity_map\emissivity_map_Chile\030418575278187'
+#sourFile1 = r'E:\Penghua\data\emissivity_map\emissivity_map_Chile\030418575278187'
 #
 #sourFile2 = r'E:\Penghua\data\emissivity_map\emissivity_map_Portugal\merged'
 #
 #sourFile3 = r'E:\Penghua\data\DEM\Chile\030418574118118'
 #
-name = '_Emissivity_Mean.tif'
+#name = '_Emissivity_Mean.tif'
 #
 #id = list(range(37,44))
 #
-id2 = 'AG100'
+#id2 = 'AG100'
 #
 #id3 = 'dem'
-outputPath1 = r'E:\Penghua\data\emissivity_map\emissivity_map_Chile\030418575278187\merged\emissivity_map_Chile.tif'
-merge(sourFile1, outputPath1, id2, name)
+#outputPath1 = r'E:\Penghua\data\emissivity_map\emissivity_map_Chile\030418575278187\merged\emissivity_map_Chile.tif'
+#merge(sourFile1, outputPath1, id2, name)
 #for id1 in id:
 #    
 #    id1_s = str(id1)
