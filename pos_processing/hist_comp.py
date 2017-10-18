@@ -105,36 +105,36 @@ def zonal_analysis(rasterFile, shpFile, SST = False):
 
 # Definition des Inputdateinamens
 # scene1
-dataDir = r"E:\Penghua\data\Etna\2014.09.16\TET\ac_results_1.20"
-rasterFileName = "FBI_TET1_20140916T233303_20140916T233426_L2_C_EL-00408_cobined_MIR_TIR_tem.tif"
-rasterFile = os.path.join(dataDir, rasterFileName)
-
-MODISDir = r"E:\Penghua\data\Etna\2014.09.16\SST"
-MODISFileName = "A2014259013500.L2_LAC_SST_repro_UTM33N_repro_cut.tif"
-MODISFile = os.path.join(MODISDir, MODISFileName)
-
-shpDir = r"E:\Penghua\data\Etna\shapefiles"
-shpFileName = ["rect2.shp", "rect4.shp", "rect6.shp", "rect7.shp"]
-
-diffDir = r"E:\Penghua\data\Etna\2014.09.16\TET\ac_results_1.20\compared"
-diffFileName = "diff_MIR.tif"
-diffFile = os.path.join(diffDir, diffFileName)
-
-#scene2
-#dataDir = r"E:\Penghua\data\Etna\2014.06.22\TET\ac_results_1.20"
-#rasterFileName = "FBI_TET1_20140622T232052_20140622T232155_L2_002589_WHM_cobined_MIR_TIR_tem.tif"
+#dataDir = r"E:\Penghua\data\Etna\2014.09.16\TET\ac_results_1.00"
+#rasterFileName = "FBI_TET1_20140916T233303_20140916T233426_L2_C_EL-00408_cobined_MIR_TIR_tem.tif"
 #rasterFile = os.path.join(dataDir, rasterFileName)
 #
-#MODISDir = r"E:\Penghua\data\Etna\2014.06.22\SST"
-#MODISFileName = "A2014173003000.L2_LAC_SST_repro_UTM33N_repro_cut.tif"
+#MODISDir = r"E:\Penghua\data\Etna\2014.09.16\SST"
+#MODISFileName = "A2014259013500.L2_LAC_SST_repro_UTM33N_repro_cut.tif"
 #MODISFile = os.path.join(MODISDir, MODISFileName)
 #
 #shpDir = r"E:\Penghua\data\Etna\shapefiles"
 #shpFileName = ["rect2.shp", "rect4.shp", "rect6.shp", "rect7.shp"]
 #
-#diffDir = r"E:\Penghua\data\Etna\2014.06.22\TET\ac_results_1.20\compared"
+#diffDir = r"E:\Penghua\data\Etna\2014.09.16\TET\ac_results_1.00\compared"
 #diffFileName = "diff_MIR.tif"
 #diffFile = os.path.join(diffDir, diffFileName)
+
+#scene2
+dataDir = r"E:\Penghua\data\Etna\2014.06.22\TET\ac_results_1.00"
+rasterFileName = "FBI_TET1_20140622T232052_20140622T232155_L2_002589_WHM_cobined_MIR_TIR_tem.tif"
+rasterFile = os.path.join(dataDir, rasterFileName)
+
+MODISDir = r"E:\Penghua\data\Etna\2014.06.22\SST"
+MODISFileName = "A2014173003000.L2_LAC_SST_repro_UTM33N_repro_cut.tif"
+MODISFile = os.path.join(MODISDir, MODISFileName)
+
+shpDir = r"E:\Penghua\data\Etna\shapefiles"
+shpFileName = ["rect2.shp", "rect4.shp", "rect6.shp", "rect7.shp"]
+
+diffDir = r"E:\Penghua\data\Etna\2014.06.22\TET\ac_results_1.00\compared"
+diffFileName = "diff_MIR.tif"
+diffFile = os.path.join(diffDir, diffFileName)
 
 
 # get subarea raster array
@@ -151,56 +151,59 @@ for i in range(len(shpFileName)):
     TETZoneArray.append(TETzoneraster)
     MODISZoneArray.append(MODISzoneraster)
     differences.append(diffzoneraster)
-plt.x
+
+
 # plot
 # subplot, 3 rows, 1 columns
-#for i in range(len(shpFileName)):
-#    fig, axes = plt.subplots(3, 1)
-#    axes.flatten()
-#    
-#    axes[0].hist(MODISZoneArray[i].compressed(), bins = 100)
-#    axes[0].set_title("Rect%d. MODIS" %(i + 1))
-#    axes[0].set_xlabel('temperatures', fontsize = 9)
-#    axes[0].grid()
-#    
-#    axes[1].hist(TETZoneArray[i].compressed(), bins = 100)
-#    axes[1].set_title("Rect%d. TET" %(i + 1))
-#    axes[1].set_xlabel('temperatures', fontsize = 9)
-#    axes[1].grid()
-#    
-#    axes[2].hist(differences[i].compressed(), bins = 100)
-#    axes[2].set_title("Rect%d. Differeces" %(i + 1))
-#    axes[2].set_xlabel('temperature difference', fontsize = 9)
-#    axes[2].grid()
-#    
-#    fig.tight_layout()
-#    #fig.savefig(os.path.join(r'E:\Penghua\results\hist_analysis\sc1.10', r'rect%d.png' %(i + 1)), dpi=500)
-#    plt.show()
+for i in range(len(shpFileName)):
+    fig, axes = plt.subplots(3, 1)
+    axes.flatten()
     
+    axes[0].hist(MODISZoneArray[i].compressed(), bins = 100)
+    axes[0].set_title("Rect%d. MODIS" %(i + 1))
+    axes[0].set_xlabel('temperatures', fontsize = 9)
+    axes[0].grid()
+    
+    axes[1].hist(TETZoneArray[i].compressed(), bins = 100)
+    axes[1].set_title("Rect%d. TET" %(i + 1))
+    axes[1].set_xlabel('temperatures', fontsize = 9)
+    axes[1].grid()
+    
+    axes[2].hist(differences[i].compressed(), bins = 100)
+    axes[2].set_title("Rect%d. Differeces" %(i + 1))
+    axes[2].set_xlabel('temperature difference', fontsize = 9)
+    axes[2].grid()
+    
+    fig.tight_layout()
+    #fig.savefig(os.path.join(r'E:\Penghua\results\hist_analysis\sc1.10', r'rect%d.png' %(i + 1)), dpi=500)
+    plt.show()
+    
+TET = []
+MODIS = []
+Diff = []
+for i in range(len(TETZoneArray)):
+    TET.extend(TETZoneArray[i].compressed())
+    MODIS.extend(MODISZoneArray[i].compressed())
+    Diff.extend(differences[i].compressed())
 
-#for i in range(len(TETZoneArray)):
-#    TETZoneArray[i] = TETZoneArray[i].compressed()
-#    MODISZoneArray[i] = MODISZoneArray[i].compressed()
-#    differences[i] = differences[i].compressed()
+fig2, axes2 = plt.subplots(3, 1)
+axes2.flatten()
 
-#fig2, axes2 = plt.subplots(3, 1)
-#axes2.flatten()
-#
-#axes2[0].hist(MODISZoneArray, bins = 100, stacked = True)
-#axes2[0].set_title('MODIS')
-#axes2[0].set_xlabel('temperatures', fontsize = 9)
-#axes2[0].grid()
-#
-#axes2[1].hist(TETZoneArray, bins = 100, stacked = True)
-#axes2[1].set_title('TET')
-#axes2[1].set_xlabel('temperatures', fontsize = 9)
-#axes2[1].grid()
-#
-#axes2[2].hist(differences, bins = 100, stacked = True)
-#axes2[2].set_title('Differences')
-#axes2[2].set_xlabel('temperature differences', fontsize = 9)
-#axes2[2].grid()
-#
-#fig2.tight_layout()
-##fig2.savefig(os.path.join(r'E:\Penghua\results\hist_analysis\sc1.10', r'rect_all.png'), dpi=500)
-#plt.show()
+axes2[0].hist(MODIS, bins = 100, stacked = True)
+axes2[0].set_title('MODIS')
+axes2[0].set_xlabel('temperatures', fontsize = 9)
+axes2[0].grid()
+
+axes2[1].hist(TET, bins = 100, stacked = True)
+axes2[1].set_title('TET')
+axes2[1].set_xlabel('temperatures', fontsize = 9)
+axes2[1].grid()
+
+axes2[2].hist(Diff, bins = 100, stacked = True)
+axes2[2].set_title('Differences')
+axes2[2].set_xlabel('temperature differences', fontsize = 9)
+axes2[2].grid()
+
+fig2.tight_layout()
+#fig2.savefig(os.path.join(r'E:\Penghua\results\hist_analysis\sc1.10', r'rect_all.png'), dpi=500)
+plt.show()
