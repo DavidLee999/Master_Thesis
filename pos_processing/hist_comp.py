@@ -155,55 +155,55 @@ for i in range(len(shpFileName)):
 
 # plot
 # subplot, 3 rows, 1 columns
-for i in range(len(shpFileName)):
-    fig, axes = plt.subplots(3, 1)
-    axes.flatten()
+#for i in range(len(shpFileName)):
+#    fig, axes = plt.subplots(3, 1)
+#    axes.flatten()
+#    
+#    axes[0].hist(MODISZoneArray[i].compressed(), bins = 100)
+#    axes[0].set_title("Rect%d. MODIS" %(i + 1))
+#    axes[0].set_xlabel('temperatures', fontsize = 9)
+#    axes[0].grid()
+#    
+#    axes[1].hist(TETZoneArray[i].compressed(), bins = 100)
+#    axes[1].set_title("Rect%d. TET" %(i + 1))
+#    axes[1].set_xlabel('temperatures', fontsize = 9)
+#    axes[1].grid()
+#    
+#    axes[2].hist(differences[i].compressed(), bins = 100)
+#    axes[2].set_title("Rect%d. Differeces" %(i + 1))
+#    axes[2].set_xlabel('temperature difference', fontsize = 9)
+#    axes[2].grid()
+#    
+#    fig.tight_layout()
+#    #fig.savefig(os.path.join(r'E:\Penghua\results\hist_analysis\sc1.10', r'rect%d.png' %(i + 1)), dpi=500)
+#    plt.show()
     
-    axes[0].hist(MODISZoneArray[i].compressed(), bins = 100)
-    axes[0].set_title("Rect%d. MODIS" %(i + 1))
-    axes[0].set_xlabel('temperatures', fontsize = 9)
-    axes[0].grid()
-    
-    axes[1].hist(TETZoneArray[i].compressed(), bins = 100)
-    axes[1].set_title("Rect%d. TET" %(i + 1))
-    axes[1].set_xlabel('temperatures', fontsize = 9)
-    axes[1].grid()
-    
-    axes[2].hist(differences[i].compressed(), bins = 100)
-    axes[2].set_title("Rect%d. Differeces" %(i + 1))
-    axes[2].set_xlabel('temperature difference', fontsize = 9)
-    axes[2].grid()
-    
-    fig.tight_layout()
-    #fig.savefig(os.path.join(r'E:\Penghua\results\hist_analysis\sc1.10', r'rect%d.png' %(i + 1)), dpi=500)
-    plt.show()
-    
-TET = []
-MODIS = []
-Diff = []
-for i in range(len(TETZoneArray)):
-    TET.extend(TETZoneArray[i].compressed())
-    MODIS.extend(MODISZoneArray[i].compressed())
-    Diff.extend(differences[i].compressed())
-
-fig2, axes2 = plt.subplots(3, 1)
-axes2.flatten()
-
-axes2[0].hist(MODIS, bins = 100, stacked = True)
-axes2[0].set_title('MODIS')
-axes2[0].set_xlabel('temperatures', fontsize = 9)
-axes2[0].grid()
-
-axes2[1].hist(TET, bins = 100, stacked = True)
-axes2[1].set_title('TET')
-axes2[1].set_xlabel('temperatures', fontsize = 9)
-axes2[1].grid()
-
-axes2[2].hist(Diff, bins = 100, stacked = True)
-axes2[2].set_title('Differences')
-axes2[2].set_xlabel('temperature differences', fontsize = 9)
-axes2[2].grid()
-
-fig2.tight_layout()
-#fig2.savefig(os.path.join(r'E:\Penghua\results\hist_analysis\sc1.10', r'rect_all.png'), dpi=500)
-plt.show()
+#TET = []
+#MODIS = []
+#Diff = []
+#for i in range(len(TETZoneArray)):
+#    TET.extend(TETZoneArray[i].compressed())
+#    MODIS.extend(MODISZoneArray[i].compressed())
+#    Diff.extend(differences[i].compressed())
+#
+#fig2, axes2 = plt.subplots(3, 1)
+#axes2.flatten()
+#
+#axes2[0].hist(MODIS, bins = 100, stacked = True)
+#axes2[0].set_title('MODIS')
+#axes2[0].set_xlabel('temperatures', fontsize = 9)
+#axes2[0].grid()
+#
+#axes2[1].hist(TET, bins = 100, stacked = True)
+#axes2[1].set_title('TET')
+#axes2[1].set_xlabel('temperatures', fontsize = 9)
+#axes2[1].grid()
+#
+#axes2[2].hist(Diff, bins = 100, stacked = True)
+#axes2[2].set_title('Differences')
+#axes2[2].set_xlabel('temperature differences', fontsize = 9)
+#axes2[2].grid()
+#
+#fig2.tight_layout()
+##fig2.savefig(os.path.join(r'E:\Penghua\results\hist_analysis\sc1.10', r'rect_all.png'), dpi=500)
+#plt.show()

@@ -88,7 +88,7 @@ def Array2Raster(sdsArray, out_filename, ullat, ullon, cellSize, dtype):
         out_ds.GetRasterBand(1).WriteArray(sdsArray[:,:])
         out_ds = None
         
-sourFile = r'E:\Penghua\data\emissivity_map\emissivity_map_Chile\030418575278187'
+sourFile = r'\\fram\exchange\simon\MITIP\GED'
 os.chdir(sourFile)
 
 for file in glob.glob('*.h5'):

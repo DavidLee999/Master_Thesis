@@ -53,16 +53,16 @@ def merge(sourFile, outputPath, id, name = None, nodata = -9999):
     print 'Done.'
     
     
-sourFolder = r'\\fram\exchange\simon\MITIP\DEM\030422138591618'
-outputFoler = r'\\fram\exchange\simon\MITIP\DEM\030422138591618\merged'
+sourFolder = r'\\fram\exchange\simon\MITIP\GED'
+outputFoler = r'\\fram\exchange\simon\MITIP\GED\Merged'
 os.chdir(sourFolder)
 
 DEM = []
 for files in os.listdir(sourFolder):
-    if 'ASTG' in files:
+    if 'AG100' in files and os.path.isdir(files) == True:
         folder = os.path.abspath(files)
         for tif in os.listdir(folder):
-            if 'dem' in tif and tif.endswith('.tif'):
+            if '_Emissivity_Mean' in tif and tif.endswith('.tif'):
                 DEM.append(os.path.join(folder, tif))
 
 outputFile = r'ASTGTM2_DEM_merged.tif'
