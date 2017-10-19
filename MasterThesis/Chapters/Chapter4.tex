@@ -51,7 +51,46 @@ with $m$ is the total number of the sub-areas.
 \subsection{Results comparision with MODIS SST and calibration}
 Before doing the comparison betwen MODIS SST and MITIP surface temperature products, one problem needs to be solved is that the choice of emissivity. The emissivity map derived from ASTER Global Emissivity Database is consisted of 5 bands and there are two bands, namely band 11 with wavelength 8.6 $\mu$m and band 12 with wavelength 9.1 $\mu$m fall in TET-1 imagery's TIR band with spectral range 8.5 $\mu$m to 9.3 $\mu$m \parencite{Reference306}. So there comes a problem which band of emissivity map should be used. This problem would be considered under different circumstances.\\
 
-\noindent Since the 
+\noindent Since the emissivities of water body in these two bands are very close, 0.984  and 0.985 respectively, the effects of the different emissivities can be neglected when the results from MITIP are compared with MODIS SST as shown Figure \ref{fig:tem_diff_emi}. Here the emissivity map in band 8.6 $\mu$m is used.\\
+
+\begin{figure}[!htbp]
+\centering\includegraphics[width=0.8\textwidth]{diff_emi1.png}
+\caption{Mean temperature of all sub-areas in Etna scenes with different emissivities}
+\label{fig:tem_diff_emi1}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering\includegraphics[width=0.8\textwidth]{diff_emi2.png}
+\caption{Differences of temperatures resulted from different emissivities(Etna)}
+\label{fig:tem_diff_emi2}
+\end{figure}
+
+\noindent From Figure \ref{fig:tem_diff_emi2} we can see that the temperature differences resulted from different emissivities in MIR band imagries are within the range (0.010, 0.018). The temperature differences resulted from different emissivities in TIR band imagries are within the range (0.032, 0.040). Both of them are so small that can be neglected in the context of the area of interest (AOI) is water body.\\
+
+\noindent Firstly, the surface temperature maps from MITIP are compare with MODIS SST according to the steps states in Section 4.1. The Figure \ref{fig:tem_com} shows that the surface temperature derived by MITIP is a bit lower than the MODIS SST. To adjust these differences, TOA radiances of the original TET-1 imagries, which are the pixel values of the original TET-1 imagries, need to be calibrated.\\
+
+\begin{figure}[!htbp]
+\centering\includegraphics[width = 0.8\textwidth]{tem_com.png}
+\caption{Temperature differences between the temperature maps from MITIP and MODIS SST for Etna scenes}
+\label{fig:tem_com}
+\end{figure}
+
+\noindent Consequently, the MITIP method add two input keywords \emph{sc1} and \emph{sc2}, which stand for scale factor for the TET-1 MIR and TIR band imagries respectively, to calibrate the TOA radiances. Since the temperature derived from MITIP is a bit lower than the MODIS SST, the TOA radiances of the TET-1 imagriy should be increased. As a result, five scale factors, 1.00 which means original TOA radiances, 1.05 which means increases the TOA radiances by 5\%, 1.10, 1.15 and 1.20, are selected to calibrate the TET-1 MIR and TIR band respectively.\\
+
+\noindent In order to see detailedly how the scale factor will affect the pixel values of the results of MITIP, histograms of sub-areas of TET-1 imagry are investigated. The histograms of each sub-area with different scale factors are showed in Figure\\
+
+\begin{figure}[!htbp]
+\centering
+\subfigure[Scale factor 1.00]{
+\label{fig:hist_rect1_1}
+\includegraphics[width = 0.48\linewidth]{rect1_sc100.png}}
+\vspace{0.1in}
+\subfigure[Scale factor 1.10]{
+\label{fig:hist_rect1_2}
+\includegraphics[width = 0.48\linewidth]{rect1_sc110.png}}
+\caption{Histograms of MODIS SST, TET-1 MIR band imagry and their differences in sub-area 1}
+\label{fig:hist_rect1}
+\end{figure}
 
 %-----------------------------------
 %	SUBSECTION 3
