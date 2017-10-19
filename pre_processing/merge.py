@@ -53,8 +53,8 @@ def merge(sourFile, outputPath, id, name = None, nodata = -9999):
     print 'Done.'
     
     
-sourFolder = r'\\fram\exchange\simon\MITIP\GED'
-outputFoler = r'\\fram\exchange\simon\MITIP\GED\Merged'
+sourFolder = r'\\fram\exchange\simon\MITIP\GED_new\030422281711181'
+outputFoler = r'\\fram\exchange\simon\MITIP\GED_new\030422281711181'
 os.chdir(sourFolder)
 
 DEM = []
@@ -65,7 +65,7 @@ for files in os.listdir(sourFolder):
             if '_Emissivity_Mean' in tif and tif.endswith('.tif'):
                 DEM.append(os.path.join(folder, tif))
 
-outputFile = r'ASTGTM2_DEM_merged.tif'
+outputFile = r'ASTER2_emissivity_merged.tif'
 
 command = []
 

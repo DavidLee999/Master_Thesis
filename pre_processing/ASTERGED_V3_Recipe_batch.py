@@ -88,7 +88,7 @@ def Array2Raster(sdsArray, out_filename, ullat, ullon, cellSize, dtype):
         out_ds.GetRasterBand(1).WriteArray(sdsArray[:,:])
         out_ds = None
         
-sourFile = r'\\fram\exchange\simon\MITIP\GED'
+sourFile = r'\\fram\exchange\simon\MITIP\GED_new\030422281711181'
 os.chdir(sourFile)
 
 for file in glob.glob('*.h5'):
