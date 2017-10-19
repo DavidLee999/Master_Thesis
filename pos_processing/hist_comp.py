@@ -103,6 +103,48 @@ def zonal_analysis(rasterFile, shpFile, SST = False):
     
     return zoneraster
 
+
+scale_factor = '1.00'
+dataDir = r'E:\Penghua\data\Etna'
+
+shpDir = r"E:\Penghua\data\Etna\shapefiles"
+shpFileName = ["rect2.shp", "rect4.shp", "rect6.shp", "rect7.shp"]
+
+shpfile = os.path.join(shpDir, shpFileName[2])
+
+TET_tem = []
+
+os.chdir(dataDir)
+for folder in os.listdir(dataDir):
+    if '2017' not in folder and '0' in folder:
+        absfolder = os.path.abspath(folder)
+        datafolder = os.path.join(absfolder, r'TET\ac_results_%s' %scale_factor)
+        
+        for files in os.listdir(datafolder):
+            if 'tem' in files and files.endswith('.tif'):
+                TET_tem.append(os.path.join(datafolder, files))
+
+TETrect = []
+for i in range(len(TET_tem)):
+    rasterfile = TET_tem[i]
+    
+    TETzoneraster = zonal_analysis(rasterfile, shpfile)
+    
+    TETrect.append(TETzoneraster)
+
+for i in range(len(TET_tem)):
+    fig, axes = plt.subplots()
+    axes.hist(TETrect[i].compressed(), bins = 100)
+    axes.axvline(np.mean(TETrect[i]), color = 'red', linewidth = 2)
+    axes.axvline(np.mean(TETrect[i]) - np.std(TETrect[i]), color = 'red', linestyle = 'dashed', linewidth = 1)
+    axes.axvline(np.mean(TETrect[i]) + np.std(TETrect[i]), color = 'red', linestyle = 'dashed', linewidth = 1)
+    fig.tight_layout()
+    plt.show()
+    
+    
+    
+
+
 # Definition des Inputdateinamens
 # scene1
 #dataDir = r"E:\Penghua\data\Etna\2014.09.16\TET\ac_results_1.00"
@@ -121,36 +163,38 @@ def zonal_analysis(rasterFile, shpFile, SST = False):
 #diffFile = os.path.join(diffDir, diffFileName)
 
 #scene2
-dataDir = r"E:\Penghua\data\Etna\2014.06.22\TET\ac_results_1.10"
-rasterFileName = "FBI_TET1_20140622T232052_20140622T232155_L2_002589_WHM_cobined_MIR_TIR_tem.tif"
-rasterFile = os.path.join(dataDir, rasterFileName)
-
-MODISDir = r"E:\Penghua\data\Etna\2014.06.22\SST"
-MODISFileName = "A2014173003000.L2_LAC_SST_repro_UTM33N_repro_cut.tif"
-MODISFile = os.path.join(MODISDir, MODISFileName)
-
-shpDir = r"E:\Penghua\data\Etna\shapefiles"
-shpFileName = ["rect2.shp", "rect4.shp", "rect6.shp", "rect7.shp"]
-
-diffDir = r"E:\Penghua\data\Etna\2014.06.22\TET\ac_results_1.10\compared"
-diffFileName = "diff_MIR.tif"
-diffFile = os.path.join(diffDir, diffFileName)
-
-
-# get subarea raster array
-TETZoneArray = []
-MODISZoneArray = []
-differences = []
-for i in range(len(shpFileName)):
-    shpFile = os.path.join(shpDir, shpFileName[i])
+#dataDir = r"E:\Penghua\data\Etna\2014.06.22\TET\ac_results_1.10"
+#rasterFileName = "FBI_TET1_20140622T232052_20140622T232155_L2_002589_WHM_cobined_MIR_TIR_tem.tif"
+#rasterFile = os.path.join(dataDir, rasterFileName)
+#
+#MODISDir = r"E:\Penghua\data\Etna\2014.06.22\SST"
+#MODISFileName = "A2014173003000.L2_LAC_SST_repro_UTM33N_repro_cut.tif"
+#MODISFile = os.path.join(MODISDir, MODISFileName)
+#
+#shpDir = r"E:\Penghua\data\Etna\shapefiles"
+#shpFileName = ["rect2.shp", "rect4.shp", "rect6.shp", "rect7.shp"]
+#
+#diffDir = r"E:\Penghua\data\Etna\2014.06.22\TET\ac_results_1.10\compared"
+#diffFileName = "diff_MIR.tif"
+#diffFile = os.path.join(diffDir, diffFileName)
+#
+#
+## get subarea raster array
+#TETZoneArray = []
+#MODISZoneArray = []
+#differences = []
+#for i in range(len(shpFileName)):
+#    shpFile = os.path.join(shpDir, shpFileName[i])
+#    
+#    TETzoneraster = zonal_analysis(rasterFile, shpFile)
+#    MODISzoneraster = zonal_analysis(MODISFile, shpFile, True)
+#    diffzoneraster = zonal_analysis(diffFile, shpFile)
+#    
+#    TETZoneArray.append(TETzoneraster)
+#    MODISZoneArray.append(MODISzoneraster)
+#    differences.append(diffzoneraster)
     
-    TETzoneraster = zonal_analysis(rasterFile, shpFile)
-    MODISzoneraster = zonal_analysis(MODISFile, shpFile, True)
-    diffzoneraster = zonal_analysis(diffFile, shpFile)
-    
-    TETZoneArray.append(TETzoneraster)
-    MODISZoneArray.append(MODISzoneraster)
-    differences.append(diffzoneraster)
+
 
 
 # plot
@@ -178,38 +222,38 @@ for i in range(len(shpFileName)):
 #    #fig.savefig(os.path.join(r'E:\Penghua\results\hist_analysis\sc1.10', r'rect%d.png' %(i + 1)), dpi=500)
 #    plt.show()
     
-TET = []
-MODIS = []
-Diff = []
-for i in range(len(TETZoneArray)):
-    TET.extend(TETZoneArray[i].compressed())
-    MODIS.extend(MODISZoneArray[i].compressed())
-    Diff.extend(differences[i].compressed())
-
-fig2, axes2 = plt.subplots(3, 1)
-axes2.flatten()
-
-axes2[0].hist(MODIS, bins = 100, stacked = True)
-axes2[0].set_title('MODIS')
-axes2[0].set_xlabel('temperatures', fontsize = 9)
-axes2[0].set_yticks(range(0, 1000, 300))
-axes2[0].set_yticklabels(range(0, 1000, 300), fontsize = 6)
-axes2[0].grid()
-
-axes2[1].hist(TET, bins = 100, stacked = True)
-axes2[1].set_title('TET')
-axes2[1].set_xlabel('temperatures', fontsize = 9)
-axes2[1].set_yticks(range(0, 550, 200))
-axes2[1].set_yticklabels(range(0, 550, 200), fontsize = 6)
-axes2[1].grid()
-
-axes2[2].hist(Diff, bins = 100, stacked = True)
-axes2[2].set_title('Differences')
-axes2[2].set_xlabel('temperature differences', fontsize = 9)
-axes2[2].set_yticks(range(0, 1000, 300))
-axes2[2].set_yticklabels(range(0, 1000, 300), fontsize = 6)
-axes2[2].grid()
-
-fig2.tight_layout()
-fig2.savefig(os.path.join(r'E:\Penghua\results\hist_analysis\2014.06.22\sc1.10', r'rect_all.png'), dpi=500)
-plt.show()
+#TET = []
+#MODIS = []
+#Diff = []
+#for i in range(len(TETZoneArray)):
+#    TET.extend(TETZoneArray[i].compressed())
+#    MODIS.extend(MODISZoneArray[i].compressed())
+#    Diff.extend(differences[i].compressed())
+#
+#fig2, axes2 = plt.subplots(3, 1)
+#axes2.flatten()
+#
+#axes2[0].hist(MODIS, bins = 100, stacked = True)
+#axes2[0].set_title('MODIS')
+#axes2[0].set_xlabel('temperatures', fontsize = 9)
+#axes2[0].set_yticks(range(0, 1000, 300))
+#axes2[0].set_yticklabels(range(0, 1000, 300), fontsize = 6)
+#axes2[0].grid()
+#
+#axes2[1].hist(TET, bins = 100, stacked = True)
+#axes2[1].set_title('TET')
+#axes2[1].set_xlabel('temperatures', fontsize = 9)
+#axes2[1].set_yticks(range(0, 550, 200))
+#axes2[1].set_yticklabels(range(0, 550, 200), fontsize = 6)
+#axes2[1].grid()
+#
+#axes2[2].hist(Diff, bins = 100, stacked = True)
+#axes2[2].set_title('Differences')
+#axes2[2].set_xlabel('temperature differences', fontsize = 9)
+#axes2[2].set_yticks(range(0, 1000, 300))
+#axes2[2].set_yticklabels(range(0, 1000, 300), fontsize = 6)
+#axes2[2].grid()
+#
+#fig2.tight_layout()
+##fig2.savefig(os.path.join(r'E:\Penghua\results\hist_analysis\2014.06.22\sc1.10', r'rect_all.png'), dpi=500)
+#plt.show()
