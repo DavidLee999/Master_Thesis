@@ -49,9 +49,9 @@ with $m$ is the total number of the sub-areas.
 %-----------------------------------
 
 \subsection{Results comparision with MODIS SST and calibration}
-Before doing the comparison betwen MODIS SST and MITIP surface temperature products, one problem needs to be solved is that the choice of emissivity. The emissivity map derived from ASTER Global Emissivity Database is consisted of 5 bands and there are two bands, namely band 11 with wavelength 8.6 $\mu$m and band 12 with wavelength 9.1 $\mu$m fall in TET-1 imagery's TIR band with spectral range 8.5 $\mu$m to 9.3 $\mu$m \parencite{Reference306}. So there comes a problem which band of emissivity map should be used. This problem would be considered under different circumstances.\\
+Before doing the comparison betwen MODIS SST and MITIP surface temperature products, one problem needs to be solved is that the choice of emissivity. The emissivity map derived from ASTER Global Emissivity Database is consisted of 5 bands and there are two bands, namely band 11 with wavelength 8.6 $\mu$m and band 12 with wavelength 9.1 $\mu$m fall in TET-1 imagery's TIR band with spectral range 8.5 $\mu$m to 9.3 $\mu$m \parencite{Reference306}. So there comes a problem that which band of emissivity map should be used. This problem would be considered under different circumstances.\\
 
-\noindent Since the emissivities of water body in these two bands are very close, 0.984  and 0.985 respectively, the effects of the different emissivities can be neglected when the results from MITIP are compared with MODIS SST as shown Figure \ref{fig:tem_diff_emi}. Here the emissivity map in band 8.6 $\mu$m is used.\\
+\noindent Since the emissivities of water body in these two bands are very close, 0.984  and 0.985 respectively, the effects of the different emissivities can be neglected when the results from MITIP are compared with MODIS SST as shown Figure \ref{fig:tem_diff_emi1}.\\
 
 \begin{figure}[!htbp]
 \centering\includegraphics[width=0.8\textwidth]{diff_emi1.png}
@@ -65,9 +65,9 @@ Before doing the comparison betwen MODIS SST and MITIP surface temperature produ
 \label{fig:tem_diff_emi2}
 \end{figure}
 
-\noindent From Figure \ref{fig:tem_diff_emi2} we can see that the temperature differences resulted from different emissivities in MIR band imagries are within the range (0.010, 0.018). The temperature differences resulted from different emissivities in TIR band imagries are within the range (0.032, 0.040). Both of them are so small that can be neglected in the context of the area of interest (AOI) is water body.\\
+\noindent From Figure \ref{fig:tem_diff_emi2} we can see that the temperature differences resulted from different emissivities in MIR band imagries are within the range (0.010K, 0.018K). The temperature differences resulted from different emissivities in TIR band imagries are within the range (0.032K, 0.040K). Both of them are so small that can be neglected in the context of the area of interest (AOI) is water body. Here the emissivity map in band 8.6 $\mu$m is used.\\
 
-\noindent Firstly, the surface temperature maps from MITIP are compare with MODIS SST according to the steps states in Section 4.1. The Figure \ref{fig:tem_com} shows that the surface temperature derived by MITIP is a bit lower than the MODIS SST. To adjust these differences, TOA radiances of the original TET-1 imagries, which are the pixel values of the original TET-1 imagries, need to be calibrated.\\
+\noindent Firstly, the surface temperature maps from MITIP are compare with MODIS SST according to the steps states in Section 4.1. The Figure \ref{fig:tem_com} shows that the surface temperature derived by MITIP is a bit lower than the MODIS SST on both the MIR band and TIR band. To adjust these differences, TOA radiances of the original TET-1 imagries, which are the pixel values of the original TET-1 imagries, need to be calibrated.\\
 
 \begin{figure}[!htbp]
 \centering\includegraphics[width = 0.8\textwidth]{tem_com.png}
@@ -75,22 +75,124 @@ Before doing the comparison betwen MODIS SST and MITIP surface temperature produ
 \label{fig:tem_com}
 \end{figure}
 
-\noindent Consequently, the MITIP method add two input keywords \emph{sc1} and \emph{sc2}, which stand for scale factor for the TET-1 MIR and TIR band imagries respectively, to calibrate the TOA radiances. Since the temperature derived from MITIP is a bit lower than the MODIS SST, the TOA radiances of the TET-1 imagriy should be increased. As a result, five scale factors, 1.00 which means original TOA radiances, 1.05 which means increases the TOA radiances by 5\%, 1.10, 1.15 and 1.20, are selected to calibrate the TET-1 MIR and TIR band respectively.\\
+\noindent Consequently, the MITIP method add two input keywords \emph{sc1} and \emph{sc2}, which stand for scale factor for the TET-1 MIR and TIR band imagries respectively, to calibrate the TOA radiances. Since the temperature derived from MITIP is a bit lower than the MODIS SST, the TOA radiances of the TET-1 imagriy should be increased. As a result, five scale factors, 1.00 which means original TOA radiances, 1.05 which means increasing the TOA radiances by 5\%, 1.10, 1.15 and 1.20, are selected to calibrate the TET-1 MIR and TIR band respectively.\\
 
-\noindent In order to see detailedly how the scale factor will affect the pixel values of the results of MITIP, histograms of sub-areas of TET-1 imagry are investigated. The histograms of each sub-area with different scale factors are showed in Figure\\
+\noindent In order to see detailedly how the scale factor will affect the pixel values of the results of MITIP, histograms of sub-areas of TET-1 MIR band temperature map are investigated and compared with the histograms of the same areas of MODIS SST. The histograms of each sub-area with different scale factors are showed in Figure \ref{fig:hist_rect_all}. Here we use the Etna scene of the date 2014.06.22, which is the first scene we have for the Etna.\\
+
+\begin{figure}[!htbp]
+\centering
+\subfigure[Sub-area 1 with scale factor 1.00]{
+\label{fig:hist_rect1_1}
+\includegraphics[width = 0.48\linewidth]{rect1_sc100.png}}
+\vspace{0.1in}
+\subfigure[Sub-area 1 with scale factor 1.10]{
+\label{fig:hist_rect1_2}
+\includegraphics[width = 0.48\linewidth]{rect1_sc110.png}}
+
+\hspace{0.5in}
+
+\subfigure[Sub-area 2 with cale factor 1.00]{
+\label{fig:hist_rect2_1}
+\includegraphics[width = 0.48\linewidth]{rect2_sc100.png}}
+\vspace{0.1in}
+\subfigure[Sub-area 2 with cale factor 1.10]{
+\label{fig:hist_rect2_2}
+\includegraphics[width = 0.48\linewidth]{rect2_sc110.png}}
+
+\hspace{0.5in}
+
+\subfigure[Sub-area 3 with cale factor 1.00]{
+\label{fig:hist_rect3_1}
+\includegraphics[width = 0.48\linewidth]{rect3_sc100.png}}
+\vspace{0.1in}
+\subfigure[Sub-area 3 with cale factor 1.10]{
+\label{fig:hist_rect3_2}
+\includegraphics[width = 0.48\linewidth]{rect3_sc110.png}}
+
+\hspace{0.5in}
+
+\subfigure[Sub-area 4 with cale factor 1.00]{
+\label{fig:hist_rect4_1}
+\includegraphics[width = 0.48\linewidth]{rect4_sc100.png}}
+\vspace{0.1in}
+\subfigure[Sub-area 4 with cale factor 1.10]{
+\label{fig:hist_rect4_2}
+\includegraphics[width = 0.48\linewidth]{rect4_sc110.png}}
+
+\caption{Histograms of MODIS SST, TET-1 MIR band imagry and their differences with different scale factor}
+\label{fig:hist_rect_all}
+\end{figure}
+
+\noindent In Figure \ref{fig:hist_rect_all}, it is clear that the histograms of the same sub-area of MODIS SST are the same. For the TET-1 MIR band temperature maps with differnet scale factors, the shapes of the histograms of the same sub-area, which are the second row of each sub-figures, are almost identical. But looking carefully we will notice that for the histograms of TET-1 MIR band temperature map with different scale factors, the x-axes are shifted to the left, which means the pixel values of all pixels inside the sub-areas are increased with a certain value. The same for the temperature differences between the TET-1 MIR band temperature map and MODIS SST. To make it more clear, two sub-areas are selected and their histograms with all the five scale factors are shown in Figure \ref{fig:rect1_sc_all} and Figure \ref{fig:rect4_sc_all}.\\
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width = 1.0\textwidth]{rect1_sc_all.png}
+\caption{Histograms of MODIS SST and TET-1 MIR band imageries with all the five scale factors in sub-area 1. The red solid line in each histogram denotes the mean value and the red dashed line the standard deviation.}
+\label{fig:rect1_sc_all}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width = 1.0\textwidth]{rect4_sc_all.png}
+\caption{Histograms of MODIS SST and TET-1 MIR band imageries with all the five scale factors in sub-area 4. The red solid line in each histogram denotes the mean value and the red dashed line the standard deviation.}
+\label{fig:rect4_sc_all}
+\end{figure}
+
+\noindent Figure \ref{fig:rect1_sc_all} and Figure \ref{fig:rect4_sc_all} obviously show that with the increment the scale factor, the histograms of the sub-areas will be shifted to the right while the shapes are always symmetric. The mean temperature of each histogram acts as a linear function of scale factor while the standard deviations are very stable. Consequently, the mean temperature of all pixels within one sub-area can be used as representative for this sub-area and show how temperatures vary with the change of scale factor.\\
+
+\noindent But we do not use only the mean temperature of one sub-area. As stated in Section 4.1.1, the mean temperatures over all the sub-areas will be calculated to compare with the same value of MODIS SST. The histograms of pixels located in all the sub-areas are given in Figure \ref{fig:hist_all_rect} and Figure \ref{fig:rect_all_sc_all}. For MODIS SST, due to the reasones of upsampling, noisy and missing value etc, its histograms of the sub-areas are sparse and concentrate in fewer values. Its shape is a bit skewed left but its main part is symmetric. Furthormore, the main part of the histogram of all sub-areas of MODIS SST shares the similiar shape with the histograms of all sub-areas of TET-1 MIR band surface temperature map. For TET-1 MIR band surface temperature map, the behavior of histograms of all sub-areas is the same as the histograms of individual sub-area as stated before. Hence it is reasonable and reliable to use the mean temperature over all the sub-areas in both MODIS SST and TET-1 surface temperature product to do the comparison instead of using the histogram all the time.\\
 
 \begin{figure}[!htbp]
 \centering
 \subfigure[Scale factor 1.00]{
-\label{fig:hist_rect1_1}
-\includegraphics[width = 0.48\linewidth]{rect1_sc100.png}}
+\label{fig:hist_rect_all_1}
+\includegraphics[width = 0.48\linewidth]{rect_all_sc100.png}}
 \vspace{0.1in}
 \subfigure[Scale factor 1.10]{
-\label{fig:hist_rect1_2}
-\includegraphics[width = 0.48\linewidth]{rect1_sc110.png}}
-\caption{Histograms of MODIS SST, TET-1 MIR band imagry and their differences in sub-area 1}
-\label{fig:hist_rect1}
+\label{fig:hist_rect_all_2}
+\includegraphics[width = 0.48\linewidth]{rect_all_sc110.png}}
+\caption{Histograms of all sub-areas of MODIS SST, TET-1 MIR band imagry and their differences with different scale factor}
+\label{fig:hist_all_rect}
 \end{figure}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width = 1.0\textwidth]{rect_all.png}
+\caption{Histograms of all sub-areas of MODIS SST and TET-1 MIR band imageries with all the five scale factors. The red solid line in each histogram denotes the mean value and the red dashed line the standard deviation.}
+\label{fig:rect_all_sc_all}
+\end{figure}
+
+\noindent Afterwards, in order to find the best scale factors for TET-1 MIR and TIR band imageries respectively, a time-serise analysis is performed. The results are shown in Figure \ref{fig:etna_sc_mir_tir}. The Figure \ref{fig:etna_bsc_tem} shows the best scale factor for each Etna scenes (the red solid line) and its corresponding temperature differences (the blue dashed line), which is also the minimal temperature differences. The ideal scale factor will be a constant over time. However, because of the unstable performance of the sensor, the influence of the space environment the weather condition and many other reasons, the scale factors of both TET-1 MIR and TIR band imageries acts as a function of time. But it is still clear that for the TET-1 TIR band imagery, the scale factor 1.05 achieves the best performance that the temperature differences resulted from it is most close to zero. The Figure \ref{fig:etna_bsc_tir} also proves that showing that most of the TET-1 TIR band imageries has the best scale factor 1.05.\\
+
+\noindent The situation for the TET-1 MIR band imagery is a bit complicated because the scale factor 1.10 and 1.15 have similar performances.\\
+
+\begin{figure}[!htbp]
+\centering
+\subfigure[MIR band]{
+\label{fig:etna_sc_mir}
+\includegraphics[width = 0.8\linewidth]{Etna_scf_mir.png}}
+\hspace{0.5in}
+\subfigure[TIR band]{
+\label{fig:etna_sc_tir}
+\includegraphics[width = 0.8\linewidth]{Etna_scf_tir.png}}
+\caption{Temperature differences between TET-1 surface temperature maps and MODIS SST.}
+\label{fig:etna_sc_mir_tir}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+\subfigure[MIR band]{
+\label{fig:etna_bsc_mir}
+\includegraphics[width = 0.8\linewidth]{Etna_bsc&tem_mir.png}}
+\hspace{0.5in}
+\subfigure[TIR band]{
+\label{fig:etna_bsc_tir}
+\includegraphics[width = 0.8\linewidth]{Etna_bsc&tem_tir.png}}
+\caption{The best scale factors for each Etna scenes and its corresponding temperature differences. The red solid line is the best scale factor for each Etna scene. The blue dashed line is the minimal temperature differnces resulted from that scale factor.}
+\label{fig:etna_bsc_tem}
+\end{figure}
+
 
 %-----------------------------------
 %	SUBSECTION 3

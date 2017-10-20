@@ -15,8 +15,26 @@
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Mean temperature of all sub-areas in Etna scenes with different emissivities\relax }}{18}{figure.caption.44}
 \contentsline {figure}{\numberline {4.5}{\ignorespaces Differences of temperatures resulted from different emissivities(Etna)\relax }}{19}{figure.caption.45}
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Temperature differences between the temperature maps from MITIP and MODIS SST for Etna scenes\relax }}{19}{figure.caption.46}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Histograms of MODIS SST, TET-1 MIR band imagry and their differences in sub-area 1\relax }}{20}{figure.caption.47}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Scale factor 1.00}}}{20}{figure.caption.47}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Scale factor 1.10}}}{20}{figure.caption.47}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Histograms of MODIS SST, TET-1 MIR band imagry and their differences with different scale factor\relax }}{21}{figure.caption.47}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Sub-area 1 with scale factor 1.00}}}{21}{figure.caption.47}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Sub-area 1 with scale factor 1.10}}}{21}{figure.caption.47}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Sub-area 2 with cale factor 1.00}}}{21}{figure.caption.47}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Sub-area 2 with cale factor 1.10}}}{21}{figure.caption.47}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Sub-area 3 with cale factor 1.00}}}{21}{figure.caption.47}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {Sub-area 3 with cale factor 1.10}}}{21}{figure.caption.47}
+\contentsline {subfigure}{\numberline {(g)}{\ignorespaces {Sub-area 4 with cale factor 1.00}}}{21}{figure.caption.47}
+\contentsline {subfigure}{\numberline {(h)}{\ignorespaces {Sub-area 4 with cale factor 1.10}}}{21}{figure.caption.47}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Histograms of MODIS SST and TET-1 MIR band imageries with all the five scale factors in sub-area 1. The red solid line in each histogram denotes the mean value and the red dashed line the standard deviation.\relax }}{22}{figure.caption.56}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Histograms of MODIS SST and TET-1 MIR band imageries with all the five scale factors in sub-area 4. The red solid line in each histogram denotes the mean value and the red dashed line the standard deviation.\relax }}{23}{figure.caption.57}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Histograms of all sub-areas of MODIS SST, TET-1 MIR band imagry and their differences with different scale factor\relax }}{24}{figure.caption.58}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Scale factor 1.00}}}{24}{figure.caption.58}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Scale factor 1.10}}}{24}{figure.caption.58}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Histograms of all sub-areas of MODIS SST and TET-1 MIR band imageries with all the five scale factors. The red solid line in each histogram denotes the mean value and the red dashed line the standard deviation.\relax }}{25}{figure.caption.61}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Temperature differences between TET-1 surface temperature maps and MODIS SST.\relax }}{26}{figure.caption.62}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MIR band}}}{26}{figure.caption.62}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {TIR band}}}{26}{figure.caption.62}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces The best scale factors for each Etna scenes and its corresponding temperature differences. The red solid line is the best scale factor for each Etna scene. The blue dashed line is the minimal temperature differnces resulted from that scale factor.\relax }}{27}{figure.caption.65}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MIR band}}}{27}{figure.caption.65}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {TIR band}}}{27}{figure.caption.65}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
