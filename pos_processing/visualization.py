@@ -41,11 +41,11 @@ effective_pixel_port = effective_pixel_port_band.ReadAsArray(0, 0, cols, rows)
 FRP = FRP_band.ReadAsArray(0, 0, cols, rows)
 
 #effective_fire_temp_subarea = effective_fire_temp_band.ReadAsArray(0, 0, cols, rows) # 750, 2020, 200, 200
-FRP_subarea = FRP_band.ReadAsArray(825, 2105, 45, 45)
+temperature_MIR_subarea = temperature_MIR_band.ReadAsArray(0, 0, cols, rows)
 
-mask_nodatavalue = FRP_subarea == 0
-masked_FRP_subarea = np.ma.array(FRP_subarea, mask = mask_nodatavalue, fill_value = 0)
+mask_nodatavalue = temperature_MIR_subarea == 0
+masked_temperature_MIR_subarea = np.ma.array(temperature_MIR_subarea, mask = mask_nodatavalue, fill_value = 0)
 
-plt.imshow(masked_FRP_subarea, cmap = 'hot_r')
+plt.imshow(masked_temperature_MIR_subarea, cmap = 'hot_r')
 plt.title('Etna: fire radiative power (FRP)')
 plt.colorbar()
