@@ -11,6 +11,7 @@ This chapter gives a brief description about the MITIP method which is an atmosp
 %----------------------------------------------------------------------------------------
 
 \section{Data preparation and pre-processing}
+The MITIP method is an atmospheric correction and image processing method used for processing the thermal remote sensing imageries of the FireBIRD satellite. MITIP performs atmospheric corrections for TET-1 imagery first based on water vapor column and elevation in order to get ground surface radiance and temperature. Afterwards, the dual channel method introduced in Chapter 2 is used detect and characterize sub-pixel temperature of hot pixels. In this section, required input data is introduced. The procedure and principles of MITIP and its products are described in following sections.\\
 
 %-----------------------------------
 %	SUBSECTION 1
@@ -128,7 +129,7 @@ The outcomes of MITIP can be classified into two parts: one part is the result o
 \noindent The result of atmospheric correction is the surface radiance in MIR and TIR band respectively. There are two types of surface radiance files:
 \begin{itemize}
 \item The ''blackbody'' surface radiance with $\varepsilon_{MIR} = \varepsilon_{TIR} = 1$;
-\item The ''graybody'' surface radiance accounting for the input emissivity map $\varepsilon_{TIR}$ and assuming $\varepsilon_{MIR} = \varepsilon_{TIR}$;
+\item The ''graybody'' surface radiance calculated from the input emissivity map $\varepsilon_{TIR}$ and assuming $\varepsilon_{MIR} = \varepsilon_{TIR}$;
 \end{itemize}
 
 \noindent The HTE monitoring product is one GeoTIFF file which consists of six bands:
