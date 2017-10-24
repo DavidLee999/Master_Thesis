@@ -15,8 +15,8 @@ plt.show()
 
 gdal.AllRegister()
 
-data_dir = r'E:\Penghua\data\Etna\2014.06.22\TET\ac_results'
-raster_file = r'FBI_TET1_20140622T232052_20140622T232155_L2_002589_WHM_cobined_MIR_TIR_tem.tif'
+data_dir = r'E:\Penghua\data\Portugal\2016.08.11\TET\ac_results'
+raster_file = r'FBI_TET1_20160811T133543_20160811T133705_L2_C_EL-04047_cobined_MIR_TIR_tem.tif'
 input_raster = os.path.join(data_dir, raster_file)
 
 raster = gdal.Open(input_raster)
@@ -40,12 +40,13 @@ effective_fire_temp = effective_fire_temp_band.ReadAsArray(0, 0, cols, rows)
 effective_pixel_port = effective_pixel_port_band.ReadAsArray(0, 0, cols, rows)
 FRP = FRP_band.ReadAsArray(0, 0, cols, rows)
 
-#effective_fire_temp_subarea = effective_fire_temp_band.ReadAsArray(0, 0, cols, rows) # 750, 2020, 200, 200
-temperature_MIR_subarea = temperature_MIR_band.ReadAsArray(0, 0, cols, rows)
+#Read the data into a 2D Numeric array with ReadAsArray(<xoff>, <yoff>, <xsize>, <ysize>)
+# Etna: 820, 2100, 50, 50 Stromboli: 950, 1335, 30, 30 Bardarbunga1: 1385, 1675, 200, 200 Bardarbunga2: 1525, 1680, 200, 200 Chile: 200, 2350, 500, 600
+effective_fire_subarea = FRP_band.ReadAsArray(700, 900, 400, 500)
 
-mask_nodatavalue = temperature_MIR_subarea == 0
-masked_temperature_MIR_subarea = np.ma.array(temperature_MIR_subarea, mask = mask_nodatavalue, fill_value = 0)
+mask_nodatavalue = effective_fire_subarea == 0
+masked_effective_fire_subarea = np.ma.array(effective_fire_subarea, mask = mask_nodatavalue, fill_value = 0)
 
-plt.imshow(masked_temperature_MIR_subarea, cmap = 'hot_r')
-plt.title('Etna: fire radiative power (FRP)')
+plt.imshow(masked_effective_fire_subarea, cmap = 'gist_heat_r') #'hot_r' 'gist_heat_r'
+plt.title('Portugal: fire radiactive power [MW]')
 plt.colorbar()

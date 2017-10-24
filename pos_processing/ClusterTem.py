@@ -369,25 +369,25 @@ def loop_centerPos(input_zone_polygon, input_MIR_radiance, input_bg_tem, noDataV
 
 
 
-shpfile = r'E:\Penghua\data\Bardarbunga\2014.09.14\TET\ac_results\Mask\sub_tem.shp'
-
-rasterfile = r'E:\Penghua\data\Bardarbunga\2014.09.14\TET\ac_results\FBI_TET1_20140914T022014_20140914T022136_L2_C_EL-00420_cobined_MIR_TIR_tem.tif'
-
-tet_radiance = r'E:\Penghua\data\Bardarbunga\2014.09.14\TET\FBI_TET1_20140914T022014_20140914T022136_L2_C_EL-00420_MWIR_near_repro_cut.tif'
-
-bg_tem = r'E:\Penghua\data\Bardarbunga\2014.09.14\TET\ac_results\FBI_TET1_20140914T022014_20140914T022136_L2_C_EL-00420_cobined_MIR_TIR_Tback.tif'
+#shpfile = r'E:\Penghua\data\Bardarbunga\2014.09.14\TET\ac_results\Mask\sub_tem.shp'
+#
+#rasterfile = r'E:\Penghua\data\Bardarbunga\2014.09.14\TET\ac_results\FBI_TET1_20140914T022014_20140914T022136_L2_C_EL-00420_cobined_MIR_TIR_tem.tif'
+#
+#tet_radiance = r'E:\Penghua\data\Bardarbunga\2014.09.14\TET\FBI_TET1_20140914T022014_20140914T022136_L2_C_EL-00420_MWIR_near_repro_cut.tif'
+#
+#bg_tem = r'E:\Penghua\data\Bardarbunga\2014.09.14\TET\ac_results\FBI_TET1_20140914T022014_20140914T022136_L2_C_EL-00420_cobined_MIR_TIR_Tback.tif'
 
 #bg = zonalStats.zonal_stats(0, alpha, rasterfile, 2, -9999)
 
 
 
-#shpfile = r'E:\Penghua\data\Chile\2017.01.26\TET\ac_results\Mask\sub_tem.shp'
-#
-#rasterfile = r'E:\Penghua\data\Chile\2017.01.26\TET\ac_results\FBI_TET1_20170126T063754_20170126T063927_L2_C_SP-00191_cobined_MIR_TIR_tem.tif'
-#
-#tet_radiance = r'E:\Penghua\data\Chile\2017.01.26\TET\FBI_TET1_20170126T063754_20170126T063927_L2_C_SP-00191_MWIR_near_repro_cut.tif'
-#
-#bg_tem = r'E:\Penghua\data\Chile\2017.01.26\TET\ac_results\FBI_TET1_20170126T063754_20170126T063927_L2_C_SP-00191_cobined_MIR_TIR_Tback.tif'
+shpfile = r'E:\Penghua\data\Chile\2017.01.26\TET\ac_results\Mask\sub_tem.shp'
+
+rasterfile = r'E:\Penghua\data\Chile\2017.01.26\TET\ac_results\FBI_TET1_20170126T063754_20170126T063927_L2_C_SP-00191_cobined_MIR_TIR_tem.tif'
+
+tet_radiance = r'E:\Penghua\data\Chile\2017.01.26\TET\FBI_TET1_20170126T063754_20170126T063927_L2_C_SP-00191_MWIR_near_repro_cut.tif'
+
+bg_tem = r'E:\Penghua\data\Chile\2017.01.26\TET\ac_results\FBI_TET1_20170126T063754_20170126T063927_L2_C_SP-00191_cobined_MIR_TIR_Tback.tif'
 #
 
 a = loop_clusterTem(shpfile, rasterfile, 0)
