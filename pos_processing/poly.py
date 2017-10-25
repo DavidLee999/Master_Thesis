@@ -97,8 +97,8 @@ def raster2shp( rasterfn, bandNum ):
 #    lyr.DeleteFeature(lyr.GetFeatureCount() - 1)
 
 
-#src_ds = r'E:\Penghua\data\Bardarbunga\2014.09.14\TET\ac_results\FBI_TET1_20140914T022014_20140914T022136_L2_C_EL-00420_cobined_MIR_TIR_tem.tif'
-src_ds = r'E:\Penghua\data\georeferenced_TET\Bardarbunga\FBI_TET1_20140914T022014_20140914T022136_L2_C_EL-00420_V000.909\FBI_TET1_20140914T022014_20140914T022136_L2_C_EL-00420_FIREMASK_near.tif'
+src_ds = r'E:\Penghua\data\Bardarbunga\2014.09.14\TET\ac_results\FBI_TET1_20140914T022014_20140914T022136_L2_C_EL-00420_cobined_MIR_TIR_tem.tif'
+#src_ds = r'E:\Penghua\data\georeferenced_TET\Bardarbunga\FBI_TET1_20140914T022014_20140914T022136_L2_C_EL-00420_V000.909\FBI_TET1_20140914T022014_20140914T022136_L2_C_EL-00420_FIREMASK_near.tif'
 
 outputfolder = os.path.join( os.path.split(src_ds)[0], 'Mask' )
 
@@ -109,7 +109,7 @@ os.chdir( outputfolder )
 
 newRaster = os.path.join( outputfolder, 'sub_tem.tif' )
 
-array = raster2array( src_ds, 1 ) # 4
+array = raster2array( src_ds, 4 ) # 4
 array = createMaskArray( array, 0 )
 array2raster( newRaster, src_ds, array)
 

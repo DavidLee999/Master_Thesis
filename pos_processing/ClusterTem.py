@@ -36,8 +36,8 @@ def clusterTem(FID, input_zone_polygon, input_value_raster, NoDataValue = -9999)
     transform = raster.GetGeoTransform()
     xOrigin = transform[0]
     yOrigin = transform[3]
-    pixelWidth = transform[1] # int(transform[1])
-    pixelHeight = transform[5]
+    pixelWidth = int(transform[1]) # int(transform[1])
+    pixelHeight = int(transform[5])
     
     # Reproject vector geometry to same projection as raster
     sourceSR = lyr.GetSpatialRef()
@@ -154,13 +154,13 @@ def clusterTem(FID, input_zone_polygon, input_value_raster, NoDataValue = -9999)
     valid_tem = numpy.ma.masked_array(sub_pix_tem_array, numpy.logical_not(datamask))
     valid_area = numpy.ma.masked_array(sub_pix_area_array, numpy.logical_not(datamask))
     
-#    if (raster.RasterCount >= 6):
-#        FRP_raster = raster.GetRasterBand(6)
-#        FRP_array = FRP_raster.ReadAsArray(xoff, yoff, xcount, ycount).astype(numpy.float)
-#        valid_frp = numpy.ma.masked_array(FRP_array, numpy.logical_not(datamask))
-#        frp = numpy.sum(valid_frp)
-#    else:
-#        frp = 0.0
+    if (raster.RasterCount >= 6):
+        FRP_raster = raster.GetRasterBand(6)
+        FRP_array = FRP_raster.ReadAsArray(xoff, yoff, xcount, ycount).astype(numpy.float)
+        valid_frp = numpy.ma.masked_array(FRP_array, numpy.logical_not(datamask))
+        frp = numpy.sum(valid_frp)
+    else:
+        frp = 0.0
     
     clusterSize = numpy.where(datamask == 1)[0].size
                              
@@ -195,9 +195,13 @@ def clusterTem(FID, input_zone_polygon, input_value_raster, NoDataValue = -9999)
 #    print numpy.average(valid_tem, weights = valid_area)
 #    print numpy.mean(valid_tem)
     #print tem
-#    print frp
-#    print 5.6704 * tem * tem * tem * tem * Area/(100000000 * 1000000)
-#    print 5.6704 * tem * tem * tem * tem * 150 * 150 * (numpy.sum(valid_area) / 4.0)/(100000000 * 1000000)
+#    print 'Frp / 4'
+#    print frp / 4
+##    print 5.16704 * tem * tem * tem * tem * Area/(100000000 * 1000000)
+#    print 'frp c'
+#    print 5.16704 * tem * tem * tem * tem * 150 * 150 * (numpy.sum(valid_area)/ 4.0 )/(100000000 * 1000000)
+#    print 'a'
+#    print 150 * 150 * (numpy.sum(valid_area)/ 4.0 )
 
     return [tem, clusterSize]
 #    return numpy.mean(zoneraster)
@@ -356,7 +360,7 @@ def loop_centerPos(input_zone_polygon, input_MIR_radiance, input_bg_tem, noDataV
                 
     return statDict
 
-       
+#       
 #shpfile = r'E:\Penghua\data\Etna\2014.06.22\TET\ac_results\Mask\sub_tem.shp'
 #
 #rasterfile = r'E:\Penghua\data\Etna\2014.06.22\TET\ac_results\FBI_TET1_20140622T232052_20140622T232155_L2_002589_WHM_cobined_MIR_TIR_tem.tif'
@@ -379,6 +383,14 @@ def loop_centerPos(input_zone_polygon, input_MIR_radiance, input_bg_tem, noDataV
 
 #bg = zonalStats.zonal_stats(0, alpha, rasterfile, 2, -9999)
 
+
+#shpfile = r'E:\Penghua\data\Bardarbunga\2014.09.15\TET\ac_results\Mask\sub_tem.shp'
+#
+#rasterfile = r'E:\Penghua\data\Bardarbunga\2014.09.15\TET\ac_results\FBI_TET1_20140915T015349_20140915T015511_L2_C_EL-00421_cobined_MIR_TIR_tem.tif'
+#
+#tet_radiance = r'E:\Penghua\data\Bardarbunga\2014.09.15\TET\FBI_TET1_20140915T015349_20140915T015511_L2_C_EL-00421_MWIR_near_repro_cut.tif'
+#
+#bg_tem = r'E:\Penghua\data\Bardarbunga\2014.09.15\TET\ac_results\FBI_TET1_20140915T015349_20140915T015511_L2_C_EL-00421_cobined_MIR_TIR_Tback.tif'
 
 
 shpfile = r'E:\Penghua\data\Chile\2017.01.26\TET\ac_results\Mask\sub_tem.shp'
