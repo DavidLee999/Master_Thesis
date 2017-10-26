@@ -153,7 +153,7 @@ def clusterTem(FID, input_zone_polygon, input_value_raster, NoDataValue = -9999)
     
     valid_tem = numpy.ma.masked_array(sub_pix_tem_array, numpy.logical_not(datamask))
     valid_area = numpy.ma.masked_array(sub_pix_area_array, numpy.logical_not(datamask))
-    
+    print numpy.mean(valid_tem)
     if (raster.RasterCount >= 6):
         FRP_raster = raster.GetRasterBand(6)
         FRP_array = FRP_raster.ReadAsArray(xoff, yoff, xcount, ycount).astype(numpy.float)
@@ -361,13 +361,13 @@ def loop_centerPos(input_zone_polygon, input_MIR_radiance, input_bg_tem, noDataV
     return statDict
 
 #       
-#shpfile = r'E:\Penghua\data\Etna\2014.06.22\TET\ac_results\Mask\sub_tem.shp'
-#
-#rasterfile = r'E:\Penghua\data\Etna\2014.06.22\TET\ac_results\FBI_TET1_20140622T232052_20140622T232155_L2_002589_WHM_cobined_MIR_TIR_tem.tif'
-#
-#tet_radiance = r'E:\Penghua\data\Etna\2014.06.22\TET\FBI_TET1_20140622T232052_20140622T232155_L2_002589_WHM_MWIR_near_repro_cut.tif'
-#
-#bg_tem = r'E:\Penghua\data\Etna\2014.06.22\TET\ac_results\FBI_TET1_20140622T232052_20140622T232155_L2_002589_WHM_cobined_MIR_TIR_Tback.tif'
+shpfile = r'E:\Penghua\data\Etna\2015.01.05\TET\ac_results\Mask\sub_tem.shp'
+
+rasterfile = r'E:\Penghua\data\Etna\2015.01.05\TET\ac_results\FBI_TET1_20150105T232604_20150105T232707_L2_C_EL-00724_cobined_MIR_TIR_tem.tif'
+
+#tet_radiance = r'E:\Penghua\data\Etna\2014.07.03\TET\FBI_TET1_20140622T232052_20140622T232155_L2_002589_WHM_MWIR_near_repro_cut.tif'
+
+#bg_tem = r'E:\Penghua\data\Etna\2014.07.03\TET\ac_results\FBI_TET1_20140622T232052_20140622T232155_L2_002589_WHM_cobined_MIR_TIR_Tback.tif'
 #
 #alpha = r'E:\Penghua\data\georeferenced_TET\Etna\new_selected_data\alpha_channel\FBI_TET1_20140622T232052_20140622T232155_L2_002589_WHM_MWIR_near_repro_alpha.shp'
 
@@ -393,14 +393,14 @@ def loop_centerPos(input_zone_polygon, input_MIR_radiance, input_bg_tem, noDataV
 #bg_tem = r'E:\Penghua\data\Bardarbunga\2014.09.15\TET\ac_results\FBI_TET1_20140915T015349_20140915T015511_L2_C_EL-00421_cobined_MIR_TIR_Tback.tif'
 
 
-shpfile = r'E:\Penghua\data\Chile\2017.01.26\TET\ac_results\Mask\sub_tem.shp'
-
-rasterfile = r'E:\Penghua\data\Chile\2017.01.26\TET\ac_results\FBI_TET1_20170126T063754_20170126T063927_L2_C_SP-00191_cobined_MIR_TIR_tem.tif'
-
-tet_radiance = r'E:\Penghua\data\Chile\2017.01.26\TET\FBI_TET1_20170126T063754_20170126T063927_L2_C_SP-00191_MWIR_near_repro_cut.tif'
-
-bg_tem = r'E:\Penghua\data\Chile\2017.01.26\TET\ac_results\FBI_TET1_20170126T063754_20170126T063927_L2_C_SP-00191_cobined_MIR_TIR_Tback.tif'
+#shpfile = r'E:\Penghua\data\Chile\2017.01.26\TET\ac_results\Mask\sub_tem.shp'
+#
+#rasterfile = r'E:\Penghua\data\Chile\2017.01.26\TET\ac_results\FBI_TET1_20170126T063754_20170126T063927_L2_C_SP-00191_cobined_MIR_TIR_tem.tif'
+#
+#tet_radiance = r'E:\Penghua\data\Chile\2017.01.26\TET\FBI_TET1_20170126T063754_20170126T063927_L2_C_SP-00191_MWIR_near_repro_cut.tif'
+#
+#bg_tem = r'E:\Penghua\data\Chile\2017.01.26\TET\ac_results\FBI_TET1_20170126T063754_20170126T063927_L2_C_SP-00191_cobined_MIR_TIR_Tback.tif'
 #
 
 a = loop_clusterTem(shpfile, rasterfile, 0)
-b = loop_centerPos(shpfile, tet_radiance, bg_tem)
+#b = loop_centerPos(shpfile, tet_radiance, bg_tem)
