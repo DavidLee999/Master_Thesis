@@ -36,5 +36,14 @@
 \contentsline {figure}{\numberline {4.13}{\ignorespaces The best scale factors for each Etna scenes and its corresponding temperature differences. The red solid line is the best scale factor for each Etna scene. The blue dashed line is the minimal temperature differnces resulted from that scale factor.\relax }}{27}{figure.caption.65}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MIR band}}}{27}{figure.caption.65}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {TIR band}}}{27}{figure.caption.65}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces The minimal temperature differences and the temperature differences resulted from scale factor 1.15. The red solid line is the minimal temperature differences for each Etna scene. The blue dashed line is the temperature differences resulted from the selected scale factors for MIR and TIR band imageries, scale factor 1.15 (left) and scale factor 1.05 (right), respectively.\relax }}{28}{figure.caption.68}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MIR band}}}{28}{figure.caption.68}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {TIR band}}}{28}{figure.caption.68}
+\contentsline {figure}{\numberline {4.15}{\ignorespaces The example figures of Portugal and Demmin. The red rectangles represent the selected sub-areas.\relax }}{29}{figure.caption.72}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Portugal}}}{29}{figure.caption.72}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Demmin}}}{29}{figure.caption.72}
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Transferability test: temperature differences between TET-1 surface temperature maps and MODIS SST.\relax }}{30}{figure.caption.75}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MIR band}}}{30}{figure.caption.75}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {TIR band}}}{30}{figure.caption.75}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
