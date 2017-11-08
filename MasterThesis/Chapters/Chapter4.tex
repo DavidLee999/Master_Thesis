@@ -49,7 +49,7 @@ with $m$ is the total number of the sub-areas.
 %-----------------------------------
 
 \subsection{Results comparision with MODIS SST and calibration}
-Before doing the comparison betwen MODIS SST and MITIP surface temperature products, one problem needs to be solved is that the choice of emissivity. The emissivity map derived from ASTER Global Emissivity Database is consisted of 5 bands and there are two bands, namely band 11 with wavelength 8.6 $\mu$m and band 12 with wavelength 9.1 $\mu$m fall in TET-1 imagery's TIR band with spectral range 8.5 $\mu$m to 9.3 $\mu$m \parencite{Reference306}. So there comes a problem that which band of emissivity map should be used. This problem would be considered under different circumstances.\\
+Before doing the comparison betwen MODIS SST and MITIP surface temperature products, one problem needs to be solved is that the choice of emissivity. The emissivity map derived from ASTER Global Emissivity Database is consisted of 5 bands and there are two bands, namely band 11 with wavelength 8.6 $\mu$m and band 12 with wavelength 9.1 $\mu$m fall in TET-1 imagery's TIR band with spectral range 8.5 $\mu$m to 9.3 $\mu$m \parencite{Reference306}. So there comes a problem that which band of the emissivity maps should be used. This problem would be considered under different circumstances.\\
 
 \noindent Since the emissivities of water body in these two bands are very close, 0.984  and 0.985 respectively, the effects of the different emissivities can be neglected when the results from MITIP are compared with MODIS SST as shown Figure \ref{fig:tem_diff_emi1}.\\
 
@@ -234,7 +234,7 @@ The best scale factors for the TET-1 MIR and TIR band imageries are selected as 
 \label{fig:portugal&demmin}
 \end{figure}
 
-\noindent Besides the chosen scale factor 1.15 for MIR band imagery and 1.05 for TIR band imagery, for the MIR band imagery, the performances of scale factor 1.10 and 1.20 are also presented as comparison and for TIR band imagery, the performances of scale factor 1.00 and 1.10 are displayed as well for the same purpose. As shown in Figure \ref{fig:SST_test}, scale factor 1.15 for MIR band imagery and scale factor 1.05 for TIR band imagery are not optimal scale factor for each scene, however, they demonstrate good performances over time and sites.\\
+\noindent Besides the chosen scale factor 1.15 for MIR band imagery and 1.05 for TIR band imagery, for the MIR band imagery, the performances of scale factor 1.10 and 1.20 are also presented as comparison and for TIR band imagery, the performances of scale factor 1.00 and 1.10 are displayed as well for the same purpose. As shown in Figure \ref{fig:SST_test}, scale factor 1.15 for MIR band imagery and scale factor 1.05 for TIR band imagery are not always optimal scale factor for each scene, however, they demonstrate better performances than the other scale factors over time and sites.\\
 
 \begin{figure}[!htbp]
 \centering
@@ -253,7 +253,39 @@ The best scale factors for the TET-1 MIR and TIR band imageries are selected as 
 %	SUBSECTION 4
 %-----------------------------------
 
-\subsection{Results comparision with MODIS LST and calibration}
+\subsection{Results comparison with MODIS LST and calibration}
+The similar comparison is done between the temperature results from MITIP and MODIS LST over the scenes of the test site Libya-1. However, the emissivities of different land features vary a lot. So the problem that which band of the emissivity maps to be used matters. The temperature maps of MITIP resulted from different emissivity maps are presented as follows.\\
+
+\begin{figure}[!htbp]
+\centering
+\subfigure[Temperature (Libya-1) with different emissivities]{
+\label{fig:emi_Libya_1}
+\includegraphics[width = 0.8\linewidth]{diff_emi1_Lybia.png}}
+\hspace{0.5in}
+\subfigure[Temperature differences (Libya-1) with different emissivities]{
+\label{fig:emi_Libya_2}
+\includegraphics[width = 0.8\linewidth]{diff_emi2_Lybia.png}}
+\caption{The effect of different emissivities on the surface temperature maps from MITIP.}
+\label{fig:diff_emi_Lybia}
+\end{figure}
+
+\noindent from the Figure \ref{fig:diff_emi_Lybia} it is clear that different emissivities maps have great influence on the temperature maps from MITIP.  Figure \ref{fig:emi_Libya_2} shows that the temperature differences in TET-1 TIR band imageries are much higher than the temperature differences in the MIR band imageries. Consequently, the focus will be laid on the TET-1 TIR band imageries.\\
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width = 0.8\textwidth]{diff_emi_tir1.png}
+\caption{Temperature differences (Lybia-1) between the surface temperature maps in TIR band and MODIS LST.}
+\label{fig:diff_emi_tir1}
+\end{figure}
+
+\noindent Figure \ref{fig:diff_emi_tir1} shows that the emissivity maps have effects comparable with the effects of the scale factors and it is clear that with the same scale factor, the temperature differences in TIR band resulted from emissivity map in 8.6 $\mu$m are much lower than these from the emissivity in band 9.1 $\mu$m. The temperature differences in MIR band with different emissivity maps also prove that as shown in Figure \ref{fig:diff_emi_mir1}.\\
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width = 0.8\textwidth]{diff_emi_mir1.png}
+\caption{Temperature differences (Lybia-1) between the surface temperature maps in MIR band and MODIS LST.}
+\label{fig:diff_emi_mir1}
+\end{figure}
 
 %-----------------------------------
 %	SUBSECTION 5

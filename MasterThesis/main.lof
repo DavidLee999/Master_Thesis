@@ -45,5 +45,10 @@
 \contentsline {figure}{\numberline {4.16}{\ignorespaces Transferability test: temperature differences between TET-1 surface temperature maps and MODIS SST.\relax }}{30}{figure.caption.75}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MIR band}}}{30}{figure.caption.75}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {TIR band}}}{30}{figure.caption.75}
+\contentsline {figure}{\numberline {4.17}{\ignorespaces The effect of different emissivities on the surface temperature maps from MITIP.\relax }}{31}{figure.caption.79}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Temperature (Libya-1) with different emissivities}}}{31}{figure.caption.79}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Temperature differences (Libya-1) with different emissivities}}}{31}{figure.caption.79}
+\contentsline {figure}{\numberline {4.18}{\ignorespaces Temperature differences (Lybia-1) between the surface temperature maps in TIR band and MODIS LST.\relax }}{32}{figure.caption.82}
+\contentsline {figure}{\numberline {4.19}{\ignorespaces Temperature differences (Lybia-1) between the surface temperature maps in MIR band and MODIS LST.\relax }}{33}{figure.caption.83}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
