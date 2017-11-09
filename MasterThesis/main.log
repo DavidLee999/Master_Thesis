@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.11.1)  8 NOV 2017 13:48
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.11.1)  9 NOV 2017 11:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2246,11 +2246,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 281--282
  []
 
 File: Figures/diff_emi_mir1.png Graphic file (type QTm)
-<use  "Figures/diff_emi_mir1.png" >) [32] [33]
+<use  "Figures/diff_emi_mir1.png" >
+Underfull \hbox (badness 10000) in paragraph at lines 290--291
+
+ []
+
+File: Figures/diff_emi_mir2.png Graphic file (type QTm)
+<use  "Figures/diff_emi_mir2.png" >
+File: Figures/diff_emi_tir2.png Graphic file (type QTm)
+ <use  "Figures/diff_emi_tir2.png" >
+Underfull \hbox (badness 10000) in paragraph at lines 305--306
+
+ []
+
+File: Figures/Libya-1.png Graphic file (type QTm)
+<use  "Figures/Libya-1.png" >) [32] [33] [34] [35]
 \openout2 = `Chapters/Chapter5.aux'.
 
  (./Chapters/Chapter5.tex
-[34
+[36
 
 
 
@@ -2258,10 +2272,10 @@ File: Figures/diff_emi_mir1.png Graphic file (type QTm)
 Chapter 5.
 )
 1: section
-[35]
+[37]
 \openout2 = `Chapters/Chapter6.aux'.
 
- (./Chapters/Chapter6.tex [36
+ (./Chapters/Chapter6.tex [38
 
 
 
@@ -2269,7 +2283,7 @@ Chapter 5.
 Chapter 6.
 )
 1: section
-[37] [38
+[39] [40
 
 
 ]
@@ -2291,7 +2305,7 @@ y re-trieval from satel-lite data^^Q.
  []
 
 1: section
-[39]
+[41]
 Overfull \hbox (7.3944pt too wide) in paragraph at lines 196--196
 [][]\T1/ppl/m/n/12 Moritz, Max A. et al. (2014). ^^P  Learn-ing to co-ex-ist wi
 th wild-fire^^Q. In: \T1/ppl/m/it/12 Na-ture \T1/ppl/m/n/12 515.7525,
@@ -2308,7 +2322,7 @@ ng ASTER, ETM and BIRD satel-
 Missing character: There is no – in font pplr8t!
 Missing character: There is no μ in font pplr8t!
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 199.
-[40]
+[42]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 199.
  (./main.aux (./Chapters/Chapter1.aux) (./Chapters/Chapter2.aux)
 (./Chapters/Chapter3.aux) (./Chapters/Chapter4.aux) (./Chapters/Chapter5.aux)
@@ -2324,12 +2338,12 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 33146 strings out of 493005
- 668670 string characters out of 6134596
- 905428 words of memory out of 5000000
- 36728 multiletter control sequences out of 15000+600000
+ 33158 strings out of 493005
+ 668911 string characters out of 6134596
+ 905909 words of memory out of 5000000
+ 36737 multiletter control sequences out of 15000+600000
  33037 words of font info for 77 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  57i,20n,78p,10377b,6097s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (52 pages).
+Output written on main.pdf (54 pages).
