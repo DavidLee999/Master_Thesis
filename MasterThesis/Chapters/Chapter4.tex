@@ -163,7 +163,7 @@ Before doing the comparison betwen MODIS SST and MITIP surface temperature produ
 \label{fig:rect_all_sc_all}
 \end{figure}
 
-\noindent Afterwards, in order to find the best scale factors for TET-1 MIR and TIR band imageries respectively, a time-serise analysis is performed. The results are shown in Figure \ref{fig:etna_sc_mir_tir}. The Figure \ref{fig:etna_bsc_tem} shows the best scale factor for each Etna scenes (the red solid line) and its corresponding temperature differences (the blue dashed line), which is also the minimal temperature differences. The ideal scale factor will be a constant over time, meaning constant scale factors can be applied to TET-1 MIR and TIR band imageries respectively, or it should be a periodic function of time. However, because of the unstable performance of the sensor, the influence of the space environment the weather condition and many other reasons, the scale factors of both TET-1 MIR and TIR band imageries acts as a function of time. But it is still clear that for the TET-1 TIR band imagery, the scale factor 1.05 achieves the best performance that the temperature differences resulted from it is most close to zero. The Figure \ref{fig:etna_bsc_tir} also proves that showing that most of the TET-1 TIR band imageries has the best scale factor 1.05.\\
+\noindent Afterwards, in order to find the best scale factors for TET-1 MIR and TIR band imageries respectively, a time-serise analysis is performed. The results are shown in Figure \ref{fig:etna_sc_mir_tir}. The Figure \ref{fig:etna_bsc_tem} shows the best scale factor for each Etna scenes (the red solid line) and its corresponding temperature differences (the blue dashed line), which is also the minimal temperature differences. The ideal scale factor will be a constant over time, meaning constant scale factors can be applied to TET-1 MIR and TIR band imageries respectively, or it should be a periodic function of time. However, because of the unstable performance of the sensors, the influence of the space environment the weather condition and many other reasons, the temperature differences' behaviors of both TET-1 MIR and TIR band imageries are actually random. But it is still clear that for the TET-1 TIR band imagery, the scale factor 1.05 achieves the best performance that the temperature differences resulted from it is most close to zero. The Figure \ref{fig:etna_bsc_tir} also proves that showing that most of the TET-1 TIR band imageries has the best scale factor 1.05.\\
 
 \noindent The situation for the TET-1 MIR band imagery is a bit complicated because the scale factor 1.10 and 1.15 have similar performances. Here scale factor 1.15 are selected artificially because of two points. On one hand, several scenes requires a scale factor higher than 1.15, namely 1.20. On the other hand, as we will present later, scale factor 1.15 shows a better transferability and performs well for scenes of other sites.\\
 
@@ -176,7 +176,7 @@ Before doing the comparison betwen MODIS SST and MITIP surface temperature produ
 \subfigure[TIR band]{
 \label{fig:etna_sc_tir}
 \includegraphics[width = 0.8\linewidth]{Etna_scf_tir.png}}
-\caption{Temperature differences between TET-1 surface temperature maps and MODIS SST.}
+\caption{Temperature differences between TET-1 surface temperature maps and MODIS SST (Etna).}
 \label{fig:etna_sc_mir_tir}
 \end{figure}
 
@@ -189,7 +189,7 @@ Before doing the comparison betwen MODIS SST and MITIP surface temperature produ
 \subfigure[TIR band]{
 \label{fig:etna_bsc_tir}
 \includegraphics[width = 0.8\linewidth]{Etna_bsc&tem_tir.png}}
-\caption{The best scale factors for each Etna scenes and its corresponding temperature differences. The red solid line is the best scale factor for each Etna scene. The blue dashed line is the minimal temperature differnces resulted from that scale factor.}
+\caption{The best scale factors for each Etna scenes and its corresponding temperature differences. The red solid line is the best scale factor for each Etna scene. The blue dashed line is the minimal temperature differences resulted from that scale factor.}
 \label{fig:etna_bsc_tem}
 \end{figure}
 
@@ -204,7 +204,7 @@ Before doing the comparison betwen MODIS SST and MITIP surface temperature produ
 \subfigure[TIR band]{
 \label{fig:etna_bsc&temComp_tir}
 \includegraphics[width = 0.8\linewidth]{Etna_bsc&temCom_tir.png}}
-\caption{The minimal temperature differences and the temperature differences resulted from scale factor 1.15. The red solid line is the minimal temperature differences for each Etna scene. The blue dashed line is the temperature differences resulted from the selected scale factors for MIR and TIR band imageries, scale factor 1.15 (left) and scale factor 1.05 (right), respectively.}
+\caption{The minimal temperature differences and the temperature differences resulted from scale factor 1.15 and scale factor 1.05. The red solid line is the minimal temperature differences for each Etna scene. The blue dashed line is the temperature differences resulted from the selected scale factors for MIR and TIR band imageries, scale factor 1.15 (upper) and scale factor 1.05 (lower), respectively.}
 \label{fig:etna_bsc&temComp}
 \end{figure}
 
@@ -217,7 +217,6 @@ Before doing the comparison betwen MODIS SST and MITIP surface temperature produ
 %-----------------------------------
 %	SUBSECTION 3
 %-----------------------------------
-
 \subsection{transferability test (SST)}
 The best scale factors for the TET-1 MIR and TIR band imageries are selected as 1.15 and 1.05 respectively in the previous section. But they are selected based on TET-1 imageries of one site only. Before applying them to othter imageries, their transferability should be tested to see whether the scale factors got from Etna scenes are suitable for other sites as well. Consequently, three other scenes of Etna, one scene of Portugal and two scenes of Demmin are used as test scenes to validate the chosen scale factors.\\
 
@@ -234,7 +233,7 @@ The best scale factors for the TET-1 MIR and TIR band imageries are selected as 
 \label{fig:portugal&demmin}
 \end{figure}
 
-\noindent Besides the chosen scale factor 1.15 for MIR band imagery and 1.05 for TIR band imagery, for the MIR band imagery, the performances of scale factor 1.10 and 1.20 are also presented as comparison and for TIR band imagery, the performances of scale factor 1.00 and 1.10 are displayed as well for the same purpose. As shown in Figure \ref{fig:SST_test}, scale factor 1.15 for MIR band imagery and scale factor 1.05 for TIR band imagery are not always optimal scale factor for each scene, however, they demonstrate better performances than the other scale factors over time and sites.\\
+\noindent Besides the chosen scale factor 1.15 for MIR band imagery and 1.05 for TIR band imagery, the performances of scale factor 1.10 and 1.20 are also presented for the MIR band imagery as comparison and for TIR band imagery, the performances of scale factor 1.00 and 1.10 are displayed as well for the same purpose. As shown in Figure \ref{fig:SST_test}, scale factor 1.15 for MIR band imagery and scale factor 1.05 for TIR band imagery are not always optimal scale factors for each scene, however, they demonstrate better performances than the other scale factors over time and sites.\\
 
 \begin{figure}[!htbp]
 \centering
@@ -298,7 +297,7 @@ The similar comparison is done between the temperature results from MITIP and MO
 \subfigure[TIR band]{
 \label{fig:diff_emi_tir2}
 \includegraphics[width = 0.8\linewidth]{diff_emi_tir2.png}}
-\caption{TTemperature differences (Lybia-1) between the surface temperature maps from MITIP with certain scale factor and MODIS LST.}
+\caption{Temperature differences (Lybia-1) between the surface temperature maps from MITIP with certain scale factor and MODIS LST.}
 \label{fig:diff_emi_Lybia2}
 \end{figure}
 
@@ -307,22 +306,88 @@ The similar comparison is done between the temperature results from MITIP and MO
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width = 0.5\textwidth]{Libya-1.png}
-\caption{The example figures of Libya-1. The red rectangles represent the selected sub-areas.}
+\caption{The example figure of Libya-1. The red rectangles represent the selected sub-areas.}
 \label{fig:Libya1_sub_areas}
 \end{figure}
+
+\begin{figure}[!htbp]
+\centering
+\subfigure[MIR band]{
+\label{fig:Libya-1_sc_mir}
+\includegraphics[width = 0.8\linewidth]{Lybia-1_scf_mir.png}}
+\hspace{0.5in}
+\subfigure[TIR band]{
+\label{fig:Libya-1_sc_tir}
+\includegraphics[width = 0.8\linewidth]{Lybia-1_scf_test_tir.png}}
+\caption{Tempereature differences between TET-1 surface temperature maps and MODIS LST (Libya-1).}
+\label{fig:Libya-1_sc_mir_tir}
+\end{figure}
+
+\noindent As Figure \ref{fig:Libya-1_sc_mir_tir} shows, the temperature differences between TET-1 surface temperature maps and MODIS LST with different scale factors act randomly as well. For the TIR band imageries, again, the scale factor 1.05 achieves the best performances, which can also be seen in Figure \ref{fig:Libya-1_bsc_tir}. For the MIR band imageries, it is clear from the Figure \ref{fig:Libya-1_sc_mir} and Figure \ref{fig:Libya-1_bsc_mir}, much more MIR band imageries require a higher scale factor compared with the situation of doing comparison withe the MODIS SST. This is also why the scale factor 1.15 is selected as the optimal scale factor for the MIR band imageries. On one hand, it can achieve a good results for these scenes require a higher scale factor. On the other hand, it will not over calibrate these scenes require a lower scale factor. All in all, the scale factor 1.15 for the MIR band imageries perform best over all scenes of different times.\\
+
+\begin{figure}[!htbp]
+\centering
+\subfigure[MIR band]{
+\label{fig:Libya-1_bsc_mir}
+\includegraphics[width = 0.8\linewidth]{Lybia-1_bsc&tem_mir.png}}
+\hspace{0.5in}
+\subfigure[TIR band]{
+\label{fig:Libya-1_bsc_tir}
+\includegraphics[width = 0.8\linewidth]{Lybia-1_bsc&tem_tir.png}}
+\caption{The best scale factors for each Lybia-1 scenes and its corresponding temperature differences. The red solid line is the best scale factor for each Libya-1 scene. The blue dashed line is the minimal temperature differences resulted from that scale factor.}
+\label{fig:Libya-1_bsc_mir_tir}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+\subfigure[MIR band]{
+\label{fig:Lybia-1_bsc&temCom_mir}
+\includegraphics[width = 0.8\linewidth]{Lybia-1_bsc&temCom_mir.png}}
+\hspace{0.5in}
+\subfigure[TIR band]{
+\label{fig:Lybia-1_bsc&temCom_tir}
+\includegraphics[width = 0.8\linewidth]{Lybia-1_bsc&temCom_tir.png}}
+\caption{The minimal temperature differences and the temperature differences resulted from scale factor 1.15 and scale factor 1.05. The red solid line is the minimal temperature differences for each Etna scene. The blue dashed line is the temperature differences resulted from the selected scale factors for MIR and TIR band imageries, scale factor 1.15 (upper) and scale factor 1.05 (lower), respectively.}
+\label{fig:Lybia-1_bsc&temCom}
+\end{figure}
+
+\noindent As Figure \ref{fig:Lybia-1_bsc&temCom} shows, for the TET-1 MIR and TIR band imageries of the site Libya-1, the scale factor 1.15 and 1.05 are not the optimal scale factors. But the temperature differences they made are very close to the minimal temperature differences. What's more, the choices enable us to ignore the difference between water-dominated or land-dominated scenes because the optimal scale factors for the Libya-1 scenes are the same as the optimal scale factors for the Etna scenes. Of course, latter, the transferability of the scale factors selected from the Libya-1 scenes will be tested.\\
 
 %-----------------------------------
 %	SUBSECTION 5
 %-----------------------------------
 
 \subsection{transferability test (LST)}
+After the selection of the optimal scale factors, as what has been done after the comparisons with the MODIS SST, the transferability of  the chosen scale factors will be tested using several scenes of other sites. Here, scenes of Libya-2 are used as test scenes. Figure \ref{fig:Libya2_sub_areas} is an example scene of Libya-2.\\
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width = 0.5\textwidth]{Libya-2.png}
+\caption{The example figure of Libya-2. The red rectangles represent the selected sub-areas.}
+\label{fig:Libya2_sub_areas}
+\end{figure}
+
+\noindent Besides the chosen scale factor 1.15 for MIR band imagery and 1.05 for TIR band imagery, the performance of the scale factor 1.10 and 1.20 are also presented for the TET-1 MIR band imagery as comparison and for TIR band imagery, the performances of scale factor 1.00 and 1.10 are displayed as well for the same purpose. The results are presented in Figure \ref{fig:LST_test}. The situation is very similar with the situation of Section 4.1.3. scale factor 1.15 for MIR band imagery and 1.05 for TIR band imagery are not always optimal scale factors for every scenes., however, they demonstrate better performance than other scale factors over time.\\
+
+\begin{figure}[!htbp]
+\centering
+\subfigure[MIR band]{
+\label{fig:LST_test_mir}
+\includegraphics[width = 0.8\linewidth]{lls_test&cmp_mir.png}}
+\hspace{0.5in}
+\subfigure[TIR band]{
+\label{fig:LST_test_tir}
+\includegraphics[width = 0.8\linewidth]{lls_test&cmp_tir.png}}
+\caption{Transferability test: temperature differences between TET-1 surface temperature maps and MODIS LST.}
+\label{fig:LST_test}
+\end{figure}
 
 %----------------------------------------------------------------------------------------
 %	SECTION 2
 %----------------------------------------------------------------------------------------
 
 \section{Conclusion of the comparisons and calibrations}
-
+In this chapter, the MITIP method are tested using the Etna scenes and improved by adding two key words \emph{sc1} and \emph{sc2} to calibrate the TOA radiances of the TET-1 MIR and TIR band imagery respectively. After all of the comparisons and tests, the optimal scale factors for TET-1 MIR and TIR band imageries are 1.15 and 1.05 respectively.
 %-----------------------------------
 %	SUBSECTION 1
 %-----------------------------------
