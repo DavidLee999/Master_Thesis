@@ -29,12 +29,12 @@
 \contentsline {chapter}{\numberline {5}Analysis of high-temperature events}{43}{chapter.104}
 \contentsline {section}{\numberline {5.1}High-temperature events}{43}{section.105}
 \contentsline {subsection}{\numberline {5.1.1}Volcanoes}{43}{subsection.106}
-\contentsline {subsection}{\numberline {5.1.2}Fire events}{46}{subsection.114}
-\contentsline {section}{\numberline {5.2}Comparison with the results of the Zhukov's algorithm}{46}{section.115}
-\contentsline {subsection}{\numberline {5.2.1}Brief description of Zhukov's algorithm}{46}{subsection.116}
-\contentsline {subsection}{\numberline {5.2.2}From pixel-based to cluster-based analysis}{46}{subsection.117}
-\contentsline {subsection}{\numberline {5.2.3}Comparision}{46}{subsection.118}
-\contentsline {chapter}{\numberline {6}Conclusion and outlook}{47}{chapter.119}
-\contentsline {section}{\numberline {6.1}Conclusion}{47}{section.120}
-\contentsline {section}{\numberline {6.2}Outlook}{47}{section.121}
-\contentsline {chapter}{Bibliography}{49}{chapter*.122}
+\contentsline {subsection}{\numberline {5.1.2}Fire events}{46}{subsection.128}
+\contentsline {section}{\numberline {5.2}Comparison with the results of the Zhukov's algorithm}{49}{section.136}
+\contentsline {subsection}{\numberline {5.2.1}Brief description of Zhukov's algorithm}{52}{subsection.137}
+\contentsline {subsection}{\numberline {5.2.2}From pixel-based to cluster-based analysis}{52}{subsection.138}
+\contentsline {subsection}{\numberline {5.2.3}Comparision}{52}{subsection.139}
+\contentsline {chapter}{\numberline {6}Conclusion and outlook}{57}{chapter.140}
+\contentsline {section}{\numberline {6.1}Conclusion}{57}{section.141}
+\contentsline {section}{\numberline {6.2}Outlook}{57}{section.142}
+\contentsline {chapter}{Bibliography}{59}{chapter*.143}
