@@ -10,7 +10,7 @@
 \contentsline {chapter}{\numberline {2}Theoretical background of thermal infrared remote sensing}{5}{chapter.13}
 \contentsline {section}{\numberline {2.1}Principles of thermal infrared remote sensing}{5}{section.14}
 \contentsline {subsection}{\numberline {2.1.1}The thermal infrared domain and atmospheric windows}{6}{subsection.16}
-\contentsline {subsection}{\numberline {2.1.2}The Planck's law and Stefan-Boltzmann law}{6}{subsection.18}
+\contentsline {subsection}{\numberline {2.1.2}The Planck's law and Stefan-Boltzmann law}{7}{subsection.18}
 \contentsline {section}{\numberline {2.2}A dual-channel method for the identification of subresolution high temperature sources}{8}{section.23}
 \contentsline {chapter}{\numberline {3}The MITIP, an atmospheric correction and image processing method}{9}{chapter.25}
 \contentsline {section}{\numberline {3.1}Data preparation and pre-processing}{9}{section.26}
@@ -34,7 +34,7 @@
 \contentsline {subsection}{\numberline {5.2.1}Brief description of Zhukov's algorithm}{49}{subsection.137}
 \contentsline {subsection}{\numberline {5.2.2}From pixel-based to cluster-based analysis}{52}{subsection.138}
 \contentsline {subsection}{\numberline {5.2.3}Comparison}{52}{subsection.139}
-\contentsline {chapter}{\numberline {6}Conclusion and outlook}{57}{chapter.142}
-\contentsline {section}{\numberline {6.1}Conclusion}{57}{section.143}
-\contentsline {section}{\numberline {6.2}Outlook}{57}{section.144}
-\contentsline {chapter}{Bibliography}{59}{chapter*.145}
+\contentsline {chapter}{\numberline {6}Conclusion and outlook}{63}{chapter.149}
+\contentsline {section}{\numberline {6.1}Conclusion}{63}{section.150}
+\contentsline {section}{\numberline {6.2}Outlook}{63}{section.151}
+\contentsline {chapter}{Bibliography}{65}{chapter*.152}
