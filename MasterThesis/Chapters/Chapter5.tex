@@ -174,28 +174,48 @@ Besides volcanoes, wild fires are another kind of high-temperature events need t
 \section{Comparison with the results of the Zhukov's algorithm}
 In this section, the HTE monitoring products of MITIP are compared with the results of Zhukov's algorithm, which used to process the TET-1 imagery originally.\\
 
-\noindent The Zhukov's algorithm carries out a bundle of tests to filter out clouds, warm soils and fire scars etc first and then performs fire pixel detection and quantification. It uses the dual channel method stated in Chapter 2 to determine temperature in sub-pixel resolution as well. However, the Zhukov's algorithm detects and quantifies the hot area by means of per cluster instead of per pixel as MITIP method dose. After detection, the Zhukov's algorithm aggregates hot pixels which are neighbors to form a hot cluster and the temperature of this cluster and its area etc are estimated.\\
-
-\noindent But the MITIP method performs a pixel-based analysis. Consequently, in order to compare the results of them, a procedure is developed to shift the MITIP's original pixel-based results to a cluster-based results. The input is the effective target temperature map, which is converted to vector file afterwards. Then each polygon features in this vector file is extracted and converted to a mask file. The mask file is used to extract AOI in the effective target temperature map and doing zonal statistics of the AOI. The final output is the cluster's temperature and size.\\
-
-
 %-----------------------------------
 %	SUBSECTION 1
 %-----------------------------------
 
 \subsection{Brief description of Zhukov's algorithm}
+Unlike other hot spot detection algorithm, the Zhukov's algorithm carries out a bundle of tests to filter out clouds, warm surfaces and sun glints etc first and then performs fire pixel detection and quantification. It uses the dual channel method stated in Chapter 2 to determine effective fire temperature in sub-pixel resolution as well. However, the Zhukov's algorithm detects and quantifies the hot area by means of per cluster instead of per pixel as MITIP method dose. After the detection of hot pixels, the Zhukov's algorithm aggregates hot pixels which are adjacent to each other to form a hot cluster and the temperature of this cluster and its area etc are estimated.\\
 
 %-----------------------------------
 %	SUBSECTION 2
 %-----------------------------------
 
 \subsection{From pixel-based to cluster-based analysis}
+In contrast to Zhukov's algorithm, the MITIP method performs a pixel-based analysis. Consequently, in order to compare the results of the MITIP method and Zhukov's algorithm, a procedure is developed to shift the MITIP's original pixel-based results to a cluster-based results because it is much more difficult to derive each pixel's temperature from the characteristics of the whole cluster. \\
+
+\noindent The procedure is described as follows. The input is the effective target temperature map, which is converted to vector file afterwards. The connected pixels will then form a polygon feature with which a cluster will come into being. Then each polygon feature in the vector file is extracted and converted to  raster file acts as a mask file. The mask file is used to extract AOI in the effective target temperature map and zonal statistics is carried out over the AOI. The final output is the cluster's temperature and size.\\
 
 %-----------------------------------
 %	SUBSECTION 3
 %-----------------------------------
 
-\subsection{Comparision}
+\subsection{Comparison}
+After converting MITIP's pixel-based results to cluster-based results, the comparison between MITIP and Zhukov's algorithm are able to carry out. Similar with what has be done in previous section, the comparison is done over small volcanoes, large scale lava and wild fires.\\
+
+Firstly, the scenes of Etna in date 2014.07.21 has been processed by these two method and shown in Figure \ref{fig:Etna_comp}. Blue line is the boundary of the cluster detected by Zhukov's algorithm. Green line is the boundary of the cluster produced by MITIP. First of all, due to the reason of resampling, there are some shifts between the locations of detected cluster of MITIP and Zhukov's algorithm. Second, because the MITIP is a pixel-based method, due to the numerical reasons, some pixels will fail during the determination of effective target temperatures. This is the reason why inside the cluster derived from MITIP surface temperature map, there are several missing pixels. Besides these two points, we can see that the location of these two clusters are almost overlapped and the size of them are almost identical as well.\\
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.8\linewidth]{Etna_2014.07.21.png}
+\caption{Etna 2014.07.21. The background picture is the surface temperature map in MIR band from MITIP. Blue line is the boundary of the cluster detected by Zhukov's algorithm. Green line is the boundary of the cluster produced by MITIP.}
+\label{fig:Etna_comp}
+\end{figure}
+
+\begin{table}[!ht]
+\caption{Etna 2014.07.21. Comparison between MITIP and Zhukov's algorithm.}
+\centering
+\begin{tabular}{l|l|l}
+\hline\hline
+\textbf{Method} & \textbf{Temperature [K]} & \textbf{cluster size} \\
+\hline\hline
+\end{tabular}
+\label{Etna_comp}
+\end{table}
 
 %----------------------------------------------------------------------------------------
 %	SECTION 3

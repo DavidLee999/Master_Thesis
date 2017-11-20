@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.11.1)  18 NOV 2017 17:30
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.11.1)  19 NOV 2017 14:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1468,19 +1468,7 @@ File: english.lbx 2016/12/05 v3.7 biblatex localization (PK/JW/AB)
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 
-(./main.aux (./Chapters/Chapter1.aux) (./Chapters/Chapter2.aux
-
-LaTeX Warning: Label `eq5' multiply defined.
-
-) (./Chapters/Chapter3.aux) (./Chapters/Chapter4.aux
-
-LaTeX Warning: Label `eq1' multiply defined.
-
-) (./Chapters/Chapter5.aux
-
-LaTeX Warning: Label `fig:Bar_HTE' multiply defined.
-
-) (./Chapters/Chapter6.aux))
+No file main.aux.
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 71.
@@ -1502,7 +1490,6 @@ LaTeX Font Info:    ... okay on input line 71.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 71.
 LaTeX Font Info:    ... okay on input line 71.
 LaTeX Font Info:    Try loading font information for T1+ppl on input line 71.
-
 (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/t1ppl.fd
 File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
 )
@@ -1617,14 +1604,15 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 71.
 LaTeX Info: Redefining \pageref on input line 71.
 LaTeX Info: Redefining \nameref on input line 71.
-
-(./main.out) (./main.out)
 \@outlinefile=\write5
 \openout5 = `main.out'.
 
+
+
+Package hyperref Warning: Rerun to get /PageLabels entry.
+
 \c__siunitx_mathsf_int=\count377
 LaTeX Font Info:    Try loading font information for U+msa on input line 71.
-
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
@@ -1711,56 +1699,32 @@ LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <12> not available
 ]
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <24.88> not available
 (Font)              Font shape `T1/ppl/b/n' tried instead on input line 155.
- (./main.toc
-1: section
-[5])
 \tf@toc=\write6
 \openout6 = `main.toc'.
 
- [6] (./main.lof
-Overfull \hbox (13.95168pt too wide) in paragraph at lines 8--8
- [][] [][][]\T1/ppl/m/n/12 Emissivity spec-tra for soils in the ASTER spec-tral
- emis-siv-ity database. 
- []
-
-
-Overfull \hbox (0.32063pt too wide) in paragraph at lines 16--16
- [][] [][][]\T1/ppl/m/n/12 Differences of tem-per-a-tures re-sulted from dif-fe
-r-ent emis-siv-i-ties(Etna)[][] [][]  
- []
 
 1: section
-[7
+[5] [6
 
 ]
-Overfull \hbox (2.67296pt too wide) in paragraph at lines 57--57
- [][] [][][]\T1/ppl/m/n/12 Tempereature dif-fer-ences be-tween TET-1 sur-face t
-em-per-a-ture maps 
- []
-
-[8])
 \tf@lof=\write7
 \openout7 = `main.lof'.
 
- [9] [10
 
-] (./main.lot
-Overfull \hbox (1.38853pt too wide) in paragraph at lines 5--5
- [][] [][][]\T1/ppl/m/n/12 Main Fire-BIRD cam-era pa-ram-e-ters (Al-ti-tude 510
-km) (Frauen-berger 
- []
+1: section
+[7] [8
 
-)
+]
 \tf@lot=\write8
 \openout8 = `main.lot'.
 
 
 1: section
-[11] [12
+[9] [10
 
 ]
 1: section
-[13] [14
+[11] [12
 
 ]
 1: section
@@ -1867,6 +1831,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--8
  []
 
 
+LaTeX Warning: Reference `eq1' on page 5 undefined on input line 14.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 14--15
 
  []
@@ -1914,6 +1881,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 56--63
  []
 
 
+LaTeX Warning: Reference `eq2' on page 7 undefined on input line 64.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 64--65
 
  []
@@ -1927,6 +1897,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 70--71
 Underfull \hbox (badness 10000) in paragraph at lines 76--79
 
  []
+
+
+LaTeX Warning: Reference `eq4' on page 7 undefined on input line 80.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 80--81
@@ -1963,6 +1936,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 97--98
 Underfull \hbox (badness 10000) in paragraph at lines 106--107
 
  []
+
+
+LaTeX Warning: Reference `eq5' on page 8 undefined on input line 108.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 108--109
@@ -2031,9 +2007,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 61--72
  []
 
 [10]
+
+LaTeX Warning: Reference `eq301' on page 11 undefined on input line 79.
+
+
+LaTeX Warning: Reference `eq303' on page 11 undefined on input line 85.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 91--93
 
  []
+
+
+LaTeX Warning: Reference `fig:emi_soil' on page 11 undefined on input line 94.
+
+
+LaTeX Warning: Reference `fig:emi_vegetation' on page 11 undefined on input lin
+e 94.
+
+
+LaTeX Warning: Reference `fig:emi_water' on page 11 undefined on input line 94.
+
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 94--95
@@ -2052,6 +2046,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 116--117
  []
 
 [11] [12]
+
+LaTeX Warning: Reference `eq305' on page 13 undefined on input line 118.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 118--119
 
  []
@@ -2091,6 +2089,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 20--21
  []
 
 
+LaTeX Warning: Reference `fig:SST' on page 15 undefined on input line 22.
+
+
+LaTeX Warning: Reference `fig:selectedArea' on page 15 undefined on input line 
+22.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 22--23
 
  []
@@ -2113,6 +2118,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 54--55
 
 1: section
 [15] [16]
+
+LaTeX Warning: Reference `fig:tem_diff_emi1' on page 17 undefined on input line
+ 56.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 56--57
 
  []
@@ -2121,9 +2131,17 @@ File: Figures/diff_emi1.png Graphic file (type QTm)
 <use  "Figures/diff_emi1.png" >
 File: Figures/diff_emi2.png Graphic file (type QTm)
  <use  "Figures/diff_emi2.png" >
+
+LaTeX Warning: Reference `fig:tem_diff_emi2' on page 17 undefined on input line
+ 70.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 70--71
 
  []
+
+
+LaTeX Warning: Reference `fig:tem_com' on page 17 undefined on input line 72.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 72--73
@@ -2136,6 +2154,10 @@ File: Figures/tem_com.png Graphic file (type QTm)
 Underfull \hbox (badness 10000) in paragraph at lines 80--81
 
  []
+
+
+LaTeX Warning: Reference `fig:hist_rect_all' on page 19 undefined on input line
+ 82.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 82--83
@@ -2165,6 +2187,18 @@ File: Figures/rect4_sc110.png Graphic file (type QTm)
 LaTeX Warning: Float too large for page by 36.36102pt on input line 126.
 
 
+LaTeX Warning: Reference `fig:hist_rect_all' on page 19 undefined on input line
+ 128.
+
+
+LaTeX Warning: Reference `fig:rect1_sc_all' on page 19 undefined on input line 
+128.
+
+
+LaTeX Warning: Reference `fig:rect4_sc_all' on page 19 undefined on input line 
+128.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 128--129
 
  []
@@ -2175,11 +2209,29 @@ File: Figures/rect1_sc_all.png Graphic file (type QTm)
 File: Figures/rect4_sc_all.png Graphic file (type QTm)
 
 <use  "Figures/rect4_sc_all.png" > [21]
+
+LaTeX Warning: Reference `fig:rect1_sc_all' on page 22 undefined on input line 
+144.
+
+
+LaTeX Warning: Reference `fig:rect4_sc_all' on page 22 undefined on input line 
+144.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 144--145
 
  []
 
 [22]
+
+LaTeX Warning: Reference `fig:hist_all_rect' on page 23 undefined on input line
+ 146.
+
+
+LaTeX Warning: Reference `fig:rect_all_sc_all' on page 23 undefined on input li
+ne 146.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 146--147
 
  []
@@ -2191,6 +2243,19 @@ File: Figures/rect_all_sc110.png Graphic file (type QTm)
 File: Figures/rect_all.png Graphic file (type QTm)
 
 <use  "Figures/rect_all.png" >
+
+LaTeX Warning: Reference `fig:etna_sc_mir_tir' on page 23 undefined on input li
+ne 168.
+
+
+LaTeX Warning: Reference `fig:etna_bsc_tem' on page 23 undefined on input line 
+168.
+
+
+LaTeX Warning: Reference `fig:etna_bsc_tir' on page 23 undefined on input line 
+168.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 168--169
 
  []
@@ -2209,6 +2274,11 @@ File: Figures/Etna_bsc&tem_mir.png Graphic file (type QTm)
 <use  "Figures/Etna_bsc&tem_mir.png" >
 File: Figures/Etna_bsc&tem_tir.png Graphic file (type QTm)
  <use  "Figures/Etna_bsc&tem_tir.png" >
+
+LaTeX Warning: Reference `fig:etna_bsc&temComp' on page 25 undefined on input l
+ine 198.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 198--199
 
  []
@@ -2226,6 +2296,11 @@ File: Figures/Portugal.png Graphic file (type QTm)
 <use  "Figures/Portugal.png" >
 File: Figures/Demmin.png Graphic file (type QTm)
  <use  "Figures/Demmin.png" >
+
+LaTeX Warning: Reference `fig:SST_test' on page 25 undefined on input line 238.
+
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 238--239
 
  []
@@ -2243,6 +2318,15 @@ File: Figures/diff_emi1_Lybia.png Graphic file (type QTm)
 <use  "Figures/diff_emi1_Lybia.png" >
 File: Figures/diff_emi2_Lybia.png Graphic file (type QTm)
  <use  "Figures/diff_emi2_Lybia.png" >
+
+LaTeX Warning: Reference `fig:diff_emi_Lybia' on page 25 undefined on input lin
+e 273.
+
+
+LaTeX Warning: Reference `fig:emi_Libya_2' on page 25 undefined on input line 2
+73.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 273--274
 
  []
@@ -2250,12 +2334,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 273--274
 [25] [26] [27] [28] [29] [30] [31]
 File: Figures/diff_emi_tir1.png Graphic file (type QTm)
  <use  "Figures/diff_emi_tir1.png" >
+
+LaTeX Warning: Reference `fig:diff_emi_tir1' on page 32 undefined on input line
+ 282.
+
+
+LaTeX Warning: Reference `fig:diff_emi_mir1' on page 32 undefined on input line
+ 282.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 282--283
 
  []
 
 File: Figures/diff_emi_mir1.png Graphic file (type QTm)
 <use  "Figures/diff_emi_mir1.png" >
+
+LaTeX Warning: Reference `fig:diff_emi_Lybia2' on page 32 undefined on input li
+ne 291.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 291--292
 
  []
@@ -2281,6 +2379,23 @@ File: Figures/Lybia-1_scf_mir.png Graphic file (type QTm)
 File: Figures/Lybia-1_scf_test_tir.png Graphic file (type QTm)
 
 <use  "Figures/Lybia-1_scf_test_tir.png" >
+
+LaTeX Warning: Reference `fig:Libya-1_sc_mir_tir' on page 32 undefined on input
+ line 328.
+
+
+LaTeX Warning: Reference `fig:Libya-1_bsc_tir' on page 32 undefined on input li
+ne 328.
+
+
+LaTeX Warning: Reference `fig:Libya-1_sc_mir' on page 32 undefined on input lin
+e 328.
+
+
+LaTeX Warning: Reference `fig:Libya-1_bsc_mir' on page 32 undefined on input li
+ne 328.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 328--329
 
  []
@@ -2297,9 +2412,18 @@ File: Figures/Lybia-1_bsc&temCom_mir.png Graphic file (type QTm)
 File: Figures/Lybia-1_bsc&temCom_tir.png Graphic file (type QTm)
 
 <use  "Figures/Lybia-1_bsc&temCom_tir.png" >
+
+LaTeX Warning: Reference `fig:Lybia-1_bsc&temCom' on page 33 undefined on input
+ line 356.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 356--357
 
  []
+
+
+LaTeX Warning: Reference `fig:Libya2_sub_areas' on page 33 undefined on input l
+ine 363.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 363--364
@@ -2308,6 +2432,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 363--364
 
 File: Figures/Libya-2.png Graphic file (type QTm)
 <use  "Figures/Libya-2.png" >
+
+LaTeX Warning: Reference `fig:LST_test' on page 33 undefined on input line 372.
+
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 372--373
 
  []
@@ -2352,6 +2481,17 @@ File: Figures/temp_map_etna_mir.png Graphic file (type QTm)
 File: Figures/temp_map_etna_tir.png Graphic file (type QTm)
 
 <use  "Figures/temp_map_etna_tir.png" >
+
+LaTeX Warning: Reference `fig:Etna_sur_tem' on page 43 undefined on input line 
+33.
+
+
+LaTeX Warning: Reference `fig:Etna_HTE' on page 43 undefined on input line 33.
+
+
+LaTeX Warning: Reference `fig:Etna_frp' on page 43 undefined on input line 33.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 33--34
 
  []
@@ -2364,6 +2504,11 @@ File: Figures/Effective_target_pixel_frac_etna.png Graphic file (type QTm)
 File: Figures/frp_etna.png Graphic file (type QTm)
 
 <use  "Figures/frp_etna.png" >
+
+LaTeX Warning: Reference `fig:Strom_sur_tem' on page 43 undefined on input line
+ 55.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 55--56
 
  []
@@ -2375,6 +2520,15 @@ File: Figures/strom_tem_mir.png Graphic file (type QTm)
 File: Figures/strom_tem_tir.png Graphic file (type QTm)
 
 <use  "Figures/strom_tem_tir.png" >
+
+LaTeX Warning: Reference `fig:Strom_HTE' on page 46 undefined on input line 70.
+
+
+
+LaTeX Warning: Reference `fig:Strom_frp' on page 46 undefined on input line 70.
+
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 70--71
 
  []
@@ -2387,6 +2541,11 @@ File: Figures/strom_eff_pixel_frac_strom.png Graphic file (type QTm)
 File: Figures/frp_strom.png Graphic file (type QTm)
 
 <use  "Figures/frp_strom.png" >
+
+LaTeX Warning: Reference `fig:Bar_sur_tem' on page 46 undefined on input line 9
+2.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 92--93
 
  []
@@ -2395,14 +2554,24 @@ File: Figures/Bar_tem_mir.png Graphic file (type QTm)
 <use  "Figures/Bar_tem_mir.png" >
 File: Figures/Bar_tem_tir.png Graphic file (type QTm)
  <use  "Figures/Bar_tem_tir.png" >
-File: Figures/Bar_eff_tem.png Graphic file (type QTm)
 
+LaTeX Warning: Reference `fig:Bar_HTE' on page 46 undefined on input line 107.
+
+
+LaTeX Warning: Reference `fig:Bar_frp' on page 46 undefined on input line 107.
+
+File: Figures/Bar_eff_tem.png Graphic file (type QTm)
 <use  "Figures/Bar_eff_tem.png" >
 File: Figures/Bar_eff_pixel_frac.png Graphic file (type QTm)
  <use  "Figures/Bar_eff_pixel_frac.png" >
 File: Figures/Bar_frp.png Graphic file (type QTm)
 
 <use  "Figures/Bar_frp.png" >
+
+LaTeX Warning: Reference `fig:Por_sur_tem' on page 46 undefined on input line 1
+33.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 133--134
 
  []
@@ -2414,6 +2583,9 @@ File: Figures/Por_tem_tir.png Graphic file (type QTm)
 [47] [48]
 
 LaTeX Warning: Reference `fig:Por_HTE' on page 49 undefined on input line 148.
+
+
+LaTeX Warning: Reference `fig:Por_frp' on page 49 undefined on input line 148.
 
 File: Figures/Por_eff_tem.png Graphic file (type QTm)
 <use  "Figures/Por_eff_tem.png" >
@@ -2427,27 +2599,49 @@ Underfull \hbox (badness 10000) in paragraph at lines 175--176
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 177--178
+Underfull \hbox (badness 10000) in paragraph at lines 182--183
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 179--180
+Underfull \hbox (badness 10000) in paragraph at lines 189--190
 
  []
 
-[49] [50] [51]) [52] [53] [54] [55]
+[49] [50] [51]
+Underfull \hbox (badness 10000) in paragraph at lines 191--192
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 198--199
+
+ []
+
+
+LaTeX Warning: Reference `fig:Etna_comp' on page 52 undefined on input line 200
+.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 200--201
+
+ []
+
+[52] [53] [54]
+File: Figures/Etna_2014.07.21.png Graphic file (type QTm)
+ <use  "Figures/Etna_2014.07.21.png" >) [55] [56]
 \openout2 = `Chapters/Chapter6.aux'.
 
- (./Chapters/Chapter6.tex [56
 
-
-
-]
+(./Chapters/Chapter6.tex
 Chapter 6.
 )
 1: section
-[57] [58
+[57
+
+
+
+] [58
 
 
 ]
@@ -2498,19 +2692,24 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 199.
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package biblatex Warning: Please (re)run BibTeX on the file(s):
+(biblatex)                main
+(biblatex)                and rerun LaTeX afterwards.
 
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 33283 strings out of 493005
- 671623 string characters out of 6134596
- 910346 words of memory out of 5000000
- 36833 multiletter control sequences out of 15000+600000
+ 33183 strings out of 493005
+ 670367 string characters out of 6134596
+ 897514 words of memory out of 5000000
+ 36755 multiletter control sequences out of 15000+600000
  33037 words of font info for 77 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 58i,20n,82p,10377b,6097s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 58i,20n,82p,10377b,4973s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (74 pages).
+Output written on main.pdf (72 pages).
