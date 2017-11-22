@@ -32,9 +32,9 @@
 \contentsline {subsection}{\numberline {5.1.2}Fire events}{46}{subsection.128}
 \contentsline {section}{\numberline {5.2}Comparison with the results of the Zhukov's algorithm}{49}{section.136}
 \contentsline {subsection}{\numberline {5.2.1}Brief description of Zhukov's algorithm}{49}{subsection.137}
-\contentsline {subsection}{\numberline {5.2.2}From pixel-based to cluster-based analysis}{52}{subsection.138}
-\contentsline {subsection}{\numberline {5.2.3}Comparison}{52}{subsection.139}
-\contentsline {chapter}{\numberline {6}Conclusion and outlook}{63}{chapter.149}
-\contentsline {section}{\numberline {6.1}Conclusion}{63}{section.150}
-\contentsline {section}{\numberline {6.2}Outlook}{63}{section.151}
-\contentsline {chapter}{Bibliography}{65}{chapter*.152}
+\contentsline {subsection}{\numberline {5.2.2}From pixel-based to cluster-based analysis}{52}{subsection.139}
+\contentsline {subsection}{\numberline {5.2.3}Comparison}{57}{subsection.141}
+\contentsline {chapter}{\numberline {6}Conclusion and outlook}{65}{chapter.151}
+\contentsline {section}{\numberline {6.1}Conclusion}{65}{section.152}
+\contentsline {section}{\numberline {6.2}Outlook}{65}{section.153}
+\contentsline {chapter}{Bibliography}{67}{chapter*.154}
