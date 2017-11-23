@@ -2,7 +2,7 @@
 
 \label{Chapter5}
 
-In this chapter, the products of HTE monitoring from MITIP will presented firstly using several scenes worldwide which contains volcanoes, large scale lava flow and wild fires. In section 5.2, the HTE monitoring results of MITIP will be compared with the results of the Zhukov's algorithm, which is used to process the TET-1 imagery originally.\\
+In this chapter, the products of HTE monitoring from MITIP will presented firstly using scenes worldwide which contains volcanoes, large scale lava flow and wild fires. In section 5.2, the HTE monitoring results of MITIP will be compared with the results of the Zhukov's algorithm, which is used to process the TET-1 imagery originally.\\
 %----------------------------------------------------------------------------------------
 %	SECTION 1
 %----------------------------------------------------------------------------------------
@@ -30,7 +30,7 @@ First of all, the HTE monitoring products of Etna and Stromboli in the date 2016
 \label{fig:Etna_sur_tem}
 \end{figure}
 
-\noindent As Figure \ref{fig:Etna_sur_tem} shows, the surface temperatures of the lava are around 310 K to 340K in MIR band and 290K to 310K in TIR band. The effective target temperature in sub-pixel resolution and effective target pixel fraction as well as the FRP are shown in Figure \ref{fig:Etna_HTE} and Figure \ref{fig:Etna_frp}. We can see that no all hot pixels show in the surface temperature maps are solved for the effective target temperature and target pixel fraction due to numerical reasons. The hottest areas of the Etna is around 850 K. It can be notice that the higher the effective target temperature in one pixel, the lower the effective target pixel fraction of it. Because the pixel temperature and background temperature are pre-determined.\\
+\noindent As Figure \ref{fig:Etna_sur_tem} shows, the surface temperatures of the lava are around 310 K to 340K in MIR band and 290K to 310K in TIR band. The effective target temperature in sub-pixel resolution and effective target pixel fraction as well as the FRP are shown in Figure \ref{fig:Etna_HTE} and Figure \ref{fig:Etna_frp}. We can see that no all hot pixels shown in the surface temperature maps are solved for the effective target temperature and target pixel fraction due to numerical reasons. The hottest areas of the Etna is around 850 K. It can be notice that the higher the effective target temperature in one pixel, the lower the effective target pixel fraction of it. Because the pixel temperature and background temperature are pre-determined.\\
 
 \begin{figure}[!htbp]
 \centering
@@ -52,7 +52,7 @@ First of all, the HTE monitoring products of Etna and Stromboli in the date 2016
 \label{fig:Etna_frp}
 \end{figure}
 
-\noindent Stromboli island is one of the Aeolian island of Italy. The Stromboli volcano is one of the most active volcanoes on Earth. It has been nearly continuous eruption for about 2000 years. Since there is a small town in Stromboli island, the prediction and monitoring of the eruption of the Stromboli volcano is of great importance. The figure \ref{fig:Strom_sur_tem} shows the surface temperature maps of Stromboli in MIR and TIR band respectively of the date 2014.06.22. It can be notice that in Summer's evening, the temperature of the sea surface is higher than the temperature of the land surface.\\
+\noindent Stromboli island is one of the Aeolian island of Italy. The Stromboli volcano is one of the most active volcanoes on Earth. It has been nearly continuous erupted for about 2000 years. Since there is a small town in Stromboli island, the prediction and monitoring of the eruption of the Stromboli volcano is of great importance. The figure \ref{fig:Strom_sur_tem} shows the surface temperature maps of Stromboli in MIR and TIR band respectively of the date 2014.06.22. It can be notice that in evening, the temperature of the sea surface is higher than the temperature of the land surface.\\
 
 \begin{figure}
 \centering
@@ -104,7 +104,7 @@ First of all, the HTE monitoring products of Etna and Stromboli in the date 2016
 \label{fig:Bar_sur_tem}
 \end{figure}
 
-\noindent It is clear to see that the erupted lava occupied a large area and the temperature of it is between 400 K and 500 K in MIR band and 350 K to 450 K in TIR band. Figure \ref{fig:Bar_HTE} and Figure \ref{fig:Bar_frp} give the effective target temperature and effective target pixel fraction as well as FRP maps.\
+\noindent It is clear to see that the erupted lava occupied a large area and the temperature of it is between 400 K and 500 K in MIR band and 350 K to 450 K in TIR band. Figure \ref{fig:Bar_HTE} and Figure \ref{fig:Bar_frp} give the effective target temperature and effective target pixel fraction as well as FRP maps.\\
 
 \begin{figure}[!htbp]
 \centering
@@ -179,7 +179,7 @@ In this section, the HTE monitoring products of MITIP are compared with the resu
 %-----------------------------------
 
 \subsection{Brief description of Zhukov's algorithm}
-Unlike other hot spot detection algorithms, the Zhukov's algorithm carries out a bundle of tests to filter out clouds, warm surfaces and sun glints etc first and then performs fire pixel detection and quantification. It uses the dual channel method stated in Chapter 2 to determine effective fire temperature in sub-pixel resolution as well. However, the Zhukov's algorithm detects and quantifies the hot area by means of per cluster instead of per pixel as MITIP method dose. After the detection of hot pixels, the Zhukov's algorithm aggregates hot pixels which are adjacent to each other to form a hot cluster and the temperature of this cluster and its area etc are estimated.\\
+Unlike other hot spot detection algorithms, the Zhukov's algorithm carries out a bundle of tests to filter out clouds, warm surfaces and sun glints etc first and then performs fire pixel detection. It uses the dual channel method stated in Chapter 2 to determine effective fire temperature in sub-pixel resolution as well. However, the Zhukov's algorithm detects and quantifies the hot area by means of per cluster instead of per pixel as MITIP method dose. After the detection of hot pixels, the Zhukov's algorithm aggregates hot pixels which are adjacent to each other to form a hot cluster and the temperature of this cluster and its area etc are estimated.\\
 
 \begin{figure}[!htbp]
 \centering
@@ -197,7 +197,7 @@ Unlike other hot spot detection algorithms, the Zhukov's algorithm carries out a
 \subsection{From pixel-based to cluster-based analysis}
 In contrast to Zhukov's algorithm, the MITIP method performs a pixel-based analysis. Consequently, in order to compare the results of the MITIP method and Zhukov's algorithm, here a procedure is developed to shift the MITIP's original pixel-based results to a cluster-based results because it is much more difficult to derive each pixel's temperature from the characteristics of the whole cluster. \\
 
-\noindent The procedure is described as follows. The input is the effective target pixel fraction map and effective target temperature map which is converted to a vector file afterwards. The connected pixels will then form a polygon feature with which a cluster will come into being. Then every polygon feature in the vector file is extracted and converted to a raster file acts as a mask file. The mask file is used to extract AOI in the effective target temperature map and zonal statistics is carried out over the AOI. The final output is the cluster's temperature and size. The cluster's temperature is the weighted average of the effective target temperatures within this cluster and the weights are the corresponding effect target pixel fractions. The size of the cluster is denoted by the number of pixels. The Figure \ref{fig:P2C} shows the flow chart of the described procedure.\\
+\noindent The procedure is described as follows. The input is the effective target pixel fraction map and effective target temperature map which is converted to a vector file afterwards. The connected pixels will then form a polygon feature with which a cluster will come into being. Then every polygon feature in the vector file is extracted and converted to a raster file acts as a mask file. The mask file is used to extract AOI in the effective target temperature map and zonal statistics is carried out over the AOI. The final output is the cluster's temperature and size. The cluster's temperature is the weighted average of the effective target temperatures of pixels within this cluster and the weights are the corresponding effect target pixel fractions. The size of the cluster is denoted by the number of pixels. The Figure \ref{fig:P2C} shows the flow chart of the described procedure.\\
 
 \begin{figure}[!htbp]
 \centering
@@ -265,7 +265,7 @@ After converting MITIP's pixel-based results to cluster-based results, the compa
 \label{Strom_comp}
 \end{table}
 
-\noindent The Etna and Stromboli both only occupy a few numbers of pixels in the imageries. Following is the comparison results using scene of Bardarbunga in date 2014.09.14, in which the hot area occupies a large area as shown in Figure \ref{fig:Bar_comp}. It can be noticed that the detected cluster by Zhukov's algorithm, which includes a lot of additional no-hot pixels, is much larger than the cluster derived by MITIP, which describes the boundary of the cluster much precious as shown in Figure \ref{fig:Bar_comp}.\\
+\noindent The Etna and Stromboli both only occupy a few numbers of pixels in the imageries. Following is the comparison results using scene of Bardarbunga in date 2014.09.14, in which the hot area occupies a large area as shown in Figure \ref{fig:Bar_comp}. It can be noticed that the detected cluster by Zhukov's algorithm, which includes a lot of additional no-hot pixels, is much larger than the cluster derived by MITIP, which describes the boundary of the cluster much precisely as shown in Figure \ref{fig:Bar_comp}.\\
 
 \begin{figure}[!htbp]
 \centering
@@ -290,7 +290,7 @@ After converting MITIP's pixel-based results to cluster-based results, the compa
 \label{Bar_comp}
 \end{table}
 
-\noindent From Table \ref{Bar_comp} we can see that the cluster's temperature derived from MITIP is exceed the max temperature given by Zhukov's algorithm because the result of MITIP is concentrated in the hottest area while the cluster detected by Zhukov's algorithm includes too many normal-temperature pixels which resulted in the decrement of the cluster's temperature. The cluster size provided by Zhukov's algorithm is also much larger than the cluster size given by MITIP with around 450 pixels which is about 21.5\% of the cluster's size given by MITIP.\\
+\noindent From Table \ref{Bar_comp} we can see that the cluster's temperature derived from MITIP exceeds the max temperature given by Zhukov's algorithm because the result of MITIP is concentrated in the hottest area while the cluster detected by Zhukov's algorithm includes too many normal-temperature pixels which resulted in the decrement of the cluster's temperature. The cluster size provided by Zhukov's algorithm is also much larger than the cluster size given by MITIP with around 450 pixels which is about 21.5\% of the cluster's size given by MITIP.\\
 
 \noindent The HTE monitoring results about the wild fires are also compared. Figure \ref{fig:Chile_comp} shows the comparison result using the scene of Chile wild fires. The wild fires cover a large amount of areas and divide into several parts. Three large areas \emph{a}, \emph{b} and \emph{c1}, \emph{c2}  will be used in comparison which denoted in the Figure \ref{fig:Chile_comp} as well.
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.11.1)  21 NOV 2017 17:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.11.1)  23 NOV 2017 22:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -3161,6 +3161,10 @@ File: Figures/Bar_tem_tir.png Graphic file (type png)
 Package pdftex.def Info: Figures/Bar_tem_tir.png used on input line 102.
 (pdftex.def)             Requested size: 341.43439pt x 255.02325pt.
 
+Underfull \hbox (badness 10000) in paragraph at lines 107--108
+
+ []
+
 <Figures/Bar_eff_tem.png, id=920, 462.528pt x 345.4506pt>
 File: Figures/Bar_eff_tem.png Graphic file (type png)
 
@@ -3448,7 +3452,7 @@ xmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2017/texmf-dis
 t/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts
 /type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/
 urw/palatino/uplri8a.pfb>
-Output written on main.pdf (82 pages, 10568153 bytes).
+Output written on main.pdf (82 pages, 10568104 bytes).
 PDF statistics:
  1194 PDF objects out of 1200 (max. 8388607)
  935 compressed objects within 10 object streams
