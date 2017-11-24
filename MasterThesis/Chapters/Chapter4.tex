@@ -4,7 +4,7 @@
 
 %description
 %----------------------------------------------------------------------------------------
-In this chapter, to see whether the temperature products derived from MITIP is reliable or not, its results are compared with MODIS temperature products, namely MODIS Sea Surface Temperature (SST) and MODIS Land Surface Temperature (LST). Two test sites, Etna and Libya, are selected to do the comparisons because their imageries mainly covered by sea (Etna) and homogeneous landscape (Libya) respectively.\\
+In this chapter, to see whether the temperature products derived from MITIP are reliable or not, its results are compared with MODIS temperature products, namely MODIS Sea Surface Temperature (SST) and MODIS Land Surface Temperature (LST). Two test sites, Etna and Libya, are selected to do the comparisons because their imageries mainly covered by sea (Etna) and homogeneous landscape (Libya) respectively.\\
 
 %----------------------------------------------------------------------------------------
 %	SECTION 1
@@ -51,7 +51,7 @@ with $m$ is the total number of the sub-areas. Here $m = 4$.
 %-----------------------------------
 
 \subsection{Results comparison with MODIS SST and calibration}
-Before doing the comparison between MODIS SST and MITIP surface temperature products, one problem needs to be solved is that the choice of emissivity map. The emissivity map derived from ASTER Global Emissivity Database is consisted of 5 bands and there are two bands, namely band 11 with wavelength 8.6 $\mu$m and band 12 with wavelength 9.1 $\mu$m fall in TET-1 imagery's TIR band with spectral range 8.5 $\mu$m to 9.3 $\mu$m \parencite{Reference306}. So there comes a problem that which band of the emissivity maps should be used. This problem will be considered under different circumstances.\\
+Before doing the comparison between MODIS SST and MITIP surface temperature products, one problem needed to be solved is the choice of emissivity map. The emissivity map derived from ASTER Global Emissivity Database consists of 5 bands and there are two bands, namely band 11 with wavelength 8.6 $\mu$m and band 12 with wavelength 9.1 $\mu$m fall in TET-1 imagery's TIR band with spectral range 8.5 $\mu$m to 9.3 $\mu$m \parencite{Reference306}. So there comes a problem that which band of the emissivity maps should be used. This problem will be considered under different circumstances.\\
 
 \noindent Since the emissivities of water body in these two bands are very close, 0.984  and 0.985 respectively, the effects of the different emissivities can be neglected when the results from MITIP are compared with MODIS SST as shown Figure \ref{fig:tem_diff_emi1}.\\
 
@@ -67,9 +67,9 @@ Before doing the comparison between MODIS SST and MITIP surface temperature prod
 \label{fig:tem_diff_emi2}
 \end{figure}
 
-\noindent From Figure \ref{fig:tem_diff_emi2} we can see that the temperature differences resulted from different emissivities in MIR band imagries are within the range (0.010K, 0.018K). The temperature differences resulted from different emissivities in TIR band imagries are within the range (0.032K, 0.040K). Both of them are so small that can be neglected in the context of the area of interest (AOI) is water body. Here the emissivity map in band 8.6 $\mu$m is used.\\
+\noindent From Figure \ref{fig:tem_diff_emi2} we can see that the temperature differences resulted from different emissivities in MIR band imagries are within the range (0.010K, 0.018K). The temperature differences resulted from different emissivities in TIR band imagries are within the range (0.032K, 0.040K). Both of them are so small that can be neglected in the context of the area of interest (AOI) is water. Here the emissivity map in band 8.6 $\mu$m is used.\\
 
-\noindent Firstly, the surface temperature maps from MITIP are compare with MODIS SST according to the steps states in Section 4.1. The Figure \ref{fig:tem_com} shows that the surface temperatures derived by MITIP are lower than the MODIS SST on both the MIR band and TIR band. To adjust these differences, TOA radiances, which are the pixel values of the original TET-1 imageries, need to be calibrated.\\
+\noindent Firstly, the surface temperature maps from MITIP are compare with MODIS SST according to the steps states in Section 4.1. The Figure \ref{fig:tem_com} shows that the surface temperatures derived by MITIP are lower than those of the MODIS SST on both the MIR band and TIR band. To adjust these differences, TOA radiances, which are the pixel values of the original TET-1 imageries, need to be calibrated.\\
 
 \begin{figure}[!htbp]
 \centering\includegraphics[width = 0.8\textwidth]{tem_com.png}
@@ -77,7 +77,7 @@ Before doing the comparison between MODIS SST and MITIP surface temperature prod
 \label{fig:tem_com}
 \end{figure}
 
-\noindent As a result, the MITIP method adds two input keywords \emph{sc1} and \emph{sc2}, which stand for scale factor for the TET-1 MIR and TIR band imagries respectively, to calibrate the TOA radiances. Since the temperatures derived from MITIP are lower than the MODIS SST, the TOA radiances of the TET-1 imagriy should be increased. As a result, five scale factors, 1.00 which means original TOA radiances, 1.05 which means increasing the TOA radiances by 5\%, 1.10, 1.15 and 1.20, are selected to calibrate the TET-1 MIR and TIR band respectively.\\
+\noindent As a result, the MITIP method adds two input keywords \emph{sc1} and \emph{sc2}, which stand for scale factor for the TET-1 MIR and TIR band imageries respectively, to calibrate the TOA radiances. Since the temperatures derived from MITIP are lower than the MODIS SST, the TOA radiances of the TET-1 imagery should be increased. As a result, five scale factors, 1.00 which means original TOA radiances, 1.05 which means increasing the TOA radiances by 5\%, 1.10, 1.15 and 1.20, are selected to calibrate the TET-1 MIR and TIR band respectively.\\
 
 \noindent In order to see detailedly how the scale factor will affect the pixel values of the results of MITIP, histograms of sub-areas of TET-1 MIR band temperature map are investigated and compared with the histograms of the same areas of MODIS SST. The histograms of each sub-area with different scale factors are showed in Figure \ref{fig:hist_rect_all}. Here we use the Etna scene of the date 2014.06.22, which is the first scene we have for the Etna.\\
 
@@ -165,9 +165,9 @@ Before doing the comparison between MODIS SST and MITIP surface temperature prod
 \label{fig:rect_all_sc_all}
 \end{figure}
 
-\noindent Afterwards, in order to find the best scale factors for TET-1 MIR and TIR band imageries respectively, a time-serise analysis is performed. The results are shown in Figure \ref{fig:etna_sc_mir_tir}. The Figure \ref{fig:etna_bsc_tem} shows the best scale factor for each Etna scenes (the red solid line) and its corresponding temperature differences (the blue dashed line), which is also the minimal temperature differences. The ideal scale factor will be a constant over time, meaning constant scale factors can be applied to TET-1 MIR and TIR band imageries respectively, or it should be a periodic function of time. However, because of the unstable performance of the sensors, the influence of the space environment, the weather condition and so on, the temperature differences' behaviors of both TET-1 MIR and TIR band imageries are actually random. But it is still clear that for the TET-1 TIR band imagery, the scale factor 1.05 achieves the best performance that the temperature differences resulted from it are most close to zero. The Figure \ref{fig:etna_bsc_tir} also proves that showing that most of the TET-1 TIR band imageries has the best scale factor 1.05.\\
+\noindent Afterwards, in order to find the best scale factors for TET-1 MIR and TIR band imageries respectively, a time-serise analysis is performed. The results are shown in Figure \ref{fig:etna_sc_mir_tir}. The Figure \ref{fig:etna_bsc_tem} shows the best scale factor for each Etna scenes (the red solid line) and its corresponding temperature differences (the blue dashed line), which is also the minimal temperature differences. The ideal scale factor will be a constant over time, meaning constant scale factors can be applied to TET-1 MIR and TIR band imageries respectively, or it should be a periodic function of time. However, because of the unstable performance of the sensors, the influence of the space environment, the weather condition and so on, the temperature differences' behaviors of both TET-1 MIR and TIR band imageries are actually random. But it is still clear that for the TET-1 TIR band imagery, the scale factor 1.05 achieves the best performance that the temperature differences resulted from it are most close to zero. The Figure \ref{fig:etna_bsc_tir} also proves that, showing most of the TET-1 TIR band imageries has the best scale factor 1.05.\\
 
-\noindent The situation for the TET-1 MIR band imagery is a bit complicated because the scale factor 1.10 and 1.15 have similar performances. Here scale factor 1.15 are selected artificially because of two points. On one hand, several scenes requires a scale factor higher than 1.15, namely 1.20. On the other hand, as we will present later, scale factor 1.15 shows a better transferability and performs better for scenes of other sites.\\
+\noindent The situation for the TET-1 MIR band imagery is a bit complicated because the scale factor 1.10 and 1.15 have similar performances. Here scale factor 1.15 is selected artificially because of two points. On one hand, several scenes requires a scale factor higher than 1.15, namely 1.20. On the other hand, as we will present later, scale factor 1.15 shows a better transferability and performs better for scenes of other sites.\\
 
 \begin{figure}[!htbp]
 \centering
@@ -255,7 +255,7 @@ The best scale factors for the TET-1 MIR and TIR band imageries are selected as 
 %-----------------------------------
 
 \subsection{Results comparison with MODIS LST and calibration}
-The similar comparison is done between the temperature results from MITIP and MODIS LST over the scenes of the test site Libya-1. However, the emissivities of different land features vary a lot. So the problem that which band of the emissivity maps to be used matters. The temperature maps of MITIP resulted from different emissivity maps are presented as follows.\\
+The similar comparison is done between the temperature results from MITIP and MODIS LST over the scenes of the test site Libya-1. However, the emissivities of different land features vary a lot. So the problem that which band of the emissivity maps should be used matters. The temperature maps of MITIP resulted from different emissivity maps are presented as follows.\\
 
 \begin{figure}[!htbp]
 \centering
@@ -389,7 +389,7 @@ After the selection of the optimal scale factors, as what has been done after th
 %----------------------------------------------------------------------------------------
 
 \section{Conclusion of the comparisons and calibrations}
-In this chapter, the MITIP method are tested using the Etna scenes and improved by adding two key words \emph{sc1} and \emph{sc2} to calibrate the TOA radiances of the TET-1 MIR and TIR band imagery respectively. In order to find the best scale factors for the TET-1 MIR and TIR band imageries separately, the surface temperature maps in MIR band TIR band are compared with the MODIS SST firstly and then LST respectively. After all of the comparisons and tests, the optimal scale factors for TET-1 MIR and TIR band imageries are chosen as 1.15 and 1.05 respectively. Both of the scale factors performs well in both space and time domain. Later, the MITIP method will be applied to several high-temperature events scenes with the determined scale factors.\\
+In this chapter, the MITIP method is tested using the Etna scenes and improved by adding two key words \emph{sc1} and \emph{sc2} to calibrate the TOA radiances of the TET-1 MIR and TIR band imagery respectively. In order to find the best scale factors for the TET-1 MIR and TIR band imageries separately, the surface temperature maps in MIR band TIR band are compared with the MODIS SST firstly and then LST respectively. After all of the comparisons and tests, the optimal scale factors for TET-1 MIR and TIR band imageries are chosen as 1.15 and 1.05 respectively. Both of the scale factors performs well in both space and time domain. Later, the MITIP method will be applied to several high-temperature events scenes with the determined scale factors.\\
 %-----------------------------------
 %	SUBSECTION 1
 %-----------------------------------
