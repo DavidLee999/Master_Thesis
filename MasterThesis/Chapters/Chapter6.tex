@@ -7,9 +7,19 @@
 %----------------------------------------------------------------------------------------
 
 \section{Conclusion}
+In this paper, we investigate and improve the performance of MITIP, a dual-channel method for detection and quantification of high-temperature events. What has been done in this thesis leads to the implementation of MITIP for the detection of high-temperature events of TET-1 data and to a near real-time semi-operational detection system for thermal anomalies.\\
+
+\noindent The research of the performance of MITIP, the presentation of HTE monitoring results and the comparison of its results with the results of Zhukov's algorithm show the high capabilities of MITIP in high-temperature events monitoring. The results of MITIP are more accuracy and its processing time is 20 seconds on average, which is much shorter than with Zhukov's algorithm's average processing time, which is around 20 minutes. Moreover, MITIP method provides more information than Zhukov's algorithm dose because it carries out a pixel-based analysis.\\
+
+\noindent Besides the FireBIRD data, the MITIP method are able to be applied to imagery of other satellites equipping sensors with two thermal infrared bands only if the atmospheric correction parameters and temperature-radiance relationships are updated with the respective channel spectral response functions.\\
 
 %----------------------------------------------------------------------------------------
 %	SECTION 2
 %----------------------------------------------------------------------------------------
 
 \section{Outlook}
+Although the MITIP method shows a excellent performance in high-temperature events monitoring, it can be improved in two aspects.\\
+
+\noindent Besides the MIR band TIR band imageries, the TET-1 satellite also offers imagery in red band, which is useless for the processing of the night-time scenes. However, the red band imagery will become quite helpful in atmospheric correction of day-time scenes. Now a further expansion of the MITIP method to enable it to process the day-time scenes is currently under discussion.\\
+
+\noindent In addition, the MITIP method derives the temperature of each pixel firstly and then carries out a bundle of tests to find the hot spots using empirical thresholds which is set manually. In contrast, the Zhukov's algorithm performs filters to exclude non-hot pixels at the beginning using thresholds derived from the information, namely the pixel values, of inputted imagery. These two procedures can be combined that the MITIP uses the detection procedure of Zhukov's algorithm, which is more robust and is able to adapt to the particular conditions of the input imagery, and then carries out its own hot pixel quantification method, which is more reliable and gives more information.\\
