@@ -3,104 +3,104 @@
 \select@language {english}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces The thermal infrared wavelength domain \parencite {Reference204}.\relax }}{6}{figure.caption.18}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces The thermal infrared wavelength domain \parencite {Reference204}.\relax }}{6}{figure.caption.17}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Emissivity spectra for soils in the ASTER spectral emissivity database. (a) 3 - 5 $\mu $m. (b) 8 - 14 $\mu $m. \parencite {Reference303}.\relax }}{12}{figure.caption.35}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Emissivity spectra for four types of vegetation in the ASTER spectral emissivity database. (a) 3 - 5 $\mu $m. (b) 8 - 14 $\mu $m. \parencite {Reference303}.\relax }}{12}{figure.caption.35}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Emissivity spectra for water, ice and snow in the ASTER spectral emissivity database. (a) 3 - 5 $\mu $m. (b) 8 - 14 $\mu $m. \parencite {Reference303}.\relax }}{12}{figure.caption.35}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Emissivity spectra for soils in the ASTER spectral emissivity database. (a) 3 - 5 $\mu $m. (b) 8 - 14 $\mu $m. \parencite {Reference303}.\relax }}{12}{figure.caption.34}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Emissivity spectra for four types of vegetation in the ASTER spectral emissivity database. (a) 3 - 5 $\mu $m. (b) 8 - 14 $\mu $m. \parencite {Reference303}.\relax }}{12}{figure.caption.34}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Emissivity spectra for water, ice and snow in the ASTER spectral emissivity database. (a) 3 - 5 $\mu $m. (b) 8 - 14 $\mu $m. \parencite {Reference303}.\relax }}{12}{figure.caption.34}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces a) MODIS SST. b) MITIP temperature product: surface temperature map in MIR band\relax }}{16}{figure.caption.42}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Difference map between MODIS SST and MITIP surface temperature in MIR band\relax }}{16}{figure.caption.43}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces a) Selected sub-areas distribution over MITIP surface temperature in MIR band. b) Zoomed-in pictures of two sub-areas\relax }}{17}{figure.caption.44}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Mean temperature of all sub-areas in Etna scenes with different emissivities\relax }}{18}{figure.caption.46}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Differences of temperatures resulted from different emissivities(Etna)\relax }}{18}{figure.caption.47}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Temperature differences between the temperature maps from MITIP and MODIS SST for Etna scenes\relax }}{19}{figure.caption.48}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Histograms of MODIS SST, TET-1 MIR band imagry and their differences with different scale factor\relax }}{20}{figure.caption.49}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Sub-area 1 with scale factor 1.00}}}{20}{figure.caption.49}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Sub-area 1 with scale factor 1.10}}}{20}{figure.caption.49}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Sub-area 2 with cale factor 1.00}}}{20}{figure.caption.49}
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Sub-area 2 with cale factor 1.10}}}{20}{figure.caption.49}
-\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Sub-area 3 with cale factor 1.00}}}{20}{figure.caption.49}
-\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {Sub-area 3 with cale factor 1.10}}}{20}{figure.caption.49}
-\contentsline {subfigure}{\numberline {(g)}{\ignorespaces {Sub-area 4 with cale factor 1.00}}}{20}{figure.caption.49}
-\contentsline {subfigure}{\numberline {(h)}{\ignorespaces {Sub-area 4 with cale factor 1.10}}}{20}{figure.caption.49}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Histograms of MODIS SST and TET-1 MIR band imageries with all the five scale factors in sub-area 1. The red solid line in each histogram denotes the mean value and the red dashed line the standard deviation.\relax }}{21}{figure.caption.58}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Histograms of MODIS SST and TET-1 MIR band imageries with all the five scale factors in sub-area 4. The red solid line in each histogram denotes the mean value and the red dashed line the standard deviation.\relax }}{22}{figure.caption.59}
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Histograms of all sub-areas of MODIS SST, TET-1 MIR band imagry and their differences with different scale factor\relax }}{23}{figure.caption.60}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Scale factor 1.00}}}{23}{figure.caption.60}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Scale factor 1.10}}}{23}{figure.caption.60}
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Histograms of all sub-areas of MODIS SST and TET-1 MIR band imageries with all the five scale factors. The red solid line in each histogram denotes the mean value and the red dashed line the standard deviation.\relax }}{24}{figure.caption.63}
-\contentsline {figure}{\numberline {4.12}{\ignorespaces Temperature differences between TET-1 surface temperature maps and MODIS SST (Etna).\relax }}{26}{figure.caption.64}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MIR band}}}{26}{figure.caption.64}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {TIR band}}}{26}{figure.caption.64}
-\contentsline {figure}{\numberline {4.13}{\ignorespaces The best scale factors for each Etna scenes and its corresponding temperature differences. The red solid line is the best scale factor for each Etna scene. The blue dashed line is the minimal temperature differences resulted from that scale factor.\relax }}{27}{figure.caption.67}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MIR band}}}{27}{figure.caption.67}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {TIR band}}}{27}{figure.caption.67}
-\contentsline {figure}{\numberline {4.14}{\ignorespaces The minimal temperature differences and the temperature differences resulted from scale factor 1.15 and scale factor 1.05. The red solid line is the minimal temperature differences for each Etna scene. The blue dashed line is the temperature differences resulted from the selected scale factors for MIR and TIR band imageries, scale factor 1.15 (upper) and scale factor 1.05 (lower), respectively.\relax }}{28}{figure.caption.70}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MIR band}}}{28}{figure.caption.70}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {TIR band}}}{28}{figure.caption.70}
-\contentsline {figure}{\numberline {4.15}{\ignorespaces The example figures of Portugal and Demmin. The red rectangles represent the selected sub-areas.\relax }}{29}{figure.caption.74}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Portugal}}}{29}{figure.caption.74}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Demmin}}}{29}{figure.caption.74}
-\contentsline {figure}{\numberline {4.16}{\ignorespaces Transferability test: temperature differences between TET-1 surface temperature maps and MODIS SST.\relax }}{30}{figure.caption.77}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MIR band}}}{30}{figure.caption.77}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {TIR band}}}{30}{figure.caption.77}
-\contentsline {figure}{\numberline {4.17}{\ignorespaces The effect of different emissivities on the surface temperature maps from MITIP.\relax }}{31}{figure.caption.81}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Temperature (Libya-1) with different emissivities}}}{31}{figure.caption.81}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Temperature differences (Libya-1) with different emissivities}}}{31}{figure.caption.81}
-\contentsline {figure}{\numberline {4.18}{\ignorespaces Temperature differences (Lybia-1) between the surface temperature maps in TIR band and MODIS LST.\relax }}{32}{figure.caption.84}
-\contentsline {figure}{\numberline {4.19}{\ignorespaces Temperature differences (Lybia-1) between the surface temperature maps in MIR band and MODIS LST.\relax }}{33}{figure.caption.85}
-\contentsline {figure}{\numberline {4.20}{\ignorespaces Temperature differences (Lybia-1) between the surface temperature maps from MITIP with certain scale factor and MODIS LST.\relax }}{34}{figure.caption.86}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MIR band}}}{34}{figure.caption.86}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {TIR band}}}{34}{figure.caption.86}
-\contentsline {figure}{\numberline {4.21}{\ignorespaces The example figure of Libya-1. The red rectangles represent the selected sub-areas.\relax }}{35}{figure.caption.89}
-\contentsline {figure}{\numberline {4.22}{\ignorespaces Tempereature differences between TET-1 surface temperature maps and MODIS LST (Libya-1).\relax }}{36}{figure.caption.90}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MIR band}}}{36}{figure.caption.90}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {TIR band}}}{36}{figure.caption.90}
-\contentsline {figure}{\numberline {4.23}{\ignorespaces The best scale factors for each Lybia-1 scenes and its corresponding temperature differences. The red solid line is the best scale factor for each Libya-1 scene. The blue dashed line is the minimal temperature differences resulted from that scale factor.\relax }}{37}{figure.caption.93}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MIR band}}}{37}{figure.caption.93}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {TIR band}}}{37}{figure.caption.93}
-\contentsline {figure}{\numberline {4.24}{\ignorespaces The minimal temperature differences and the temperature differences resulted from scale factor 1.15 and scale factor 1.05. The red solid line is the minimal temperature differences for each Etna scene. The blue dashed line is the temperature differences resulted from the selected scale factors for MIR and TIR band imageries, scale factor 1.15 (upper) and scale factor 1.05 (lower), respectively.\relax }}{38}{figure.caption.96}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MIR band}}}{38}{figure.caption.96}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {TIR band}}}{38}{figure.caption.96}
-\contentsline {figure}{\numberline {4.25}{\ignorespaces The example figure of Libya-2. The red rectangles represent the selected sub-areas.\relax }}{39}{figure.caption.100}
-\contentsline {figure}{\numberline {4.26}{\ignorespaces Transferability test: temperature differences between TET-1 surface temperature maps and MODIS LST.\relax }}{40}{figure.caption.101}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MIR band}}}{40}{figure.caption.101}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {TIR band}}}{40}{figure.caption.101}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces a) MODIS SST. b) MITIP temperature product: surface temperature map in MIR band\relax }}{16}{figure.caption.41}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Difference map between MODIS SST and MITIP surface temperature in MIR band\relax }}{16}{figure.caption.42}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces a) Selected sub-areas distribution over MITIP surface temperature in MIR band. b) Zoomed-in pictures of two sub-areas\relax }}{17}{figure.caption.43}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Mean temperature of all sub-areas in Etna scenes with different emissivities\relax }}{18}{figure.caption.45}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Differences of temperatures resulted from different emissivities(Etna)\relax }}{18}{figure.caption.46}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Temperature differences between the temperature maps from MITIP and MODIS SST for Etna scenes\relax }}{19}{figure.caption.47}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Histograms of MODIS SST, TET-1 MIR band imagry and their differences with different scale factor\relax }}{20}{figure.caption.48}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Sub-area 1 with scale factor 1.00}}}{20}{figure.caption.48}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Sub-area 1 with scale factor 1.10}}}{20}{figure.caption.48}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Sub-area 2 with cale factor 1.00}}}{20}{figure.caption.48}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Sub-area 2 with cale factor 1.10}}}{20}{figure.caption.48}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Sub-area 3 with cale factor 1.00}}}{20}{figure.caption.48}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {Sub-area 3 with cale factor 1.10}}}{20}{figure.caption.48}
+\contentsline {subfigure}{\numberline {(g)}{\ignorespaces {Sub-area 4 with cale factor 1.00}}}{20}{figure.caption.48}
+\contentsline {subfigure}{\numberline {(h)}{\ignorespaces {Sub-area 4 with cale factor 1.10}}}{20}{figure.caption.48}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Histograms of MODIS SST and TET-1 MIR band imageries with all the five scale factors in sub-area 1. The red solid line in each histogram denotes the mean value and the red dashed line the standard deviation.\relax }}{21}{figure.caption.57}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Histograms of MODIS SST and TET-1 MIR band imageries with all the five scale factors in sub-area 4. The red solid line in each histogram denotes the mean value and the red dashed line the standard deviation.\relax }}{22}{figure.caption.58}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Histograms of all sub-areas of MODIS SST, TET-1 MIR band imagry and their differences with different scale factor\relax }}{23}{figure.caption.59}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Scale factor 1.00}}}{23}{figure.caption.59}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Scale factor 1.10}}}{23}{figure.caption.59}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Histograms of all sub-areas of MODIS SST and TET-1 MIR band imageries with all the five scale factors. The red solid line in each histogram denotes the mean value and the red dashed line the standard deviation.\relax }}{24}{figure.caption.62}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Temperature differences between TET-1 surface temperature maps and MODIS SST (Etna).\relax }}{26}{figure.caption.63}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MIR band}}}{26}{figure.caption.63}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {TIR band}}}{26}{figure.caption.63}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces The best scale factors for each Etna scenes and its corresponding temperature differences. The red solid line is the best scale factor for each Etna scene. The blue dashed line is the minimal temperature differences resulted from that scale factor.\relax }}{27}{figure.caption.66}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MIR band}}}{27}{figure.caption.66}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {TIR band}}}{27}{figure.caption.66}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces The minimal temperature differences and the temperature differences resulted from scale factor 1.15 and scale factor 1.05. The red solid line is the minimal temperature differences for each Etna scene. The blue dashed line is the temperature differences resulted from the selected scale factors for MIR and TIR band imageries, scale factor 1.15 (upper) and scale factor 1.05 (lower), respectively.\relax }}{28}{figure.caption.69}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MIR band}}}{28}{figure.caption.69}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {TIR band}}}{28}{figure.caption.69}
+\contentsline {figure}{\numberline {4.15}{\ignorespaces The example figures of Portugal and Demmin. The red rectangles represent the selected sub-areas.\relax }}{29}{figure.caption.73}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Portugal}}}{29}{figure.caption.73}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Demmin}}}{29}{figure.caption.73}
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Transferability test: temperature differences between TET-1 surface temperature maps and MODIS SST.\relax }}{30}{figure.caption.76}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MIR band}}}{30}{figure.caption.76}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {TIR band}}}{30}{figure.caption.76}
+\contentsline {figure}{\numberline {4.17}{\ignorespaces The effect of different emissivities on the surface temperature maps from MITIP.\relax }}{31}{figure.caption.80}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Temperature (Libya-1) with different emissivities}}}{31}{figure.caption.80}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Temperature differences (Libya-1) with different emissivities}}}{31}{figure.caption.80}
+\contentsline {figure}{\numberline {4.18}{\ignorespaces Temperature differences (Lybia-1) between the surface temperature maps in TIR band and MODIS LST.\relax }}{32}{figure.caption.83}
+\contentsline {figure}{\numberline {4.19}{\ignorespaces Temperature differences (Lybia-1) between the surface temperature maps in MIR band and MODIS LST.\relax }}{33}{figure.caption.84}
+\contentsline {figure}{\numberline {4.20}{\ignorespaces Temperature differences (Lybia-1) between the surface temperature maps from MITIP with certain scale factor and MODIS LST.\relax }}{34}{figure.caption.85}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MIR band}}}{34}{figure.caption.85}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {TIR band}}}{34}{figure.caption.85}
+\contentsline {figure}{\numberline {4.21}{\ignorespaces The example figure of Libya-1. The red rectangles represent the selected sub-areas.\relax }}{35}{figure.caption.88}
+\contentsline {figure}{\numberline {4.22}{\ignorespaces Tempereature differences between TET-1 surface temperature maps and MODIS LST (Libya-1).\relax }}{36}{figure.caption.89}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MIR band}}}{36}{figure.caption.89}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {TIR band}}}{36}{figure.caption.89}
+\contentsline {figure}{\numberline {4.23}{\ignorespaces The best scale factors for each Lybia-1 scenes and its corresponding temperature differences. The red solid line is the best scale factor for each Libya-1 scene. The blue dashed line is the minimal temperature differences resulted from that scale factor.\relax }}{37}{figure.caption.92}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MIR band}}}{37}{figure.caption.92}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {TIR band}}}{37}{figure.caption.92}
+\contentsline {figure}{\numberline {4.24}{\ignorespaces The minimal temperature differences and the temperature differences resulted from scale factor 1.15 and scale factor 1.05. The red solid line is the minimal temperature differences for each Etna scene. The blue dashed line is the temperature differences resulted from the selected scale factors for MIR and TIR band imageries, scale factor 1.15 (upper) and scale factor 1.05 (lower), respectively.\relax }}{38}{figure.caption.95}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MIR band}}}{38}{figure.caption.95}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {TIR band}}}{38}{figure.caption.95}
+\contentsline {figure}{\numberline {4.25}{\ignorespaces The example figure of Libya-2. The red rectangles represent the selected sub-areas.\relax }}{39}{figure.caption.99}
+\contentsline {figure}{\numberline {4.26}{\ignorespaces Transferability test: temperature differences between TET-1 surface temperature maps and MODIS LST.\relax }}{40}{figure.caption.100}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MIR band}}}{40}{figure.caption.100}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {TIR band}}}{40}{figure.caption.100}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Surface temperature maps of Etna 2014.06.22.\relax }}{44}{figure.caption.108}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MIR band}}}{44}{figure.caption.108}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {TIR band}}}{44}{figure.caption.108}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces HTE monitoring products of Etna 2014.06.22.\relax }}{45}{figure.caption.111}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Effective target temperature}}}{45}{figure.caption.111}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Effective target pixel fraction}}}{45}{figure.caption.111}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces FRP of Etna 2014.06.22.\relax }}{46}{figure.caption.114}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Surface temperature maps of Stromboli 2014.06.22.\relax }}{47}{figure.caption.115}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MIR band}}}{47}{figure.caption.115}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {TIR band}}}{47}{figure.caption.115}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces HTE monitoring products of Stromboli 2014.06.22.\relax }}{48}{figure.caption.118}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Effective target temperature}}}{48}{figure.caption.118}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Effective target pixel fraction}}}{48}{figure.caption.118}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces FRP of Stromboli 2014.06.22.\relax }}{49}{figure.caption.121}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Surface temperature maps of Bardarbunga 2014.09.14.\relax }}{50}{figure.caption.122}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MIR band}}}{50}{figure.caption.122}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {TIR band}}}{50}{figure.caption.122}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces HTE monitoring products of Bardarbunga 2014.09.14.\relax }}{51}{figure.caption.125}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Effective target temperature}}}{51}{figure.caption.125}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Effective target pixel fraction}}}{51}{figure.caption.125}
-\contentsline {figure}{\numberline {5.9}{\ignorespaces FRP of Bardarbunga 2014.09.14.\relax }}{52}{figure.caption.128}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Surface temperature maps of Portugal wild fires in 2016.08.11.\relax }}{53}{figure.caption.130}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MIR band}}}{53}{figure.caption.130}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {TIR band}}}{53}{figure.caption.130}
-\contentsline {figure}{\numberline {5.11}{\ignorespaces HTE monitoring products of Portugal wild fires in 2016.08.11.\relax }}{54}{figure.caption.133}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Effective target temperature}}}{54}{figure.caption.133}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Effective target pixel fraction}}}{54}{figure.caption.133}
-\contentsline {figure}{\numberline {5.12}{\ignorespaces FRP of Portugal wild fires in 2016.08.11.\relax }}{55}{figure.caption.136}
-\contentsline {figure}{\numberline {5.13}{\ignorespaces Flow chart of the Zhukov's algorithm.\relax }}{55}{figure.caption.139}
-\contentsline {figure}{\numberline {5.14}{\ignorespaces Flow chart of the pixel-based result to the cluster-based result.\relax }}{56}{figure.caption.141}
-\contentsline {figure}{\numberline {5.15}{\ignorespaces Etna 2014.07.21. The background picture is the surface temperature map in MIR band from MITIP. Blue line is the boundary of the cluster detected by Zhukov's algorithm. Green line is the boundary of the cluster produced by MITIP.\relax }}{58}{figure.caption.143}
-\contentsline {figure}{\numberline {5.16}{\ignorespaces Stromboli 2014.07.03. The background picture is the surface temperature map in MIR band from MITIP. Blue line is the boundary of the cluster detected by Zhukov's algorithm. Green line is the boundary of the cluster produced by MITIP.\relax }}{59}{figure.caption.145}
-\contentsline {figure}{\numberline {5.17}{\ignorespaces Bardarbunga 2014.09.14. The background picture is the surface temperature map in MIR band from MITIP. Blue line is the boundary of the cluster detected by Zhukov's algorithm. Green line is the boundary of the cluster produced by MITIP.\relax }}{60}{figure.caption.147}
-\contentsline {figure}{\numberline {5.18}{\ignorespaces Chile 2016.01.26. The background picture is the surface temperature map in MIR band from MITIP. Blue line is the boundary of the cluster detected by Zhukov's algorithm. Green line is the boundary of the cluster produced by MITIP.\relax }}{62}{figure.caption.149}
-\contentsline {figure}{\numberline {5.19}{\ignorespaces Chile 2016.01.26. Sub-figure in the lower right corner shows that the two hot areas \emph {c1} and \emph {c2} are connected by one pixel in the result of MITIP method which merges these two hot areas into one hot cluster.\relax }}{63}{figure.caption.151}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Surface temperature maps of Etna 2014.06.22.\relax }}{44}{figure.caption.107}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MIR band}}}{44}{figure.caption.107}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {TIR band}}}{44}{figure.caption.107}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces HTE monitoring products of Etna 2014.06.22.\relax }}{45}{figure.caption.110}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Effective target temperature}}}{45}{figure.caption.110}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Effective target pixel fraction}}}{45}{figure.caption.110}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces FRP of Etna 2014.06.22.\relax }}{46}{figure.caption.113}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Surface temperature maps of Stromboli 2014.06.22.\relax }}{47}{figure.caption.114}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MIR band}}}{47}{figure.caption.114}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {TIR band}}}{47}{figure.caption.114}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces HTE monitoring products of Stromboli 2014.06.22.\relax }}{48}{figure.caption.117}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Effective target temperature}}}{48}{figure.caption.117}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Effective target pixel fraction}}}{48}{figure.caption.117}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces FRP of Stromboli 2014.06.22.\relax }}{49}{figure.caption.120}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Surface temperature maps of Bardarbunga 2014.09.14.\relax }}{50}{figure.caption.121}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MIR band}}}{50}{figure.caption.121}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {TIR band}}}{50}{figure.caption.121}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces HTE monitoring products of Bardarbunga 2014.09.14.\relax }}{51}{figure.caption.124}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Effective target temperature}}}{51}{figure.caption.124}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Effective target pixel fraction}}}{51}{figure.caption.124}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces FRP of Bardarbunga 2014.09.14.\relax }}{52}{figure.caption.127}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Surface temperature maps of Portugal wild fires in 2016.08.11.\relax }}{53}{figure.caption.129}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MIR band}}}{53}{figure.caption.129}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {TIR band}}}{53}{figure.caption.129}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces HTE monitoring products of Portugal wild fires in 2016.08.11.\relax }}{54}{figure.caption.132}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Effective target temperature}}}{54}{figure.caption.132}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Effective target pixel fraction}}}{54}{figure.caption.132}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces FRP of Portugal wild fires in 2016.08.11.\relax }}{55}{figure.caption.135}
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Flow chart of the Zhukov's algorithm.\relax }}{55}{figure.caption.138}
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Flow chart of the pixel-based result to the cluster-based result.\relax }}{56}{figure.caption.140}
+\contentsline {figure}{\numberline {5.15}{\ignorespaces Etna 2014.07.21. The background picture is the surface temperature map in MIR band from MITIP. Blue line is the boundary of the cluster detected by Zhukov's algorithm. Green line is the boundary of the cluster produced by MITIP.\relax }}{58}{figure.caption.142}
+\contentsline {figure}{\numberline {5.16}{\ignorespaces Stromboli 2014.07.03. The background picture is the surface temperature map in MIR band from MITIP. Blue line is the boundary of the cluster detected by Zhukov's algorithm. Green line is the boundary of the cluster produced by MITIP.\relax }}{59}{figure.caption.144}
+\contentsline {figure}{\numberline {5.17}{\ignorespaces Bardarbunga 2014.09.14. The background picture is the surface temperature map in MIR band from MITIP. Blue line is the boundary of the cluster detected by Zhukov's algorithm. Green line is the boundary of the cluster produced by MITIP.\relax }}{60}{figure.caption.146}
+\contentsline {figure}{\numberline {5.18}{\ignorespaces Chile 2016.01.26. The background picture is the surface temperature map in MIR band from MITIP. Blue line is the boundary of the cluster detected by Zhukov's algorithm. Green line is the boundary of the cluster produced by MITIP.\relax }}{62}{figure.caption.148}
+\contentsline {figure}{\numberline {5.19}{\ignorespaces Chile 2016.01.26. Sub-figure in the lower right corner shows that the two hot areas \emph {c1} and \emph {c2} are connected by one pixel in the result of MITIP method which merges these two hot areas into one hot cluster.\relax }}{63}{figure.caption.150}
 \addvspace {10\p@ }

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.11.1)  26 NOV 2017 11:40
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.11.1)  26 NOV 2017 19:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1788,44 +1788,6 @@ IP and Zhukov's
 [11] [12
 
 ]
-
-./main.tex:173: LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.173 \begin{table}[!ht]
-                        
-? 
-./main.tex:173: Undefined control sequence.
-\latex@xfloat ...vf \fi \global \setbox \@currbox 
-                                                  \color@vbox \normalcolor \...
-l.173 \begin{table}[!ht]
-                        
-? 
-./main.tex:173: Missing number, treated as zero.
-<to be read again> 
-                   \vbox 
-l.173 \begin{table}[!ht]
-                        
-? 
-
-./main.tex:175: Package array Error:  Illegal pream-token (\textbf): `c' used.
-
-See the array package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.175 \textbf
-             {HTE} & \textbf{H}igh-\textbf{T}emperature \textbf{E}vent \\
-? 
-./main.tex:175: Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.175 \textbf{HTE} &
-                     \textbf{H}igh-\textbf{T}emperature \textbf{E}vent \\
-? 
 1: section
 [13] [14
 
@@ -1919,7 +1881,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 99--100
  []
 
 [3])
-Underfull \hbox (badness 10000) in paragraph at lines 101--200
+Underfull \hbox (badness 10000) in paragraph at lines 101--217
 
  []
 
@@ -2134,7 +2096,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 127--128
  []
 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 145--202
+Underfull \hbox (badness 10000) in paragraph at lines 145--219
 
  []
 
@@ -2611,25 +2573,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 23--24
  []
 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 25--205
+Underfull \hbox (badness 10000) in paragraph at lines 25--222
 
  []
 
 1: section
 [65] [66]
-Overfull \hbox (1.33995pt too wide) in paragraph at lines 208--208
+Overfull \hbox (1.33995pt too wide) in paragraph at lines 225--225
 \T1/ppl/m/n/12 nu-mer-i-cal mod-elling^^Q. In: \T1/ppl/m/it/12 Earth Sur-face P
 ro-cesses and Land-forms \T1/ppl/m/n/12 28.12, pp. 1341^^U
  []
 
 
-Overfull \hbox (0.30823pt too wide) in paragraph at lines 208--208
+Overfull \hbox (0.30823pt too wide) in paragraph at lines 225--225
 \T1/ppl/m/n/12 classes mea-sured from satel-lites^^Q. In: \T1/ppl/m/it/12 Re-mo
 te Sens-ing of En-vi-ron-ment \T1/ppl/m/n/12 18.1, pp. 21
  []
 
 
-Overfull \hbox (0.65251pt too wide) in paragraph at lines 208--208
+Overfull \hbox (0.65251pt too wide) in paragraph at lines 225--225
 [][]\T1/ppl/m/n/12 Li, Zhao-Liang et al. (2013). ^^P  Land sur-face emis-siv-it
 y re-trieval from satel-lite data^^Q.
  []
@@ -2639,7 +2601,7 @@ y re-trieval from satel-lite data^^Q.
 
 
 ]
-Overfull \hbox (7.3944pt too wide) in paragraph at lines 208--208
+Overfull \hbox (7.3944pt too wide) in paragraph at lines 225--225
 [][]\T1/ppl/m/n/12 Moritz, Max A. et al. (2014). ^^P  Learn-ing to co-ex-ist wi
 th wild-fire^^Q. In: \T1/ppl/m/it/12 Na-ture \T1/ppl/m/n/12 515.7525,
  []
@@ -2647,21 +2609,21 @@ th wild-fire^^Q. In: \T1/ppl/m/it/12 Na-ture \T1/ppl/m/n/12 515.7525,
 Missing character: There is no – in font pplr8t!
 Missing character: There is no μ in font pplr8t!
 
-Overfull \hbox (0.2456pt too wide) in paragraph at lines 208--208
+Overfull \hbox (0.2456pt too wide) in paragraph at lines 225--225
 [][]\T1/ppl/m/n/12 Tetzlaff, Anke (2004). ^^P  Coal fire quan-tifi-ca-tion us-i
 ng ASTER, ETM and BIRD satel-
  []
 
 Missing character: There is no – in font pplr8t!
 Missing character: There is no μ in font pplr8t!
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 211.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 228.
 [68]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 211.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 228.
  (./main.aux (./Chapters/Chapter1.aux) (./Chapters/Chapter2.aux)
 (./Chapters/Chapter3.aux) (./Chapters/Chapter4.aux) (./Chapters/Chapter5.aux)
 (./Chapters/Chapter6.aux))
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 211.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 211.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 228.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 228.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -2677,7 +2639,7 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 Here is how much of TeX's memory you used:
  33362 strings out of 493005
  672987 string characters out of 6134596
- 912772 words of memory out of 5000000
+ 912777 words of memory out of 5000000
  36901 multiletter control sequences out of 15000+600000
  33934 words of font info for 78 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
