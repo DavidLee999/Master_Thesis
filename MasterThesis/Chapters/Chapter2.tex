@@ -4,14 +4,14 @@
 
 %description
 %----------------------------------------------------------------------------------------
-This chapter reviews some fundamentals of thermal remote sensing (Section 2.1), as well as a useful approach, which is also used in , to identify and determine target temperature of subpixle resolution (Section 2.2). \\
+This chapter reviews some fundamentals of thermal remote sensing (Section 2.1), as well as a useful approach uses to identify and determine target temperature of sub-pixel resolution (Section 2.2). \\
 
 %----------------------------------------------------------------------------------------
 %	SECTION 1
 %----------------------------------------------------------------------------------------
 
 \section{Principles of thermal infrared remote sensing}
-Thermal remote sensing depends on the fact that any object with a temperature above absolute zero (0 K or -273.15 $^\circ$C) emits electromagnetic (EM) radiation in the infrared range. For example, the Earth we live has an average temperature around 300 K and its peak emittance is near 10 $\mu$m, which falls on thermal infrared domain \parencite {Reference201, Reference202}. The spectral composition and intensity of the emited radiation are determined by its surface temperature, which is also called kinetic temperature $T_{kin}$,  and the emissivity of the object \parencite{Reference207}. The emissivity $\varepsilon_{\lambda}$, $\varepsilon$ for short, is a ratio of the radiant flux of an object at a certain temperature to the radiant flux of a blackbody at the same temperature (Equation \eqref{eq1}), representing the effectiveness of the object in emitting energy as thermal radiation. The blackbody is an idealized physical object that aborbs and re-emits all incident EM radiation, which means its emissivity is 1 \parencite{Reference206, Reference204}. The emissivity varies as a function of wavelength $\lambda$ and also depends on the surface properities of the object such as surface roughness or color, but is not temperature-dependent \parencite{Reference203}.\\
+Thermal remote sensing depends on the fact that any object with a temperature above absolute zero (0 K or -273.15 $^\circ$C) emits electromagnetic (EM) radiation in the infrared range. For example, the Earth we live has an average temperature around 300 K and its peak emittance is near 10 $\mu$m, which falls on thermal infrared domain \parencite {Reference201, Reference202}. The spectral composition and intensity of the emited radiation are determined by its surface temperature, which is also called kinetic temperature $T_{kin}$,  and the emissivity of the object \parencite{Reference207}. The emissivity $\varepsilon_{\lambda}$, $\varepsilon$ for short, is a ratio of the radiant flux of an object at a certain temperature to the radiant flux of a blackbody at the same temperature (Equation \eqref{eq1}), representing the effectiveness of the object in emitting energy as thermal radiation. The blackbody is an idealized physical object that aborbs and re-emits all incident EM radiations, which means its emissivity is 1 \parencite{Reference206, Reference204}. The emissivity varies as a function of wavelength $\lambda$ and also depends on the surface properities of the object such as surface roughness or color, but is not temperature-dependent \parencite{Reference203}.\\
 \begin{equation}
 \label{eq1}
 \varepsilon_{\lambda} = \frac{L_{gb, \lambda}(T_{kin})}{L_{bb, \lambda}(T_{kin})}
@@ -30,7 +30,7 @@ Thermal remote sensing depends on the fact that any object with a temperature ab
 %-----------------------------------
 
 \subsection{The thermal infrared domain and atmospheric windows}
-There is no strict definition of the thermal infrared domain. Usually, the thermal infrared wavelength domain spread from around 3 to 14 $\mu$m. Within this range, there are two atomspheric windows in the 3 - 5 $\mu$m range and in the 8 - 14 $\mu$m range \parencite{Reference204}. \\
+There is no strict definition of the thermal infrared domain. Usually, the thermal infrared wavelength domain spreads from around 3 to 14 $\mu$m. Within this range, there are two atmospheric windows in the 3 - 5 $\mu$m range and in the 8 - 14 $\mu$m range \parencite{Reference204}. \\
 
 \begin{figure}[!htbp]
   \centering\includegraphics[width=0.8\textwidth]{The_thermal_infrared_wavelength_domain.eps}
@@ -40,7 +40,7 @@ There is no strict definition of the thermal infrared domain. Usually, the therm
 
 \noindent The spectral range 8 - 14 $\mu$m, which is called Long-Wavelength InfRared (LWIR), is the thermal imaging region. Within this range, sensors are able to obtain a completely passive image based on the thermal radiation emitted by objects itself and no illumination is required. There is only a absorption of OZone in this region which is neglected by sensors. The spectral range 3 - 5 $\mu$m is called Mid-Wavelength InfraRed (MWIR). Sensors responsive to this spectral range will capture reflected sunlight which contaminates the object-emitted thermal signal. So More attention should be paid when dealing with day-time 3 - 5 $\mu$m MWIR imagery. \\
 
-\noindent In this thesis, we focus on the night-time TET-1 scene only. \\
+\noindent For the reason of simplicity, in this thesis, we focus on the night-time TET-1 scene only. \\
 
 %-----------------------------------
 %	SUBSECTION 2
@@ -94,7 +94,7 @@ T_{rad} = \sigma ^{\frac{1}{4}} T_{kin}
 \section{A dual-channel method for the identification of subresolution high temperature sources}
 From satellites which contain more than one channel in the thermal infrared spectral region, it is possible to measure suface temperature fields of sub-pixel spatial resolution. Because of the differnet responses of Planck's function at different wavelength, the radiant temperatures measured in two channels may be expressed in terms of contributions from two temperature fields, each occupying a portion of the pixel \parencite{Reference210, Reference211}.\\
 
-\noindent As mentioned before, The TET-1 satellite's payload includes a HSRS with two thermal infrared spectral bands, one MIR band and one TIR band. Assume that the TET-1 scene contains sub-pixel high-temperature targets within one ''hot pixel''. Such a ''mixed pixels'' composes of a target at temperature $T_t$, which we call it effective target temperature, occupying portion $p$, which we call it effective target pixel fraction, of the pixel (where $0 \leqslant p \leqslant 1$) and a background temperature $T_b$ which occupies the remaining portion $(1 - p)$. The measured black body radiance $L_{bb, \lambda}$can be writen as:\\
+\noindent As mentioned before, The TET-1 satellite's payload including a HSRS with two thermal infrared spectral bands, one MIR band and one TIR band. Assume that the TET-1 scene contains a sub-pixel high-temperature target within one ''hot pixel''. Such a ''mixed pixels'' composes of a target at temperature $T_t$, which we call it effective target temperature, occupying portion $p$, which we call it effective target pixel fraction, of the pixel (where $0 \leqslant p \leqslant 1$) and a background temperature $T_b$ which occupies the remaining portion $(1 - p)$. The measured black body radiance $L_{bb, \lambda}$can be written as:\\
 \begin{equation}
 \begin{aligned}
 \label{eq5}
@@ -103,11 +103,11 @@ L_{bb, 2}(T_{rad, 2}) = pL_{bb, 2}(T_t) + (1 - p)L_{bb, 2}(T_b)
 \end{aligned}
 \end{equation}
 
-\noindent where 1 represents the MIR band and 2 reperesent the TIR band.\\
+\noindent where 1 represents the MIR band and 2 represents the TIR band.\\
 
-\noindent If the backgournd temperature $T_b$ is known from neighbor pixels of the hot pixel, these two equations become two linear equations with two unknowns and can be solved easily. For some applications, there is not reliable estimation of the background temperature $T_b$. Then more complicated method should be appliied to solve equations \eqref{eq5}.\\
+\noindent If the background temperature $T_b$ is known from neighbor pixels of the hot pixel, these two equations become two linear equations with two unknowns and can be solved easily. For some applications, there is not reliable estimation of the background temperature $T_b$. Then more complicated method should be applied to solve equations \eqref{eq5}, which goes beyond the scope of this thesis and will no be covered here.\\
 
-\noindent Of course, more than one sub-pixel fire patch might be contained within one hot pixel. Even if only one patch exists, it usually does not have a uniform sub-pixel temperature. This is the reason why we call $T_t$ and $p$ effective, representing an imaginary homogeneous high-temperature event.
+\noindent Of course, more than one sub-pixel fire patch might be contained within one hot pixel. Even if only one patch exists, it usually does not have a uniform sub-pixel temperature. This is the reason why we call $T_t$ and $p$ effective, representing an imaginary homogeneous high-temperature event.\\
 
 %----------------------------------------------------------------------------------------
 %	SECTION 3
