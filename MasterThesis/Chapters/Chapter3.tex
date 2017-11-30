@@ -4,14 +4,14 @@
 
 %description
 %----------------------------------------------------------------------------------------
-This chapter gives a brief description about the MITIP method which is an atmospheric correction and image processing method for the TET-1 imagery, developed by Dr. Rudolf at DLR. Data preparation and pre-processing is given in Section 3.1. The processing procedure is descirbed briefly in Section 3.2. The output of MITIP is presented in Section 3.3.\\
+This chapter gives a brief description about the MITIP method which is an atmospheric correction and image processing method for the TET-1 imagery, developed by Dr. Rudolf at DLR. Data preparation and pre-processing is given in Section 3.1. The processing procedure is described briefly in Section 3.2. The output of MITIP is presented in Section 3.3.\\
 
 %----------------------------------------------------------------------------------------
 %	SECTION 1
 %----------------------------------------------------------------------------------------
 
 \section{Data preparation and pre-processing}
-The MITIP method is an atmospheric correction and image processing method used for processing the thermal remote sensing imageries of the FireBIRD satellite. MITIP performs atmospheric corrections for TET-1 imagery first based on water vapor column and elevation in order to get ground surface radiance and temperature. Afterwards, the dual channel method introduced in Chapter 2 is used detect and characterize sub-pixel temperature of hot pixels. In this section, required input data is introduced. The procedure and principles of MITIP and its products are described in following sections.\\
+The MITIP method is an atmospheric correction and image processing method used for processing the thermal remote sensing imageries of the FireBIRD satellite. MITIP performs atmospheric corrections for TET-1 imagery first based on water vapor and elevation in order to get ground surface radiance and temperature. Afterwards, the dual channel method introduced in Chapter 2 is used detect and characterize sub-pixel temperature of hot pixels. In this section, required input data is introduced. The procedure and principles of MITIP and its products are described in following sections.\\
 
 %-----------------------------------
 %	SUBSECTION 1
@@ -20,7 +20,7 @@ The MITIP method is an atmospheric correction and image processing method used f
 \subsection{Data preparation}
 The TET-1 imagery inputted to the MITIP is radiometrically calibrated top-of-atmosphere (TOA) radiance data (Level 1B). In order to acquire ground surface radiance and temperature, atmospheric correction should be performed first.\\
 
-\noindent The necessary atmospheric correction takes advantage of the fact that in the thermal spectral range water vapor is the dominating disturbing parameter, while aerosols play only a negligible role \parencite{Reference204}. Consequently, for the purpose of simplifying the procedure, water vapor is the only parameter that taken into account while performing atmosphric correction. Because it is impossible to retrieve information of water vapor from TET-1 imagery, external data is required and MODIS water vapor products are used here. Besides, since the water vapor column decreases with elevation, the other parameter that has to be included is the elevation, which is obtained from ASTER Digital Elevation Map (DEM).\\
+\noindent The necessary atmospheric correction takes advantage of the fact that in the thermal spectral range water vapor is the dominating disturbing parameter, while aerosols play only a negligible role \parencite{Reference204}. Consequently, for the purpose of simplifying the procedure, water vapor is the only parameter that taken into account while performing atmospheric correction. Because it is impossible to retrieve information of water vapor from TET-1 imagery, external data is required and MODIS water vapor products are used here. Besides, since the water vapor decreases with elevation, the other parameter that has to be included is the elevation, which is obtained from ASTER Digital Elevation Map (DEM).\\
 
 \noindent From Chapter 2 we know, emissivity map is required to convert the derived radiant temperature $T_{rad}$ to kinetic temperature $T_{kin}$. The emissivity map can be acquired from ASTER Global Emissivity Database (GED).\\
 
@@ -39,9 +39,9 @@ The TET-1 imagery inputted to the MITIP is radiometrically calibrated top-of-atm
 %-----------------------------------
 
 \subsection{Data pre-processing}
-According to the MITIP's requirements, the input data should fulfill three conditions: 1) all input data should be of format GeoTIFF; 2) all input imageries should be overlapped and of the same size; 3) spatial resolution of all imageries should be identical.\\
+According to the MITIP's requirements, the input data should fulfill three conditions: 1) all input data should be of format GeoTIFF; 2) all input imageries ought to be overlapped and of the same size; 3) spatial resolution of all imageries should be identical.\\
 
-\noindent On the basis of these requirements, after downloading all the auxiliary data, we should convert them into GeoTIFF format first. Then, compared with TET-1 imagery, the individual raster file of both the ASTER data has a smaller ground coverage of around 60 km by 60 km. These small raster files of ASTER DEM and GED should be merged into one large file respectively which is able to cover the whole area of interest (AOI). Next, to ensure all the four input files are overlapped with each other, they ought to be reprojected into the same and appropriate UTM zone and resampled to the same pixel size. Finally, the TET-1 imagery is used as standard defining the size of the input file. All input data should be clipped using TET-1 imagery as mask to guarantee that they all share the same number of rows and columns.\\ 
+\noindent On the basis of these requirements, after downloading all the auxiliary data, we should convert them into GeoTIFF format first. Then, compared with TET-1 imagery, the individual raster file of both the ASTER data has a smaller ground coverage of around 60 km by 60 km. These small raster files of ASTER DEM and GED should be merged into one large file respectively which is able to cover the whole area of interest (AOI). Next, to ensure all the four input files are overlapped with each other, they ought to be reprojected into the same and appropriate UTM zone and resampled to the same pixel size. Finally, the TET-1 imagery is used as a standard defining the size of the input file. All input data should be clipped using TET-1 imagery as mask to guarantee that they all share the same number of rows and columns.\\ 
 
 %----------------------------------------------------------------------------------------
 %	SECTION 2
@@ -82,7 +82,7 @@ L(\lambda) = L_p(\lambda) + \tau (\lambda) \varepsilon (\lambda) L_{bb}(\lambda,
 L(\lambda) = L_p(\lambda) + \tau (\lambda) \varepsilon (\lambda) L_{bb}(\lambda, T) + \tau (\lambda) (1 - \varepsilon (\lambda)) \frac{F(\lambda)}{\pi}
 \end{equation}
 
-\noindent Multiplying both sides of Equation \eqref{eq303} with the channel spectral response function $R(\lambda)$ and integrating over the bandpass field we have:
+\noindent Multiplying both sides of Equation \eqref{eq303} with the channel spectral response function $R(\lambda)$ of TET-1 satellite and integrating over the bandpass field we have:
 \begin{equation}
 \label{eq304}
 L(k) = L_p(k) + \tau (k) \varepsilon (k) L_{bb}(k, T) + \tau (k) (1 - \varepsilon (k)) \frac{F(k)}{\pi}
@@ -113,7 +113,7 @@ L(k) = L_p(k) + \tau (k) \varepsilon (k) L_{bb}(k, T) + \tau (k) (1 - \varepsilo
 L_{surf}^*(k, T) = \frac{L(k) - L_p(k)}{\tau (k)} - (1 - \varepsilon (k)) \frac{F(k)}{\pi}
 \end{equation}
 
-\noindent Given in both MIR and TIR band the emissivity is close to 1, so the term $1 - \varepsilon (k)$ will be such a small term that the thermal downwelling flux term $F(k)$ will have only a small influence. Finally, all the terms $L_p(k)$, $F(k)$ and $\tau (k)$ will be calculated by MODTRAN (MODerate resolution atmospheric TRANsmission) as a function of atmospheric water vapor volumn $W(e)$, $W$ for short, which acts as a function of elevation $e$, for MIR and TIR band of TET-1 imagery respectively.\\
+\noindent Given in both MIR and TIR band the emissivity is close to 1, so the term $1 - \varepsilon (k)$ will be such a small term that the thermal downwelling flux term $F(k)$ will have only a small influence. Finally, all the terms $L_p(k)$, $F(k)$ and $\tau (k)$ will be calculated by MODTRAN (MODerate resolution atmospheric TRANsmission) as a function of atmospheric water vapor volume $W(e)$, $W$ for short, which acts as a function of elevation $e$, for MIR and TIR band of TET-1 imageries respectively.\\
 
 \noindent Finally, the surface radiance of both the black body and natural materials can be calculated from Equation \eqref{eq305}. The atmospheric correction for the night-time TET-1 scenes are done.\\
 
@@ -136,7 +136,7 @@ The outcomes of MITIP can be classified into two parts: one part is the result o
 \begin{itemize}
 \item Band 1: surface temperature map in MIR band, $T_{MIR}$ [K];
 \item Band 2: surface temperature map in TIR band, $T_{TIR}$ [K];
-\item Band 3: fire probability map indicating which pixel might contain high-temperature events. For non-fire pixels, the pixel value are 0; for each detected fire pixel, the fire probability is assigned between 0.8 to 1.0;
+\item Band 3: fire probability map indicating which pixel might contain high-temperature events. For non-fire pixels, the pixel values are 0; for each detected fire pixels, the fire probability are assigned between 0.8 to 1.0;
 \item Band 4: effective target temperature map [K]. For every detected fire pixel, the effective target temperature $T_t$ is calculated.  Otherwise the pixel value is set to 0;
 \item Band 5: effective target pixel fraction map. The same as the effective target temperature map, for each detected fire pixel, the effective target pixel fraction $p$ is calculated. For the rest, their pixel values are set to 0;
 \item Band 6: fire radiative power (FRP) [MW] map;

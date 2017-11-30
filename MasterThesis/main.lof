@@ -15,18 +15,18 @@
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Mean temperature of all sub-areas in Etna scenes with different emissivities\relax }}{18}{figure.caption.45}
 \contentsline {figure}{\numberline {4.5}{\ignorespaces Differences of temperatures resulted from different emissivities(Etna)\relax }}{18}{figure.caption.46}
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Temperature differences between the temperature maps from MITIP and MODIS SST for Etna scenes\relax }}{19}{figure.caption.47}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Histograms of MODIS SST, TET-1 MIR band imagry and their differences with different scale factor\relax }}{20}{figure.caption.48}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Histograms of MODIS SST, TET-1 MIR band imagery and their differences with different scale factor\relax }}{20}{figure.caption.48}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Sub-area 1 with scale factor 1.00}}}{20}{figure.caption.48}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Sub-area 1 with scale factor 1.10}}}{20}{figure.caption.48}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Sub-area 2 with cale factor 1.00}}}{20}{figure.caption.48}
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Sub-area 2 with cale factor 1.10}}}{20}{figure.caption.48}
-\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Sub-area 3 with cale factor 1.00}}}{20}{figure.caption.48}
-\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {Sub-area 3 with cale factor 1.10}}}{20}{figure.caption.48}
-\contentsline {subfigure}{\numberline {(g)}{\ignorespaces {Sub-area 4 with cale factor 1.00}}}{20}{figure.caption.48}
-\contentsline {subfigure}{\numberline {(h)}{\ignorespaces {Sub-area 4 with cale factor 1.10}}}{20}{figure.caption.48}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Sub-area 2 with scale factor 1.00}}}{20}{figure.caption.48}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Sub-area 2 with scale factor 1.10}}}{20}{figure.caption.48}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Sub-area 3 with scale factor 1.00}}}{20}{figure.caption.48}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {Sub-area 3 with scale factor 1.10}}}{20}{figure.caption.48}
+\contentsline {subfigure}{\numberline {(g)}{\ignorespaces {Sub-area 4 with scale factor 1.00}}}{20}{figure.caption.48}
+\contentsline {subfigure}{\numberline {(h)}{\ignorespaces {Sub-area 4 with scale factor 1.10}}}{20}{figure.caption.48}
 \contentsline {figure}{\numberline {4.8}{\ignorespaces Histograms of MODIS SST and TET-1 MIR band imageries with all the five scale factors in sub-area 1. The red solid line in each histogram denotes the mean value and the red dashed line the standard deviation.\relax }}{21}{figure.caption.57}
 \contentsline {figure}{\numberline {4.9}{\ignorespaces Histograms of MODIS SST and TET-1 MIR band imageries with all the five scale factors in sub-area 4. The red solid line in each histogram denotes the mean value and the red dashed line the standard deviation.\relax }}{22}{figure.caption.58}
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Histograms of all sub-areas of MODIS SST, TET-1 MIR band imagry and their differences with different scale factor\relax }}{23}{figure.caption.59}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Histograms of all sub-areas of MODIS SST, TET-1 MIR band imagery and their differences with different scale factor\relax }}{23}{figure.caption.59}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Scale factor 1.00}}}{23}{figure.caption.59}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Scale factor 1.10}}}{23}{figure.caption.59}
 \contentsline {figure}{\numberline {4.11}{\ignorespaces Histograms of all sub-areas of MODIS SST and TET-1 MIR band imageries with all the five scale factors. The red solid line in each histogram denotes the mean value and the red dashed line the standard deviation.\relax }}{24}{figure.caption.62}
@@ -64,9 +64,9 @@
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MIR band}}}{38}{figure.caption.95}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {TIR band}}}{38}{figure.caption.95}
 \contentsline {figure}{\numberline {4.25}{\ignorespaces The example figure of Libya-2. The red rectangles represent the selected sub-areas.\relax }}{39}{figure.caption.99}
-\contentsline {figure}{\numberline {4.26}{\ignorespaces Transferability test: temperature differences between TET-1 surface temperature maps and MODIS LST.\relax }}{40}{figure.caption.100}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MIR band}}}{40}{figure.caption.100}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {TIR band}}}{40}{figure.caption.100}
+\contentsline {figure}{\numberline {4.26}{\ignorespaces Transferability test: temperature differences between TET-1 surface temperature maps and MODIS LST.\relax }}{41}{figure.caption.100}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MIR band}}}{41}{figure.caption.100}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {TIR band}}}{41}{figure.caption.100}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Surface temperature maps of Etna 2014.06.22.\relax }}{44}{figure.caption.107}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MIR band}}}{44}{figure.caption.107}
