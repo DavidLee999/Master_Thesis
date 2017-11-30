@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.11.1)  29 NOV 2017 21:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.11.1)  30 NOV 2017 16:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1789,9 +1789,7 @@ LaTeX Warning: Label `eq1' multiply defined.
 
 LaTeX Warning: Label `Bar_comp' multiply defined.
 
-)
-No file Chapters/Chapter6.aux.
-)
+) (./Chapters/Chapter6.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 72.
@@ -1811,7 +1809,8 @@ LaTeX Font Info:    ... okay on input line 72.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 72.
 LaTeX Font Info:    ... okay on input line 72.
 LaTeX Font Info:    Try loading font information for T1+ppl on input line 72.
- (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/t1ppl.fd
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/t1ppl.fd
 File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
 )
 Now handling font encoding TS1 ...
@@ -3482,10 +3481,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 34771 strings out of 492995
- 694239 string characters out of 6132704
- 915097 words of memory out of 5000000
- 37589 multiletter control sequences out of 15000+600000
+ 34774 strings out of 492995
+ 694303 string characters out of 6132704
+ 917533 words of memory out of 5000000
+ 37590 multiletter control sequences out of 15000+600000
  41782 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  59i,20n,85p,10377b,2899s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -3505,7 +3504,7 @@ xmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2017/texmf-dis
 t/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts
 /type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/
 urw/palatino/uplri8a.pfb>
-Output written on main.pdf (82 pages, 10572920 bytes).
+Output written on main.pdf (82 pages, 10572917 bytes).
 PDF statistics:
  1194 PDF objects out of 1200 (max. 8388607)
  935 compressed objects within 10 object streams
