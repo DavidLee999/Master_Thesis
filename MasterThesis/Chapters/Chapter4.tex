@@ -79,6 +79,8 @@ Before doing the comparison between MODIS SST and MITIP surface temperature prod
 
 \noindent As a result, the MITIP method adds two input keywords \emph{sc1} and \emph{sc2}, which stand for scale factor for the TET-1 MIR and TIR band imageries respectively, to calibrate the TOA radiances. Since the temperatures derived from MITIP are lower than the MODIS SST, the TOA radiances of the TET-1 imagery should be increased. As a result, five scale factors, 1.00 which means original TOA radiances, 1.05 which means increasing the TOA radiances by 5\%, 1.10, 1.15 and 1.20, are selected to calibrate the TET-1 MIR and TIR band respectively.\\
 
+\noindent The optimal scale factors for the MIR and TIR band imageries should be found to minimize the temperature differences between the MITIP surface temperature maps and MODIS temperature products.\\
+
 \noindent In order to see detailedly how the scale factor will affect the pixel values of the results of MITIP, histograms of sub-areas of TET-1 MIR band temperature map are investigated and compared with the histograms of the same areas of MODIS SST. The histograms of each sub-area with different scale factors are showed in Figure \ref{fig:hist_rect_all}. Here we use the Etna scene of the date 2014.06.22, which is the first scene we have for the Etna.\\
 
 \begin{figure}[!htbp]
