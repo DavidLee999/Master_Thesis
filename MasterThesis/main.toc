@@ -11,7 +11,7 @@
 \contentsline {section}{\numberline {2.1}Principles of thermal infrared remote sensing}{5}{section.14}
 \contentsline {subsection}{\numberline {2.1.1}The thermal infrared domain and atmospheric windows}{6}{subsection.16}
 \contentsline {subsection}{\numberline {2.1.2}The Planck's law and Stefan-Boltzmann law}{7}{subsection.18}
-\contentsline {section}{\numberline {2.2}A dual-channel method for the identification of subresolution high temperature sources}{8}{section.23}
+\contentsline {section}{\numberline {2.2}A dual-channel method for the identification of sub-resolution high temperature sources}{8}{section.23}
 \contentsline {chapter}{\numberline {3}The MITIP, an atmospheric correction and image processing method}{9}{chapter.25}
 \contentsline {section}{\numberline {3.1}Data preparation and pre-processing}{9}{section.26}
 \contentsline {subsection}{\numberline {3.1.1}Data preparation}{9}{subsection.27}
