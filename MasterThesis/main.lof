@@ -48,16 +48,16 @@
 \contentsline {figure}{\numberline {4.17}{\ignorespaces The effect of different emissivities on the surface temperature maps from MITIP.\relax }}{31}{figure.caption.80}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Temperature (Libya-1) with different emissivities}}}{31}{figure.caption.80}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Temperature differences (Libya-1) with different emissivities}}}{31}{figure.caption.80}
-\contentsline {figure}{\numberline {4.18}{\ignorespaces Temperature differences (Lybia-1) between the surface temperature maps in TIR band and MODIS LST.\relax }}{32}{figure.caption.83}
-\contentsline {figure}{\numberline {4.19}{\ignorespaces Temperature differences (Lybia-1) between the surface temperature maps in MIR band and MODIS LST.\relax }}{33}{figure.caption.84}
-\contentsline {figure}{\numberline {4.20}{\ignorespaces Temperature differences (Lybia-1) between the surface temperature maps from MITIP with certain scale factor and MODIS LST.\relax }}{34}{figure.caption.85}
+\contentsline {figure}{\numberline {4.18}{\ignorespaces Temperature differences (Libya-1) between the surface temperature maps in TIR band and MODIS LST.\relax }}{32}{figure.caption.83}
+\contentsline {figure}{\numberline {4.19}{\ignorespaces Temperature differences (Libya-1) between the surface temperature maps in MIR band and MODIS LST.\relax }}{33}{figure.caption.84}
+\contentsline {figure}{\numberline {4.20}{\ignorespaces Temperature differences (Libya-1) between the surface temperature maps from MITIP with certain scale factor and MODIS LST.\relax }}{34}{figure.caption.85}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MIR band}}}{34}{figure.caption.85}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {TIR band}}}{34}{figure.caption.85}
 \contentsline {figure}{\numberline {4.21}{\ignorespaces The example figure of Libya-1. The red rectangles represent the selected sub-areas.\relax }}{35}{figure.caption.88}
-\contentsline {figure}{\numberline {4.22}{\ignorespaces Tempereature differences between TET-1 surface temperature maps and MODIS LST (Libya-1).\relax }}{36}{figure.caption.89}
+\contentsline {figure}{\numberline {4.22}{\ignorespaces Temperature differences between TET-1 surface temperature maps and MODIS LST (Libya-1).\relax }}{36}{figure.caption.89}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MIR band}}}{36}{figure.caption.89}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {TIR band}}}{36}{figure.caption.89}
-\contentsline {figure}{\numberline {4.23}{\ignorespaces The best scale factors for each Lybia-1 scenes and its corresponding temperature differences. The red solid line is the best scale factor for each Libya-1 scene. The blue dashed line is the minimal temperature differences resulted from that scale factor.\relax }}{37}{figure.caption.92}
+\contentsline {figure}{\numberline {4.23}{\ignorespaces The best scale factors for each Libya-1 scenes and its corresponding temperature differences. The red solid line is the best scale factor for each Libya-1 scene. The blue dashed line is the minimal temperature differences resulted from that scale factor.\relax }}{37}{figure.caption.92}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MIR band}}}{37}{figure.caption.92}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {TIR band}}}{37}{figure.caption.92}
 \contentsline {figure}{\numberline {4.24}{\ignorespaces The minimal temperature differences and the temperature differences resulted from scale factor 1.15 and scale factor 1.05. The red solid line is the minimal temperature differences for each Etna scene. The blue dashed line is the temperature differences resulted from the selected scale factors for MIR and TIR band imageries, scale factor 1.15 (upper) and scale factor 1.05 (lower), respectively.\relax }}{38}{figure.caption.95}
@@ -89,10 +89,10 @@
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Effective target temperature}}}{51}{figure.caption.124}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Effective target pixel fraction}}}{51}{figure.caption.124}
 \contentsline {figure}{\numberline {5.9}{\ignorespaces FRP of Bardarbunga 2014.09.14.\relax }}{52}{figure.caption.127}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Surface temperature maps of Portugal wild fires in 2016.08.11.\relax }}{53}{figure.caption.129}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Surface temperature maps of Portugal wild fires on 2016.08.11.\relax }}{53}{figure.caption.129}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MIR band}}}{53}{figure.caption.129}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {TIR band}}}{53}{figure.caption.129}
-\contentsline {figure}{\numberline {5.11}{\ignorespaces HTE monitoring products of Portugal wild fires in 2016.08.11.\relax }}{54}{figure.caption.132}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces HTE monitoring products of Portugal wild fires on 2016.08.11.\relax }}{54}{figure.caption.132}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Effective target temperature}}}{54}{figure.caption.132}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Effective target pixel fraction}}}{54}{figure.caption.132}
 \contentsline {figure}{\numberline {5.12}{\ignorespaces FRP of Portugal wild fires in 2016.08.11.\relax }}{55}{figure.caption.135}

@@ -11,7 +11,7 @@ This chapter gives a brief description about the MITIP method which is an atmosp
 %----------------------------------------------------------------------------------------
 
 \section{Data preparation and pre-processing}
-The MITIP method is an atmospheric correction and image processing method used for processing the thermal remote sensing imageries of the FireBIRD satellite. MITIP performs atmospheric corrections for TET-1 imagery first based on water vapor and elevation in order to get ground surface radiance and temperature. Afterwards, the dual channel method introduced in Chapter 2 is used detect and characterize sub-pixel temperature of hot pixels. In this section, required input data is introduced. The procedure and principles of MITIP and its products are described in following sections.\\
+The MITIP method is an atmospheric correction and image processing method used for processing the thermal remote sensing imageries of the FireBIRD satellite. MITIP performs atmospheric corrections for TET-1 imagery first based on water vapor and elevation in order to get ground surface radiance and temperature. Afterwards, the dual channel method introduced in Chapter 2 is used to detect and characterize sub-pixel temperature of hot pixels. In this section, required input data is introduced. The procedure and principles of MITIP and its outcomes are described in following sections.\\
 
 %-----------------------------------
 %	SUBSECTION 1
@@ -20,13 +20,13 @@ The MITIP method is an atmospheric correction and image processing method used f
 \subsection{Data preparation}
 The TET-1 imagery inputted to the MITIP is radiometrically calibrated top-of-atmosphere (TOA) radiance data (Level 1B). In order to acquire ground surface radiance and temperature, atmospheric correction should be performed first.\\
 
-\noindent The necessary atmospheric correction takes advantage of the fact that in the thermal spectral range water vapor is the dominating disturbing parameter, while aerosols play only a negligible role \parencite{Reference204}. Consequently, for the purpose of simplifying the procedure, water vapor is the only parameter that taken into account while performing atmospheric correction. Because it is impossible to retrieve information of water vapor from TET-1 imagery, external data is required and MODIS water vapor products are used here. Besides, since the water vapor decreases with elevation, the other parameter that has to be included is the elevation, which is obtained from ASTER Digital Elevation Map (DEM).\\
+\noindent The necessary atmospheric correction takes advantage of the fact that in the thermal spectral range water vapor is the dominating disturbing parameter, while aerosols play only a negligible role \parencite{Reference204}. Consequently, for the purpose of simplifying the procedure, water vapor is the only parameter that taken into account while performing atmospheric correction. Because it is impossible to retrieve information of water vapor from TET-1 imagery, external data is required and MODIS water vapor products are used here. Besides, since the water vapor volume decreases with elevation, the other parameter that has to be included is the elevation, which is obtained from ASTER Digital Elevation Map (DEM).\\
 
 \noindent From Chapter 2 we know, emissivity map is required to convert the derived radiant temperature $T_{rad}$ to kinetic temperature $T_{kin}$. The emissivity map can be acquired from ASTER Global Emissivity Database (GED).\\
 
 \noindent Finally, the input files to the MITIP are:
 \begin{itemize}
-\item TET-1 imagery with TOA radiance
+\item TET-1 imagery with MIR band and TIR band
 \item Water vapor from MODIS water vapor product
 \item Elevation from ASTER Global Elevation Map
 \item Emissivity map from ASTER Global Emissivity Database
@@ -41,7 +41,7 @@ The TET-1 imagery inputted to the MITIP is radiometrically calibrated top-of-atm
 \subsection{Data pre-processing}
 According to the MITIP's requirements, the input data should fulfill three conditions: 1) all input data should be of format GeoTIFF; 2) all input imageries ought to be overlapped and of the same size; 3) spatial resolution of all imageries should be identical.\\
 
-\noindent On the basis of these requirements, after downloading all the auxiliary data, we should convert them into GeoTIFF format first. Then, compared with TET-1 imagery, the individual raster file of both the ASTER data has a smaller ground coverage of around 60 km by 60 km. These small raster files of ASTER DEM and GED should be merged into one large file respectively which is able to cover the whole area of interest (AOI). Next, to ensure all the four input files are overlapped with each other, they ought to be reprojected into the same and appropriate UTM zone and resampled to the same pixel size. Finally, the TET-1 imagery is used as a standard defining the size of the input file. All input data should be clipped using TET-1 imagery as mask to guarantee that they all share the same number of rows and columns.\\ 
+\noindent On the basis of these requirements, after downloading all the auxiliary data, we should convert them into GeoTIFF format first. Then, compared with TET-1 imagery, the individual raster file of both the ASTER data has a smaller ground coverage of around 60 km by 60 km. These small raster files of ASTER DEM and GED should be merged into one large file respectively which is able to cover the whole area of interest (AOI). Next, to ensure all the four input files are overlapped with each other, they ought to be reprojected into the same and appropriate UTM zone and resampled to the same pixel size. Finally, the TET-1 imagery is used as a standard defining the size of the input files. All input data should be clipped using TET-1 imagery as mask to guarantee that they all share the same number of rows and columns.\\ 
 
 %----------------------------------------------------------------------------------------
 %	SECTION 2

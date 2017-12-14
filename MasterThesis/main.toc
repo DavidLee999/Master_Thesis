@@ -29,7 +29,7 @@
 \contentsline {chapter}{\numberline {5}Analysis of high-temperature events}{43}{chapter.104}
 \contentsline {section}{\numberline {5.1}High-temperature events}{43}{section.105}
 \contentsline {subsection}{\numberline {5.1.1}Volcanoes}{43}{subsection.106}
-\contentsline {subsection}{\numberline {5.1.2}Fire events}{46}{subsection.128}
+\contentsline {subsection}{\numberline {5.1.2}Fire events}{49}{subsection.128}
 \contentsline {section}{\numberline {5.2}Comparison with the results of the Zhukov's algorithm}{49}{section.136}
 \contentsline {subsection}{\numberline {5.2.1}Brief description of Zhukov's algorithm}{49}{subsection.137}
 \contentsline {subsection}{\numberline {5.2.2}From pixel-based to cluster-based analysis}{52}{subsection.139}
